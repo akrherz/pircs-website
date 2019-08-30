@@ -1,0 +1,12 @@
+#
+# Created by WebMap 1.0.1
+# Wednesday, November 29, 1995 at 5:48 PM
+# Format: NCSA
+#
+
+
+default ../n_america.html
+rect ../en_CA.html 189,143 251,162
+rect ../tr_fr_CA.html 188,163 251,180
+rect ../en_US.html 169,180 264,198
+rect ../mexico.html 169,198 239,220

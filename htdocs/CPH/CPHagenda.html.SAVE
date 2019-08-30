@@ -1,0 +1,125 @@
+<html>
+<Title>PIRCS Copenhagen Agenda</title>
+<body>
+<blockquote>
+<h2><font color="#0000ff">Draft Agenda</font></h2>
+<BR>
+<p>Participants are encouraged to take advantage of
+a <b>poster session</b> to present recent results. 
+The poster format allows people 
+to have extended discussion regarding results of interest.  
+Those who are 
+presenting posters will have an opportunity to introduce 
+their material briefly (one minute, one transparency) so 
+the audience will know what is available.  There is limited 
+space for posters; thus, please confirm whether you will 
+give a poster so that we can reserve a space for you.</p>
+<p>Please email <a href="mailto:pircs@iastate.edu">pircs@iastate.edu</a>
+if you have questions about the agenda, or additional agenda items
+to suggest.</p>
+<table border="0" width="90%">
+<font color="#0000ff" size="+1"><b>Monday, 22 May</b></font><P>
+<tr>
+<td width="15%">0900</td>
+<td width="70%">Welcome and introductions</td>
+</tr>
+<tr>
+<td width="15%" valign="top">0930</td>
+<td width="70%"><p>Review of Experiment 1</p>
+<tr>
+<td></td>
+<td>
+<ul>
+<li>Current status</li>
+<li>Preliminary findings from Experiment 1B</li>
+<li>Data distribution policy</li>
+<li>Future analyses and publications</li>
+</ul>
+</td>
+</tr> 
+<tr>
+<td width="15%">1200</td>
+<td width="70%">Lunch</td>
+</tr> 
+<tr>
+<td width="15%">1300</td>
+<td width="70%">Experiment 1c</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<ul>
+<li>Science questions</li>
+<li>Spatial domain and resolution</li>
+<li>Duration of simulation</li>
+</ul>
+</td></tr> 
+<tr>
+<td width="15%">1700</td>
+<td width="70%">Poster introductions</td>
+</tr> 
+<tr>
+<td width="15%">1715</td>
+<td width="70%">Poster viewing and reception</td>
+</tr> 
+<tr>
+<td width="15%" valign="top">
+<B><font color="#0000ff">Posters</font></b></td>
+<td width="70%">
+F. Feser,
+<i>A spectral nudging technique for dynamical downscaling purposes</i>
+<p>S. Hagemann,
+<i>Analysis of the drying out problem over south-eastern Europe using the limited 
+area model HIRHAM4</i>
+<p>J. Larson and J. Taylor,
+<i>Regional Climate Modelling at Argonne National Laboratory</i>
+<p>
+H.Soegaards, E.Boegh, M.S. Rasmussen, N.Woetmann, J.H.Christensen,
+C.B.Hasager and N.O.Jensen,
+<i>Combining satellite data and a high resolutions meteorological model for
+estimation of surface fluxes and resistances</i>
+<p>
+R. Stockli and P.L. Vidale, <i>Time and space dependent biophysical land surface parameters from AVHRR
+NDVI data</i><p>
+Z. Yang and R.W. Arritt, 
+<i>Ensemble simulations with perturbed physics in a nested regional climate model</i>
+<br>
+</td></tr>
+</table>
+
+<BR><BR>
+<font color="#0000ff" size="+1"><b>Tuesday, 23 May</b></font><P>
+
+<table border="0" width="90%">
+<tr>
+<td width="15%">0900</td>
+<td width="70%">Experiment 2</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<ul>
+<li>Science questions</li>
+<li>Spatial domain and resolution</li>
+<li>Duration of simulation</li>
+<li>Fields to be saved: compromise between data volume and requirements for participants to precompute diagnostic quantities</li>
+<li>Source for initial/boundary data</li>
+<li>Observed data for model evaluation</li>
+<li>Interactions with other programs: 
+<a href="http://www.met.utah.edu/jpaegle/homepages/jpaegle/ALLS_implementation.html">
+ALLS</a>, LBA, etc.</ul><P>
+</ul>
+<td>
+</tr>
+<tr>
+<td width="15%">1200</td>
+<td width="70%">Lunch</td>
+</tr> 
+<tr>
+<td width="15%">1330</td>
+<td width="70%">Experiment 2 (continued)</td>
+</tr> 
+</table>
+</blockquote>
+</body>
+</html>

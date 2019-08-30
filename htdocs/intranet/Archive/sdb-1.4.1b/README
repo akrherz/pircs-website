@@ -1,0 +1,248 @@
+                   README for SDB(1.4.1b) SERVER(CGI script)
+                   --------------------------------------
+
+This README will cover some of the basics of compiling/setting up the 
+'sdb' CGI script w/ an HTTPD server and also the 'fits2hdf' CGI script 
+if FITS support is needed. It has been tested on an HP9000/7xxx and 
+Solaris 2.5.  It should work on any generic Unix box.
+
+NOTE: There is a bug in Vxx reading interface. This will cause the 'sdb'
+      script to core dump on an SGI(IRIX5.3) and SunOS(4.1.x).
+      The use of this script on these platforms is not recommneded.
+      A library fix is in the works.
+
+They both bascially work like any other CGI script and don't require
+anything special except for a few conventions when setting up the HTML
+document which will be explained below.
+
+Currently there is not a lot of documentation except for this README
+and the comments in the source code.
+
+Building 'sdb'
+=============
+NOTE:
+ Major portions of the code have been re-written.
+ The main routine(sdb.c) and the HDF/FITS integration still needs some work.
+
+ Features:
+ ---------
+ Seee CHANGES section at the end of the README
+
+ Requirements:
+ ------------
+ For HDF:
+   1. requires HDF4.0r1patch01. See 'ftp://ftp.ncsa.uiuc.edu/HDF'
+      for this distribution.
+
+ For FITS support:
+   1. requires FITSIO Fortran-77 version. 
+	See "http://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio_release.html"
+
+Also this version is not fully ANSI and has been mostly compilied with GCC.
+
+Compiling 'sdb':
+---------------
+1. Edit the Makefile found in toplevel directory
+   and set the following varibles. See Makefile for further info.
+
+   CC                      -> cc, gcc
+   CFLAGS                  -> -DDEBUG=2(if you want debugging)
+   SYSCONFIGFLAGS          -> (see Makefile)
+   hdfdir,cdfdir,jpegdir   -> location of libdf.a, libmfhdf.a and libjeg.a
+   zlibdir                 -> location of libz.a
+   fitsiodir               -> location of FITS4.12 directory(for FITS support)
+   HDF_LIBS                -> (see Makefile)
+   HDF_FLAGS               -> -DHAVE_HDF, -DHAVE_FITS, -DHAVE_FITS2HDF
+   HDF_INC                 -> (see Makefile)
+   AUX_FLAGS               -> -DHAVE_PROTOTYPES
+   AUX_INC                 -> (see Makefile)
+   AUX_LIBS                -> e.g -lm -lcl -lisamstub on HPUX(for fitsio)
+
+2. type 'make sdb'. This should build the target script 'sdb'.
+
+3. For FITS support you need to compile the CGI script 'fits2hdf' in
+   the directory 'fits2hdf'. See the Makefile in that directory for
+   further info.
+
+4. If you want you can get only FITS support. Modify the 'Makefile'
+   (the HDF include file needed for FITS file) and type 'make fdb'. This 
+   should build the target script 'fdb'. How to use the 'fdb' is similar to
+   how to use the 'sdb'. See below.
+
+SDB Setup
+=========
+When setting up the 'sdb' CGI script in an HTML document the following
+conventions should be observed:
+
+1. The CGI script expects the path to the HDF/netCDF/FITS file to passed as
+   an evironment variable PATH_INFO from the HTTPD server .
+   You need to do the following.
+
+e.g say the file is located as '/usr/local/etc/httpd/htdocs/hdf/test.hdf' 
+   and the CGI script is located in you 'cgi-bin' directroy as '/cgi-bin/sdb'. 
+   Furthermore, the HTTPD document area is '/usr/local/etc/httpd/htdocs'.
+   In the HTML file you need a reference like the following.
+
+   <A HREF="/cgi-bin/(script name)/(directory where file is)?(filename)>
+
+   e.g.
+
+   <A HREF="/cgi-bin/sdb/hdf?test.hdf">
+
+   NOTE that path to the hdf file relative to the HTTPD documentation
+   area '/usr/local/etc/httpd/htdocs' is 'hdf' which is added to the
+   the end of the script(/cgi-bin/sdb) and becomes '/cgi-bin/sdb/hdf'.
+
+2. Initial requests like the above are obtained using the CGI GET
+   Method. Subsequent requests use either forms where appropriate
+   (and so use the CGI POST Method) or the GET Method.
+
+
+fits2hdf Compiling/Setup
+========================
+
+  The "fits2hdf" is the separated CGI Script associated with SDB. When doing
+  a conversion for FITS file to HDF file it is needed. After converting the 
+  FITS file to HDF file you can review the data of the  FITS Primary array or 
+  IMAGE Extension.
+
+  Suppose you have installed the fitsio4.12 Fortran library. If not, you can 
+  download that at:
+	http://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio_release.html
+
+  To compile the 'fits2hdf' CGI script, you just need to modify the makefile
+  to locate the HDF and FITSIO library.
+
+  To use the fits2hdf CGI Script you need the following:
+
+  e.g. In the HTML file you have the following reference:
+
+	  <A HREF="/cgi-bin/fits2hdf/fits/files?test.fits> 
+
+      Say the FITS file is located as 
+        '/usr/local/etc/httpd/htdocs/fits/files/test1.fits' 
+
+      and the CGI script(fits2hdf) is located in your 'cgi-bin/' directory
+        '/usr/local/etc/httpd/cgi-bin/fits2hdf'
+
+      Futhermore the HTTPD document area for fits file is under
+        '/usr/local/etc/httpd/htdocs/fits/files'.  
+
+  Now:
+   1. Create a subdirectory called 'tmp' under 
+
+	   '/usr/local/etc/httpd/htdocs/fits/' 
+
+      and the converted HDF file will be put at
+
+	   '/usr/local/etc/httpd/htdocs/fits/tmp/tmp.hdf'
+
+      Make sure that the permissions on the 'tmp' directory
+      allow the creation of temprary files(You might have to make it
+      world-writable).
+
+  That's it. The fits2hdf should work for you.
+
+Trouble Shooting
+===================
+
+   The first place to look is to view the source of the resulting HTML
+   document in the client(if one is returned)and take a look at the
+   HREF link and make sure that it looks like the link in part(1 above.
+
+   If further problems exist, you can turn debugging on using the
+   compile flag -DDEBUG=3 which will output debugging info to '/tmp/sdb2.log'.
+   If you look through the file after a session you can sort of get
+   and indication where things went wrong. Read 'myutil.h' for more
+   info on the debugging procedures used.
+
+   I have included a small CSH shell script called 'test_sdb' that
+   mimics the environment provided by the HTTPD server. You can
+   test if the CGI script handles the first GET method by filling
+   in the appropriate environment variables(file location, file name,..etc)
+   This will give you a good idea if the script itself works.....
+
+Known BUGS
+===================
+    1. Browsing netCDF files does not work fully. 
+       It has a problem dealing with attributes. This is a bug
+       in the library and will be fixed in the next release of 
+       the HDF/netcdf distribution.
+
+    2. Will not work with HDF4.0r1p1 on SunOS(4.1.x)
+       and SGI(IRIX5.3) due to a bug in Vxx reading interface.
+       This will be fixed in the next release of the HDF/netcdf distribution.
+
+Fixed BUGS
+==========
+
+    1. Fixed handling of unsigned values.
+    2. Fixed handling of floats in Vdatas.
+    3. Fixed handling of unsigned values in attributes.
+    4. Fixed - Selecting some Vdatas cause a core dump.   
+    5. Fixed - Graphical printing of Vgroup/Vdata hierachy is broken.
+    6. Fixed - bug in creation of subsampled Images from SDS.
+    7. Fixed bug when browsing FITS files to properly display the 
+       associated fits file in all the URL's.
+    8. Fixed bug in 'fits2hdf' which caused the script to core dump on
+       the Dec Alpha(OSF3.0).
+    9. Fixed memory leak in the main routine in 'sdb.c'.
+
+TODO
+====
+    1. Test on more platforms(Dec Alpha, IBM AIX,..etc)
+    2. cleanup up the FITS/HDF integration.
+    3. Better error reporting.
+    4. rewrite main() and other routines in 'sdb.c'.
+    5. Package most of the routines as a library(?).
+
+Special COMMENTS
+================
+   If you happen to look at the code you will see various hooks for
+   doing other things(i.e. CCI,..etc). These features are not fully
+   supported yet and do not work well.
+
+    For comments/suggestions/bugfixes please email them to
+
+    George Velamparampil <georgev@ncsa.uiuc.edu>
+    NCSA Software Development Group
+    HDF Group
+    152 Computing Applications Bldg.
+    605 E. Springfield Ave.
+    Champaign, IL 61820
+
+CHANGES 
+=======
+   1.4.1b
+   o Fixed bug when browsing FITS files to properly display the 
+     associated fits file in all the URL's.
+   o Fixed bug in 'fits2hdf' which caused the script to core dump on
+     the Dec Alpha(OSF3.0).
+   o Fixed memory leak in the main routine in 'sdb.c'.
+   
+   1.4b
+   ----
+   o Fixed - bug in creation of sumsampled Images from SDS.
+   o Updated/rearranged Makefile
+   o Updated README
+
+   1.3b
+   ----
+   o There is support now to browse FITS files also.
+     This also requires the CGI script 'fits2hdf' found in
+     in this distribution.
+   o Everything now is placed in HTML Tables where appropriate.
+   o Now you can subset Vdatas along field names and records.
+   o Images w/ a fake palette are generated for any SDS whose rank is 2 or 3.
+   o A Vdata data is shown in HTML Tables.
+   o A lot of the code has been rewritten.
+   o added a little CSH script to test the GET mehtod w/ CGI script. 
+     See below in the Troubleshooting section for further details.
+   o Fixed - Selecting some Vdatas cause a core dump.   
+   o Fixed - Graphical printing of Vgroup/Vdata hierachy is broken.
+
+   1.0-1.2b
+   --------
+    o Fixed handling of unsigned values.
+    o Fixed handling of floats in Vdatas.
+    o Fixed handling of unsigned values in attributes.

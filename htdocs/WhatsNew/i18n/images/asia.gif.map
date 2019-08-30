@@ -1,0 +1,22 @@
+###_sgi-version: 1
+###_sgi-format: netsite
+###_sgi-date: (890871871) Wed Mar 25 16:24:31 1998
+###_sgi-document: Int'l Pages Asia
+
+default worldmap.html
+
+#
+rect tr_simpl_cn.html 457,207 578,238
+
+#
+rect tr_japan.html 456,169 508,185
+
+#
+rect tr_korea.html 455,196 507,204
+
+#
+rect tr_simpl_cn.html 427,0 552,17
+
+#
+rect tr_trad_TW.html 456,240 513,261
+

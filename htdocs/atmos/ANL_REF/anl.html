@@ -1,0 +1,367 @@
+<title> Iowa State University - Argonnne National Laboratory
+</title>
+
+<Pre>
+<h4>
+Project for Collaboration between</h4>
+<h2>
+Iowa State University
+Atmospheric Science/Agricultural Meteorology Program</h2>  
+<h4>
+and</h4>
+<h2>
+Argonne National Laboratory Global Change Program
+Mathematical and Computer Science Division 
+</h2>
+<h3>
+May 10, 1995
+</h3>
+</Pre>
+
+
+<h3>Contents</h3>
+<ul>
+<li><a href="#Intro">Introduction</a>
+<li><a href="#Comp">Computational Issues</a>
+<li><a href="#MM5">Model</a>
+<li><a href="#Results">Meteorological Issues</a>
+<li><a href="#Ack">Acknowledgments</a>
+<li><a href="#Ref">References</a>
+<li><a href="#Pers">Personnel</a>
+</ul>
+
+<a name="Intro"><b>Introduction</b>
+
+
+<p>This document describes the collaborative
+effort, in progress, between researchers in the 
+departments of Computer Science and Geological
+and Atmospheric Science at Iowa State University
+and Scientists in the Department of Mathematics and 
+Computer Science at Argonne National Laboratory
+(ANL). We set out to jointly conduct a series of
+experiments (simulations) for the purposes of answering
+specific scientific and computational questions relating to 
+simulation of real mesoscale meteorological events 
+on a massively parallel computer. To this end, 
+we have engaged students and faculty having interests in
+computational techniques and meteorological processes. 
+This effort centers around the use of ANL's
+massively parallel mesoscale meteorology model (MPMM)
+to simulate an event from the Great Flood of
+1993 in the US Midwest.  This meteorological
+event is of intense interest, not only for
+its meteorological and economical importance,
+but also because of its usefulness in
+revealing new scientific insights into the
+hydrological cycle in a region where
+precipitation is the driving force for the
+economy.  It also offers an opportunity to
+extend MPMM to include a hydrostatic version
+and to evaluate alternative computational
+structures for parallelizing a realistic
+meteorological problem.<p>
+<p> We have outlined a series of simulations
+of 24-hour periods of precipitation to test
+hydrostatic against nonhydrostatic versions,
+parallel against serial versions, 30-km
+against 60-km resolution, and the Grell
+convection scheme against explicit moisture.
+See <a href=expttab.gif>
+ Table 1 (0.023 MB) </A> which shows the experimental design and
+status of the simulations.
+Results of these experiments will give us a
+basis for maximizing efficiency while
+faithfully capturing the physics in future
+simulations on very large domains. <p>
+<p>The MPMM has been developed on the IBM
+SP1 machine by the MCS division at ANL.  This
+project is intended to complement ongoing ANL
+research by developing the parallel
+implementation of the hydrostatic version of
+MPMM and to apply the new model to
+challenging problems in climate research for
+the central US.<p>
+
+</a><p>
+<a name="Comp"><b>Computational Issues (progress)</b>
+
+<p>Kim, Kothari, Mitra, Michalakes </p>
+
+<p>The process of transforming the hydrostatic version of MM5, in principle, 
+should follow the lead ANL has taken in transforming the nonhydrostatic
+version.  The task has proved to be more challenging than first envisioned,
+which has led to both frustrations and windows of opportunity. </p> 
+
+<p>We see the code transformation process as described in 
+<a href=mm5.gif>
+ Figure 1. (0.005 MB) </A> 
+The major effort in creating a parallel version of a meteorological code (or
+perhaps any finite difference code) is represented by the heavy arrows near
+the top of the figure.  The major issue that is very time-consuming is the
+process of defining the communication variables and synchronization points,
+as represented by the right-most arrow.  This is a tedious and 
+time-consuming task, which must be done very precisely or it may lead to
+errors in the final results. </p>
+
+<p>This fairly ominous task also presents us with an opportunity:  if this task
+is generic to very large codes that are to be parallelized, then if we could
+develop a communication diagnostic tool to perform this task in an accurate
+and efficient manner, it would be in high demand by others as well.  We have
+some ideas about using index algebra and variable classification to generate
+such a tool.  Creation of such a tool also would be useful in diagnosing
+sequential codes and locating opportunities for improving efficiency in
+these codes as well.  Development of such a tool will be one focus of our 
+attention in the coming months. </p>
+
+<p><a href=timing2.gif>
+ Figure 2 (0.005 MB) </A> which 
+ shows a plot of the timing of a 24 hour simulation with the
+non-hydrostatic version of MM5 using the domain and initial and boundary
+conditions described below.  This graph shows that substantial speed-up is
+achieved by using 6x6 (36 processors) in place of 4x4 (16 processors).
+Additional speed-up for 64 and 100 processors is shown but marginal gain is
+produced.  Development of a communication diagnostic tool  will allow us to
+further evaluate the present code and search for opportunities for
+improvement.</p> 
+</a><p>
+<a name="MM5"><b>Model description</b>
+<p>     MPMM includes the finite-difference
+formulation of the time-dependent Navier
+Stokes equations and physics simulations such
+as clouds, radiation, and moist convection in
+3D.  MPMM takes advantage of the large node
+memory and performance of the SP-1 machine as
+well as its robust operational and
+programming environment.  Fortran is used
+as the programming language, and other useful
+development tools such as Chameleon and PCN
+are also used for MPMM.  The major
+communication pattern is nearest-neighbor
+communication to solve the finite difference
+equations.  About 25-50 node hours per
+simulated day will be needed depending on the
+domain size, nesting and parallel efficiency.
+We estimate the project will require about
+300 node hours per month for studies of
+scalability as well as intercomparisons
+previously mentioned.<p>
+
+</a><p>
+<a name="Results"><b>Meteorological Issues (Progress)</b>
+<p>
+
+<p>Pan, Kim, Turner, Takle, Michalakes </p>
+  
+<h4>Methods </h4>
+<p>We have set out to use the ANL massively parallel version of MM5 to simulate 
+an event from the Great Flood of 1993 in the US Midwest.  This is a period of
+intense interest, not only for its meteorological and economical importance,
+but also because of its usefulness in revealing new scientific insights into
+the hydrological cycle in a region where precipitation is the driving force
+for the economy. <p/> 
+
+<p>The spatial domain will be the continental US, with specific attention to
+ the 
+Midwest, particularly the upper Mississippi River drainage basin.  We have
+used a low-resolution domain of 25x28 grid points at 180 km with and
+without a nested region of 34x37 at 60 km.  A high-resolution domain is also
+employed that uses 49x55 grid points at 90 km,  with and without a nested
+region of 67x73 at 30 km. All domains use 23 levels in the vertical.  The
+time period simulated is a 24-h period during the 
+summer of 1993 when heavy precipitation was recorded.  We have chosen 9 July, 
+<a href=julysyn.gif>
+(see synoptic chart 0.028 MB) </A>
+which will allow additional comparisons to be made with previous simulations
+we have done (Pan, et al, 1994,1995) with MM4. </p>
+
+<p>
+<a href=ter180.gif>
+ Figures 3 (0.028 MB) </A>, 
+<a href=ter90.gif>
+  4 (0.031 MB) </A>, 
+<a href=ter60.gif>
+  5 (0.019 MB) </A>, and
+<a href=ter30.gif>
+   6 (0.023 MB) </A> 
+show the terrain maps used for simulations at 180, 90, 60,
+ and 30 
+km resolution, respectively.  All simulations were driven by initial conditions
+at 12 UTC 8 July 1993 and proceeded at time steps ranging from 540 s (for
+the 180 km coarse grid) to 90 s (for 30 km nested grid) for 24 h.  The Grell
+cumulus parameterization option was selected, and a high resolution boundary
+layer was employed.  The surface wetness was initialized by using
+climatological values. </p> 
+
+<h4>Results</h4>
+<p>Figures 7-10 show the accumulated precipitation produced by the model
+ for the 
+24-h period ending at 12 UTC 9 July 1993.  At 180 km resolution 
+<a href=pcp180.gif>
+ (Figure 7 (0.011 MB)) </A>, a
+single broad pattern of precipitation is produced with a wide-area maximum
+of between 6 and 8 mm centered on Iowa.  Except for point storms at the
+boundaries, no other grid points gave accumulated precipitation in excess of
+2 mm at this resolution.  The precipitation region defined at this
+resolution will be hereinafter referred to as the 
+"primary" region.  </p>
+<p>
+<a href=pcp90.gif>
+Figure 8 (0.012 MB) </A>
+shows an identical simulation at 90 km, which gives three areas of 
+accumulated precipitation with contours exceeding 10 mm.  The primary
+precipitation region has a similar or slightly smaller area but a much
+higher maximum of 90 mm.  
+This maximum is produced at one grid point on the Wisconsin-Illinois border.
+A secondary maximum over Iowa, more closely corresponding to the maximum at
+180 km resolution, has largest contour at 50 mm, and a third maximum
+(possibly spurious) is simulated where the primary region extends to the
+boundary.  A second region in 
+northwestern Minnesota covers several grid points and has a maximum of 30 mm.
+A tiny third area shows up in southeastern South Dakota with a 10-mm
+contour.</p> 
+
+<p>By a 3 to 1 nesting, a 60-km resolution simulation is produced within the
+180-km outer grid, as shown in 
+<a href=pcp60.gif>
+ Figure 9 (0.011 MB) </A>.  The contour interval has been raised
+to 20 mm, so only the primary region is shown to have precipitation exceeding
+this threshold.  The primary region is more elongated in the
+southwest-northeast direction.  The grid point maximum for this resolution
+is located in extreme east-central Iowa, about midway 
+Between the two distinct centers revealed at 90-km resolution.
+At 60-km resolution, the maximum accumulated precipitation is about 100 mm.
+A second 20 mm maximum is simulated to the east of Lake Michigan.  </p>
+
+<p>A nesting at 30-km resolution within the 90-km simulation
+produces the plot of  
+<a href=pcp30.gif>
+Figure 10 (0.012 MB) </A>.  Much more spatial detail is shown at this
+resolution.  Two maxima are revealed within the primary 
+precipitation zone, both slightly in
+excess of 100 mm, located in central Iowa and on the Wisconsin-Illinois
+border in agreement with the 90-km simulation.  The two additional
+precipitation regions, northwestern Minnesota and 
+eastern South Dakota, that were produced at 90 km show up at 30 km as well,
+with maxima slightly displaced from their positions at 90-km resolution.
+One additional precipitation maximum of 80 mm, not present at any lower
+resolution, is simulated in west-central Kansas. </p>
+
+<IMG ALIGN=TOP SRC=pcp30zoom.gif>
+<br>
+<br>
+<IMG ALIGN=TOP SRC=obspcp.gif>
+<p>A preliminary comparison with measured precipitation can be made by 
+examining the contours of observed precipitation as given by  NMC analyses
+in <a href=obspcp.gif>
+Figure 11 (0.012 MB) </A>..  This plot shows an east-west elongated
+primary region centered
+over central Iowa with a maximum contour of 127 mm.  To the west of the
+primary center, in central Nebraska, a second closed contour is simulated to
+have a maximum of about 38 mm.  A third east-west elongated region centered
+in central Minnesota has maximum of about 25 mm.</p> 
+
+<h4>Conclusions</h4>  
+<p>The simulations presented are our first results and are subject to
+modification as our experience increases.  However, we are tempted to draw
+some preliminary conclusions:</p> 
+
+<ul>
+<li>The 180-km simulation captures the location and orientation of the primary 
+precipitation region, but severely underestimates the magnitude of the maximum.
+Total precipitation produced by the model also is far below the observed amount. 
+<li>Marked improvement in defining major precipitation regions and 24 hour 
+accumulated amounts is realized by increasing the resolution to 90 km.  
+Secondary regions resembling observed locations of maxima are resolved.  A 
+large amount of precipitation seems to be produced at a single grid point not 
+within the observed heavy precipitation region. 
+
+<li>Increase of the resolution to 60 km modestly refines the primary precipitation 
+region and the location of its maximum.  Oddly enough, a secondary 
+precipitation region has its precipitation reduced from 30 mm to less than 20 
+mm.  It should be noted, however, that the observed maximum for this center in 
+Minnesota was about 26 mm, so a reduction from the 90-km simulated value is 
+in the right direction.  Having contours at 20 mm obscures the value of this 
+secondary maximum. 
+<li>At 30-km resolution, considerably more detail is shown, although it may not 
+correspond to realistic variation.   The Minnesota maximum again exceeds the 
+observations.  The primary rainfall area in central Iowa is reasonably captured 
+both in terms of maximum value and location. 
+</ul>
+
+<p>Overall we conclude that</p> 
+  
+<ul>
+<li>Considerable improvement in accuracy is achieved by refining from 180 to 90 
+km.
+<li>Mesh refinement beyond 90 km reshapes the precipitation contours and
+redefines the location of precipitation maxima within the general rain
+areas.  The 90 and 30 km simulations seem to produce about the same amount
+of precipitation and both give more than the 60-km simulation. 
+</ul>
+<p>Additional analysis of these simulations is needed, and plots of different
+contour values will give more insight to actual simulated values.  A search
+for more detailed precipitation observations is justified to determine if
+the contours plotted are realistic.  
+Comparison of simulated values with individual station amounts would help
+determine if the detail produced at 30-km resolution has any physical basis.
+Studies of other storms are needed to test the validity of our tentative
+conclusion.</p> 
+
+<p>The results presented herein represent a significant first step toward 
+understanding and numerically simulating US Midwest precipitation patterns. 
+Some intriguing questions are raised about the relative importance of
+resolving the water vapor transport mechanisms compared to resolving the
+regions where precipitation is triggered.  More diagnostic analyses are
+needed to fully understand the role of resolution on modeled precipitation
+in the US Midwest.</p>
+
+
+</a><p>
+<a name="Ack"><b>Acknowledgments</b>
+ <p>    NASA funds (project NAG 5-2491) of the HPCC program provide partial support for this
+research.  Proposals are being submitted to support this and follow on collaborative work on MPMM
+between Iowa State University, Ames Laboratory, and Argonne National Laboratory.
+
+<p>
+<a name="Ref"><b>References</b></a><p>
+
+Michalakes, J., T. Canfield, R. Nanjundiah, and S. Hammond, 1994:
+A scalable parallel implementation of MM5 for large real-time weather
+forecasting applications.
+<i>Proceedings of the Sixth Workshop on the use of Parallel Processors
+ in Meteorology,</i> Reading, U.K. 39pp.<br>
+<br>
+Pan, Z., M. Segal, E. S. Takle, and R. Turner, 1994:  Surface wetness impact on
+summer rainfall in the Central US during droughts and floods. <i> Preprints,
+Sixth Conference on Mesoscale Processes, Portland </i>, Amer. Meteor. Soc.,
+J1-J4.<br>
+<br>
+Pan, Z., M. Segal, R. Turner, and E.S. Takle, 1995:
+      Model simulation of impacts of transient surface wetness on summer
+      rainfall in the U.S. Midwest during drought and flood years. 
+      <i>Mon. Weath. Rev </i>., <b>123</b>,1575-1581.<br>
+<br>
+Richards, F., and M. D. Hudlow, 1994:  Hydrometeorolgical conditions during the
+Great Flood of 1993.  In <i>Preprints, Symposium on the Great Flood of 1993</i>
+January, 1994. Am. Meteor. Soc. 65pp. <br>
+<br>
+<a name="Pers"><b>Personnel</b></a><p>
+
+<b>Computational</b> <br>
+Youngtae Kim  (ISU) <br>
+S. Mitra  (ISU) <br>
+Zaitao Pan  (ISU) <br>
+Richard Turner  (ISU) <br>
+
+<b>Advisory</b> <br>
+Raymond Arritt (ISU) <br>
+John Gustaffson (ISU) <br>
+William Gutowski (ISU) <br>
+Surej Kothari  (ISU) <br>
+John Michalakes (ANL) <br>
+Ruth Reck (ANL) <br>
+Moti Segal (ISU) <br>
+Eugene Takle  (ISU) <br>
+
+

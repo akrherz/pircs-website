@@ -1,0 +1,5 @@
+<limit GET>
+order deny,allow
+deny from all
+allow from .agron.iastate.edu 129.186.26
+</limit>

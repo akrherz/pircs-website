@@ -1,0 +1,24 @@
+ctrans -d xwd -resolution 768x768 gmeta.850sh93.1 > 850sh93-00Z.xwd
+xwdtopnm < 850sh93-00Z.xwd | ppmtogif > 850sh93-00Z.gif
+rm 850sh93-00Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh93.2 > 850sh93-06Z.xwd
+xwdtopnm < 850sh93-06Z.xwd | ppmtogif > 850sh93-06Z.gif
+rm 850sh93-06Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh93.3 > 850sh93-12Z.xwd
+xwdtopnm < 850sh93-12Z.xwd | ppmtogif > 850sh93-12Z.gif
+rm 850sh93-12Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh93.4 > 850sh93-18Z.xwd
+xwdtopnm < 850sh93-18Z.xwd | ppmtogif > 850sh93-18Z.gif
+rm 850sh93-18Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh88.1 > 850sh88-00Z.xwd
+xwdtopnm < 850sh88-00Z.xwd | ppmtogif > 850sh88-00Z.gif
+rm 850sh88-00Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh88.2 > 850sh88-06Z.xwd
+xwdtopnm < 850sh88-06Z.xwd | ppmtogif > 850sh88-06Z.gif
+rm 850sh88-06Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh88.3 > 850sh88-12Z.xwd
+xwdtopnm < 850sh88-12Z.xwd | ppmtogif > 850sh88-12Z.gif
+rm 850sh88-12Z.xwd
+ctrans -d xwd -resolution 768x768 gmeta.850sh88.4 > 850sh88-18Z.xwd
+xwdtopnm < 850sh88-18Z.xwd | ppmtogif > 850sh88-18Z.gif
+rm 850sh88-18Z.xwd

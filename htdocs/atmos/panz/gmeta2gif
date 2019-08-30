@@ -1,0 +1,64 @@
+# C-shell script to extract frames from an NCAR Graphics metacode
+# file and turn each frame into a GIF image.
+# Date: Fri, 19 Jun 1998 15:31:34 -0500
+# From: rwarritt@iastate.edu
+# To: gutowski@iastate.edu
+
+
+#  First argument is the NCAR Graphics metacode file name.
+#  Second argument is the prefix for the GIF file names.  The frame
+#     number and a suffix .gif will be appended to this prefix.
+#  Third and following arguments are the frame number to be extracted.
+
+#  NOTE:  before running, need to 
+#		add ncar
+#		add pbm
+
+#  Example:
+#      ncartogif testrun.gmeta test 1 5 25
+#  (MODIFIED name:  gmeta2gif testrun.gmeta test 1 5 25)
+
+#  This will extract frames 1, 5, and 25 from an NCAR Graphics
+#  metacode 
+#  file called testrun.gmeta and create GIF files called test1.gif, 
+#  test5.gif and test25.gif.
+
+#  GIFSIZE determines the image size in pixels along each direction.
+
+set GIFSIZE = 512
+
+#  Check number of arguments:
+
+if ($#argv < 3)  then
+        echo Usage: ncartogif metafilename GIFprefix firstframe nextframe ...
+        exit
+endif
+
+
+#  NCAR Graphics file is the first argument
+
+set metafile = $argv[1]
+
+
+#  Output prefix is the second argument
+
+set outfile = $argv[2]
+
+
+#  Loop over all the frame numbers
+
+@ count = 3
+
+#cd /agmeso/users/candersn/pircs/1988
+
+while ( $count <= $#argv)
+        set frame = $argv[$count]
+        rm -f medcmd.tmp
+        rm -f gmeta.tmp
+	echo "$frame"a gmeta.tmp > medcmd.tmp
+        set gifname = $outfile$frame.gif
+        echo Extracting frame ${frame} from $metafile to GIF file $gifname
+        med -f medcmd.tmp $metafile 
+        ctrans -d sun -resolution '$GIFSIZE'x'$GIFSIZE' gmeta.tmp | rasttopnm | ppmtogif > $gifname
+        @ count = ($count + 1)
+end

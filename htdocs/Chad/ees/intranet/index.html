@@ -1,0 +1,309 @@
+<html>
+<head><title>PIRCS Intranet</title></head>
+<body bgcolor="#FFFFFF">
+<center>
+<font size=6>PIRCS Intranet</font><br>
+<font size=2>Internal systems information</font><br>
+<hr>
+</center>
+<font color="FF0000">
+This page contains information regarding internal systems
+and procedures for the PIRCS equipment.  As such its access
+will be controlled to certain domains.
+</font>
+<hr>
+<a href="./installs.html">Installed Software Index</a><br>
+<a href="./comp_form.html">Sample form for user accounts</a><br>
+<a href="./users.html">User accounts</a><br>
+<i>The items below are under development (as is everything here really)</i><br>
+<a href="./comp/comp.html">code developement and analysis (tools on the PIRCS
+systems)</a><br>
+Visualization: Xess, Spyglass, etc.<br>
+html authoring tools<br>
+systems admin (account management and creation, NFS, tape units, etc.)<br>
+resources (WWW and similar)<br>
+<hr>
+<center><font>Thur., March 13: 1997<br></font></center>
+<ul>
+<li>All the printing functions are ready to go from all the UNIX
+machines.  I need to check each one and make sure I am referencing
+the printer correctly and it should be done.  I haven't brought the 
+color printer down yet since I don't have anything to put it on, I 
+may try and drag another small table I have at IITAP over here for 
+it.  When I am done and everything is the "same" on all the machines
+I will post the finalized print commands.
+<li>The tape units are up and solid (tested) on 
+pircsa1.agron.iastate.edu as units rmt1h and rmt0h (there is a
+note on them to tell you which is which).  So you can
+use:<br>
+tar cf /dev/rmt0h ./source<br>
+Note in the man pages that on the DEC's now you can not use a command
+like <br>tar -fxv /dev/rmt0h<br>
+there are restrictions on how and where to use - now.  The man pages
+are pretty good (for a change) on this.
+Also, mt works fine so<br>
+mt -f /dev/rmt1h rewind<br>
+and all the other mt commnads are operating as expected.
+<li>The server is up and running with NFS and all the compilers.  It is 
+exported to maggie, pircsa0 and pircsa1 at /local/mnt/ppircs.   Accounts
+are being made and I will get these out.
+</ul>
+<hr>
+<center><font>Wed., March 12: 1997<br></font></center>
+NFS is up and running, I have a 26 gig volume exported to pircsa0
+for testing and it is looking good.<br>
+I will bring the printers and accounts up next and the compilers
+will be installed as well today.  On that note I have not heard back
+form the comp cernter regarding compilers for the alpha's so I will
+get back in touch with them, it's been over a week now.
+<hr>
+<center><font>Mon., March 10: 1997<br></font></center>
+Sorry for all the delays in providing updates here, it has been wild
+getting everything together plus not falling behind on my other projects.
+(I have of course fallen behind on the projects anyway) Here is the status
+of events, it looks to all soon be done and up.
+<ul>
+<li>Server is up and running for several days now.   Drives are plexed
+together and ready to go.
+<li>ftp is operational, I created ftp.pircs.iastate.edu as an alias
+<li>WWW is operational, I created www.pircs.iastate.edu as an alias
+<li>The 8mm drives are on pircsa1 (I will provide info on accessing them
+there).  I don't have the scsi cables to hook them directly to the 
+server at this time, so I attached them there so that they could be used
+if needed.
+<li>I will bring the NFS and NIS systems on-line and then create
+the mounting files for the computers.
+<li>print services will be brought up at the same time
+<li>expect accounts any day now.
+</ul>
+<hr>
+<center><font>Thur., Feb 27: 1997<br></font></center>
+<ul>
+<li>The memory has been added to both Alpha's.  They are now
+at 160 megs each (before system boot, which will eat into available space)
+<li>The return of top.  Top was not on the DEC UNIX distribution, I found
+this hard to believe but true.  I locted the source of top, but it uses
+heavy gnu make dependancies in the make routine, so I have just brought over
+a top binary.  There seems to be some trouble with ncurses and the termcap
+entry file.  I will keep people posted on this and get top into the 
+standard bin path on both these machines.
+</ul>
+<hr>
+<center><font>Wed., Feb 26: 1997<br></font></center>
+Some people have asked if they will always have to deal with changing passwords
+on all the different machines.  Absolutely not.  The server will run
+NIS (yellow pages) so you will be able to deal with centralized passwords
+and file systems, including home directories.  I will provide more information
+on this as well as some easy mods to your dot files so that you don't
+have to worry if you are on the SGI's, alpha's or vincent machines.
+<hr>
+<center><font>Tuesday, Feb 25: 1997<br></font></center>
+The accounts are ready (<b>no really, they are</b>) and I will
+bring over the info and drop it off (the username and temp passwds)
+The following notes will be on the account sheet:<P>
+
+<ul>
+<li> The SGI's have a full set of Fortran and C/C++ compilers ready to go, 
+the Cosmo system is on the computers (I will put more info in the WWW site) 
+but the license has not been installed, I will do that soon.  Netscape and 
+Java are also on these machines for those interested.  Also the SGI integrated 
+dev environment is also on these, a very nice debugging and performance analysis 
+package for C/C++ and Fortran.
+<li> The DEC alpha's came with a C compiler but not Fortran, I am talking 
+with the comp center to see if there is a site license we can get in on 
+for that (as well as ncar graphics and spyglass).  Fortran binaries compiled 
+on Vincent can be ftp'ed to these machines and will run fine.
+<li> Pircsa0 has a 2 gig drive located at /local/mnt/scsi5, it can be 
+used by anyone for extra local computer space.  Space is more limited 
+at this time on pircsa1, use df -k to watch this for the time being.
+<li> Office has been placed on the Windows and Mac machines in the room, 
+they are ready to be used, but I will need to install printer drivers on 
+them so they can see the (any) printer.
+<li> TCP/IP is conflicting with another machine on the Mac, so 
+ethernet o it is down.  I will have to get this resolved (which will 
+the 2nd time I got a bad number for this room from the comp center)  :(
+</ul>
+
+Send your problems/complaints/fashion tips to fils@iastate.edu and I will deal with them.
+
+<hr>
+<center><font>Tuesday, Feb 18: 1997<br></font></center>
+<ul>
+<li>I am touch with both Mary Davis and Cathy Beckman at central
+stores.  It looks like we will get the chairs from Ames
+Stationers and the desks from central stores.
+<li>The alpha's are now networked.  I have a 2 gig drive over
+here which I will add to one of them and bring it on-line
+for people.
+<li>I will work up a user registration sheet for accounts.  I will
+use this to provide information on and records of accounts.  I will
+use this to then distribute accounts to PIRCS users so they can 
+begin to work with the machines.  The server should show up this
+week, from the information I have.
+<li>The Mac and PC are now set up.  I will be placing x-hosting software
+on both of these machine soon (I have this software ready to go).  I will
+fit both these systems out with as much software as I can and 
+index that information somewhere in www pages.  I will do this the 
+other machines as well.
+</ul>
+<hr>
+<center><font>Sunday, Feb 16: 1997<br></font></center>
+
+I am working up most of my notes here so that people will
+have a single page to reference to see the status of 
+efforts.  I will try to keep this up-to-date, clean and 
+easy to use.  If you have anything you would like to see here
+or any comments, please let me know.<br>
+<ul>
+<li> The computers are coming on-line, I hope to have all
+4 UNIX systems running by the end of Monday
+<li> The printer is on-line with the SGI systems, hope to 
+have it end of Monday for Alpha's and soon for the Vincent
+system.  It's ready for Mac's and PC/Windows 95.  Win 95 can
+talk AppleTalk so you can get to it that way, I can show anyone
+how to do this if you haven't done it before.
+<li> I am not setting the Mac and PC/Windows machine up first, but
+rather last in the assumption the UNIX machines are of more interest.
+Please let me know if this is wrong.
+<li> I can configure the color printer here at the start of this week
+as well.
+<li> I am still working on getting desks.  I also have some 
+prices on new desks, I will bring this over on Monday
+<li> The Alpha's came configured in such a way as they have almost
+no disk space left over, I have a 2 gig drive I will bring over
+and may have a 1 gig that can be used for a while on these machines
+to solve this.  There may also be some "intro" files on the systems
+that may be large and be removed.
+</ul>
+<hr>
+<center>
+<font size=4>Reference Section</font><p>
+<font size=4>Very early development stage</font><p>
+</center>
+
+<font color="FF0000">Making user accounts</font><br>
+There are a few things to keep in mind in reference to making user
+accounts on the systems.  One is that if someone already has a Vincent
+computer account you should use their UID from Vincent for the UID
+on all the systems.  You can get this from Vincent with the command:
+<p>
+hesinfo username passwd
+<br>
+For example:<br>
+hesinfo fils passwd<br>
+fils:*:1316:101:Douglas R Fils,89B Physics,(515) 294-6196,(515) 292-0597,:/home/fils:/bin/tcsh<br>
+This shows my vincent UID to be 1316.
+<p>
+I will work up a detailed page on the steps to add users to the various
+machines, as well the the chlist additions for the vincent stations.
+Also, a common root passwd should be decided upon for the machines
+so that the popper people can be provided with this access.
+<p>
+<font color="FF0000">NFS notes</font><br>
+When the drives arrive and are installed, I will use a common mount
+point on all the NFS clients.  Due to some restrictions with the mount
+point on vincent workstations (NFS mount points only allowed in /local)
+I am suggesting:<br>
+/local/mnt/nfs0<P>
+as the mount point on all the machines.  This path can then be used in 
+the code and it can be compiled on the SGI's, Alpha's, Vincent, etc and
+the path name will be common to all.  I will sym link this on the O2000
+as well, so even it will be able to use this directory path.
+<p>
+The mount command (must be executed as root) is then:<br>
+mount -tnfs pricss0.geol.iastate.edu:/usr/people/pircs /local/mnt/nfs0<br>
+<i>this is only an example, until the machine is here, I can't put
+the actual command</i>
+<p>
+<font color="FF0000">Printer notes</font><br>
+The LaserJet 5 is currently named LaserJet 5, I will get this changed
+to something more like pircs_lj5 soon.  When that is done I will
+put details here on adding printers and how to print to them.
+The SGI's are currently pointed at this printer, so the command
+<br>lp -dlaserejt5 file<br>
+will print to it.  Note this is a SysV style lp system, not BSD
+style lpr system as most people at ISU are used to.  I will install
+the BSD lpr package on the SGI's so both can be used.  I will redo this
+section as the printer details get refined.
+<p>
+<font color="FF0000">HINT marks</font><br>
+As Prof. Arritt, has noted the only good benchmark is the program itself.
+I couldn't agree more, however, I have a high degree of respect for
+the HINT system developed at Ames Lab.  As such I provide you a very 
+early look at the results I have for machines like those being used
+by PIRCS.
+<p>
+In addition to the common caveats related to benchmarks I provide these
+as well.
+<ol>
+<li>The Alpha box does not have its full install of memory, this will
+improve its performance, mostly in the later sections of this curve (representing
+more complex operations).
+<li>The SGI systems are running a version of the program compiled for 
+R4600 processors, not R5000 or R10000 cpu's.  Their performance will improve
+with native compiled code and the larger memory sizes we will run at.
+<li>The Origin listed here is a 200 running the R4600 compiled benchmark.
+Not the 2000 model that will be coming.
+<li>The Mac and PC curves are from machines running under UNIX and not
+MacOS or Windows 95.  My experience shows that MacOS and Windows 95 will
+not perform as well due to GUI overhead and inferior IO and memory management
+routines.  These curves should be considered "generous" in that regard.
+<li>The vincent machine is a Dec 3000/300 with only 32 megs of memory.
+</ol>
+Click on the image for a larger version:<br>
+<a href="./hint.gif"><img src="./hint_sm.gif"></a>
+<p>
+<font color="FF0000">isofs image files</font><br>
+As some data may be distributed in CD-ROM format, I will install
+the isofs program.  This is a UNIX side program we are 
+using to generate iso image files.  Most all common CD-ROM
+writing software can read these format files.  It allows
+for the creation of the CD-ROM "image" on the UNIX side
+which can help preserve proper path and file names and also
+helps to increase speed and reliability in the creation of 
+CD-ROM's.  Currently this program exists for the IRIX
+systems, I think I can compile it OK on the Dec UNIX systems
+though as well.
+<p>
+<font color="FF0000">Tape reference</font><br>
+I will expand this section later with more details and
+information regarding reading, writing and tape manipulation.
+Multi-tape archives, moving forward and backward in multi-archive
+tapes, etc.
+<p>
+For now I will note the following tapes as supported:<br>
+<ol>
+<li> 4mm DDS 1
+<li> 4mm DDS 2
+<li> 8mm Exabyte  (There is no such thing as just "Exabyte" 
+support, I will detail the exact Exabyte tape formats we can
+read and write later)
+</ol>
+<p>
+<font color="FF0000">X server on the PC's and xhosting notes</font><br>
+I have software for both the Windows and Mac computer to allow them 
+to xhost to the UNIX machines.  This can be done to Vincent as well, but
+the Dec Alpha's on vincent require that I create some /local/etc files
+to setup the permissions correctly (The ULTRIX boxes don't require these
+edits).
+<p>
+I will configure these programs and place information here on their
+use as well as general information about xhosting here.
+<p>
+<font color="FF0000">Network topology</font><br>
+I worked up a quick layout of how I am currently planning the room.
+Please ignore scaling aspects, this is only for location references.
+As always, this is your room, please let me know if you have any
+ideas or problems with my working plans.
+<p>
+I will add details here regarding computer type, configuration, IP
+information, OS type, etc.  It is because I do plan to put this
+information here that I strongly suggest making this page viewable 
+to a restricted set of people and or domains.
+<p>
+Click the image to see a larger view<br>
+<a href="./room.gif"><img src="./room_sm.gif"></a>
+
+
+</body>
+</html>

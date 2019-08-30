@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Ten-Year Regional Climate Simulation</title>
+<meta name="Author" content="William J. Gutowski">
+</head>
+<body bgcolor="FFFFFF">
+
+<hr noshade width="85%">
+<center><h2>Regional Climate Model Ouput:  1979-1988</h2></center>
+<hr noshade width="85%">
+
+<p>
+Climatologies from two simulations by regional climate models
+(HIRHAM and RegCM2) driven by the NCEP/NCAR reanalysis for the 10-year
+period 1979-1988.  The observed climatology used for comparison covers
+the same period.  The model domain is the same as used by the Project
+to Intercompare Regional Climate Simulations (PIRCS).
+<br>
+<h2>PLEASE NOTE:</h2>  
+Results linked to this page are preliminary.  They
+should not be discussed, cited or otherwise referenced
+without consulting DMI and ISU modelers who produced these results.
+<p>
+
+<h3>(1) Elevation</h3>
+<p>
+A common elevation grid at 1/2 degree has been produced from
+<b>((PLEASE FILL
+IN))</b> using a Cressman scheme for horizontal interpolation.  Model
+and observing station elevations have also been interpolated to the
+1/2 degree grid using the same Cressman scheme.   These figures show
+differences between
+<br> 
+- each model and the common grid elevations
+<br>
+- observing station elevations and the common grid elevations.
+<br>
+Contour interval:  250 m, from -1375 m.
+<ul>
+<li><a href="elev_stn-obs.gif"> Observing stations - common grid</a>
+<li><a href="elev_dmi-obs.gif"> HIRHAM - common grid</a>
+<li><a href="elev_reg-obs.gif"> RegCM2 - common grid</a>
+</ul>
+<p>
+
+<h3>(2) Daily maximum temperature</h3>
+<p>
+These maps show the 10-year climatology of daily maximum temperature
+[deg C] by month of the year.  Each month has three panels:
+<pre>
+model climatology     model-obs bias     observed climatology
+</pre>
+Months are grouped according to meteorological seasons (Dec-Jan-Feb,
+etc.)  Contour interval:  5 deg C, from -17.5 deg C
+<p>
+<a href="HIRHAM.tmax.html">HIRHAM</a>
+<p>
+<a href="REGCM2.tmax.html">RegCM2</a>
+<p>
+
+<h3>(3) Daily minimum temperature</h3>
+<p>
+The same as (2), but for daily minimum temperature climatology. 
+<p>
+<a href="HIRHAM.tmin.html">HIRHAM</a>
+<p>
+<a href="REGCM2.tmin.html">RegCM2</a>
+<p>
+
+<h3>(4) Precipitation</h3>
+<p>
+The same layout as (2), but for precipitation climatology.
+Observations from VEMAP 
+gridded monthly precipitation dataset<br>
+Contour interval: 1 mm/day, from -5 mm/day<br>
+<p>
+<a href="REGCM2.precip.html">RegCM2</a>
+<p>
+Also available here are <a href="NCEP.precip.html">NCEP reanalysis</a>
+average precipitation for January and July.
+<p>
+
+<h3>(5) Surface fluxes</h3>
+<p>
+January and July surface flux climatology, model output only, in W/m**2.
+<p>
+<a href="REGCM2.sfc.html">RegCM2</a>
+<p>
+
+
+<hr width="85%">
+<p>
+<A href="../index.html"><img src="../button12.gif">
+</body>
+</html>

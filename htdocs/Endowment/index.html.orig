@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+  <HEAD>
+    <TITLE>Seasonal Forecast</TITLE>
+    <META NAME="AUTHOR" CONTENT="Dave Flory">
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <LINK rel="stylesheet" type="text/css" href="index.css">
+  </HEAD>
+  <BODY>
+    <TABLE class="top" cellspacing="0" cellpadding="0" width="100%">
+      <TR><TD class="header" colspan="2">&nbsp;</TD></TR>
+      <TR><TD class="header" colspan="2"><font class="header">Agroecosystem Seasonal Forecasting</font>
+      </TD></TR>
+      <TR><TD class="header" colspan="2"><font class="subheader">An Agroecosystem Water Management Model: 
+        Coupling of Plant, Soil, and Climate Components</font></TD></TR> 
+      <TR><TD class="header" colspan="2">&nbsp;</TD></TR>
+      <TR><TD class="banner" colspan="2">&nbsp;</TD></TR>
+      <TR>
+         <TD class="navigate"><font class="navigate"><br /><br />Info<br /><br />Analysis<br /><br />
+         Contacts<br /><br /></font></TD>
+         <TD class="content"><p class="content"><font class="content">As a test run of the Agroecosystem
+            Water Management Model, we try to project soil water available to crops in Iowa during growing
+            season. The ultimate goal of this Agronomy Endowment funded project is to develop a fully 
+            coupled modeling system that will allow crop producers to inventory, update, and project seasonal
+            soil water availability at field or sub-field scales for planning strategies on cropping, seed 
+            selection, chemical application, planting, harvest, and marketing, and allow scientists to further
+            their understanding of nonlinear interactions among individual components within a whole 
+            agroecosystem.</p><p class="content">
+            This integrated model will eventually couple following component modules:</p>
+            <ul>
+              <li>Regional climate model - MM5</li>
+              <li>Crop growth and root development model</li>
+              <li>Soil and hydrological model</li>
+            </ul></font>
+         </TD>
+      </TR>
+      <TR><TD class="banner" colspan="2">&nbsp;</TD></TR>
+      <TR><TD class="header" colspan="2"><br /><br /></TD></TR>
+    </TABLE>
+  </BODY>
+</HTML>
+

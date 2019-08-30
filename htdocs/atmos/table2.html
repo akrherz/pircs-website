@@ -1,0 +1,232 @@
+<html>
+<head>
+<title>Table 2- PIRCS Supplemental ("B List") Archive</title>
+</head>
+<body bgcolor="#ffffff" link="blue" vlink="purple">
+
+
+<hr noshade width="85%">
+<center><h2>Table 2- PIRCS Supplemental ("B List") Archive</h2></center>
+<hr noshade width="85%">
+<p><p>
+
+<table border=2 cellpadding=5>
+<tr>
+	<th>ID</th>
+	<Th>Field</th>
+	<th>Units</th>
+</tr>
+<tr>
+	<td>10010</td>
+	<td>Hourly accumulated precipitation
+<ul>
+	<li>for 1-hour periods ending at 00,01, ... 23 UTC</td>
+</ul>
+	<td> mm </td>
+</tr>
+<tr>
+	<td>10020</td>
+	<td>Mixed-layer depth
+<ul>
+	<li>definition: the midpoint of the model layer closest to the surface
+	for which the potential temperature change with height, d(theta)/dz, exceeds +1
+	K/km
+	<li>sampled at 00,01, ... 23 UTC
+</ul>
+</td>
+	<td>m</td>
+</tr>
+<tr>
+	<td>10030</td>
+	<td>Total cloud cover
+<ul>
+	<li>hourly average
+	<li>for 1-hour periods ending at 00,01, ... 23 UTC</td>
+</ul>
+</td>
+	<td>percent</td>
+</tr>
+<tr>
+	<td>10031</td>
+	<td>Shortwave cloud-radiative forcing (at surface)
+<ul>
+	<li>use Method II of Potter et al. (1992,JGR,p.20,507)
+	<li>hourly average
+	<li>for 1-hour periods ending at 00,01, ... 23 UTC</td>
+</ul>
+</td>
+	<td>Watts m<sup>-2</sup> </td>
+</tr>
+<tr>
+	<td>10032</td>
+	<td>Longwave cloud-radiative forcing (at surface)
+<ul>
+	<li>use Method II of Potter et al. (1992,JGR,p.20,507)
+	<li>hourly average
+	<li>for 1-hour periods ending at 00,01, ... 23 UTC</td>
+</ul>
+</td>
+	<td>Watts m<sup>-2</sup> </td>
+</tr>
+<tr>
+	<td>10033</td>
+	<td>Shortwave cloud-radiative forcing (at top of atmosphere)
+<ul>
+	<li>use Method II of Potter et al. (1992,JGR,p.20,507)
+	<li>hourly average
+	<li>for 1-hour periods ending at 00,01, ... 23 UTC</td>
+</ul>
+</td>
+	<td>Watts m<sup>-2</sup> </td>
+</tr>
+<tr>
+	<td>10034</td>
+	<td>Longwave cloud-radiative forcing (at top of atmosphere)
+<ul>
+	<li>use Method II of Potter et al. (1992,JGR,p.20,507)
+	<li>hourly average
+	<li>for 1-hour periods ending at 00,01, ... 23 UTC</td>
+</ul>
+</td>
+	<td>Watts m<sup>-2</sup> </td>
+</tr>
+</table>
+
+<p>
+
+<table border=2 cellpadding=5>
+	<th> ID </th>
+	<td>Atmospheric vertical profiles on model grid, at selected
+gridpoints, 
+<br>sampled at 00,01, ... 23 UTC.
+<br>(see <a href="#table3"> Table 3</a> for locations of points and
+definitions of "ST")</td> 
+	<th>Units </th>
+</tr>
+<tr>
+	<td>20100+ST</td>
+	<td>Temperature </td>
+	<td> K </td>
+</tr>
+<tr>
+	<td>20200+ST</td>
+	<td>Specific Humidity</td>
+	<td> kg kg<sup>-1</sup> </td>
+</tr>
+<tr>
+	<td>20300+ST</td>
+	<td>Zonal (east-west) wind</td>	
+	<td> m s<sup>-1</sup> </td>
+</tr>
+<tr>
+	<td>20400+ST</td>
+	<td>Meridional (north-south) wind</td>	
+	<td> m s<sup>-1</sup> </td>
+</tr>
+<tr>
+	<td>20500+ST</td>
+	<td>Vertical wind</td>
+        <td>m s<sup>-1</sup></td>
+</tr>
+<tr>
+	<td>20600+ST</td>
+	<td>Geopotential height</td>
+        <td>m</td>
+</tr>
+<tr>
+	<td>20700+ST</td>
+	<td>Pressure</td>	
+	<td> Pa</td>
+</tr>
+</table>
+<p>
+NOTE 1: Example - ID for station 72265 specific humidity = 20211<p>
+NOTE 2: Horizontal wind directions are with respect to the earth's
+latitude-longitude grid.<p>
+NOTE 3: Output should be reported in pairs of write records:  (1)
+individual time-step header followed by (2) vertical profile.
+<br>
+<br>
+<br>
+
+<a name="table3">
+<hr noshade width="85%">
+<h2><center>Table 3- Grid Locations for Selected Vertical Profiles</center></h2>
+<hr noshade width="85%"><p>
+
+
+<p>
+<center>
+<table border>
+<tr>
+      <th> ST </th>
+      <th> ST. ID </th>
+      <th> LAT. </th>
+      <th> LON. </th>
+</tr>
+<tr>
+      <td> 10 </td>
+      <td> 72261 </td>
+      <td> 29.37 </td> 
+      <td> -100.92</td> 
+</tr>
+<tr>
+      <td> 11 </td>
+       <td> 72265  </dt>
+       <td> 31.95 </td>
+       <td> -102.18 </td>
+</tr>
+<tr>
+      <td> 12 </td>
+      <td> 72353(PRC) </td>
+      <td> 35.40 </td> 
+      <td> -97.60</td> 
+</tr>
+<tr>
+      <td> 13 </td>
+      <td> 72456 </td>
+      <td> 39.07 </td> 
+      <td> -95.63</td> 
+</tr>
+<tr>
+      <td> 14 </td>
+      <td> 72469(PLT)</td>
+      <td> 39.75 </td> 
+      <td> -104.87 </td> 
+</tr>
+<tr>
+      <td> 15 </td>
+      <td> 76225 </td>
+      <td> 28.70  </td> 
+      <td> -106.07</td> 
+</tr>
+<tr>
+      <td> 16 </td>
+      <td> 76256 </td>
+      <td> 27.95  </td> 
+      <td> -110.80</td> 
+</tr>
+<tr>
+      <td> 17 </td>
+      <td> JTNT2 </td>
+      <td> 33.01 </td> 
+      <td> -100.58</td> 
+</tr>
+<tr>
+      <td> 18 </td>
+      <td> RWDN1 </td>
+      <td> 40.05 </td> 
+      <td> -100.39</td> 
+</tr>
+<tr>
+      <td> 19 </td>
+      <td> SLAI4 </td>
+      <td> 41.54 </td> 
+      <td> -93.41</td> 
+</tr>
+</table>
+</center>
+<p>
+
+</body>
+</html>

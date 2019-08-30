@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3">
+    <TITLE>Documentation CD </TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLPADDING="10">
+    <TR>
+        <TD><H1>
+            <FONT FACE="helvetica">Using the Base Documentation CD</FONT></H1>
+            <H3>
+            <FONT FACE="helvetica">About This CD</FONT></H3>
+            <P>
+            <FONT FACE="helvetica">For customers with new systems that 
+            shipped with this release, new and updated documentation can be viewed 
+            offline using the IRIX 6.5 Base Documentation CD.
+            </FONT></P>
+            <P>
+            <FONT FACE="helvetica">The IRIX 6.5 Base Documentation CD 
+            allows you to access standard release notes, online books, and man 
+            pages before you install the system software. You view the 
+            documentation directly from the CD; you do not use this CD to install 
+            documentation. No license is required to use the tools provided on the 
+            CD. (Documentation is installed, by default, with software CDs. To find 
+            out about accessing <I>installed</I> documentation see <A
+             HREF="resources.html#gendoc">General Documentation</A>.)</FONT></P>
+            <P>
+            <FONT FACE="helvetica">The IRIX 6.5 Base Documentation CD 
+            is not shipped with the IRIX 6.5.<I>x</I> Update Kits. 
+            Corresponding book documentation, release note, and man page 
+            information can be viewed by customers who have purchased SGI systems 
+            through the web on Supportfolio Online at
+            <A HREF="http://support.sgi.com/irix/6.5"
+            TARGET="_blank">http://support.sgi.com/irix/6.5</A>
+            site.</FONT>
+            <P>
+            <B><FONT FACE="helvetica">Note</FONT></B><FONT
+             FACE="helvetica">: There is a duplicate copy of Start Here 
+            on the Base Documentation CD.</FONT></P>
+            <P>
+            <B><FONT FACE="helvetica">Tip: </FONT></B><FONT
+             FACE="helvetica">This CD is an ISO9660 standard CD, which 
+            means that it can be used in most CD-ROM drives. This allows your 
+            IRIX-based system to mount the CD from a variety of remote CD-ROM 
+            drives (as long as they are connected to operating systems that support 
+            exporting ISO9660 filesystems).</FONT></P>
+            <H3>
+            <FONT FACE="helvetica">How to Use This CD</FONT></H3>
+            <OL>
+                <LI>
+                <FONT FACE="helvetica">Login and insert the Base 
+                Documentation CD into your CD-ROM drive.</FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <FONT FACE="helvetica">Open a shell:</FONT><BR>
+                 <FONT FACE="helvetica">From the Toolchest, choose 
+                Desktop &gt; Open Unix Shell.</FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <FONT FACE="helvetica">Go to the CDROM directory:</FONT>
+                 
+                <P>
+                <FONT FACE="helvetica">Use the <CODE>cd</CODE> command:</FONT><BR>
+                 <TT>%<B> cd</B> <B>/CDROM</B></TT> </P>
+                <P>
+                <FONT FACE="helvetica">Inside of the directory are the 
+                six different CD scripts, which you can see listed with the <CODE>ls</CODE> command:</FONT><BR>
+                 <TT>% <B>ls</B></TT><BR>
+                 <TT>CDgrelnotes&nbsp;&nbsp;&nbsp;CDinsight CDrelnotes</TT><BR>
+                 <TT>CDinfosearch &nbsp;CDman &nbsp;&nbsp;&nbsp;&nbsp;CDsgihelp</TT><BR>
+                 <BR>
+                 </P>
+                <LI>
+                <FONT FACE="helvetica">Use the CD scripts to access the 
+                documentation on the CD. To run any of the scripts, in a UNIX shell, 
+                enter</FONT> <B><TT>./</TT></B> <FONT FACE="helvetica">followed 
+                by the script name. </FONT>
+                <P>
+                <FONT FACE="helvetica">For example:</FONT><BR>
+                 <TT>% <B>./CDgrelnotes</B></TT></P>
+                <P>
+                <FONT FACE="helvetica">What follows are descriptions of 
+                what each of the scripts do:</FONT></P>
+                <UL>
+                    <LI>
+                    <B><TT>./CDgrelnotes </TT></B><FONT
+                     FACE="helvetica">- launches <CODE>[g]relnotes</CODE>, 
+                    which you can use to view Release Notes. You can specify the product 
+                    name in the command. For example, to view the release notes for 
+                    Netscape you would enter: </FONT><B><TT>./CDgrelnotes 
+                    netscape</TT></B><BR>
+                     <BR>
+                     
+                    <LI>
+                    <B><TT>./CDman </TT></B><TT><FONT FACE="helvetica">- </FONT></TT><FONT
+                     FACE="helvetica">displays man pages when used like 
+                    the <CODE>man</CODE> command. For example, to see the man 
+                    page on <CODE>inst</CODE>, enter </FONT><B><TT>./CDman 
+                    inst</TT></B><BR>
+                     <BR>
+                     
+                    <LI>
+                    <B><TT>./CDinsight</TT></B><TT><FONT
+                     FACE="helvetica"> - </FONT></TT><FONT
+                     FACE="helvetica">launches the online book viewer, <CODE>InSight</CODE>. Displays 
+                    the online book library on the CD. <B>Note:</B> If 
+                    you are running IRIX 6.2 on your workstation, you must have version 3.0 
+                    of InSight or higher in order for this to work.</FONT><BR>
+                     <BR>
+                     
+                    <LI>
+                    <B><TT>./CDsgihelp</TT></B><TT><FONT
+                     FACE="helvetica"> - </FONT></TT><FONT
+                     FACE="helvetica">displays <CODE>instructions</CODE> for 
+                    making <CODE>sgihelp</CODE> work with the content on the 
+                    CD. (Involves setting a couple of X-resources in a local .<CODE>Xdefaults</CODE>
+                     file.)</FONT><BR>
+                     <BR>
+                     
+                    <LI>
+                    <B><TT>./CDinfosearch</TT></B><TT><FONT
+                     FACE="helvetica"> -</FONT></TT><FONT
+                     FACE="helvetica"> displays <CODE>instructions</CODE> for 
+                    making Infosearch work with the content on the CD. (Involves editing 
+                    some configuration files.) InfoSearch is used for searching and viewing 
+                    all online books, release notes, and man pages. <B>You 
+                    must already be running 6.5 for <CODE>CDinfosearch</CODE>
+                     to work with the content of this CD.</B></FONT> 
+                    &nbsp;</TD>
+            </TR>
+        </TABLE>
+    </UL>
+</OL>
+</BODY>
+</HTML>

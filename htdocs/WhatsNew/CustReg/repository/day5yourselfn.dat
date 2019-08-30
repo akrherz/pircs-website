@@ -1,0 +1,47 @@
+:#
+:# day5yourselfn.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0 - nothing special (default)
+:#	1 - soft mandatory
+:#	2 - hard mandatory
+:#	4 - hinv result if value is empty
+:#	8 - auto pop system serial # if value is empty
+:#      16  - auto pop sysID if value is empty
+:#	32  - detect email connection
+:#	64  - auto pop email address
+:#	128 - app seg conversion
+:#	256 - auto pop country list.
+:#      512 - country name to code conversion
+:#
+:# value -- user input or a predefined value
+
+:SerialNo:text:10::
+:SysID:text:16::
+:Salutation:text:::
+:FirstName:text:2::
+:LastName:text:2::
+:SelfEmp:checkbox::off:
+:Company:text:2::
+:Street1:text:2::
+:Street2:text:::
+:City:text:2::
+:State:text:2::
+:Postal:text:2::
+:Country:text:514::
+:Bldg:text:::
+:Phone:text:1::
+:Floor:text:::
+:Ext:text:::
+:Suite:text:::
+:Vmail:text:::
+:Room:text:::
+:Fax:text:::
+:Mstop:text:::
+:Email:text:65::
+:Gate:text:::
+
+:# end

@@ -1,0 +1,227 @@
+<title>System Administrator Registration</title>
+<!-- Changed by: James Chen, 30-Jan-1996 -->
+
+<body background="images/bg_sgi_logo.gif">
+
+<h2>
+<img src="images/CorpID.gif" alt="Silicon Graphics, Inc.">
+System Administrator Registration
+</h2>
+
+__ErrorGlobal__
+
+<form method="POST" action="day5sysadmin.cgi">
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align="center">
+<font size="+1">
+<strong>Information About Your Company:
+</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+<strong><em>Please do not use abbreviations unless necessary.</em></strong>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+Full Company Name:
+</th>
+<th align="left">
+__Company_ErrorLeft__
+<input type="text" name="Company" size="28" maxlength="28" value="__Company__">
+</th>
+</tr>
+<tr>
+<th align="right">
+Division/Department or Street Address:
+</th>
+<th align="left">
+__Street1_ErrorLeft__
+<input type="text" name="Street1" size="28" maxlength="28" value="__Street1__">
+</th>
+</tr>
+<tr>
+<th align="right">
+Street Address:      
+</th>
+<th align="left">
+<input type="text" name="Street2" size="28" maxlength="28" value="__Street2__">
+</th>
+</tr>
+<th align="right">
+Street Address:      
+</th>
+<th align="left">
+<input type="text" name="Street3" size="28" maxlength="28" value="__Street3__">
+</th>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th colspan="6" align="left">
+City:
+</th>
+<td align="left">
+__City_ErrorLeft__
+<input type="text" name="City" size="20" maxlength="20" value="__City__">
+</td>
+<th align="left">
+State/Prov:
+</th>
+<td align="left">
+__State_ErrorLeft__
+<input type="text" name="State" size="3" maxlength="3" value="__State__"> 
+</td>
+<th align="left">
+Postal Code:
+</th>
+<td align="left">
+<input type="text" name="Postal" size="10" maxlength="10" value="__Postal__">
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align="center">
+<font size="+1">
+<strong>Information About You</strong>
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<th>
+Salutation:<BR>
+<em>(optional)</em>
+</th>
+<td>
+<input type="text" name="Salutation" size="6" maxlength="6" value="__Salutation__"> 
+</td>
+<th>
+First Name:
+</th>
+<td>
+__FirstName_ErrorLeft__
+<input type="text" name="FirstName" size="12" maxlength="24" value="__FirstName__">
+</td>
+<th>
+Last Name:
+</th>
+<td>
+__LastName_ErrorLeft__
+<input type="text" name="LastName" size="12" maxlength="24" value="__LastName__">
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th align="left">
+Phone:
+<br>
+<font size="-1">(with country code)</font>
+</th>
+<td align="left">
+<input type="text" name="Phone" size="10" maxlength="16" value="__Phone__">   
+</td>
+<th colspan ="2" align="left">
+Ext: <input type="text" name="Ext" size="6" maxlength="6" value="__Ext__">
+Voice Mail: <input type="text" name="Vmail" size="11" maxlength="16" value="__Vmail__">
+</th>
+</tr>
+<tr>
+<th align="left">
+Fax:
+<br>
+<font size="-1">(with country code)</font>
+</th>
+<td align="left">
+<input type="text" name="Fax" size="10" maxlength="16" value="__Fax__">
+</td>
+<th colspan="2" align="left">
+E-mail:
+<br>
+<font size="-1">(full address)</font>
+__Email_ErrorLeft__
+<input type="text" name="Email" size="24" maxlength="50" value="__Email__">
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td width=100% align=center>
+<input type="submit" name="SubmitToHelp" value=" Help ">
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align=center>
+<font size="+1">
+Please list all system serial numbers for which you have responsibility.
+</font>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<td align="center">
+<textarea name="SerialNumList" cols="55" rows="5">
+__SerialNumList__
+</textarea>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<td width=100% align=center>
+<input type="submit" name="SubmitSaEmail" value=" Send Back to Silicon Graphics ">
+</td>
+</tr>
+</table>
+</form>

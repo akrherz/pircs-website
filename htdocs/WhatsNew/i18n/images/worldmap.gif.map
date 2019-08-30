@@ -1,0 +1,14 @@
+#
+# Created by WebMap 1.0.1
+# Wednesday, November 29, 1995 at 5:22 PM
+# Format: NCSA
+#
+
+
+default ../worldmap.html
+rect ../n_america.html 106,65 143,103
+rect ../s_america.html 210,178 244,217
+rect ../europe.html 319,7 352,93
+rect ../asia.html 487,114 519,146
+rect ../australia.html 497,206 530,240
+rect ../mideast.html 354,122 379,143

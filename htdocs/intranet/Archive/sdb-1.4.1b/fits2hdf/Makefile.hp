@@ -1,0 +1,87 @@
+# Makefile for listhead & hdp
+#
+# This file must be modified in order to build the distribution properly.
+# In particular, the parameters that specify the operating system and the
+# location of HDF  & FITSIO
+#
+
+# your C compiler(and options) 
+CC = cc  -Aa -D_HPUX_SOURCE   -g
+
+# your Fortrancompiler(and options)
+F77 = f77 
+
+# use this if you're using 'cc' on a DEC Alpha (OSF/1) or MIPS (Ultrix) system:
+# CC = cc -std1 -Olimit 750
+
+# The operating system.  Set this as appropriate for your machine.  Only one
+# of these should be set at any given time.
+
+OS = BSD4 	# Berkelely Unix (SUNs, Ultrix, etc) 
+
+#OS = SYSV  	# System V Unix (Motorola, AT&T) 
+#OS = UNICOS  	# Cray Unicos
+
+# Particular machines.  Only one should be set at a time.
+
+MACHINE = -DSUN
+#MACHINE = -DDEC
+#MACHINE = -DIRIS4
+MACHINE = -DHP9000
+
+# No change needed here.
+
+DEFS = $(MACHINE) 
+
+# Locations of the HDF include files and the object library.  Must be changed
+# as appropriate for your system.
+
+#HDFINC = /nfs/hdf3/users/xlu/sun/include
+HDFINC = /hdf2/install/hp/include
+#HDFINC = /hdf3/users/xlu/hp/include
+
+
+#HDFLIB = /nfs/hdf3/users/xlu/sun/lib
+HDFLIB = /hdf2/install/hp/lib
+
+# Locations of the FITIO include files and the object library. Must be changed
+# as appropriate for your system.
+
+
+FITSINC=/hdf4/users/xlu/FITS4.08/include
+FITSLIB=/hdf4/users/xlu/FITS4.08/lib/hp
+
+# Flags passed to the C compiler.  Leave these alone.
+
+CFLAGS = $(DEFS)  -I.  -I$(HDFINC) -I$(FITSINC)
+
+# Be sure to add -lbsd if compiling in a SYSV environment
+# LIBS =  -L$(HDFLIB) -L$(FITSLIB) -lfitsio -lnetcdf -ldf  -ljpeg
+LIBS =  $(HDFLIB)/libmfhdf.a $(HDFLIB)/libdf.a $(HDFLIB)/libjpeg.a $(HDFLIB)/libz.a $(FITSLIB)/libfitsio.a 
+ 
+# F77LFLAGS is a platform-specific environment variable which specifies 
+# the Fortran 77 libraries  that need to be linked with the program. 
+# More details about CFITSIO can be found at:
+#  http://heasarc.gsfc.nasa.gov/docs/software/fitsio/cfitsio.html
+#SUN
+F77HOME=/bert/lang-sun4/SC1.0
+F77LFLAG=-L$(F77HOME)  -lF77 -lm
+#hp 
+F77HOME=/usr/lib
+F77LFLAG=-L$(F77HOME)  -lcl -lisamstub -lc 
+
+# Macro def: source filename used
+FILES = Makefile fitsbrowser.c  sds2fits.c  phdu2sds.c utils.c cgiutils.c
+
+# Macro def: object filename used
+OBJECTS = fitsbrowser.o  cgiutils.o  fits2sds.o utils.o phdu2sds.o
+
+# make depends on the files specified in the objects macro defination
+all: fits2hdf
+
+fits2hdf:	$(OBJECTS)
+	$(CC)  $(CFLAGs) $(OBJECTS)  $(LIBS) $(F77LFLAG)   -o $@
+
+
+clean:
+	rm *.o  fits2hdf

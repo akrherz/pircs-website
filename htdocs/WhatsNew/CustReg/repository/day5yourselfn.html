@@ -1,0 +1,223 @@
+<title>Customer Registration - Information About You and Your Company</title>
+<!-- Changed by: James Chen,  7-Dec-1995 -->
+
+<body background="images/bg_sgi_logo.gif">
+
+<h2>
+<img src="images/CorpID.gif" alt="Silicon Graphics, Inc.">
+Information About You and Your Company
+</h2>
+
+<form method="POST" action="day5yourselfn.cgi">
+__ErrorGlobal__
+
+<table border=0 width=638>
+<tr>
+<th align="left">
+__SerialNo_ErrorLeft__System serial number: __SerialNo__ __SerialNo_ErrorRight__
+</th>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+Salutation:<br>
+<em>(optional)</em>
+</th>
+<td align="left">
+<input type="text" name="Salutation" SIZE="6" maxlength="6", value="__Salutation__"> 
+</td>
+<th align="right">
+First Name:
+</th>
+<td align="left">
+__FirstName_ErrorLeft__<input type="text" name="FirstName" SIZE="12" maxlength="20", value="__FirstName__">__FirstName_ErrorRight__ 
+</td>
+<th align="right">
+Last Name:
+</th>
+<td align="left">
+__LastName_ErrorLeft__<input type="text" name="LastName" SIZE="12" maxlength="20", value="__LastName__"> __LastName_ErrorRight__
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align="center">
+<font color="#0003BF">
+<strong><em>Please do not use abbreviations unless necessary.</em></strong>
+</font>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th></th>
+<th align="left">
+<input type="checkbox" name="SelfEmp" __SelfEmp__> Self-Employed
+</th>
+</tr>
+<tr>
+<th align="right" width="32%">
+Full Company Name: __Company_ErrorLeft__
+</th>
+<th align="left">
+<input type="text" name="Company" SIZE="40" maxlength="40", value="__Company__">__Company_ErrorRight__ 
+</th>
+</tr>
+</table>
+
+<table border="8" width=638>
+<th colspan="3">
+Include the following if applicable:
+</th>
+<tr>
+<td align="right">
+Gate: <input type="text" name="Gate" SIZE="12" maxlength="15", value="__Gate__">
+</td>
+<td align="right">
+Building: <input type="text" name="Bldg" SIZE="12" maxlength="15", value="__Bldg__">
+</td>
+<td align="right">
+Floor: <input type="text" name="Floor" SIZE="12" maxlength="15", value="__Floor__">   
+</td>
+</tr>
+<tr>
+<td align="right">
+Suite: <input type="text" name="Suite" SIZE="12", maxlength="15" value="__Suite__">   
+</td>
+<td align="right">
+Room: <input type="text" name="Room" SIZE="12", maxlength="15" value="__Room__"> 
+</td>
+<td align="right">
+Mail Stop: <input type="text" name="Mstop" SIZE="12", maxlength="15" value="__Mstop__"> 
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+Div/Dept or Street Address: __Street1_ErrorLeft__
+</th>
+<th align="left">
+<input type="text" name="Street1" SIZE="40", maxlength="32" value="__Street1__">__Street1_ErrorRight__
+</th>
+</tr>
+<tr>
+<th align="right">
+Street Address:
+</th>
+<th align ="left">
+<input type="text" name="Street2" SIZE="40", maxlength="32" value="__Street2__">
+</th>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+City:
+</th>
+<td align="left">
+__City_ErrorLeft__<input type="text" name="City" SIZE="20", maxlength="25" value="__City__">__City_ErrorRight__ 
+</td>
+<th align="right">
+State/Prov:
+</th>
+<td align="left">
+__State_ErrorLeft__<input type="text" name="State" SIZE="2", maxlength="2" value="__State__">__State_ErrorRight__ 
+</td>
+<th align="right">
+Postal Code:
+</th>
+<td align="left">
+__Postal_ErrorLeft__<input type="text" name="Postal" SIZE="10", maxlength="10" value="__Postal__">__Postal_ErrorRight__
+</td>
+</tr>
+<tr>
+<th align="right">
+Country:
+</th>
+<th align="left" colspan="5">
+__Country__ <input type="hidden" name="Country" value="__Country__">
+</th>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+Phone:
+<br>
+<font size="-1">(with area code)</font>
+</th>
+<td align="left">
+__Phone_ErrorLeft__<input type="text" name="Phone" SIZE="14", maxlength="15" value="__Phone__">__Phone_ErrorRight__
+</td>
+<th align="right">
+Ext:
+</th>
+<td align="left">
+<input type="text" name="Ext" SIZE="6", maxlength="15" value="__Ext__">
+</td>
+<th align="right">
+Voice Mail:
+</th>
+<td align="left">
+<input type="text" name="Vmail" SIZE="12", maxlength="15" value="__Vmail__">
+</td>
+</tr>
+<tr>
+<th align="right">
+Fax:
+<br>
+<font size="-1">(with area code)</font>
+</th>
+<td align="left">
+<input type="text" name="Fax" SIZE="14", maxlength="15" value="__Fax__">
+</td>
+<th align="right">
+E-mail:
+<br>
+<font size="-1">(full address)</font>
+</th>
+<td align="left" colspan="3">
+__Email_ErrorLeft__<input type="text" name="Email" SIZE="25", maxlength="50" value="__Email__">__Email_ErrorRight__
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td width=10%>
+</td>
+<td width=80% align="center">
+<input type="submit" name="SubmitToPrev" value=" Previous Page ">
+<input type="submit" name="SubmitToNext" value=" Continue ">
+</td>
+<td width=10% align="right">
+<input type="submit" name="SubmitToHelp" value=" Help ">
+</td>
+</tr>
+</table>
+
+</form>
+
+
+
+
+

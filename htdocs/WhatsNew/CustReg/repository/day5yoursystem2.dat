@@ -1,0 +1,40 @@
+:# day5yoursystem2.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0 - nothing special (default)
+:#	1 - soft mandatory
+:#	2 - hard mandatory
+:#	4 - hinv result if value is empty
+:#	8 - auto pop system serial # if value is empty
+:#	16 - auto pop sysID
+:#	32 - auto check email connection
+:#	64 - auto pop email address
+:#	128 - auto app seg name to code conversions
+:#	
+:# value -- user input or a predefined value
+
+:OkHwConfig:radio::1:
+:SysSGI:checkbox::off:
+:SysApple:checkbox::off:
+:SysConvex:checkbox::off:
+:SysCray:checkbox::off:
+:SysDEC:checkbox::off:
+:SysEvans:checkbox::off:
+:SysHP:checkbox::off:
+:SysIBM:checkbox::off:
+:SysIntel:checkbox::off:
+:SysLockheed:checkbox::off:
+:SysQuantel:checkbox::off:
+:SysSun:checkbox::off:
+:SysWin95:checkbox::off:
+:SysWinNT:checkbox::off:
+:SysOther:text:::
+
+:ConnectWWW:radio:::
+:ConnectInet:select:::
+
+:# end
+

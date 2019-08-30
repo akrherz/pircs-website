@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>  PIRCS Beta-test Dataset 
+</title></head>
+<link rel="stylesheet" href="../main.css" type="text/css">
+<body bgcolor="#FFFFFF">
+
+<center><font class="headline">
+PIRCS Boundary Conditions Beta-Test Data Set </font></CENTER>
+
+
+<p>
+<a name="howto"><font class="subhead">1 - HOW TO GET THE BETATEST
+DATASET</font></a><p>
+<font class="text">To access the betatest dataset: <br>
+<ol>
+<li class="text">ftp ftp.pircs.iastate.edu
+
+<li class="text">login: anonymous
+
+<li class="text">passwd: your e-mail address
+
+<li class="text">cd /pub/PIRCS/BETA.RELEASE
+<li class="text">"Get" the files
+</ol>
+<pre>
+	README (contains information similar to what is in this document)
+	tarCODE (tar file contain code to read the data files,
+	also some interpolation routines)<br>
+
+	and one of the following:
+	tarGLOBAL (contains data on a global 2.5 degree grid (i))
+	tarREGDOM (contains data on PIRCS 0.5 degree grid (ii))
+	tarPSTDOM (contains data on PIRCS polar stereographic grid (iii))
+	(depending on which set of LBC's are appropriate for your model)<br>
+</pre>
+
+
+Note:<br>
+<ol> 
+<li class="text">To extract files from a tarfile (tarCODE for
+	example) type the command <b>tar xvf tarCODE</b><br>
+<li class="text">Sometimes the network can be slow, so if problems
+	are encountered transferring files, try again later, 
+	if the problem persists, please contact us.
+</ol></font><p>
+
+<a name="datpk"><font class="subhead">2 - DATA PACKING</font></a>
+
+<p><font class="text"><b>Users of the PIRCS Beta-Test dataset should be
+aware that
+the provided variables are not stagggered, i.e., they
+are all
+at the same location.</b> Because participant
+models may use staggered grids horizontally 
+the width of the forcing zone will differ between
+models.
+For example, for the Arakawa B grid, the width for T
+and q will
+be 8 grid spacings, but 9 for U and V.<p>
+ 
+
+It is up to the participant to determine
+which 
+PIRCS dataset suits their needs best. 
+It is recommended that participants use a bilinear
+interpolation method
+to interpolate the PIRCS grid-point data to their own
+model's grid.
+A bilinear interpolation subroutine based on
+<i>bint.f</i> (described in 
+Manning and Haagenson, 1992) is part of program
+<i>indat_gen.f</i> included
+in the distributed dataset.
+Various programs that read the files containing the
+data are available.
+Hopefully these programs are designed
+so that they can be easily adapted by the participants
+in their efforts
+to convert the LBC's to their specific model
+configuration.
+These codes are in <i>the file tarCODE in the directory /pub/PIRCS/BETA.RELEASE</i> at the FTP site. 
+A listing and brief description of each program is included in the README
+file of the directory READ.CODE (the directrory which the files are in,
+when tarCODE is untarred).
+
+
+<p>The data are packed in integer format, and are in
+slices ('horizontal') of constant pressure. 
+(25 mb being first, 1050 being last.) The data are
+ordered as follows: surface pressure (Variable
+code 001; units Pa), temperature (011; K), specific
+humidity (051; kg/kg), u component of the
+wind (033; m/s), and the v component of the wind (034;
+m/s).  This code "unpacks" the data, as they are
+stored in a positive integer format; i.e., for each
+field (horizontal slice) a maximum value
+is determined, and this (and every other data point) is
+multiplied by some scale factor to ensure
+that the desired number of significant digits are to
+the left of the decimal point.  The
+original data are extracted by subtracting the stored
+data from the base value
+and then dividing by
+the scale factor.  The
+space requirements are minimized through the storage of
+data as positive integers.  To further
+minimize the space requirements, data were compacted
+using the standard UNIX "compress" (a
+modified Lempel-Ziv algorithm popularized in Welch,
+1984) command.  While this choice of
+packing procedure is not a meteorological "standard"
+like GRIB or BUFR, we think that fewer
+problems will be experienced in the short term. 
+
+<p> For each 'horizontal' slice the data are ordered as
+follows, as you look at it on the screen
+(Note, this applies for the ordering of the forcing
+data as well.) <br>
+
+<pre>             
+  SW Corner  (1,1) .........................(XMAX,1) SE Corner<br>
+            	(1,2) .........................(XMAX,2)<br>
+             	...........(I,J)...............<br>
+            	...............................<br>
+  NW corner  (1,YMAX).......................(XMAX,YMAX) NE Corner<br>
+</pre>
+
+Note, in the read program, the I index is E-W, and the
+J index is N-S.</font>
+
+
+<p>
+<a name="prelim"><font class="subhead">3 - ISU BETATEST - SOME 
+RESULTS</font></a>
+<p><font class="text">We ran the beta test at ISU using REGCM2 to produce 
+the output appearing 
+here.<p>
+
+
+(<A HREF="./RELEASE/p11fig1.gif"> Figure
+1.1(0.00833 MB)</A> shows the time series of
+the domain averaged temperature at a near-surface level
+(sigma=0.9) for the BETAtest period as simulated by 
+REGCM2, and
+(<A HREF="./RELEASE/p11fig2.gif"> Figure
+1.2(0.00833 MB)</A> shows the time series of
+the domain averaged wind speed at the same level. Figure 1.3 
+(below) shows the simulated
+precipitation for the period.
+<p>
+<IMG ALIGN=top SRC="./RELEASE/p11fig3.gif">
+<p>
+<Pre>
+
+Fig. 1.3 - Total rainfall (mm) for the 5 day period
+from 00 UTC July 1 to
+00 UTC July 6, 1988 as simulated by REGCM2 using the
+PIRCS BETAtest
+dataset.  
+
+</PRE>
+<p>It has been our experience that a 5 day integration
+of REGCM2
+(see Giorgi, et al., 1994) configured
+for the PIRCS domain takes about
+17 hours of cpu time on a DEC AXP 3000 workstation with
+32 MB of assigned memory, and 32 hours with 10 MB
+assigned.
+
+
+<p>    The variables provided are surface pressure, T,
+q, u, & v.  They are provided
+every 25 mb from 25 mb to 1050 mb. Also provided are
+fields of the NCEP analysis topography for all
+domains and topographic datasets for the limited
+domains (ii) and (iii). 
+The latter were derived from a 30
+minute dataset, and they have more detail than the
+analysis topography.  
+Land-use datasets are also
+provided for each of the limited domains, as well as
+global SST's, soil moisture for the
+limited domains, and the Great Lakes surface
+temperatures.</font>
+
+<p>
+<font class="subhead">REFERENCES</font>
+
+<p>
+<font class="text3">Manning, K. W., and P. L. Haagenson, 1992:
+Data ingest and objective analysis for the
+PSU/NCAR modeling system: Programs DATAGRID and RAWINS.
+<i>NCAR Technical note, NCAR/TN-  376+I</i>A, 209 pp.</font>
+
+<p>
+<table>
+<tr><a href="http://www.pircs.iastate.edu" border="0"><img
+src="../homepage2.jpg"
+border="0"></a></tr>
+<tr><a href="http://www.iastate.edu" border="0"><img src="../isu.gif"
+border="0"></a></tr>
+<tr><td><a
+href="http://www.iastate.edu/guide/policies/notice.html">Copyright/Trademark
+Legal Notice</a></td></tr>
+</table>
+
+</body>
+</html>

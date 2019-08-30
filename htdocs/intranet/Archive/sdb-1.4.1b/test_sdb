@@ -1,0 +1,42 @@
+#!/bin/csh
+#
+# format of URL expected
+#  <A HREF="/cgi-bin/(script name)/(directory where file is)?(filename)>
+#
+#  e.g 
+#  <A HREF="/cgi-bin/sdb/hdf?test.hdf>
+#
+# Set Environment variables
+# to mimic being called from an HTTPD server
+#
+setenv SERVER_SOFTWARE   "NCSA/1.5"
+setenv SERVER_NAME  www.pircs.iastate.edu
+setenv GATEWAY_INTERFACE   "CGI/1.1"
+setenv SERVER_PROTOCOL   "HTTP/1.0"
+setenv SERVER_PORT  4321
+setenv REQUEST_METHOD  GET
+setenv HTTP_ACCEPT   "image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*"
+#
+# This is usually set the directory location
+setenv PATH_INFO   "/hdf"
+
+# Absolute path to the file you want dumped by the CGI script
+setenv PATH_TRANSLATED   "/usr/people/pircs/fils/"
+setenv SCRIPT_NAME  "/cgi-bin/sdb"
+
+# set to file name
+setenv QUERY_STRING  dfsd_v2.hdf
+#setenv REMOTE_HOST   hdf.ncsa.uiuc.edu
+#setenv REMOTE_ADDR   141.142.21.14
+setenv REMOTE_HOST   cydonia.iitap.iastate.edu
+setenv REMOTE_ADDR   129.186.118.56
+
+# not used
+#setenv REMOTE_USER  
+#setenv AUTH_TYPE  
+#setenv CONTENT_TYPE  
+#setenv CONTENT_LENGTH  
+
+#
+#execute script with the above environment variables
+./sdb

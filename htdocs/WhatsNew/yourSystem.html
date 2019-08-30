@@ -1,0 +1,120 @@
+<html>
+
+<head>
+	<title>Welcome to SGI</title>
+</head>
+
+<script language="javascript">
+
+arrow = new Image();
+arrow.src = "pics/base/arrow.gif";
+
+arrowVoid = new Image();
+arrowVoid.src = "pics/base/blue_block.gif";
+
+function rollover( ID, Name){	
+	document.images[ID].src = eval(Name + ".src");
+}
+
+</script>
+
+<style type="text/css">
+.sgiFade { position:absolute; top:475; left:0; visibility:visible; }
+</style>
+
+<body background="pics/base/bg.gif" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0>
+<center>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+	<tr>
+		<td align=left valign=top><img src="pics/base/white_block.jpg" width=1 height=82></td>
+		<td align=right><img src="pics/base/sgi_black.gif" width=48 height=36></td>
+	</tr>
+</table>
+
+<table cellspacing=0 cellpadding=0 border=0>
+	<tr>
+		<td valign=top><img src="pics/welcome/faces.jpg"></td>
+		
+		<td><table cellspacing=0 cellpadding=0 border=0>
+			<tr>
+				<td><img src="pics/welcome/welcome.gif"></td>
+			<tr>
+			<tr>
+				<td><img src="pics/welcome/blurb.gif"></td>
+			<tr>
+			<tr><!-- spacer -->
+				<td><img src="pics/base/blue_block.gif" height=60 width=50></td>
+			</tr>
+			<tr>
+				<td><table cellspacing=0 cellpadding=0 border=0>
+					<tr>
+						<td><img name="item1" src="pics/base/blue_block.gif"></td>
+						<td><a href="cool/index.html" 
+									 onMouseOver="rollover('item1', 'arrow');"
+									 onMouseOut="rollover('item1', 'arrowVoid');"><img src="pics/welcome/whatsnew.gif" border=0></td></a>
+					</tr>				
+					<tr><!-- spacer -->
+						<td colspan=2><img src="pics/base/blue_block.gif" height=27></td>
+					</tr>
+					<tr>
+						<td><img name="item2" src="pics/base/blue_block.gif"></td>
+						<td><a href="install/index.html" 
+									 onMouseOver="rollover('item2', 'arrow');"
+									 onMouseOut="rollover('item2', 'arrowVoid');"><img src="pics/welcome/installing_irix.gif" border=0></td></a>
+					</tr>				
+					<tr><!-- spacer -->
+						<td colspan=2><img src="pics/base/blue_block.gif" height=27></td>
+					</tr>
+					<tr>
+						<td><img name="item3" src="pics/base/blue_block.gif"></td>
+						<td><a href="mindshare/index.html" 
+									 onMouseOver="rollover('item3', 'arrow');"
+									 onMouseOut="rollover('item3', 'arrowVoid');"><img src="pics/welcome/bundled_software.gif" border=0></a></td>
+					</tr>				
+					<tr><!-- spacer -->
+						<td colspan=2><img src="pics/base/blue_block.gif" height=27></td>
+					</tr>
+					<tr>
+						<td><img name="item4" src="pics/base/blue_block.gif"></td>
+						<td><a href="services/index.html" 
+									 onMouseOver="rollover('item4', 'arrow');"
+									 onMouseOut="rollover('item4', 'arrowVoid');"><img src="pics/welcome/technology_solutions.gif" border=0></a></td> </tr>				
+					<tr><!-- spacer -->
+						<td colspan=2><img src="pics/base/blue_block.gif" height=27></td>
+					</tr>
+					<tr>
+						<td><img name="item5" src="pics/base/blue_block.gif"></td>
+						<td><a href="i18n/index.html" 
+									 onMouseOver="rollover('item5', 'arrow');"
+									 onMouseOut="rollover('item5', 'arrowVoid');"><img src="pics/welcome/intl.gif" border=0></a></td>
+					</tr>
+					<tr><!-- spacer -->
+						<td colspan=2><img src="pics/base/blue_block.gif" height=100></td>
+					</tr>
+					<tr>
+						<td><img src="pics/base/blue_block.gif"></td>
+						<td>&nbsp;&nbsp;<a href="copyright/index.html" ><FONT SIZE="1" color="#ffffff">&#169; 1996-2003 Silicon 
+Graphics, Inc. All rights reserved.</FONT></A>
+</td>
+					</tr>
+
+
+
+
+
+
+					</table>
+				</td>
+			<tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</center>
+</body>
+
+<div class="sgiFade">
+<img src="pics/welcome/sgi_fade.gif">
+</div>
+
+</html>

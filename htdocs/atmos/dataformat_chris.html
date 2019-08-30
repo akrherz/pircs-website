@@ -1,0 +1,225 @@
+<html>
+<head>
+<title>PIRCS Archive Format</title>
+<meta name="Author" content="William J. Gutowski">
+</head>
+<body bgcolor="FFFFFF">
+
+<hr noshade width="85%">
+<center><h2>Format for Transmitting Model Output to PIRCS(1c) Archive</h2></center>
+<hr noshade width="85%">
+<p>
+<br>
+Model output should be transmitted to PIRCS in one of two formats, either
+<a href="http://www.unidata.ucar.edu/packages/netcdf/"> NetCDF format</a> or
+<a href="dataformat.html">the format used in PIRCS(1a) and PIRCS(1b)</a>.
+Model output submitted in PIRCS format must include one ASCII file containing
+information for reading output.  For model output submitted as NetCDF data,
+we request that all model parameters (grid spacing, number of vertical levels, base state
+pressure, etc.) are included in the NetCDF files and that a sample program to read
+the NetCDF files is provided.
+ <p>For those who wish to submit data in PIRCS(1a) and PIRCS(1b) format, please
+use exactly the same routines without corrections to any errors that may have
+been discovered since the last data transmission.  Our code is designed to read
+the quirky rather than corrected data files.  Also, note that the file naming
+convention has changed (see "NetCDF Files" below), and that PIRCS no
+longer requests output on the native model levels; instead submit data on the following
+pressure levels: 925, 850, 700, 500, and 200 mb.
+The PIRCS output files require a field ID number, available in
+<a href="table1_1c.html"> Table 1</a>.  A table
+of <a href="./table1_sample_1c.html">representative values</a>
+is available for guidance when preparing output for the archive.
+<b>Please adhere carefully to the units assigned each variable in
+these tables! </b>
+<p>
+<p>
+<hr noshade width="75%">
+<center><h3>ASCII FILE</h3></center>
+<hr noshade width="75%">
+<blockquote><p>
+The ASCII file provides general information to identify the model and
+gives control data for reading the output.  It also has some redundancy
+with the output to help maintain proper identity of the output files.
+<p>
+The file should be named IDDDDD.CONTROL, where IDDDDD is the 6-character 
+identifier string in line 1 below.
+<p>
+The file should contain at a minimum 6 lines: 
+<center>
+<table border=2 cellpadding=5>
+<tr>
+	<th> Line </th>
+	<th> Information </th>
+</tr>
+<tr>
+<td>1 </td>
+<td>A model ID (character variable; A6 format).  This ID should be the
+prefix to all files sent to the PIRCS archive (see "File naming
+convention" under NETCDF FILES, section 3(a))
+</td>
+</tr>
+<tr>
+<td>2 </td>
+<td>Start day (3 integers in year, month, day order in I5 format; 4-digit year 
+that includes century, i.e. 1988 not 88) 
+</td>
+</tr>
+<tr>
+<td>3 </td>
+<td>End day (3 integers in year, month, day order in I5 format;
+4-digit year)
+</td>
+</tr>
+<tr>
+<td>4 </td>
+<td>Number of "latitudes" (gridpoints in y-direction of model
+output grid; 1 integer in I5 format) 
+</td>
+</tr>
+<tr>
+<td>5 </td>
+<td>Number of "longitudes" (gridpoints in x-direction of model output
+grid; 1 integer in I5 format) 
+</td>
+</tr>
+<tr>
+<td>6 </td>
+<td>Byte-order indicator (character variable; A6 format).  Enter "BIG..." or
+"LITTLE" to indicate whether your machine uses "big endian" or
+"little-endian" byte order for floating-point numbers.   Consult your
+system's 'man' pages or other documentation to find which
+ordering it uses. 
+</td>
+</tr>
+<tr>
+<td>7-10</td>
+<td>The file may contain up to 4 additional lines, 80 characters wide, of
+additional comments. 
+</td>
+</tr>
+</table>
+</center>
+</blockquote><p>
+<hr noshade width="65%">
+<center><h3>NETCDF FILES</h3></center>
+<hr noshade width="65%">
+<p>
+<h4>1.  General structure</h4>
+<blockquote><p>
+Output should be stratified as follows, with "Date/time"
+representing the coarsest division of the output and "Longitude"
+representing the finest. 
+<pre>
+Date/time	<- coarsest
+Height
+Latitude
+Longitude	<- finest
+</pre>
+<p>
+The terms "latitude" and "longitude" are used loosely in this document
+to refer to the model's Y and X coordinates, respectively, where Y
+increases approximately from south to north and X increases
+approximately from west to east.  It is not necessarily implied that
+the data should be interpolated to an actual latitude-longitude grid. 
+<p>
+</blockquote>
+<h4>2.  Order</h4>
+<blockquote><p>
+Output and related reference fields are to be reported in the order
+given on the PIRCS(1c) web page tables:
+<p>
+<a href="table1_1c.html"> Table 1 </a>
+</blockquote>
+<h4>3. Files</h4>
+<blockquote>
+<p>
+File naming conventions and content depend on whether the data is submitted in
+PIRCS or NetCDF format.  We recommend creating monthly files if data is submitted in
+PIRCS format and daily files if NetCDF format is used.
+<p>
+(a1) File naming convention (monthly files):  IDDDDD.FIELD.YYYY.MM.DD.YYYY.MM.DD
+<br>where
+<ul>
+<li>IDDDDD is the 6 character model ID given in the ASCII file
+<li>FIELD is a 6 character field name given at the PIRCS web site
+<li>YYYY.MM.DD is the year (4 digits), month and day <b>on which the data
+begins or ends</b>
+</ul>
+An example of a properly constructed file name is:
+ NCPRSM.6HGEOP.1987.07.01.1987.07.31
+<p>
+(a2) File naming convention (daily files):  IDDDDD.FIELD.YYYY.MM.DD
+<br>where
+<ul>
+<li>IDDDDD is the 6 character model ID given in the ASCII file
+<li>YYYY.MM.DD is the year (4 digits), month and day <b>on which the data
+is valid</b>
+</ul>
+An example of a properly constructed file name is:
+ NCPRSM.1987.07.01
+<p>
+<p>
+(b) For PIRCS format data files, output should be written as one file per output field per month unless
+the file size would exceed 2 Gb.
+Data submitted in NetCDF format may contain multiple variables, but please adhere
+to the 2 Gb file size limit.  We suggest constructing daily output files and making monthly
+tar archives.
+<p>
+(c) For min/max temperatures, report the times of minimum and times of
+maximum in separate files from the actual values of minimum or maximum temperatures.
+<p>
+</blockquote>
+<h4>4. Horizontal grid</h4>
+<blockquote><p>
+(a) All requested fields should be reported on the same horizontal
+grid.  For models that stagger variables horizontally, output should
+be interpolated horizontally to a common grid.  When interpolation is
+needed, it is recommended that wind fields be interpolated to the grid
+used for mass and temperature variables. 
+<p>
+(b) When writing two-dimensional (horizontal) fields:
+<ol>
+<li>Start in the southwest corner and proceed "eastward" in model's x direction
+<li>Increment latitude from south to north, always writing from the
+latitude's westernmost point toward the easternmost. 
+</ol>
+<p>
+(c) When writing three-dimensional fields:
+<ol>
+<li>Write output as a sequence of two-dimensional (horizontal) fields. 
+<li>Start with atmospheric layer closest to surface.
+<li>Proceed upward to layer farthest from surface.
+</ol>
+<p>
+</blockquote>
+<h4>5. Vertical grid</h4>
+<blockquote>
+<p>
+(a) All requested three-dimensional fields should be reported at the
+following pressure levels:
+<blockquote>
+925 mb, 850 mb, 700 mb, 500 mb, and 200 mb
+</blockquote>
+<p>
+(b) When writing fields, go from the lowest layer of the model atmosphere 
+toward the top of the
+model atmosphere. 
+<p>
+</blockquote>
+<br>
+<br>
+<hr>
+<p>
+<table>
+<tr><a href="http://www.pircs.iastate.edu" border="0"><img
+src="../homepage2.jpg"
+border="0"></a></tr>
+<tr><a href="http://www.iastate.edu" border="0"><img src="../isu.gif"
+border="0"></a></tr>
+<tr><td><a
+href="http://www.iastate.edu/guide/policies/notice.html">Copyright/Trademark
+Legal Notice</a></td></tr>
+</table>
+ 
+</body>
+</html>

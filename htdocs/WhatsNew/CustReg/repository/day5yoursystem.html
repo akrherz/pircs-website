@@ -1,0 +1,295 @@
+<TITLE>Customer Registration - Information About Your System</TITLE>
+<!-- Changed by: James Chen, 30-Dec-1995 -->
+
+<body background="images/bg_sgi_logo.gif">
+
+<font size="+2">
+<strong>
+<img src="images/CorpID.gif" alt="Silicon Graphics, Inc.">
+Information About Your System
+</strong>
+</font>
+
+__ErrorGlobal__
+<FORM METHOD="POST" ACTION="day5yoursystem.cgi">
+<INPUT TYPE="hidden" NAME="Country" VALUE="__Country__">
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>
+Please provide the following about your System Administrator, if other than
+yourself.</strong>
+<br>
+<em>(System Administrators configure and maintain systems.)</em>
+</td>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+Salutation:
+<br>
+<em>(optional)</em>
+</th>
+<th align="left">
+<INPUT TYPE="text" NAME="SaSalutation" SIZE="6" MAXLENGTH="6" VALUE="__SaSalutation__"> 
+</th>
+<th align="right">
+First Name:
+</th>
+<th align="left">
+<INPUT TYPE="text" NAME="SaFirstName" SIZE="12" MAXLENGTH="20" VALUE="__SaFirstName__"> 
+</th>
+<th align="right">
+Last Name:
+</th>
+<th align="left">
+<INPUT TYPE="text" NAME="SaLastName" SIZE="12" MAXLENGTH="20" VALUE="__SaLastName__">
+</th>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<th align="right">
+E-mail:
+<br>
+<font size="-1">(full address)</font>
+</th>
+<th align="left">
+<INPUT TYPE="text" NAME="SaEmail" SIZE="27" MAXLENGTH="50" VALUE="__SaEmail__"> 
+</th>
+<th align="right">
+Phone:
+</th>
+<th align="left">
+<INPUT TYPE="text" NAME="SaPhone" SIZE="16" MAXLENGTH="16" VALUE="__SaPhone__">
+</th>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>What is your planned use for this system?
+Select top 1 to 3 choices from pull down menus.</strong>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align="right">
+__AppSeg1_ErrorLeft__#1
+</td>
+<td>
+<SELECT NAME="AppSeg1">
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_001__>AEC (Architecture/Engineering/Construction)
+<OPTION __AppSeg1_004__>CFD (Comp Fluid Dynamics)
+<OPTION __AppSeg1_046__>Digital Prototyping
+<OPTION __AppSeg1_011__>EDA (Electronic Design Automation)
+<OPTION __AppSeg1_017__>MCAD/MCAM
+<OPTION __AppSeg1_018__>MCAE
+<OPTION __AppSeg1_042__>PDM/MRP
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_034__>Industrial Process Analysis
+<OPTION __AppSeg1_038__>Robotics, Measurement and Control
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_005__>Chemistry, Biochem, Biotech, Materials
+<OPTION __AppSeg1_027__>Math, Physics, Other Sciences
+<OPTION __AppSeg1_016__>Medical Imaging
+<OPTION __AppSeg1_020__>Medicine and General Biology
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_010__>Geosciences (Under Ground)
+<OPTION __AppSeg1_014__>GIS and Defense Imaging (Above Ground)
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_048__>Broadcasting (TV, Radio), Cable
+<OPTION __AppSeg1_051__>Content, Production and Distribution Mgmt
+<OPTION __AppSeg1_049__>Interactive (Games, LBE, Kiosks, On-Line)
+<OPTION __AppSeg1_047__>Motion Picture, Video
+<OPTION __AppSeg1_050__>Music/Audio
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_015__>Publishing
+<OPTION __AppSeg1_052__>Web Authoring
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_045__>File Serving
+<OPTION __AppSeg1_044__>Media Serving
+<OPTION __AppSeg1_053__>Web Serving
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_008__>Database
+<OPTION __AppSeg1_033__>Economic and Financial Planning
+<OPTION __AppSeg1_036__>Other Commercial
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_025__>Visual Simulation
+<OPTION __AppSeg1_000__>
+<OPTION __AppSeg1_028__>Classified
+</SELECT>__AppSeg1_ErrorRight__
+<INPUT TYPE="submit" NAME="SubmitClearAppSeg1" VALUE="Clear">
+</td>
+<tr>
+<td align="right">
+#2
+</td>
+<td>
+<SELECT NAME="AppSeg2">
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_001__>AEC (Architecture/Engineering/Construction)
+<OPTION __AppSeg2_004__>CFD (Comp Fluid Dynamics)
+<OPTION __AppSeg2_046__>Digital Prototyping
+<OPTION __AppSeg2_011__>EDA (Electronic Design Automation)
+<OPTION __AppSeg2_017__>MCAD/MCAM
+<OPTION __AppSeg2_018__>MCAE
+<OPTION __AppSeg2_042__>PDM/MRP
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_034__>Industrial Process Analysis
+<OPTION __AppSeg2_038__>Robotics, Measurement and Control
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_005__>Chemistry, Biochem, Biotech, Materials
+<OPTION __AppSeg2_027__>Math, Physics, Other Sciences
+<OPTION __AppSeg2_016__>Medical Imaging
+<OPTION __AppSeg2_020__>Medicine and General Biology
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_010__>Geosciences (Under Ground)
+<OPTION __AppSeg2_014__>GIS and Defense Imaging (Above Ground)
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_048__>Broadcasting (TV, Radio), Cable
+<OPTION __AppSeg2_051__>Content, Production and Distribution Mgmt
+<OPTION __AppSeg2_049__>Interactive (Games, LBE, Kiosks, On-Line)
+<OPTION __AppSeg2_047__>Motion Picture, Video
+<OPTION __AppSeg2_050__>Music/Audio
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_015__>Publishing
+<OPTION __AppSeg2_052__>Web Authoring
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_045__>File Serving
+<OPTION __AppSeg2_044__>Media Serving
+<OPTION __AppSeg2_053__>Web Serving
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_008__>Database
+<OPTION __AppSeg2_033__>Economic and Financial Planning
+<OPTION __AppSeg2_036__>Other Commercial
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_025__>Visual Simulation
+<OPTION __AppSeg2_000__>
+<OPTION __AppSeg2_028__>Classified
+</SELECT>
+<INPUT TYPE="submit" NAME="SubmitClearAppSeg2" VALUE="Clear">
+</td>
+</tr>
+<tr>
+<td align="right">
+#3
+</td>
+<td>
+<SELECT NAME="AppSeg3">
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_001__>AEC (Architecture/Engineering/Construction)
+<OPTION __AppSeg3_004__>CFD (Comp Fluid Dynamics)
+<OPTION __AppSeg3_046__>Digital Prototyping
+<OPTION __AppSeg3_011__>EDA (Electronic Design Automation)
+<OPTION __AppSeg3_017__>MCAD/MCAM
+<OPTION __AppSeg3_018__>MCAE
+<OPTION __AppSeg3_042__>PDM/MRP
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_034__>Industrial Process Analysis
+<OPTION __AppSeg3_038__>Robotics, Measurement and Control
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_005__>Chemistry, Biochem, Biotech, Materials
+<OPTION __AppSeg3_027__>Math, Physics, Other Sciences
+<OPTION __AppSeg3_016__>Medical Imaging
+<OPTION __AppSeg3_020__>Medicine and General Biology
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_010__>Geosciences (Under Ground)
+<OPTION __AppSeg3_014__>GIS and Defense Imaging (Above Ground)
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_048__>Broadcasting (TV, Radio), Cable
+<OPTION __AppSeg3_051__>Content, Production and Distribution Mgmt
+<OPTION __AppSeg3_049__>Interactive (Games, LBE, Kiosks, On-Line)
+<OPTION __AppSeg3_047__>Motion Picture, Video
+<OPTION __AppSeg3_050__>Music/Audio
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_015__>Publishing
+<OPTION __AppSeg3_052__>Web Authoring
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_045__>File Serving
+<OPTION __AppSeg3_044__>Media Serving
+<OPTION __AppSeg3_053__>Web Serving
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_008__>Database
+<OPTION __AppSeg3_033__>Economic and Financial Planning
+<OPTION __AppSeg3_036__>Other Commercial
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_025__>Visual Simulation
+<OPTION __AppSeg3_000__>
+<OPTION __AppSeg3_028__>Classified
+</SELECT>
+<INPUT TYPE="submit" NAME="SubmitClearAppSeg3" VALUE="Clear">
+</td>
+</tr>
+<tr>
+<td align="right">
+Specify Other:
+</td>
+<td align="left">
+<INPUT TYPE="text" NAME="AppSegOther" SIZE=28 VALUE="__AppSegOther__">
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>What major third party applications will you be running?</strong>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align="center">
+<strong>Select top 1 to 3 choices from search page ---&gt;</strong>
+<INPUT TYPE="submit" NAME="SubmitToAppSrch" VALUE="Search Page">
+</td>
+</tr>
+</table>
+<p>
+<br>
+
+<table border=0 width=638>
+<tr>
+<td width=10%>
+</td>
+<td width=80% align="center">
+<input type="submit" name="SubmitToPrev" value=" Previous Page ">
+<input type="submit" name="SubmitToNext" value=" Continue ">
+</td>
+<td width=10% align="right">
+<input type="submit" name="SubmitToHelp" value=" Help ">
+</td>
+</tr>
+</table>
+
+</form>
+
+

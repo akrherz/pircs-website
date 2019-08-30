@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3b6">
+    <TITLE>OutBox: Access Control</TITLE>
+</HEAD>
+<BODY ALINK="#ff0000" VLINK="#0000ee" LINK="#0000ee"
+ BACKGROUND="/outbox/images/background.gif" BGCOLOR="#c1c1c1"
+ TEXT="#000000">
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+    <TR>
+        <TD VALIGN="TOP"><IMG SRC="/outbox/images/logo.gif"
+             ALT="Powered by Silicon Graphics"></TD>
+        <TD ALIGN="RIGHT" VALIGN="TOP">
+            <TABLE CELLPADDING="0" CELLSPACING="0">
+                <TR>
+                    <TD ALIGN="CENTER"><A HREF="/"
+                         onMouseOver="window.status='Go to the system\'s web page';return true"><IMG
+                         SRC="/outbox/images/machine.gif" ALT="System"></A></TD>
+                </TR>
+                <TR>
+                    <TD ALIGN="CENTER"><FONT SIZE="-2">System</FONT></TD>
+                </TR>
+            </TABLE>
+        </TD>
+    </TR>
+</TABLE>
+<CENTER><H2 ALIGN="CENTER">
+<BR>
+Access Control</H2>
+</CENTER><HR NOSHADE SIZE="3" WIDTH="50%">
+<P>
+The OutBox pages and documents published on this system can be viewed 
+by any user with network access to the system. This page describes how 
+to use the Netscape Web server's Access Control features to regulate 
+access to the OutBox pages. </P>
+<H3>
+Opening the Netscape Administration Server</H3>
+<P>
+The simplest way to set up access controls is to use the Netscape 
+Administration Server. Click the link below to display the Netscape 
+Administration Server.</P>
+<CENTER><P ALIGN="CENTER">
+<A HREF="http://localhost:81" TARGET="_blank">Open the Netscape 
+Administration Server.</A></P>
+</CENTER><P>
+When you click this link, you may be asked for a user name and password 
+before you can proceed. </P>
+<P>
+<B>Notes:</B></P>
+<UL>
+    <LI>
+    The Netscape Administration Server is disabled by default. To enable 
+    it, type <B><TT>/usr/ns-home/start-admin</TT></B> in a shell 
+    window. Once you're finished, you can disable the server by typing <B><TT>/usr/ns-home/stop-admin</TT></B>.<BR>
+     <BR>
+     
+    <LI>
+    The default user name and password for the server is <I>admin</I>.<BR>
+     <BR>
+     
+    <LI>
+    Refer to the Netscape Administration Server (ns-admin<I>)</I> man 
+    pages and release notes for more information. 
+</UL>
+<H3>
+Controlling Access to OutBox Pages</H3>
+<P>
+To set up access controls for an OutBox page or published document:</P>
+<OL>
+    <LI>
+    Open the Netscape Administration Server. 
+    <LI>
+    Click the <I>Access Control</I> button on the toolbar at the top of 
+    the server page. 
+    <LI>
+    Click <I>Restrict Access</I>, found on the left of the Access 
+    Control page. 
+    <LI>
+    Click the <I>Wildcard</I> button on the Restrict Access page. 
+    <LI>
+    In the Wildcard window, enter the file path or paths to the OutBox 
+    page. (The file paths for OutBox pages are shown below in <A
+     HREF="#table1">Table 1</A>.) 
+    <LI>
+    The current access control status for the page is now displayed. Use 
+    the various features of the Restrict Access page to change the access 
+    controls and save the changes. 
+</OL>
+<P>
+<B>Notes:</B> </P>
+<UL>
+    <LI>
+    These instructions refer to Version 2.0 of the Netscape Administration 
+    Server. Other versions may behave differently.<BR>
+     <BR>
+     
+    <LI>
+    Refer to the Netscape Administration Server's online help for 
+    additional information. 
+</UL>
+<P>
+<A NAME="table1"><B>Table 1: OutBox Pages That Can Be Protected</B></A></P>
+<P>
+The table below describes the OutBox pages that can be protected. For 
+each page, one or more file paths are shown. Use the Netscape 
+Administration Server to control access to the page. All of the paths 
+shown for a particular page must be protected.</P>
+<CENTER>
+<TABLE BORDER="1">
+    <TR>
+        <TH ALIGN="RIGHT"></TH>
+        <TH ALIGN="LEFT">File paths</TH>
+    </TR>
+    <TR>
+        <TH ALIGN="RIGHT" VALIGN="TOP">OutBox System Page</TH>
+        <TD>/var/www/htdocs/index.html<BR>
+             /var/www/htdocs/index.shtml</TD>
+    </TR>
+    <TR>
+        <TH ALIGN="RIGHT">Camera Image</TH>
+        <TD>/var/www/cgi-bin/sgi-camera/snap/*</TD>
+    </TR>
+    <TR>
+        <TH ALIGN="RIGHT">System Information</TH>
+        <TD>/var/www/cgi-bin/MachineInfo/*</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="RIGHT" VALIGN="TOP"><B>OutBox Published Folder</B></TD>
+        <TD>/var/www/cgi-bin/wrap/guest/myfolder/*<BR>
+             /usr/people/guest/public_html/myfolder/*<BR>
+             [ example for user <I>guest</I> and folder <I>myfolder</I>
+             ]</TD>
+    </TR>
+    <TR>
+        <TD ALIGN="RIGHT" VALIGN="TOP"><B>OutBox Published File</B></TD>
+        <TD>/usr/people/guest/public_html/myfile.doc<BR>
+             [ example for user <I>guest</I> and file <I>myfile.doc</I>
+             ]</TD>
+    </TR>
+</TABLE>
+</CENTER>
+<P>
+</P>
+<P>
+<A HREF="/"><IMG SRC="/outbox/images/go-back.gif" ALT="&lt;-"
+ BORDER="0"></A> </P>
+</BODY>
+</HTML>

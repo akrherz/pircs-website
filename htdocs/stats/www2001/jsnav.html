@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="ROBOTS" CONTENT="NONE">
+<TITLE>Navigation Window</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- // begin hide script
+
+// Load a new page into the creator's window
+function loadPage(loc) {
+	if (!opener)
+		creator.location = loc;
+	else	opener.location = loc;
+}
+
+// Close the navigation window
+function closeWin() {
+	window.close(self);
+}
+// Create the VRML window
+function createVRMLWin(loc) {
+	vrmlWin = window.open(loc, 'vrml_win',
+'toolbar=no,location=no,directories=no,status=yrd,menubar=no,scrollbars=no,resizable=yes,width=520,height=420');
+	vrmlWin.creator = self;
+}
+
+// end hide script -->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#EFEFEF">
+<CENTER><P ALIGN="CENTER">
+<TABLE WIDTH="100%" BORDER="2" CELLSPACING="1" CELLPADDING="1">
+<TR><TD HEIGHT="4"></TD></TR>
+<TR><TH COLSPAN="4" BGCOLOR="#CCCCCC"><FONT COLOR="#000000" FACE="Helvetica,Swiss,Sans Serif" SIZE="2"><A HREF="jsnav.html" onClick="loadPage('index.html');return false;">WWW Access Statistics for 2001</A></FONT></TH></TR>
+<TR><TD HEIGHT="4"></TD></TR>
+<TR><TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="nav1201.html" onClick="loadPage('totals1201.html');">December 2001</A></FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="nav1101.html" onClick="loadPage('totals1101.html');">November 2001</A></FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="nav1001.html" onClick="loadPage('totals1001.html');">October 2001</A></FONT></TD>
+</TR>
+<TR><TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="nav0901.html" onClick="loadPage('totals0901.html');">September 2001</A></FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="nav0801.html" onClick="loadPage('totals0801.html');">August 2001</A></FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="nav0701.html" onClick="loadPage('totals0701.html');">July 2001</A></FONT></TD>
+</TR>
+<TR><TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">June 2001</FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">May 2001</FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">April 2001</FONT></TD>
+</TR>
+<TR><TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">March 2001</FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">February 2001</FONT></TD>
+
+<TD NOWRAP ALIGN="CENTER" BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">January 2001</FONT></TD>
+</TR>
+<TR><TD HEIGHT="4"></TD></TR>
+<TR><TD COLSPAN="6" ALIGN="CENTER" BGCOLOR="#CCCCCC"><FONT COLOR="#000000" FACE="Helvetica,Swiss,Sans Serif" SIZE="2"><A HREF="javascript:closeWin();">Close navigation window</A></FONT></TD></TR>
+<TR><TD HEIGHT="4"></TD></TR>
+</TABLE></P>
+</CENTER>
+</BODY>
+</HTML>

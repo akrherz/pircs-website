@@ -1,0 +1,132 @@
+<html>
+<head><title>PIRCS Intranet</title></head>
+<body bgcolor="#FFFFFF">
+
+<center>
+<img src="./images/pircs.gif" alt="PIRCS intranet"><br>
+<img src="./images/pircslong.gif">
+<img src="./images/hrule.gif" alt="<hr>">
+</center>
+
+<table width=100%>
+  <tr>
+  <td valign="top">
+  <center>For more information about PIRCS projects to go the
+<a href="http://www.pircs.iastate.edu">main PIRCS WWW page</a></center>
+  <p>
+  netCDF<br>
+  <a href="http://unidata.ucar.edu/packages/netcdf/index.html">netCDF home page</a><br>
+  Compiling and Linking issues<br>
+  Makefile examples<br>
+  Performance tuning<br>
+  Some code examples<br>
+  <a href="./printers.html">Printers and printing</a><br>
+
+
+  </td>
+
+  <td align="right" valign="bottom" width=75>
+  <img src="./images/smpircslogo.gif"><br>
+  <font size=1><a href="./about.html">About this page</a></font>
+
+  </td>
+  </tr>
+</table>
+<center>
+<img src="./images/hrule.gif" alt="<hr>">
+</center>
+
+<TABLE  BORDER="0">
+<TR>
+<TD WIDTH="175" bgcolor="#EEEEEE" VALIGN="TOP" >
+<FONT COLOR="black"><b>PIRCS Intranet</b></FONT><BR>
+
+<FONT COLOR="black">FAQ</FONT>
+<br>
+<FONT COLOR="black">Make trouble report</FONT>
+<p>
+  <b>Find Doug:</b><br>
+  294-3555 IITAP main office<br>
+  294-6196 Doug's office<br>
+  <a href=mailto:fils@iastate.edu">fils@iastate.edu</a><br>
+<p>
+
+
+</TD>
+
+<TD VALIGN="TOP">
+
+<img src="./images/todaypircs.gif" alt="Today @ PIRCS"><br>
+<b>New Look</b>
+<br>
+<dd>
+I am working on a new interface to the PIRCS intranet net which I hope will
+be much cleaner and easier to use.  My goal is to make the page more usefull for
+the PIRCS group as a location for examples and information.  
+<a href=mailto:fils@iastate.edu"> Please provide me 
+thoughts and suggestions.</a>
+</dd>
+<p>
+<b>Do you use Excell?</b>
+<br>
+<dd>If you use Excell for Macintosh or Intell then you may be interested in a
+set of math tools ($20.00 shareware) for Excell.  Look at 
+<a href="http://www.octavian.com/mathdesc.html">http://www.octavian.com/mathdesc.html</a>
+ for more information.
+</dd>
+<p>
+<b>New drive storage technology</b>
+<br>
+<dd>
+Maxtor has 
+<a href="http://www.news.com/News/Item/0,4,19350,00.html">
+announced the release of a new hard drive at 11.5 Gigs</a> and 
+<a href="http://www.news.com/News/Item/0,4,19189,00.html">Seagate has
+announced a new breakthrough providing 10 to 20 times the storage capacity</a>
+over current drive technology.
+</dd>
+<p>
+<b>netCDF utilities installed.</b>
+<br>
+<dd>
+I have installed the ncview program for netCDF files as well as GRADS for both 
+SGI and Alpha.  Please note that the SGI version is 1.7 while the Alpha is 1.6, I 
+can not get 1.7 for alpha, nor the source code for 1.7 to compile it.  If anyone can get
+1.7 source I will gladly compile it.  1.7 is required for correct interfacing with 
+netCDF.  Zekai, has resolved the netCDF <-> GRADS issue.  I am assembling a 
+complete list of netCDF programs downloaded and isntalled and will place it under the 
+netCDF reference on this page.
+</dd>
+<p>
+<b>Cross compiling F90 and C</b>
+<br>
+<dd>
+Chris Anderson, and I resolved a little issue with cross compiling F90 and C.  If your
+main is in C then on the Alpha's you need to tell the F90 compiler that this is the case but
+you do not need to on the SGI's, a line like:<br>
+<font color="green">f90 myf90.f -o myprog myCmain.o </font><br>
+will work fine on the SGI's though it will warn you that you have replaced the default f90
+main with your own main (which you of course know, so I don't know why it tells you).
+<br>
+On neither machine did the C compile seem to want to cross compile to the f90 to produce 
+a binary, if people know how to use the C compile to finish a cross compile I would be
+interested to know and document it here.
+<p>
+<b>SMP Linux</b>
+<dd>
+IITAP is doing  work with shared memory parallel programs on Linux.  If you are interested in 
+threaded programming this is a cheap and easy way to explore this programming style.
+Information is available from the <a href="http://www.iitap.iastate.edu/linux">
+Linux SMP page at IITAP</a>.
+
+<p>
+
+
+
+</TD>
+</TR>
+</TABLE>
+
+
+</body>
+</html>

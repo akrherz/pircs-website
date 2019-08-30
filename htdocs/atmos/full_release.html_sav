@@ -1,0 +1,253 @@
+<html>
+<head>
+<title>  PIRCS EXPERIMENT 1 DATASET 
+</title></head>
+<body bgcolor="#FFFFFF">
+<center><FONT COLOR="#ff0000"><h1>Project to Intercompare Regional Climate Simulations <br>
+(PIRCS)</FONT></h1></center>
+<h2> Experiment I Full-Release Dataset</h2>
+
+
+<h3>INDEX</h3>
+<ol>
+<li>-<a href="#intro"> Introdution</a>
+<li>-<a href="#data"> Data files</a>
+<li>-<a href="#datpk">Data packing</a>
+<li>-<a href="#variable"> Updated list of variables to be collected</a>
+</ol>
+
+
+<a name="intro"><b><h2>1 - Introduction</h2></b></a>
+
+Full participation in PIRCS simulations requires you to
+register your model. 
+Please fill out the registration form at the 
+<A HREF="ftp://ftp.pircs.iastate.edu">PIRCS ftp site</a> (directory: /pub/PIRCS)
+and send it to us. Please contact us if any question arises.
+<p>
+
+The full two-month boundary and initial conditions 
+for experiment 1a can also be picked up from the
+<A HREF="ftp://ftp.pircs.iastate.edu">PIRCS ftp site</a> (directory:
+/pub/PIRCS/1988).
+The full dataset is in the same format as the betatest
+except for a slight change in boundary condition (BC) files. 
+<p>
+  
+Experiment 1a covers the period from 0000 UTC May 15 to
+0000 UTC July 15, 1988 and experiment 1b  
+covers that from
+0000 UTC June 1 to 0000  UTC July 31, 1993. The initial conditions
+ for the atmosphere is at the commencement time while that for the 
+sea-lake-surface temperature and soil moisture are the 
+monthly averages. (See betatest for details.)
+As in the betatest, this full dataset consists of data
+themselves and sample reading routines. 
+
+Please fill out the registration form (/PIRCS/FULL.RELEASE/registration_form)
+and send it to us. Please contact us if any question arises.
+
+<hr>
+<a name="data"><b><h2>2 - Data files</h2></b></a>
+
+<br>
+How to get the dataset:</h2></b></a>
+<ol>
+<li>ftp ftp.pircs.iastate.edu (129.186.20.177) <br>
+<li>login: anonymous <br>
+<li>passwd: your e-mail address <br>
+<li>cd /pub/PIRCS/1988 <br>
+</ol>
+<br>
+Under /pub/PIRCS/1988 are four dirctories. One (UTIL.CODE) contains
+sample reading and plotting codes. Three are data directories for different
+proections of the PIRCS domain:<p>
+<table>
+<tr><td>(1) LBTDOM52k </td> <td>(52-km grid Lambert-projection domain)</td></tr>
+<tr><td>(2) REGDOM0p5 </td> <td>(0.5 degree lat-lon domain)</td></tr>
+<tr><td>(3) PSTDOM60k </td> <td>(60-km grid polar stereographic domain)</td></tr>
+</table>
+
+<h3>REGDOM0p5 directory </h3>
+<h4> 1) Terrain, landuse, soil moisture and sea/lake temperaure</h4>
+<ul>
+ATOP0p5.88050100 <br>
+LNDF0p5.88050100 <br>
+SMAP0p5.88050100 <br>
+SST_0p5.880515-0715
+</ul>
+
+<h4> 2) Boundary condtions </h4>
+<ul>
+<table>
+<tr><td>PRCF0p5.88051500.Z</td></tr> 
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr><td>PRCF0p5.88071618.Z</td></tr> 
+</table>
+</ul>
+<h3> PSTDOM60k directory </h3>
+<h4> 1) Terrain, landuse, soil moisture and sea/lake temperature</h4>
+<ul> 
+ATOP60k.88050100 <br>
+LNDF60k.88050100 <br>
+SMAP60k.88050100 <br>
+SST_ps60k.880515-0715 <br>
+</ul>
+
+<h4> 2) Boundary condtions</h4>
+<ul>
+<table>
+<tr><td>PRCF60k.88051500.Z</td></tr>  
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr><td>PRCF60k.88071618.Z</td></tr>
+</table>
+</ul>
+
+<h4> 3) Lat/lon of gridpoints</h4>
+<ul> latlon_map.dat </ul>
+</ul>
+
+<h3>LBTDOM52k directory</h3>
+<h4> 1) Terrain, landuse, soil moisture and sea/lake temperaure</h4>
+<ul>
+ATOL52k.88051500<br>
+LNDF52k.88050100<br>
+SMAL52k.88050100<br>
+SST_1b52k.880515-0715
+</ul>
+
+<h4> 2) Boundary conditions</h4>
+<ul>
+<table>
+<tr><td>PRCF52k.88051500.Z</td></tr>
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr><td>PRCF52k.88071618.Z</td></tr>
+</table>
+</ul>
+
+<h4> 3) Lat/lon of gridpoints</h4>
+<ul> PRCI52k.latlon</ul>
+</ul>
+
+<h3>UTIL.CODE directory</h3>
+
+There are two subdirectories under the READ.CODE directory:<br>
+<ul>
+PS60Km -- for 60km polar-stereographic domain<br>
+REG05d -- for 0.5x0.5 lat/lon domain <br>
+GLB25d -- for 2.5x2.5 lat/lon global domain<br>
+</ul>
+Each contains some example reading and plotting routines.
+
+
+<a name="datpk"><b><h2>3 - DATA PACKING</h2></b></a>
+
+<p><b>Users of the <a href="./pircsex1.html">PIRCS Experiment 1</a> dataset
+should be
+aware that
+the provided variables are not stagggered, i.e., they
+are all
+at the same location.</b> Because participant
+models may use staggered grids horizontally 
+the width of the forcing zone will differ between
+models.
+For example, for the Arakawa B grid, the width for T
+and q will
+be 8 grid spacings, but 9 for U and V.<p>
+ 
+
+It is up to the participant to determine
+which 
+PIRCS dataset suits their needs best. 
+It is recommended that participants use a bilinear
+interpolation method
+to interpolate the PIRCS grid-point data to their own
+model's grid.
+A bilinear interpolation subroutine based on
+<i>bint.f</i> (described in 
+Manning and Haagenson, 1992) is part of program
+<i>indat_gen.f</i> included
+in the distributed dataset.
+Various programs that read the files containing the
+data are available.
+Hopefully these programs are designed
+so that they can be easily adapted by the participants
+in their efforts
+to convert the LBC's to their specific model
+configuration.
+These codes are in <i/pub/PIRCS/1988/UTIL.CODE/IN_DATA</i> at the FTP site. 
+
+<p>The data are packed in integer format, and are in
+slices ('horizontal') of constant pressure. 
+(25 mb being first, 1050 being last.) The data are
+ordered as follows: surface pressure (Variable
+code 001; units Pa), temperature (011; K), specific
+humidity (051; kg/kg), u component of the
+wind (033; m/s), and the v component of the wind (034;
+m/s).  This code "unpacks" the data, as they are
+stored in a positive integer format; i.e., for each
+field (horizontal slice) a maximum value
+is determined, and this (and every other data point) is
+multiplied by some scale factor to ensure
+that the desired number of significant digits are to
+the left of the decimal point.  The
+original data are extracted by subtracting the stored
+data from the base value
+and then dividing by
+the scale factor.  The
+space requirements are minimized through the storage of
+data as positive integers.  To further
+minimize the space requirements, data were compacted
+using the standard UNIX "compress" (a
+modified Lempel-Ziv algorithm popularized in Welch,
+1984) command.  While this choice of
+packing procedure is not a meteorological "standard"
+like GRIB or BUFR, we think that fewer
+problems will be experienced in the short term. 
+
+<p> For each 'horizontal' slice the data are ordered as
+follows, as you look at it on the screen
+(Note, this applies for the ordering of the forcing
+data as well.) <p>
+<center>
+<table>
+<tr><td>SW Corner</td><td>(1,1) .......................................... (XMAX,1)</td><td>SE Corner</td></tr>
+<tr><td></td><td>(1,2) .......................................... (XMAX,2)</td><td></td></tr>
+<tr><td></td><td> .............................. (I,J) ...................................</td><td></td></tr>
+<tr><td></td><td> ...........................................................................</td><td></td></tr>
+<tr><td>NW corner</td><td>(1,YMAX) ...................... (XMAX,YMAX)</td><td>NE Corner</td></tr>
+</table>
+</center>
+<p>
+Note, in the read program, the I index is E-W, and the
+J index is N-S.
+
+
+<br>
+<a name="variable"><b><h2>4 - List of output variables to be saved for PIRCS archives</h2></b></a>
+
+Output variables needed by the PIRCS archive are discussed and listed at the <a
+href="./pircsex1.html#diagn">PIRCS diagnostics</a> Web site.<p>
+<br>
+
+<h2>REFERENCES</h2>
+
+Manning, K. W., and P. L. Haagenson, 1992:
+Data ingest and objective analysis for the
+PSU/NCAR modeling system: Programs DATAGRID and RAWINS.
+<i>NCAR Technical note, NCAR/TN-  376+I</i>A, 209 pp.<p>
+
+
+<a href="../../index.html"><img src="../../button12.gif">
+<br>
+
+
+</body>
+</html>
+

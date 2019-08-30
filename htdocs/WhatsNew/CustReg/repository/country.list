@@ -1,0 +1,307 @@
+#
+# This file contains the complete list of countries.
+#
+# This file is used for creating CountryList marker in day5index.html.
+# It is also used by CountryList class to convert the country name to code
+# and vise versa.
+# 
+# Each valid entry has the following format:
+# 	:countryCode:countryName:countryHtmlName:
+# where,
+#	countryCode 	is the unique id of a country, mostly assigned
+#		   	by ISO. A few of the countries were assigned 
+# 			temporary code by Shari, cuz we did not find them
+#			elsewhere.
+#
+#	countryName	is the string passed from the GUI, i.e. web browser.
+#
+#	countryHtmlName	is the string in HTML. This field is optional.
+#			it takes countryName as the default if this field
+#			is not explicitly given.
+#			e.g. "Antiqua &amp; Barbuda"
+#
+# Note that, It is allowed that a country can have different names with the 
+# same country code. That way, CountryList::nameToCode() can convert the 
+# alias names into the correct country code. For example,
+# 	:AA:Aland Island:
+#	:AA:Aland Isl.:
+#
+# The duplicates must be put in consecutive lines. The country name in that
+# first line is used as the primary name, while the names in the following
+# lines are alias names. The primary name will be used for the day5index.html
+#
+
+# AA code was created by Shari
+:AA:Aland Isl.:
+:AA:Aland Island:
+:AD:Andorra:
+:AE:United Arab Emirates:
+:AF:Afghanistan:
+:AG:Antigua & Barbuda:
+:AI:Anguilla:
+:AL:Albania:
+:AM:Armenia:
+:AN:Netherland Antilles:
+:AO:Angola (Republic of):
+:AO:Angola:
+:AQ:Antarctica:
+:AR:Argentina:
+:AS:American Samoa:
+:AT:Austria:
+:AU:Australia:
+:AW:Aruba:
+:AZ:Azerbaidjan:
+:BA:Bosnia & Herzegovina:Bosnia &amp; Herzegovina:
+:BB:Barbados:
+:BD:Bangladesh:
+:BE:Belgium:
+:BF:Burkina Faso:
+:BG:Bulgaria:
+:BH:Bahrain:
+:BI:Burundi:
+:BJ:Benin:
+:BM:Bermuda:
+:BN:Brunei Darussalam:
+:BO:Bolivia:
+# BQ code was created by Shari
+:BQ:British Antarctic Terr.:
+:BR:Brazil:
+:BS:Bahamas:
+:BT:Bhutan:
+:BV:Bouvet Isl.:
+:BV:Bouvet Island:
+:BW:Botswana:
+:BY:Belarus:
+:BZ:Belize:
+:CA:Canada:
+:CC:Cocos (Keeling) Isl.:
+:CC:Cocos (Keeling) Islands:
+:CF:Central African Republic:
+:CG:Congo:
+:CH:Switzerland:
+:CI:Cote d'Ivoire (Ivory Coast):
+:CI:Cote d'Ivoire:
+:CK:Cook Isl.:
+:CL:Chile:
+:CM:Cameroon:
+:CN:China:
+:CO:Colombia:
+:CR:Costa Rica:
+# reuse "Czechoslovakia (former)" CS code. by Shari
+:CS:Channel Isl.:
+:CS:Channel Island:
+:CU:Cuba:
+:CV:Cape Verde:
+:CX:Christmas Isl.:
+:CX:Christmas Island:
+:CY:Cyprus:
+:CZ:Czech Republic:
+:DE:Germany:
+:DJ:Djibouti:
+:DK:Denmark:
+:DM:Dominica:
+:DO:Dominican Republic:
+:DZ:Algeria:
+:EC:Ecuador:
+:EE:Estonia:
+:EG:Egypt:
+:EH:Western Sahara:
+:ER:Eritrea:
+:ES:Spain:
+:ET:Ethiopia:
+:FI:Finland:
+:FJ:Fiji:
+:FK:Falkland Isl. (Malvinas):
+:FK:Falkland Islands (Malvinas):
+:FM:Micronesia:
+:FO:Faroe Isl.:
+:FR:France:
+:GA:Gabon:
+# see also UK
+:GB:United Kingdom:
+:GD:Grenada:
+:GE:Georgia:
+:GF:Guiana (Fr.):
+:GH:Ghana:
+:GI:Gibraltar:
+:GL:Greenland:
+:GM:Gambia:
+:GN:Guinea:
+:GP:Guadeloupe (Fr.):
+:GP:Guadeloupe:
+:GQ:Equatorial Guinea:
+:GR:Greece:
+:GS:S. Georgia & S. Sandwich Isl.:
+:GT:Guatemala:
+:GU:Guam (US):
+:GW:Guinea Bissau:
+:GY:Guyana:
+:HK:Hong Kong:
+:HM:Heard & McDonald Isl.:
+:HN:Honduras:
+:HR:Croatia:
+:HR:Croatia (Hrvatska):
+:HR:Hrvatska:
+:HT:Haiti:
+:HU:Hungary:
+:ID:Indonesia:
+:IE:Ireland:
+:IL:Israel:
+# IM code was created by Shari
+:IM:Isle of Man:
+:IN:India:
+:IO:British Indian Ocean Terr.:
+:IQ:Iraq:
+:IR:Iran:
+:IS:Iceland:
+:IT:Italy:
+:JM:Jamaica:
+:JO:Jordan:
+:JP:Japan:
+:KE:Kenya:
+:KG:Kyrgyzstan:
+:KH:Cambodia:
+:KI:Kiribati:
+:KM:Comoros:
+:KN:St. Christopher & Nevis:
+:KP:Korea (North):
+:KR:Korea (South):
+:KW:Kuwait:
+:KY:Cayman Isl.:
+:KZ:Kazakhstan:
+:LA:Laos:
+:LB:Lebanon:
+:LC:St. Lucia:
+:LI:Liechtenstein:
+:LK:Sri Lanka:
+:LR:Liberia:
+:LS:Lesotho:
+:LT:Lithuania:
+:LU:Luxembourg:
+:LV:Latvia:
+:LY:Libya:
+:MA:Morocco:
+:MC:Monaco:
+:MD:Moldova:
+:MG:Madagascar:
+:MH:Marshall Isl.:
+:MK:Macedonia:
+:ML:Mali:
+:MM:Myanmar:
+:MN:Mongolia:
+:MO:Macau:
+:MP:Northern Mariana Isl.:
+:MP:Northern Mariana Islands:
+:MQ:Martinique (Fr.):
+:MQ:Martinique:
+:MR:Mauritania:
+:MS:Montserrat:
+:MT:Malta:
+:MU:Mauritius:
+:MV:Maldives:
+:MW:Malawi:
+:MX:Mexico:
+:MY:Malaysia:
+:MZ:Mozambique:
+:NA:Namibia:
+:NC:New Caledonia (Fr.):
+:NE:Niger:
+:NF:Norfolk Isl.:
+:NG:Nigeria:
+:NI:Nicaragua:
+:NL:Netherlands:
+:NO:Norway:
+:NP:Nepal:
+:NR:Nauru:
+:NT:Northern Ireland:
+:NU:Niue:
+:NZ:New Zealand:
+:OM:Oman:
+:PA:Panama:
+:PE:Peru:
+:PF:Polynesia (Fr.):
+:PG:Papua New Guinea:
+:PH:Philippines:
+:PK:Pakistan:
+:PL:Poland:
+:PM:St. Pierre & Miquelon:
+:PN:Pitcairn Isl.:
+:PN:Pitcairn:
+:PR:Puerto Rico (US):
+:PR:Puerto Rico:
+:PT:Portugal:
+:PW:Palau:
+:PY:Paraguay:
+:QA:Qatar:
+# RD code created by Shari
+:RD:Ross Dependency:
+:RE:Reunion (Fr.):
+:RO:Romania:
+:RU:Russian Federation:
+:RW:Rwanda:
+:SA:Saudi Arabia:
+:SB:Solomon Isl.:
+:SC:Seychelles:
+:SD:Sudan:
+:SE:Sweden:
+:SG:Singapore:
+:SH:St. Helena:
+:SI:Slovenia:
+:SJ:Svalbard & Jan Mayen Isl.:
+:SJ:Svalbard & Jan Mayen Islands:
+:SK:Slovakia (Slovak Republic):
+:SK:Slovak Republic:
+:SL:Sierra Leone:
+:SM:San Marino:
+:SN:Senegal:
+:SO:Somalia:
+# SP code was created by Shari
+:SP:Spanish North Africa:
+:SR:Suriname:
+:ST:St. Tome & Principe:
+:SU:Commonwealth of Indep. St.:
+:SV:El Salvador:
+:SY:Syria:
+:SZ:Swaziland:
+:TC:Turks & Caicos Isl.:
+:TD:Chad:
+:TG:Togo:
+:TH:Thailand:
+:TJ:Tajikistan:
+:TK:Tokelau:
+:TM:Turkmenistan:
+:TN:Tunisia:
+:TO:Tonga:
+:TP:East Timor:
+:TR:Turkey:
+:TT:Trinidad & Tobago:
+:TV:Tuvalu:
+:TW:Taiwan:
+:TZ:Tanzania:
+:UA:Ukraine:
+:UG:Uganda:
+# see also GB
+:UK:United Kingdom:
+:UM:US Minor Outlying Isl.:
+:UM:US Minor Outlying Islands:
+:US:United States:
+:UY:Uruguay:
+:UZ:Uzbekistan:
+:VA:Vatican City State:
+:VC:St. Vincent & Grenadines:
+:VE:Venezuela:
+:VG:Virgin Isl. (British):
+:VG:Virgin Islands (British):
+:VI:Virgin Isl. (US):
+:VI:Virgin Islands (US):
+:VN:Vietnam:
+:VN:Viet Nam:
+:VU:Vanuatu:
+:WF:Wallis & Futuna Isl.:
+:YE:Yemen:
+:YT:Mayotte:
+:YU:Yugoslavia:
+:ZA:South Africa:
+:ZM:Zambia:
+:ZR:Zaire:
+:ZW:Zimbabwe:

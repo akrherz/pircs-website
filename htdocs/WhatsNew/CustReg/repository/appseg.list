@@ -1,0 +1,51 @@
+#
+# This file contains a list of application segments
+# It serves as mapping of appseg code to name, and vise versa.
+#
+:000::
+:001:AEC (Architecture/Engineering/Construction):
+:002:Film, Video, Broadcast:
+:004:CFD (Comp Fluid Dynamics):
+:005:Chemistry, Biochem, Biotech, Materials:
+:008:Database:
+:008:Database Management:
+:010:Geosciences (Under Ground):
+:011:EDA (Electronic Design Automation):
+:012:Kiosks and Location Based Entertainment:
+:014:GIS and Defense Imaging (Above Ground):
+:014:GIS & Defense Imaging (Above Ground):
+:015:Publishing:
+:016:Medical Imaging:
+:017:MCAD/MCAM:
+:018:MCAE:
+:018:Mechanical Analysis:
+:020:Medicine and General Biology:
+:020:Medicine & General Biology:
+:025:Visual Simulation:
+:027:Math, Physics, Other Sciences:
+:028:Classified:
+:033:Economic and Financial Planning:
+:033:Economic & Financial Planning:
+:034:Industrial Process Analysis:
+:036:Other Commercial:
+:038:Robotics, Measurement and Control:
+:038:Robotics, Measurement & Control:
+:038:Robotics, Measurement, Control:
+:039:Software Development/CASE:
+:041:Interactive Authoring (Games & Education):
+:042:PDM/MRP:
+:042:PDM (Product Data Management):
+:043:Web Author, Web Server:
+:044:Media Serving:
+:045:File Serving:
+:046:Digital Prototyping:
+:047:Motion Picture, Video:
+:048:Broadcasting (TV, Radio), Cable:
+:049:Interactive (Games, LBE, Kiosks, On-Line):
+:050:Music/Audio:
+:051:Content, Production and Distribution Mgmt:
+:051:Content, Production & Distribution Mgmt:
+:052:Web Authoring:
+:053:Web Serving:
+
+# the end

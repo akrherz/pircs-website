@@ -1,0 +1,14 @@
+#
+# This file contains choices of ConnectInet field.
+# It serves name to code conversion, therefore, all the choices
+# should match with the .html page (i.e. day5yoursystem2.html)
+#
+
+:0::
+:1:No Connection:
+:2:Modem:
+:3:Other Type of Connection:
+:4:Do Not Know:
+
+# the end
+

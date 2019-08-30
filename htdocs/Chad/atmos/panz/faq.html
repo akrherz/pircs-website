@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>  Frequently Asked Questions  
+</title></head>
+<body bgcolor="#FFFFFF">
+<h1> Frequently Asked Questions </h1>
+
+<h3> About initial and boundary conditions </h3>
+<pre>
+Q: How many vetical levels are there in experiment 1?
+<br>
+A: Forty two levels from 25 mb (1st level) down to 1050 mb 
+   (42nd) at 25 mb interval.
+<br><br>
+Q: Should there be a file which defines lat/lon for the half 
+   degree grid? 
+<br><br>
+A: The domain configuration of the 0.5x0.5 degree lat/lon is 
+    as following:
+<br><br>
+   NW corner  (1,YMAX).......................(XMAX,YMAX) NE Corner <br>
+<br><br>
+              ...........(I,J)............... 
+              ............................... 
+<br><br>
+              (1,2) .........................(XMAX,2)
+   SW Corner  (1,1) .........................(XMAX,1) SE Corner
+<br><br>
+   The lat/lon is at SW corner (130.0 W, 20.0 N),
+                     NE        ( 70.0 W, 55.0 N),
+                   center      (100.0 W, 37.5 N).
+<br><br>
+   More info. can be found on the web (betatest, fig.2.2, <A href="Pircsdata_new.html#prcdo">PIRCS domain</A>).<br> 
+<br><br>
+
+Q: I would like to know where I could get information on what the number 
+   means in the landuse file (i.e. LNDF60k.88051500)
+<br><br>
+A: First of all, the actual number in the file should be the max (14) 
+   minus this number. For example, 5 stands for 9 (=14-5).
+
+         1 -- Urban land 
+         2 -- Agriculture
+         3 -- Range-grassland
+         4 -- Deciduous forest
+         5 -- Coniferous forest
+         6 -- Mixed forest and wet land
+         7 -- Water
+         8 -- Marsh or wet land
+         9 -- Desert
+        10 -- Tundra
+        11 -- Permanent ice
+        12 -- Tropical or sub-tropical forest
+        13 -- Savannah
+<br>
+   (Note: this list is adopted from MM5 documentation.)
+
+Q: Is PIRCS dataset available at other sites aside from Iowa
+   State University?
+
+A: Yes. As a backup in case of network failure or slowness, we have
+   loaded PIRCS dataset at NCAR. They are in MSS (mass storage
+   system). The directories are:
+ 
+         /ZPAN/PIRCS_EPRI/PSTDOM60k/PRCF60k.880515-31.tar
+                                   /PRCF60k.880601-15.tar
+                                   /PRCF60k.880616-30.tar
+                                   /PRCF60k.880701-15.tar
+         /ZPAN/PIRCS_EPRI/REGDOM0p5/PRCF0p5.880515-31.tar
+                                   /PRCF0p5.880601-15.tar
+                                   /PRCF0p5.880616-30.tar
+                                   /PRCF0p5.880701-15.tar
+
+   These are large data files excluding smaller ones which can
+   be easily downloaded by other means. 
+
+   In order to download them, one has to have a "shavano" 
+   account at NCAR.
+
+<br>
+
+
+<h3> About output variables </h3>
+
+Q: What is deep-soil heat flux in list of PIRCS-collecting variables? 
+<br><br>
+A: Soil moisture content (flux) is one of the most loosely defined
+   variables. Considering the vast varieties of soil/surface modules 
+   among different models, PIRCS just intends to intercompare the
+   gross features of soil properties. To this end, the deep-soil
+   heat flux generally means the heat flux at the bottom of the 
+   lowest model layer, assuming most models have a couple of soil 
+   layers, say, 0-10 cm, 10-50 cm, 50-200 cm ... 
+<br><br>
+
+Q: I would like to know how to define the mixed-layer
+   depth, especially in cloudy conditions and night time.
+<br><br>
+A: Mixed-Layer Depth in PIRCS is defined based on the potential 
+   temperature profile. The top of the mixed layer should be the 
+   midpoint of the model layer closest to the surface for which 
+   the potential temperature change with height, d(theta)/dz, 
+   exceeds +1 K/km. In case of multiple such layers under cloudy 
+   conditions, only the FIRST one from the ground is considered. 
+   Please note that when the surface layer is stably stratified, 
+   the mixed layer depth is zero.
+<br><br>
+Q: What is the plant available soil moisture? 
+<br><br>
+A: The plant available soil moisture in the table is mainly referring 
+   to the unit of soil moisture (in terms of access above wilting 
+   points). PIRCS wants to collect soil moisture over a depth equivalent 
+   to the root zone, which is about 100 cm. Again, a specific definition 
+   for root zone is difficult among different model groups. Thus, we ask 
+   participants to save soil moisture content in all model layers 
+   because we do not know how complex soil modules are on average. 
+   (Please see <A href="Pircsdata_new.html#sfcfld">initial soil moisture</A>)
+<br><br>
+
+Q: We have a model level which is not many meters away. Can this
+   be a substitute for 500-m level for the purpose the leve-level
+   jet diagnosis?
+<br><br>
+A: (1) the LLJ is (by definition) a region of strong wind shear, 
+   so the wind differs substantially over a small increment of 
+   height, and (2) we get into the question of how close is close 
+   enough. Because of the nature of the PIRCS (INTERCOMPARISON), 
+   please do interpolate winds to 500 AGL.
+<br><br>
+
+</pre>
+<a href="./Pircsdata_new.html">Betatest release</a><p>
+<a href="./full_release.html">Full release</a><p>
+<a href="./validation.html">Validation</a><p>
+Go to the <a href="../pircs_test.html">PIRCS</a> home page
+</body>
+</html>
+

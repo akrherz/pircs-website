@@ -1,0 +1,31 @@
+<?xml version="1.0"?><rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns="http://my.netscape.com/rdf/simple/0.9/">
+
+  <channel>
+    <title>PIRCS</title>
+    <link>http://www.pircs.iastate.edu</link>
+    <description>Project to Intercompare Regional Climate Simulations (PIRCS)</description>
+  </channel>
+
+  <image>
+    <title>PIRCS</title>
+    <url>http://www.pircs.iastate.edu/rdf/image/smpircslogoSM.gif</url>
+    <link>http://www.pircs.iastate.edu</link>
+  </image> 
+
+
+    <item> 
+     <title>IUGG99 (18-30 July 1999, Birmingham, U.K.)</title> 
+     <link>http://www.pircs.iastate.edu/PIRCS-IUGG.html</link> 
+    </item> 
+    <item> 
+     <title>PIRCS Modelers Meeting (11 January 2000, Long Beach, CA)</title> 
+     <link>http://www.pircs.iastate.edu/PIRCSnotes.html</link> 
+    </item> 
+    <item> 
+     <title>RCS Review and Planning Workshop (22-23 May 2000, Copenhagen, Denmark) </title> 
+     <link>http://www.pircs.iastate.edu/CPH/</link> 
+    </item> 
+ 
+</rdf:RDF>

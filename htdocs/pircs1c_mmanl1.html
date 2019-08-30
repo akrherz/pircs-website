@@ -1,0 +1,104 @@
+<html>
+<body bgcolor="#FFFFFF" background="background2.jpg"
+link="#666666" vlink="#666666">
+<head><title>PIRCS1C - Modeling Description for MM5ANL</title>
+</head>
+<body>
+<b>Investigator(s): </b><br>
+John Taylor <br>
+Argonne National Laboratory <br>
+
+<p>
+<b>Contact information of investigator(s): </b><br>
+jtaylor@mcs.anl.gov <br>
+
+<p>
+<b>Model grid type: </b><br>
+Lambert Conic Conformal <br>
+standard latitude 1 = 60 <br>
+standard latitude 2 = 30 <br>
+standard longitude = -100 <br>
+cone factor = 0.7155668 <br>
+
+<p>
+<b>Horizontal grid spacing (or equivalent node spacing for spectral models): </b><br>
+52 km, centered on 35, -100 <br>
+85 n-s and 101 e-w grid points <br>
+
+<p>
+<b>Model vertical coordinate and number of vertical levels: </b><br>
+sigma, 23 levels <br>
+
+<p>
+<b>Model dynnamics: </b><br>
+nonhydrostatic, compressible <br>
+
+<p>
+<b>Lateral boundary relaxation method and number of points in buffer zone: </b><br>
+Linear nudging of boundary data toward internal solution over 4 grid points <br>
+
+<p>
+<b>Number of soil layers for which soil temperature is computed: </b><br>
+4 layers (Noah LSM)<br>
+
+<p>
+<b>Number of soil layers for which soil water content is computed: </b><br>
+4 layers (Noah LSM)<br>
+
+<p>
+<b>Number of surface vegetation types: </b><br>
+16 land surface classes from US Geological Survey SiB model<br>
+
+<p>
+<b>Formulation for boundary-layer fluxes (e.g., local K-theory based upon gradient Richardson number): </b><br>
+Hong-Pan (MRF) PBL, using Troen-Mahrt representation of countergradient
+term and nonlocal K profile <br>
+
+<p>
+<b>Representation of explicit precipitation (e.g., rain and ice physics): </b><br>
+Dudhia scheme, simple ice physics <br>
+snow and ice clouds only permitted below 0C; liquid clouds only permitted above 0C<br>
+snow only permitted below 0C; rain only premitted above 0C<br>
+
+<p>
+<b>Prognostic variables for explicit precipitation (e.g., cloud water; rain water; number of ice species): </b><br>
+cloud water, rain water <br>
+
+<p>
+<b>Formulation for convective parameterization (e.g., Kuo-type): </b><br>
+Grell, no shallow convection <br>
+
+<p>
+<b>Reference(s) containing model description: </b><br>
+Grell, J. Dudhia, and D. R. Stauffer, 1993: A description of the
+fifth-generation Penn State/NCAR mesoscale model (MM5). NCAR Tech.
+Note NCAR/TN-397+STR. National Center for Atmospheric Research,
+Boulder, CO, 200 pp. <br>
+Dudhia, J., and J. F. Bresch, 2002: A global version of the PSU-NCAR mesoscale
+model. <i>Mon. Wea. Rev.</i>, <b>130</b>, 2989-3007.<br>
+<a href="http://www.mmm.ucar.edu/mm5/mm5-home.html"> Online description </a><br>
+
+<p>
+<b>Reference(s) describing land-surface parameterization: </b><br>
+Chen, F., and J. Dudhia, 2001: Coupling an advanced land-surface/hydrology
+model with the Penn State/NCAR MM5 modeling system. Part I: Model
+implementation and sensitivity. <i>Mon. Wea. Rev.</i>, <b>129</b>, 569-585.<br>
+Chen, F., and J. Dudhia, 2001: Coupling an advanced land-surface/hydrology
+model with the Penn State/NCAR MM5 modeling system. Part I: Preliminary
+model validation. <i>Mon. Wea. Rev.</i>, <b>129</b>, 587-604.<br>
+
+<p> 
+<b>Reference(s) describing convective parameterization: </b><br>
+Kain, J. S., and J. M. Fritsch, 1990: A one-dimensional entraining/detraining
+plume model and its application in convective parameterization. <i> J. Atmos.
+Sci.</i>, <b>47</b>, 2784-2802. <br>
+
+<p>
+<b>Reference(s) describing boundary-layer parameterization: </b><br>
+Hong, S.-Y., and H. L. Pan, 1996: Nonlocal boundary layer vertical diffusions
+in a medium-range forecast model. <i>Mon. Wea. Rev.</i>, <b>124</b>, 2322-2339.<br>
+
+<p>
+<b>Reference(s) describing explicit precipitation paramerization: </b><br>
+Dudhia, J., 1989: Numerical study of convection observed during the Winter Monsoon Experiment
+using a mesoscale two-dimensional model. <i> J. Atmos. Sci.</i>, <b>46</b>, 3077-3107.<br>

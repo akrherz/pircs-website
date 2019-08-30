@@ -1,0 +1,776 @@
+<html>
+<head>
+<title>  PIRCS BETATEST DATASET 
+</title></head>
+<body bgcolor="#FFFFFF">
+
+<pre>
+<h1>
+ <FONT COLOR="#ff0000">PIRCS Betatest Dataset</FONT></H1>
+ <H3>
+ Description of the PIRCS Betatest Dataset and
+ documentation of the procedures used in its production 
+ </h3>
+
+<br>
+<IMG ALIGN=top SRC=logo.gif>
+<br>
+</pre>
+INDEX
+<BR>
+<UL>
+<li><a href="#intro">1 - INTRODUCTION</a>
+<li><a href="#prcdo">2 - PIRCS DOMAINS</a>
+<li><a href="#NCEPre">3 - NCEP REANALYSIS DATASET</a>
+<li><a href="#prepd">4 - PREPARATION OF PIRCS DATASET</a>
+<li><a href="#cgeop">5 - COMPUTATION OF GEOPOTENTIAL</a>
+<li><a href="#press">6 - PROCEDURE FOR COMPUTING SURFACE AND MEAN SEA
+LEVEL PRESSURE</a>
+<li><a href="#sfcfld">7 - SURFACE FIELDS SUCH AS SST AND SOIL-MOISTURE</a>
+<li><a href="#datpk">8 - DATA PACKING</a>
+<li><a href="#tarxf">9 - TAPE ARCHIVING AND FILE EXTRACTION</a>
+<li><a href="#howto">10 - HOW TO GET THE BETATEST DATASET</a>
+<li><a href="#prelim">11 - ISU's BETATEST - PRELIMINARY RESULTS</a>
+<li><a href="#aknlg">ACKNOWLEDGMENTS</a>
+<li><a href="#refer">REFERENCES</a>
+<li><a href="#misce">MISCELLANEOUS</a>
+</ul>
+<br>
+<a name="misce"><b><h2>I - MISCELLANEOUS</h2></b></a>
+
+<h3>Constants</h3><br>
+f=(2 pi)/(day length) = 7.0326x10-5 s-1 is the coriolis parameter<br>
+g = 9.8 m/s^2 is the acceleration due to gravity<br>
+Rd = 287.1<br>
+Rv = 451.05<br>
+<h3>URL's of related websites.</h3><br>
+<A HREF="http://www.physics.iastate.edu/atmos/pircs.html"> 
+- Website for PIRCS</A><br>
+<A HREF="ftp://ncardata.ucar.edu/datasets/ds090.0">
+- NCEP Reanalysis dataset information </A> <br>
+<A HREF="ftp://nic.fb4.noaa.gov/pub/nws/nmc/docs">
+- GRIB documentation</A>
+
+<br>
+Note, the National Center for Environmental Prediction (NCEP)
+in the United States was formerly known as the
+National Meteorological Center (NMC).  This change officially
+went into effect in November, 1995.
+<br>
+<h3>PIRCS points of contact at Iowa State</h3><br>
+<A HREF="http://www.public.iastate.edu/~wxintro/faculty/turner.html"> 
+Richard Turner</A>, rwturner@iastate.edu - 515 294 0264<br>
+<A HREF="http://www.public.iastate.edu/~wxintro/faculty/gutowski.html"> 
+Bill Gutowski</A>, gutowski@iastate.edu - 515 294 5632<br>
+<A HREF="http://www.public.iastate.edu/~wxintro/faculty/takle.html"> 
+Gene Takle</A>, gstakle@iastate.edu - 515 294 9871<br>
+<A HREF="http://www.public.iastate.edu/~panz/"> 
+Zaitao Pan</A>, panz@iastate.edu - 515 294 9758<br>
+<A HREF="http://www.public.iastate.edu/~wxintro/faculty/arritt.html"> 
+Ray Arritt</A>, rwarritt@iastate.edu - 515 294 9870<br>
+Fax - 515 294 3163
+<br>
+The IP number for the machine <b>pv14b1.vincent.iastate.edu</b>
+ is 129.186.20.177
+<br>
+<br>
+<a name="intro"><b><h2>1 - INTRODUCTION</h2></b></a>
+<p>     In November 1994, 35 people representing 17 models (mainly mesoscale)
+from several countries gathered in Ames, Iowa to discuss the organization of
+a project to compare seasonal simulations by mesoscale models run in climate
+mode (Takle, 1995).  This meeting was the genesis for the Project to
+Intercompare Regional Climate Simulations (PIRCS).  A report of this
+meeting, which includes the projects mission statement can be found at
+the URL<A HREF="http://www.physics.iastate.edu/atmos/mesowkshop.html"> 
+http://www.physics.iastate.edu/atmos/mesowkshop.html.</A><br> </p>
+<p>     Part of the PIRCS mission statement reads as follows:<br><i>
+"To advance the status of regional climate modeling by evaluating the
+ strengths and weaknesses of limited-area models and their component
+procedures through systematic, comparative
+simulations ...................</p>
+<p>    A useful approach for improving regional simulation by limited-area
+models is the comparison of simulations produced by different models with
+each other as well as with available observations. Strengths and weaknesses
+of model structures, numerics and parameterizations can be assessed
+side-by-side.  The utility of model intercomparisons is greatly
+enhanced if the models operate under the same external constraints, such
+as dynamic and radiative input across model boundaries.  To this end,
+participants in the Project to Intercompare Regional Climate Simulations
+(PIRCS) will perform a common set of simulations
+with limited-area models and produce a common output set, both designed 
+to highlight strengths and weaknesses of individual models and of this
+general approach to simulating regional climate."</p></i>
+<p> The design of the initial PIRCS experiment - the objective of which
+is to fulfil partially the mission statement - is described at the PIRCS
+ website <A HREF="http://www.physics.iastate.edu/atmos/pircsex1.html"> 
+(http://www.physics.iastate.edu/atmos/pircsex1.html).</A><br>
+Essentially, the first experiment requires that the participating 
+groups conduct a 2 month summer simulation for 1988 over the US.  As
+the mission statement suggests, the same initial and lateral boundary
+conditions are to be used by all participating groups since significant 
+sources of variation between the models need to be isolated.  
+This requirement dictates that there be a 'standard' PIRCS dataset and
+that there be a coordinated distribution of this dataset to all project
+participants. As it turns out - for technical
+reasons - 4 standard datasets have been produced for the 2 month period.</p>
+<p>     This document describes the procedures used in preparing the dataset(s)
+and in distributing it to the project participants.  Note, for preliminary
+testing purposes (i.e., beta testing), a 5-day subset of the data 
+set will be distributed to those groups wishing to assess the
+feasibility of their participation in PIRCS.</p>
+<br>
+<a name="prcdo"><b><h2>2 - PIRCS DOMAINS</h2></b></a>
+<br>
+<p>     To aid the discussion of the procedures relating to the preparation
+of the PIRCS BETATEST DATASET the times and domains for which they are
+available are described below.</p>
+
+<p>     The data are for every 6 hours from 00 UTC 1 July to
+00 UTC 6 July 1988.</p>
+<p>  There are three domains for which the data is available:<br>
+<DL>
+<DT> domain (i)
+<DD> global coverage with (144x73) grid points evenly spaced every
+     2.5 degrees in both latitude  and longitude (this will be for use by
+     spectral modelers). Grid point (1,1) is at (90 S, 0 E) and (144,73)
+     is at (90 N, 2.5 W).
+
+<DT> domain (ii)
+<DD> an extended (by 10 grid points) "forcing frame" that surrounds a limited
+     domain of 81(E-W) x 55(N-S) grid points.  The limited-area domain
+     covers much of North America and it is defined by a polar
+     stereographic projection that
+     has a central latitude of 37.5 N, a central longitude of 100 W, 
+     and a grid spacing of 60 km.  This configuration is
+     depicted in Fig. 2.1 below, and
+<br>
+<IMG ALIGN=top SRC=pircspsg.gif1>
+<br>
+<Pre>
+Fig. 2.1 - The PIRCS 60-km polar stereographic grid.  Every second grid
+point of the inner domain is marked with a +; every second grid point 
+of the outer domain (forcing frame) is marked with a o.
+Orientation of the inner domain:
+Central point      (X_28, Y_41) (37.50 N, 100.00 W)
+Lower left corner  (X_1 ,  Y_1) (23.48 N, 117.93 W)
+Upper right corner (X_55, Y_81) (45.87 N,  70.12 W).
+</Pre>
+
+<br>
+    
+<DT> domain (iii)
+<DD> an extended (by 10 grid points) "forcing frame" that surrounds
+     a limited domain of 101(E-W) x 51(N-S)
+     grid points spaced regularly at 0.5 degrees.  
+     The borders of this grid were chosen so as to make its  coverage similar
+     to domain (ii), the SW corner is at (25 N, 125 W) and the NE corner is at
+     (50 N, 75 W).   This configuration is depicted in Fig. 2.2 below.
+<br>
+<IMG ALIGN=top SRC=pircsreg.gif1>
+<br>
+<Pre>
+
+Fig. 2.2 - The PIRCS 1/2-degree latitude-longitude grid.  Every second grid
+point of the inner domain is marked with a +; every second grid point of
+the outer domain (forcing frame) is marked with a o.
+Orientation of the inner domain:
+Central point      (LAT=26, LON= 51) (37.5 N, 100.0 W)
+Lower left corner  (LAT= 1, LON=  1) (25.0 N, 125.0 W)
+Upper right corner (LAT=51, LON=101) (50.0 N,  75.0 W)
+
+</Pre>
+</DL>
+
+<p>  Note, in order to create the dataset for domain(ii), a domain
+     that encompassed (ii) and which was a super-set of
+     domain (iii) was temporarily in use. </p>
+
+<p>  Note, for the limited domains, the forcing frame is extended by 10 grid
+     points in each direction. Thus for domain (ii), the forcing frame plus
+     the interior simulation is a 101(E-W) x 75(N-S)
+     grid (with the same center point and grid
+     spacing as the inner domain) and for domain (iii) the forcing frame 
+     plus the interior simulation domain is a 121(E-W) x 71 (N-S) grid
+     with a SW corner at (20 N, 130 W), and a
+     NE corner at (55 N, 70 W).  Files are provided which
+     provide the latitude/longitude coordinate of each I,J point for each
+     domain.</p>
+
+<p> For the initial time (00 UTC 1 July) the data is provided at all grid
+    points on the outer domain.  For all other times the data is provided at
+    the grid points which are in the forcing
+    domain, but outside of the inner simulation domain
+    (indicated by o in the figures) </p>
+ 
+<a name="NCEPre"><b><h2>3 - NCEP REANALYSIS DATASET</h2></b></a>
+
+<p>  The PIRCS dataset is derived from the NCEP Reanalysis Project dataset
+(Kalnay, 1996).
+The data for 1988 were obtained from the Data Support Service (DSS) at the
+National Center for Atmospheric
+Research (NCAR).  Information about the NCEP Reanalysis Project
+dataset appears at the URL
+<A HREF="ftp://ncardata.ucar.edu/datasets/ds090.0">
+ ftp://ncardata.ucar.edu/datasets/ds090.0 </A>.
+A brief description of the NCEP spectral model and assimilation procedures
+used to create the Reanalysis dataset are described in Kalnay et al. (1996).
+PIRCS used the 'grbsanl' dataset (a subset of the NCEP Reanalysis dataset).
+For this subset, the data were on
+a T62 gaussian transform grid (192x94 grid points) 
+at 28 sigma levels ranging from sigma = 0.00273 to sigma = 0.9985.
+The longitudinal spacing for the gaussian grid was 1.875 degrees and
+the gaussian latitudes, as well as the sigma levels, can be obtained from the
+ds090.0 website.
+
+     The grbsanl dataset was distributed on 8 mm exabyte tapes, 
+which are labeled as follows:<pre>
+          Vol S26018 for January-June, 1988,
+          Vol S26019 for July-December,1988,
+          Vol S26006 for January-June, 1993,
+          Vol S26007 for July-December,1993.
+</pre>
+
+<p>   Inventory sheets for these tapes are attached; see section 8
+ for instructions regarding extraction of the files from the tape.  
+Once the files are extracted, they have to be 'degribbed' before
+processing.  The degribbing code is on <b>pv14b1.vincent.iastate.edu</b> in
+<i>/local/users/rwturner/GRIBalpha</i>, and is available, upon request,
+by anonymous
+ftp from this machine, instructions on file retrieval from anonymous
+ftp sites are also given in section 8.  (Throughout this document references
+are made to files at <i>/local/users/rwturner</i>, these are intended for
+internal use at Iowa State, but most can be made available upon request).
+A URL where information about GRIB messages can be obtained is 
+<A HREF="ftp://nic.fb4.noaa.gov/pub/nws/nmc/docs">
+ ftp://nic.fb4.noaa.gov/pub/nws/nmc/docs </A>.
+To degrib (or unpack) the data for each time period, an inventory of the
+PDS's (product definition sections) for each field you want 
+unpacked has to be created.  You can do this by formatting the
+ <i>unpkgrb1.dat </i>  file as follows, assuming the time period is 12 UTC
+2 July 1988, and the grbsanl file is stored in the directory
+<i>/PIRCS/NCEPgrbsanl</i></p>
+
+<pre>
+90000/PIRCS/NCEPgrbsanl
+test1.dat
+  FFFFFFFF  00000000  00000000  00000000  00000000  00000000  00000000  0
+</pre>
+
+and executing the command
+
+<b>unpkgrb1.x >  inventory </b>
+
+<p>
+     The inventory file will contain PDS's for 172 fields of different
+ variables (fields are horizontal slices along constant levels).
+  Stackpole (1994) details the WMO format of the GRIB
+ (edition 1) messages, and this can be consulted to decode the PDS's
+ to determine which GRIB records need to be decoded.  For PIRCS purposes the
+ the required fields were T, q, u, and v at all 28 sigma levels
+ as well as surface pressure and surface geopotential.  Once the needed
+ PDS's are determined, a new <i>unpkgrb1.dat </i> file has to be created
+ - in which all the necessary PDS's are included, the
+ format of this file is as follows: </p>
+  
+<pre>
+10000/PIRCS/NCEPgrbsanl
+test1.dat
+  00001C02  0750FF80  0B6B26DE  5807020C  00010000  0A000000  14000001  0
+  00001C02  0750FF80  0B6B265D  5807020C  00010000  0A000000  14000001  0
+                      ..................
+                      Var Sig     Date
+                      ..................
+  00001C02  0750FF80  01010000  5807020C  00010000  0A000000  14008001  0
+  00001C02  0750FF80  07010000  5807020C  00010000  0A000000  14000000  0
+  FFFFFFFF  00000000  00000000  00000000  00000000  00000000  00000000  0
+</pre>
+
+<p>It isn't necessary to create new inventory files for all time periods
+ if you edit the date octet as appropriate in the 2nd <i>unpkgrb1.dat </i>
+ file listed above (i.e., the one with all the needed PDS's
+ already listed), just be aware the record is in hexadecimal
+ so 88070212 is 5807020C.  Note:<br> 
+<pre>
+00H=00D, 01H=01D, 02H=02D, 03H=03D, 04H=04D, 05H=05D, 06H=06D, 07H=07D,
+08H=08D, 09H=09D, 0AH=10D, 0BH=11D, 0CH=12D, 0DH=13D, 0EH=14D, 0FH=15D,
+10H=16D, 11H=17D, 12H=18D, 13H=19D, 14H=20D, 15H=21D, 16H=22D, 17H=23D,
+18H=24D, 19H=25D, 1AH=26D, 1BH=27D, 1CH=28D, 1DH=29D, 1EH=30D, 1FH=31D,
+20H=32D, 58H=88D, and 5DH=93D.
+</pre></p>
+<p>
+To create the output file test1.dat containing all the required fields,
+simply execute the command<br>
+<b>unpkgrb1.x</b><br>
+The file <i>test1.dat</i>  is then used for input by the routines
+that create the PIRCS dataset.  Note, the programs in 
+<i>/local/users/rwturner/ncargraphics/global.conpack</i> can be used
+ to plot the degribbed reanalysis data. </p>
+ 
+
+<a name="prepd"><b><h2>4 - PREPARATION OF PIRCS DATASET</h2></b></a>
+<br>
+<i>a) "Horizontal Interpolation</i>"
+<p>    Assuming the NCEP reanalysis data have been unpacked correctly for all
+28 sigma levels, they are then converted from the T62 Gaussian Grid to
+spectral coefficients. After the spectral coefficients have been computed 
+the data are converted back to the PIRCS regularly spaced grids, domain (i) 
+grid and sup-(iii), where sup-(iii) is a super set of domain (iii) that
+encompasses domain (ii). A bilinear interpolation [see Manning and Haagenson
+(1993) for details] is used to interpolate the data from sup-(iii) to domain
+(ii).  Note, since the dimensions of domain (i) and (iii) are different, 
+two slightly different sets of codes are maintained in two directories
+(<i>/local/users/rwturner/gsm</i> and <i>/local/users/rwturner/gsm.hi</i>).
+ These codes
+are adapted from a global spectral model (GSM) that has been documented in
+Bourke (1974) and Nehrkorn and Hoffman (1985). </p>
+
+
+<p>     The file containing the fortran code (there are many subroutines in
+ this file) in which the conversion to and from the spectral coefficients is
+done
+is called <i>gtend.f</i>.  Given the structure of the <i>gtend.f</i> routines,
+and a
+threshing problem (swap space problems due to huge size of data
+arrays), it was more convenient to perform the vertical interpolations within
+the subroutine <i>laloop</i>.  The vertical interpolation procedures are
+described in the next section. </p>
+
+
+<i>b) Vertical Interpolation and Extrapolation</i>
+<p>     Vertical interpolation from the 28 sigma levels to the 42 regularly
+spaced PIRCS pressure levels (every 25 mb from 25 mb to 1050 mb) is done
+within the <i>laloop</i> subroutine, and is based on a linear in
+ <i>ln p</i> interpolation.
+The code for this was adapted from the <i>sig2prs</i> (sigma to pressure)
+subroutine of the <b>INTERP</b> which is an MM5 preprocessing program. This was
+done for all variables, except for specific humidity, q, which was first
+converted to relative humidity (RH). RH was then interpolated as for 
+the other variables, except it was subject to the constraint that 0
+< RH  < 97%.  Note, in computing RH, saturated vapor pressures were computed
+using a look-up tabular method used at NCEP.</p>
+
+
+<p>     For PIRCS pressure levels that were below the analysis surface
+(i.e., for pressure levels greater than the analysis p_sfc),
+extrapolation of the variables had to be done.  The wind components u and v
+were set equal to u(sigma=28), and v(sigma=28) respectively.  Temperature, T,
+was extrapolated
+along the moist adiabat that intersected T(sigma=28), and RH was extrapolated
+subject to the constraint that q was constant and equal to q(sigma=28).
+Reasons for the 
+adopting the extrapolation procedures described above are
+elaborated upon in section 6.  Once T and RH were known for all levels,
+q was calculated.  Figures
+<A HREF=p4fig41a.gif> 4.1a (0.0176 MB)</A>,
+<A HREF=p4fig41b.gif> 4.1b (0.0175 MB)</A>,
+<A HREF=p4fig41b.gif> 4.1c (0.0175 MB)</A>, and
+<A HREF=p4fig41b.gif> 4.1d (0.0172 MB)</A>,
+show some initial NCEP reanalysis
+soundings over the PIRCS domain, and the resultant interpolated/extrapolated 
+soundings.  Note, there is some loss of information within the
+boundary layer and some smoothing of the profiles.</p>
+
+<a name="cgeop"><b><h2>5 - COMPUTATION OF GEOPOTENTIAL</h2></b></a>
+<br>
+<p>     Some participants have requested that geopotential data be provided every
+50 mb as part of the data-set.  These data will not be distributed with the
+PIRCS data set, but will be available upon request.  The geopotential was
+computed as follows: the surface geopotential ( which is also
+the analysis topography) was part of the NCEP reanalysis data-set.</p>
+
+<p>Geopotential heights were computed at each of the 28 levels through integration 
+of the hypsometric equation, i.e.,<br>
+<IMG ALIGN=top SRC=eq51.gif>
+<br>
+where  "T_v bar" is the average (in <i>ln p</i>) virtual temperature of the k+1 -- k layer.
+Note; T_v = T (1 + 0.61q), and T and q are known at the sigma levels, and p_k = sigma*p_sfc,
+where K = 1,..,28 with sigma(1) = 0.0027 and sigma(28) = 0.9985.   Note for k=28,
+geopotential was computed as follows,<br>
+<IMG ALIGN=top SRC=eq52.gif>
+<br>
+In order to compute  T_v in the surface to sigma=28 layer, the surface temperature and
+specific humidity have to be estimated, q is set to the value at sigma=28 and
+T is linearly interpolated in <i>ln p</i> between the pressure level at sigma=28 
+and the PIRCS pressure level immediately below the surface.</p>
+
+<p>     A linear in <i>ln p </i>interpolation is then done to get at the required
+ pressure levels
+(i.e., every 25 mb from  25 mb to 1050 mb) above the surface.  To get the geopotential at
+pressure levels below the surface,
+downward integration of the hypsometric equation is done using the values (previously extrapolated
+to the pressure levels) of T and q.  Finally, after
+geopotential has been computed
+everywhere, some horizontal 
+smoothing of the extrapolated values is done.
+Plots of the 850 mb and 1000 mb
+geopotential heights for 00 UTC 1 July 1988 are provided in Figures
+<A HREF=p5fig51.gif> 5.1 (0.0170 MB)</A>, and
+<A HREF=p5fig52.gif> 5.2 (0.0143 MB)</A>.
+When the Shuell method (an NCEP technique) was used to extrapolate
+temperatures a diurnal bias over the high
+terrain was evident (in regions of high terrain, heights below the surface were too large
+when a nocturnal inversion was present)</p>
+
+<a name="press"><b><h2>6 - PROCEDURE FOR COMPUTING SURFACE AND MEAN SEA LEVEL PRESSURE
+</h2></b></a><br>
+<p>    Surface pressure (Analysis p_sfc) will be distributed as part of the PIRCS analysis data set.
+Surface pressure was distributed as part of the NCEP reanalysis dataset, and it was fit to the PIRCS
+domains (i.e., (i), (ii), and (iii)) using the procedures described previously in section 4.a. 
+However, since most PIRCS participants will have their own model topography (or model surface 
+geopotential), which will be more detailed 
+than the analysis topography (i.e., analysis surface geopotential - which is provided by PIRCS),
+a method for computing a model's surface pressure  (Model p_sfc) is needed.</p>
+<br>
+<IMG ALIGN=top SRC=fig61.gif>
+<br>
+Figure 6.1:    Schematic showing  DEL Z.<br>
+<p>
+Participants are urged to adopt the procedure outlined below for the purposes of the
+intercomparison in order to eliminate unnecessary sources of variation among the models.  Code
+for  the procedure is included in the distributed dataset (part of <i>indat_gen.f</i>).
+If anyone notices a problem with this
+method or can suggest improvements, please contact us. 
+The procedure is as follows:
+Letting DEL Z = Model surface geopotential - Analysis surface geopotential (as in Fig. 6.1)
+and by use of the hypsometric equatioa,n an expression for 
+Model p_sfc can be obtained as:<br>
+<IMG ALIGN=top SRC=eq61.gif>
+<br>
+where Del Z' is given by<br>
+<IMG ALIGN=top SRC=eq62.gif>
+<br>
+
+Here T_v can be replaced with an average virtual temperature for each layer (as was done in the
+geopotential calculation).  Note, p_k are the PIRCS pressure levels that lie within the interval
+[Model p_sfc, Analysis p_sfc] and an initial guess for the Model's
+p_sfc has to be made, so that p_1,...,p_n can be determined and an estimate of the average virtual
+temperature in the Model p_sfc - p_1 layer can be made.  The initial guess for  Model p_sfc is
+assumed to be (Analysis p_sfc-(Del Z/9)).</p>
+
+
+<p>     A similar method is used to compute mean sea level pressure (p_msl).  All that is required is
+that the Model surface geopotential = 0, so DEL Z= - Analysis Surface geopotential and p_1 has to be
+replaced by 1013.25 in Eq. 6.2.  Sample
+calculations were carried out for domain (ii) with a terrain dataset from MM5.  Plots of Model p_sfc
+and p_msl are for 00 UTC 1 July 1988 are provided in Figures
+<A HREF=p6fig62.gif> 6.2 (0.0181 MB)</A>, and
+<A HREF=p6fig63.gif> 6.3 (0.0146 MB)</A>.
+Note, for the MM5 terrain
+dataset, the magnitude of DEL Z was as large as 800 m over the high  terrain of the Rockies. For the
+forcing frame, DEL Z became large over the southern Mexico mountain ranges and over the
+Canadian Rockies.
+(<A HREF=p6fig64a.gif> Figure 6.4a(0.0172 MB)</A> shows the analysis topography and
+<A HREF=p6fig64b.gif> Figure 6.4b (0.0173 MB)</A>. shows the MM5 topography.)
+Note, that the necessity of removing diurnal biases in psfc_M and p_msl dictated
+the extrapolation method for temperature described in section 4b.  For
+example, attempts to preserve
+nocturnal inversions resulted in unrealistically high values of Model p_sfc (or p_msl) when DEL Z was large
+and negative (i.e., when the model's topography was well below the analysis topography).  This
+was the reason for extrapolating temperature down the moist adiabat.  The mesoscale models 
+will develop their own inversions within the interior of the simulation domain, but it may be of
+interest to determine the sensitivity of the regional climate simulations to the temperature
+extrapolation method, i.e., what problems do we encounter if we rigorously preserve boundary
+layer features of the NCEP Reanalysis?  Recall, a regional climate simulation does not have the
+same constraints as a forecast simulation. For example, contamination by errors in the boundary
+conditions that affect the timing of rainfall, but not the overall amounts, may not be as important in
+a climate simulation. </p>
+
+<br>
+<a name="sfcfld"><b><h2>7 - SURFACE FIELDS SUCH AS SST AND SOIL-MOISTURE</h2>
+</b></a>
+<br>
+<p>The NCEP reanalysis July 1988 monthly averaged surface temperature 
+fields, along with gridded Great Lake temperature values (supplied by
+the Climate Research Branch, Atmospheric Environment
+Service, Downsview, Ontario)  were used to create the PIRCS
+gridded sea surface/lake temperature 
+data. For the SST's this was done using a similar procedure
+(but without the vertical interpolation step)
+to what was done for the temperature at the pressure levels, i.e.,
+spectral coefficents were computed from the T62 gridded data, from these
+coefficents the fields for each of the three domains was computed.
+The procedure for computing the lake temperatures was to compute
+the July average of the lake surface temperatures at the supplied 
+points, then to use a cressman scheme to interpolate to the 
+PIRCS domains. The computed lake temperatures were then blended 
+with the surface temperature fields already created. 
+Since each participating group will have a different land/sea mask (or
+Great lakes/land mask), values of surface temperature are provided
+for each grid point.  Note, the PIRCS supplied land use files
+<b>LNDF60k.88070100</b> and <b>LNDF0p5.88070100</b> can be used
+to provide a land/ocean mask (7 = Ocean/Lake, all other numbers = Land)
+for those that need it.
+(<A HREF=gmetaSSTR.gif> Figure 7.1(0.00833 MB)</A> shows the SST field
+for PIRCS domain (iii).</p>
+
+<p>The initial soil-moisture fields are provided in the form of a surface
+moisture availabilty (<i>m</i>).  This gridded soil moisture data was
+obtained from the June 1988 NCEP reanalysis volumetric soil-moisture content
+in the uppermost 10 cm layer of the soil.
+The algorithm to obtain <i>m</i> from the volumetric soil-moisture content (eta)
+is as follows:<br>
+<IMG ALIGN=top SRC=eq71.gif>
+<br>
+Where the field capacity (eta_s) and wilting point (eta_d) values are 
+0.38 and 0.11 respectively.
+Note, a value of <i>m=</i>1 implies that evaporation can occur at the potential rate, and
+a value of <i>m=</i>0 implies no water is available for evaporation. The soil-moisture
+availability fields are in the files named <b>SMAP60k.88060100</b> and 
+<b>SMAP0p5.88060100</b>, and the field for PIRCS domain (iii) is shown in
+(<A HREF=gmetaSMAP.gif> Figure 7.2(0.00833 MB)</A>
+PIRCS advises that when participants initialize their model, that
+they impose a constant soil moisture profile.
+
+<a name="datpk"><b><h2>8 - DATA PACKING</h2></b></a>
+<br>
+<p>
+The dataset for domain (i) is in <i>/PIRCS/BETA.RELEASE/tarGLOBAL</i><br>
+The dataset for domain (ii) is in <i>/PIRCS/BETA.RELEASE/tarPSTDOM</i><br>
+The dataset for domain (iii) is in <i>/PIRCS/BETA.RELEASE/tarREGDOM</i><br>
+
+where /PIRCS is a drive attached to pv14b1.vincent.iastate.edu, note access
+to this drive is available through anonymous ftp, (once your logged into
+anonymous.rwturner, cd to PIRCS)
+</p>
+
+<p>    The variables provided are surface pressure, T, q, u, & v.  They are provided
+every 25 mb from 25 mb to 1050 mb. Also provided are fields of the NCEP analysis topography for all
+domains and topographic datasets for the limited domains (ii) and (iii) (the
+latter were derived from
+a 30
+minute dataset, and they have more detail than the analysis topography.  Land-use datasets
+are also
+provided for each of the limited domains, as well as global SST's, soil moisture for the
+limited domains, and the Great Lakes surface temperatures. </p> 
+
+<p>Note, it is up to the participant to determine which 
+PIRCS dataset suits their needs best). 
+It is recommended that participants use a bilinear interpolation method
+to interpolate the PIRCS grid-point data to their own model's grid.
+A bilinear interpolation subroutine based on <i>bint.f</i> (described in 
+Manning and Haagenson, 1992) is part of program <i>indat_gen.f</i> included
+in the distributed dataset.
+Various programs that read the files containing the data are available.
+Hopefully these programs are designed
+so that they can be easily adapted by the participants in their efforts
+to convert the LBC's to their specific model configuration.
+These codes are in <i>/PIRCS/BETA.RELEASE/tarCODE</i>. 
+A listing and brief description of each program is included in the
+README file of the directory READ.CODE (the directrory which the files are in,
+when tarCODE is untarred.)
+
+<p>The data are packed in integer format, and are in slices ('horizontal') of constant pressure. 
+(25 mb being first, 1050 being last.) The data are ordered as follows, surface pressure (Variable
+code 001; units Pa), temperature (011; K), specific humidity (051; kg/kg), u component of the
+wind (033; m/s), and the v component of the wind (034; m/s).  This code "unpacks" the data, as they are
+stored in a positive integer format; i.e., for each field (horizontal slice) a maximum value
+is determined, and this (and every other data point) is multiplied by some scale factor to ensure
+that the desired number of significant digits are to the left of the decimal point.  The
+original data are extracted by subtracting the stored data from the base value
+and then dividing by
+the scale factor.  The
+space requirements are minimized through the storage of data as positive integers.  To further
+minimize the space requirements, data were compacted using the standard UNIX "compress" (a
+modified Lempel-Ziv algorithm popularized in Welch, 1984) command.  While this choice of
+packing procedure is not a meteorological  standard' like GRIB or BUFR, we think that fewer
+problems will be experienced in the short term.  At a later point, we could convert the
+dataset to a
+BUFR or GRIB format, but at this point we want to minimize portability problems due to non-standard machine representations of unformatted data.</p>
+
+<p> For each 'horizontal' slice the data are ordered as follows, as you look at it on the screen
+(Note, this applies for the ordering of the forcing data as well) <br>
+<pre>             
+  SW Corner  (1,1) .........................(XMAX,1) SE Corner
+             (1,2) .........................(XMAX,2)
+             ...........(I,J)...............
+             ...............................
+  NW corner  (1,YMAX).......................(XMAX,YMAX) NE Corner
+</pre>
+Note, in the read program, the I index is E-W, and the J index is N-S.</p>
+
+<p>We also provide a sample write program (to be adapted by the user),
+ that we would like participants to use when
+ packing the model output that PIRCS requires to be returned.
+  To test this write
+program (which users will adapt for their needs) we have included
+programs that can read the packed format (these are similar to the
+programs that read the provided LBC data.
+We urge participants to test the reading of their 
+model output files with these
+programs before they return them to Iowa State.</p>
+ 
+These codes are in <i>/PIRCS/BETA.RELEASE/tarCODE</i>
+
+<a name="tarxf"><b><h2>9 - TAPE ARCHIVING AND FILE EXTRACTION</h2></b></a>
+
+<p>How to get files off an exabyte tape (assuming tape is fully rewound and
+ in the drive). <br>
+
+<b>mt -f /dev/nrmt2a fsf q-1</b><br>
+<b>tar cvf /dev/nrmt2a ./grbsanlyymmddhh</b><br>
+<b>mt -f /dev/nrmt2a offline</b><br><br>
+
+Here q is the tar file in which the <i>grbsanlyymmddhh</i> file resides. 
+For example for 00 UTC 15 June 1988, the tape is Vol S260018, it is in file 11,
+so to position the tape in order to extract this file the command<br>
+<b>mt -f /dev/nrmt2a fsf 10 </b><br>
+has to be executed first.</p>
+
+<p>    How to ensure you do not write over files on exabyte tape when backing up new files.
+Put tape (assuming that we start with a new tape) in exabyte tape drive <br>
+
+<b>mt -f /dev/nrmt2a rewind</b><br>
+<b>tar cvf /dev/nrmt2a tarfile1</b><br>
+<b>mt -f /dev/nrmt2a rewind</b><br>
+<b>mt -f /dev/nrmt2a fsf 1</b><br>
+<b>tar cvf /dev/nrmt2a tarfile2</b><br>
+<b>mt -f /dev/nrmt2a rewind</b><br>
+<b>mt -f /dev/nrmt2a fsf 2</b><br>
+<b>tar cvf /dev/nrmt2a tarfile3</b><br>
+<br>etc.
+Record what you have backed up at each file position. Supposing you back up N files, the next time
+you want to place files on the tape,<br>
+<br>
+<b>mt -f /dev/nrmt2a rewind</b><br>
+<b>mt -f /dev/nrmt2a fsf N</b><br>
+<b>tar cvf /dev/nrmt2a newtarfile</b><br>
+</p><br>
+
+<a name="howto"><b><h2>10 - HOW TO GET THE BETATEST DATASET</h2></b></a>
+Below are the instructions on how to access the betatest dataset <br>
+Firstly,<br>
+ftp pv14b1.vincent.iastate.edu
+<br>then<br>
+login: anonymous.rwturner
+<br>
+passwd: your e-mail address
+<br>
+cd PIRCS/BETA.RELEASE
+<br>
+the files you want to "get" are: <PRE>
+README (contains information similar to what is in this document)
+REGISTER (participant registration form)
+tarCODE  (tar file contain code to read the data files, also
+          some interpolationm routines)
+and one of the following
+tarGLOBAL (contains data on PIRCS domain (i))
+tarREGDOM (contains data on PIRCS domain (ii))
+tarPSTDOM (contains data on PIRCS domain (iii))
+(depending on which set of LBC's are appropriate for your model)
+</PRE>
+<br>
+Note to extract files from a tarfile (tarCODE for example) type the
+command <b>tar xvf tarCODE</b><br>
+<br>
+Note: Sometimes the network can be slow, so if problems are encountered
+transferring files, try again later, if the problem persists, please contact us.
+<br>
+<a name="prelim"><b><h2>11 - ISU BETATEST - PRELIMINARY RESULTS</h2></b></a>
+<p>Of course, we at ISU, had to cheat a little and get a bit of
+a headstart on everyone else, so we've already completed a 5-day
+run. Actually it wasn't cheating, but we felt it was better if we
+conducted an "alpha" test of the procedures just to iron out
+the major flaws in the procedures, and to generate some solutions
+to problems that may have been previously ovelooked.</p>
+
+<p>Some preliminary results are presented here. 
+(<A HREF=p11fig1.gif> Figure 11.1(0.00833 MB)</A> shows the time series of
+the domain averaged temperature for the BETAtest period as simulated by 
+REGCM2, and
+(<A HREF=p11fig2.gif> Figure 11.2(0.00833 MB)</A> shows the time series of
+the domain averaged wind speed.  Figure 11.3 (below) shows the simulated
+precipitation for the period.
+<br>
+<IMG ALIGN=top SRC=p11fig3.gif>
+<br>
+<Pre>
+
+Fig. 11.3 - Total rainfall (mm) for the 5 day period from 00 UTC July 1 to
+00 UTC July 6, 1988 as simulated by REGCM2 using the PIRCS BETAtest
+dataset.  
+
+</PRE>
+<p>It has been our experience that a 5 day integration of REGCM2
+(see Giorgi, et al., 1994) configured
+for the PIRCS domain takes about
+17 hours of cpu time on a DEC AXP 3000 workstation with
+32 MB of assigned memory, and 32 hours with 10 MB assigned.</p>
+
+<p>The user of the BETAtest dataset should also be aware that
+the provided variables are not stagggered, i.e., they are all
+at the same location.  Due to the fact that participant 
+models will use staggered grids horizontally (and vertically)
+the width of the forcing zone will differ between models.
+For example, for the Arakawa B grid, the width for T and q will
+be 8 grid spacings, but 9 for U and V.</p>
+ 
+<br>
+<a name="aknlg"><b><h2>ACKNOWLEDGMENTS</h2></b></a>
+
+<p>The following individuals are thanked for their help
+ Chi-Fan Shih and Dennis Joseph of the
+DSS at NCAR, Masao Kanamitsu at NCEP,
+ James Caveen and Clement Chouinard (Canada -
+COMPARE)
+Thanks also to Ewa Milewska of the Climate Research Branch
+Atmospheric Environment
+Service, Downsview, Ontario who supplied the Great Lakes
+Temperature data.  Partial suupport was provided by
+IITAP and the Center for Global and Regional Environmental
+Research, Univ. of Iowa.
+,</p>
+
+<a name="refer"><b><h2>REFERENCES</h2></b></a>
+
+<br>
+Bourke, W., 1974: A multi-level spectral model. I. 
+Formulation and hemispheric integrations. 
+<i>Mon. Wea. Rev.</i> , <b>102</b>, 687-701.
+<br><br>   
+Kalnay, E., M. Kanamitsu, R. Kistler, W. Collins,
+D. Deaven, L. Gandin, M. Iredell, S. Saha,
+G. White, J. Woollen, Y. Zhu, M. Chelliah,
+W. Ebisuzaki, W.Higgins, J. Janowiak, K. C. Mo,
+C. Ropelewski, J. Wang, A. Leetmaa, R. Reynolds,
+R. Jenne, D. Joseph, 1996:
+The NCEP/NCAR 40-Year Reanalysis Project. 
+<i>Bull. Amer. Meteor. Soc.</i>, <b>76</b>, 437-471.
+<br><br>
+Giorgi, F., C. S. Brodeur, and G. T. Bates, 1994: 
+Regional climate change scenarios over the United 
+States produced with a nested regional model.
+<i>J. Climate </i> <b>7</b>,375-399.
+<br>  
+<br>
+Manning, K. W., and P. L. Haagenson, 1992:
+Data ingest and objective analysis for the
+PSU/NCAR modeling system: Programs DATAGRID and RAWINS.
+<i>NCAR Technical note, NCAR/TN-  376+I</i>A, 209 pp.<br>
+
+<br>
+Nehrkorn, T., and R. Hoffman, 1985:
+Documentation of the general truncation version of the
+global spectral model.  <i>AER technical memorandum-1.</i> <br>
+
+<br>
+Stackpole, J. D., 1994: GRIB (Edition 1)
+The WMO format for the storage of weather product
+information and the exchange of weather product
+messages in gridded binary form. Office note 388.
+US Dept. of Commerce, NOAA, NWS, NMC.<br>
+
+<br>Takle, E. S., 1995: Project to Intercompare
+ Regional Climate Simulations (PIRCS),
+ Preliminary  Workshop, 17 - 18 November, 1994.
+ <i>Bull. Amer. Meteor. Soc.</i>, <b>75</b>, 1625-1626. <br>
+
+<br>Welch, T. A., 1984: A technique for high
+ performance data compression. 
+ <i>IEEE Computer</i>, <b>17</b>,#6,  8-19<br>
+
+<br>
+<i>Richard Turner (rwturner@iastate.edu)<br>
+June 25, 1996</i><br>
+</body>
+</html>
+

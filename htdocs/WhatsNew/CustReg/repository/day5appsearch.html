@@ -1,0 +1,139 @@
+<TITLE>Customer Registration - Your Favorite Applications</TITLE>
+<!-- Changed by: James Chen, 26-Jan-1996 -->
+
+<body background="images/bg_sgi_logo.gif">
+
+<font size="+2">
+<strong>
+<img src="images/CorpID.gif" alt="Silicon Graphics, Inc.">
+Primary Software Applications
+</strong>
+</font>
+
+<FORM METHOD="POST" ACTION="day5appsearch.cgi">
+
+<table border=0 width=638>
+<tr>
+<td>
+Enter keyword(s) to search on: <INPUT TYPE="text" NAME="AppSrchClue" SIZE="30" VALUE="__AppSrchClue__">
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+Select match pattern: <INPUT TYPE="radio" NAME="AppSrchFrom" VALUE="1" __AppSrchFrom_1__> Beginning of record only
+<INPUT TYPE="radio" NAME="AppSrchFrom" VALUE="2" __AppSrchFrom_2__> Anywhere within record
+<INPUT TYPE="submit" NAME="SubmitAppSrch" VALUE="Search">
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+Search Results: <I>__AppSrchNumRes__ application(s) found</I>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<CENTER>
+__AppSrchPickList__
+</CENTER>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>Select a product from the above list and click on one of the following
+[Apply] buttons:
+</strong>
+</td>
+</tr>
+<tr>
+<td>
+<INPUT TYPE="submit" NAME="SubmitClearApp1" VALUE="Clear">
+<INPUT TYPE="submit" NAME="SubmitPickApp1" VALUE="Apply"> 
+Application #1: <strong>__App1__</strong>
+</td>
+</tr>
+<tr>
+<td>
+<INPUT TYPE="submit" NAME="SubmitClearApp2" VALUE="Clear">
+<INPUT TYPE="submit" NAME="SubmitPickApp2" VALUE="Apply"> 
+Application #2: <strong>__App2__</strong>
+</td>
+</tr>
+<tr>
+<td>
+<INPUT TYPE="submit" NAME="SubmitClearApp3" VALUE="Clear">
+<INPUT TYPE="submit" NAME="SubmitPickApp3" VALUE="Apply"> 
+Application #3: <strong>__App3__</strong>
+</td>
+</tr>
+<tr>
+<td>
+Specify Other:
+<input type="text" name="AppOther" size="32" VALUE="__AppOther__"> 
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>
+Will you be running custom in-house developed software?
+<INPUT TYPE="radio" NAME="CustomApp" VALUE="1" __CustomApp_1__> Yes 
+<INPUT TYPE="radio" NAME="CustomApp" VALUE="2" __CustomApp_2__> No 
+<INPUT TYPE="radio" NAME="CustomApp" VALUE="3" __CustomApp_3__> Do Not Know 
+</strong>
+</td>
+</tr>
+</table>
+<br>
+
+<table border=0 width=638>
+<tr>
+<td width=10%>
+</td>
+<td width=80% align="center">
+<input type="submit" name="SubmitToNext" value=" Continue ">
+</td>
+<td width=10% align="right">
+<input type="submit" name="SubmitToHelp" value=" Help ">
+</td>
+</tr>
+</table>
+
+</form>

@@ -1,0 +1,547 @@
+<html>
+<head>
+<title>  PIRCS EXPERIMENT 1 DATASET 
+</title></head>
+<body bgcolor="#FFFFFF">
+<h1> A Brief Description of the Experiment 1 Dataset  </h1>
+
+<br>
+</pre>
+<h3>INDEX</h3>
+<ul>
+<li><a href="#data">1 - Data files</a>
+<li><a href="#codes">2 - Sample reading codes</a>
+<li><a href="#weather">3 - Synoptic pattern</a>
+<li><a href="#list">4 - Updated output variable list</a>
+<li><a href="#list">5 - Timetable</a>
+</ul>
+<br>
+</pre>
+
+<a name="misce"><b><h2>1 - Data</h2></b></a>
+
+<br>
+How to get the dataset:</h2></b></a>
+ftp pv14b1.vincent.iastate.edu (129.186.20.177) <br>
+login: anonymous.rwturner <br>
+passwd: your e-mail address <br>
+cd /PIRCS/FULL.RELEASE <br>
+<br>
+
+There are four subdirctories under /PIRCS/FULL.RELEASE:
+<ul>
+<li> PSTDOM60k -- polar steorographic 60 km
+<li> REGDOM0p5 -- 0.5 x 0.5 lat/lon
+<li> GLOBAL2p5 -- global 2.5x2.5 lat/lon
+<li> READ.CODE -- sample reading and plotting codes 
+</ul>
+<h3> PSTDOM60k directory </h3>
+<br>
+1). Terrain, landuse, soli moisture and sea/lake temperature:
+ 
+<ul> 
+ATOP0p5.88051500
+<br>
+LNDF0p5.88051500
+<br>
+SMAP0p5.88051500
+<br>
+SSTB0p5.88051500 
+</ul>
+
+2). Initial conditions
+<br>
+PRCI0p5.88051500
+<br>
+<br>
+3). Boundary condtions
+<br>
+
+<ul>
+PRCF0p5.88051500-052418.Z (42MB)
+<br>
+PRCF0p5.88052500-060418.Z (44MB)
+<br>
+PRCF0p5.88060500-061418.Z (42MB)
+<br>
+PRCF0p5.88061500-062418.Z (42MB) 
+<br>
+PRCF0p5.88062500-070418.Z (420MB)
+<br>
+PRCF0p5.88070500-071518.Z (42MB)
+
+</ul>
+
+<br>
+<h3>REGDOM0p5 directory </h3>
+<br>
+1). Terrain, landuse, soil moisture and sea/lake temperaure
+<ul>
+ATOP0p5.88051500 
+<br>
+LNDF0p5.88051500
+<br>
+SMAP0p5.88051500
+<br>
+SSTB0p5.88051500
+</ul>
+
+<br>
+2). Initial conditions
+<br>
+
+<ul>
+PRCI0p5.88051500
+</ul>
+
+<br>
+3). Boundary condtions
+<br>
+
+<ul>
+PRCF0p5.88051500-052418.Z (45MB)
+<br>
+PRCF0p5.88052500-060418.Z (45MB)
+<br>
+PRCF0p5.88060500-061418.Z (45MB)
+<br>
+PRCF0p5.88061500-062418.Z (45MB) 
+<br>
+PRCF0p5.88062500-070418.Z (45MB)
+<br>
+PRCF0p5.88070500-071518.Z (45MB)
+</ul>
+<br>
+<h3>GLOBAL2p5 directory</h3>
+<br>
+
+Still under preparation
+
+
+<a name="codes"><b><h2>2 - Sample reading/plotting codes</h2></b></a>
+
+There are two subdirectories under the READ.CODE directory:<br>
+POL60K -- for 60km polar-stereographic domain<br>
+LLA0p5 -- for 0.5x0.5 lat/lon domain <br>
+<br>
+Each contains some example reading and plotting routines.
+
+<a name="weather"><b><h2>3 - Synoptic patterns</h2></b></a>
+
+Here we put some weather maps during the 60-d period (May 15 - July 15)
+to facilitate the intercomparison of model results.
+
+<a name="list"><b><h2>4 - Updated model output list</h2></b></a>
+
+In the time since the original design of experiment 1, some changes
+have been made to the list of required model outputs. The major 
+changes were the inclusion of low level jet (LLJ)
+diagnosis and surface hydrology. The following tables list the current
+output variables that must be saved 
+to participate in the PIRCS intercomparison.
+<br>
+<table border wide=100%>
+<tr>
+     <th>  ID </th>
+     <th> 1. Surface Fluxes </th>
+     <th> Unit          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> a </td>
+      <td>incident solar (shortwave) radiation</td> 
+      <td> Watts / sq meter </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> b </td>
+         <td>reflected solar (shortwave) radiation</td>
+          <td> Watts / sq meter </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> c </td>
+        <td> upward terrestrial (longwave) radiation </td>
+        <td> Watts / sq meter </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> d </td>
+         <td>downward terrestrial (longwave) radiation</td>
+         <td> Watts / sq meter </td> 
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> e </td>
+         <td>sensible heat flux </td> 
+         <td> Watts / sq meter </td> 
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> f </td>
+         <td>deep-soil heat flux </td> 
+         <td> Watts / sq meter </td> 
+      <td> hourly </td>
+</tr> 
+<tr>
+      <td> g </td>
+         <td>latent heat flux (evapotranspiration) </td>
+         <td> Watts / sq meter </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> h </td>
+        <td>precipitation </td>
+          <td> mm /month </dt>
+      <td> hourly </td>
+</tr>
+<tr>
+     <th> ID </th>
+     <th> 2. Top-of-atmosphere fluxes </th>
+     <th> Unit          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> a </td>
+      <td>net solar (shortwave) radiation</td> 
+      <td> Watts / sq meter </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> b </td>
+         <td> upward terrestrial (longwave) radiation</td>
+          <td> Watts / sq meter </td>
+      <td> hourly </td>
+</tr>
+<tr>
+     <th> ID </th>
+     <th> 3. Mass </th>
+     <th> Unit          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> a </td>
+      <td> net solar (shortwave) radiation</td>     
+      <td> Pa </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> b </td>
+         <td> precipitable water </td>
+          <td> m </td>
+      <td> hourly </td>
+</tr>
+<tr>
+     <th> ID </th>
+     <th> 4. Vertical profiles at selected grids*</th>
+     <th> Unit          </th>
+     <th> Frequency      </th>
+</tr>
+<tr>
+      <td> a </td>
+      <td>temperature </td>
+      <td> K </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> b </td>
+         <td> specific humidity </td>
+          <td> kg/kg </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> c </td>
+         <td> specific humidity </td>
+          <td> kg/kg </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> d </td>
+         <td> zonal (east-west) wind </td>
+          <td> m/s </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> e </td>
+         <td> meridional (north-south) wind </td>
+          <td> m/s </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> f </td>
+         <td> vertical velocity </td>
+          <td> m/s </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> g </td>
+         <td> geopotential height </td>
+          <td> m </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> h </td>
+         <td> pressure </td>
+          <td> Pa </td>
+      <td> hourly </td>
+</tr>
+<tr>
+     <th> ID </th>
+     <th> 5. Low-level Jet </th>
+     <th> Level          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> b </td>
+         <td> zonal wind </td>
+          <td> 500 m AGL </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> a </td>
+      <td> meridional wind  </td>
+      <td> 500 m AGL </td>
+      <td> hourly </td>
+</tr>
+<tr>
+     <th> ID </th>
+     <th> 6. Low-level Jet at selected grids**</th>
+     <th> Level          </th>
+     <th> Frequency      </th>
+</tr>
+<tr>
+      <td> a </td>
+      <td> zonal wind </td>
+      <td> below 500 mb </td>
+      <td> hourly </td>
+</tr>
+<tr>
+      <td> a </td>
+      <td> meridional wind  </td>
+      <td> below 500 mb </td>
+      <td> hourly </td>
+</tr>
+<tr>
+     <th> ID </th>
+     <th> 7. Mixed-Layer Depth </th>
+     <th> Unit          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> a </td>
+         <td> Mixed-Layer </td>
+          <td> m AGL </td>
+      <td> hourly </td>
+</tr>
+</table>
+
+
+
+<br>
+<br>
+<h3> DAILY</h3>
+The following table lists the daily variables
+that must be collected.
+<br>
+
+<table border=5 wide=100%>
+<tr>
+     <th> ID </th>
+     <th> Varible </th>
+     <th> Unit          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> a </td>
+         <td> daily maximum temperature at 1.5 m AGL and time of occurrence (period:  6 UTC - 6 UTC) </td>
+          <td> K </td>
+      <td> daily </td>
+</tr>
+<tr>
+      <td> b </td>
+         <td> daily minimum temperature at 1.5 m AGL and time of occurrence (period:  6 UTC - 6 UTC) </td>
+          <td> K </td>
+      <td> daily </td>
+</tr>
+<tr>
+      <td> c </td>
+         <td>  soil moisture at 12 UTC for all model levels </td>
+         <td> (See note) </td>
+      <td> daily </td>
+</tr>
+</table>
+
+<br>
+<br>
+<h3> 5-DAY AVERAGE</h3>
+<br>
+
+These output variables are average values for 
+successive 5-day periods, yielding 12 periods for the
+60-day simulation.  Output should be interpolated to the levels 1000 mb,
+925 mb, 850 mb, 700 mb, 500 mb, 400 mb, 300 mb and 200 mb.  Horizontal wind
+components must be the true east-west and north-south components.
+<br>
+
+<table border=5 wide=100%>
+<tr>
+     <th> ID </th>
+     <th> Variable </th>
+     <th> Unit          </th>
+     <th> Frequency       </th>
+</tr>
+<tr>
+      <td> a </td>
+      <td> temperature </td> 
+      <td> K </td>
+      <td> 5-day </td>
+</tr>
+<tr>
+      <td> b </td>
+         <td>specific humidity</td>
+          <td> kg/kg </td>
+      <td> 5-day </td>
+</tr>
+<tr>
+      <td> c </td>
+        <td> zonal (east-west) wind </td>
+        <td> m/s </td>
+      <td> 5-day </td>
+</tr>
+<tr>
+      <td> d </td>
+         <td>meridional (north-south) wind </td>
+         <td> m/s </td> 
+      <td> 5-day </td>
+</tr>
+<tr>
+      <td> e </td>
+         <td>geopotential height </td> 
+         <td> m </td> 
+      <td> 5-day </td>
+</tr>
+</table>
+
+<br>
+<br>
+* grid locations for air mass properties
+
+<br>
+<table border>
+<tr>
+      <th> ID </tih>
+      <th> LAT. </tih>
+      <th> LON. </tih>
+      <th> X </tih>
+      <th> Y </tih>
+</tr>
+<tr>
+      <td> 1 </td>
+      <td> 40.00 </td> 
+      <td>  125</td> 
+      <td> 15 </td>
+      <td>  34</td>
+</tr>
+<tr>
+      <td> 1 </td>
+      <td> 40.00 </td> 
+      <td>  125</td> 
+      <td> 15 </td>
+      <td>  34</td>
+</tr>
+</table>
+
+<br>
+<br>
+* grid locations for low-level jet 
+<br>
+<table border>
+<tr>
+      <th> ID </th>
+      <th> LAT. </th>
+      <th> LON. </th>
+      <th> X </tih>
+      <th> Y </tih>
+</tr>
+<tr>
+      <td> 72469(PLT)</td>
+      <td> 39.75 </td> 
+      <td> -104.87 </td> 
+      <td> 44</td>      
+      <td> 43</td>
+</tr>
+<tr>
+      <td> 72456 </td>
+      <td> 39.07 </td> 
+      <td> -95.63</td> 
+      <td> 43</td>
+      <td> 42</td>
+</tr>
+<tr>
+      <td> 72353(PRC) </td>
+      <td> 35.40 </td> 
+      <td> -97.60</td> 
+      <td> 56? </td>
+      <td> 36?</td>
+</tr>
+<tr>
+      <td> 76256 </td>
+      <td> 27.95  </td> 
+      <td> -110.80</td> 
+      <td> 12 </td>
+      <td> 23</td>
+</tr>
+<tr>
+      <td> 76225 </td>
+      <td> 28.70  </td> 
+      <td> -106.07</td> 
+      <td> 39 </td>
+      <td> 19</td>
+</tr>
+<tr>
+      <td> 72261 </td>
+      <td> 29.37 </td> 
+      <td> -100.92</td> 
+      <td> 47? </td>
+      <td> 20</td>
+</tr>
+<tr>
+      <td> JTNT2 </td>
+      <td> 33.01 </td> 
+      <td> -100.58</td> 
+      <td> 50 </td>
+      <td> 30</td>
+</tr>
+<tr>
+      <td> SLAI4 </td>
+      <td> 41.54 </td> 
+      <td> -93.41</td> 
+      <td> 61 </td>
+      <td> 48</td>
+</tr>
+<tr>
+      <td> RWDN1 </td>
+      <td> 40.05 </td> 
+      <td> -100.39</td> 
+      <td> 15 </td>
+      <td>  34</td>
+</tr>
+<tr>
+      <td> 72353 </td>
+      <td> 35.40 </td> 
+      <td> -97.60</td> 
+      <td> 59? </Td>
+      <td> 44</td>
+</tr>
+</table>
+
+<a name="list"><b><h2>5 - Tentative time table</h2></b></a>
+
+The full 2-month dataset --- Feburary 17, 1997<br>
+Completion of simulation --- ?? <br>
+Competion of validation --- ?? <br>
+Second workshop --- April ??<br>
+
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>HDF WWW interface test page</TITLE>
+</HEAD>
+<BODY BGCOLOR="white">
+<CENTER><P ALIGN="CENTER">
+<FONT SIZE="5">HDF test pages</FONT></P>
+</CENTER><HR>
+<P>
+We are setting up a test hdf cgi interface system. With this people 
+will be able to come in via the WWW client and view images and data 
+sets from hdf files stored on the system. We will provide a search 
+engine to locate various files.</P>
+<P>
+This is all real ruff right now, when I get the system moving a bit 
+smoother I will polish this up and open it some more to get comments on 
+the usefullness of all this.</P>
+<P>
+This basically provides now the ability for people to view hdf files 
+and their content and then to download the binary file for their use 
+sould they decide to.</P>
+<HR>
+<P>
+<FONT SIZE="4">HDF section</FONT><BR>
+This section is dynamically created with a CGI script. It then makes 
+calls to the hdf CGI script to allow for the browsing of hdf data files.</P>
+<P>
+<!--DO NOT REMOVE--><!--#exec cgi="/cgi-bin/exec_hdf.cgi"--></P>
+<HR>
+<P>
+<FONT SIZE="4">VRML section </FONT><BR>
+The HDF data file format can be used to perform 2D and 3D 
+visualizations. 3D visualizations can be saved in VRML (version 1.0) 
+format for viewing on UNIX, Windows and PC with freely available 
+software.</P>
+<P>
+<A HREF="vrml/Hieghts.vrml">test.vrml</A><BR>
+</P>
+</BODY>
+</HTML>

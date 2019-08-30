@@ -1,0 +1,102 @@
+:#
+:# day5all.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0   - nothing special (default)
+:#	1   - soft mandatory
+:#	2   - hard mandatory
+:#	4   - hinv result if value is empty
+:#	8   - auto populate serial # if value is empty
+:#	16  - auto pop sysid if value is empty
+:#	32  - detect email connection
+:#	64  - auto pop email address
+:#	128 - app seg conversion
+:#	256 - auto pop country list.
+:#      512 - country name to code conversion
+:#     1024 - dont save the data, value can be created on the fly.
+:#
+:# value -- user input or a predefined value
+:#
+
+:# language in use
+:Lang:text:::
+
+:# info about yourself
+:SerialNo:text:8::
+:SysID:text:16::
+:Salutation:text:::
+:FirstName:text:2::
+:LastName:text:2::
+:SelfEmp:checkbox::off:
+:Company:text:2::
+:Street1:text:2::
+:Street2:text:::
+:Street3:text:::
+:City:text:2::
+:State:text:2::
+:Postal:text:2::
+:Country:text:514::
+:Bldg:text:::
+:Floor:text:::
+:Suite:text:::
+:Room:text:::
+:Gate:text:::
+:Phone:text:1::
+:Ext:text:::
+:Vmail:text:::
+:Fax:text:::
+:Mstop:text:::
+:Email:text:65::
+
+:# info about your system
+:SaSalutation:text:::
+:SaFirstName:text:::
+:SaLastName:text:::
+:SaEmail:text:::
+:SaPhone:text:::
+:AppSeg1:select:128::
+:AppSeg2:select:128::
+:AppSeg3:select:128::
+:AppSegOther:text:::
+:App1:text:2::
+:App2:text:::
+:App3:text:::
+:AppOther:text:::
+:CustomApp:radio:::
+:HwConfig:textarea:1024::
+:SwInfo:textarea:1024::
+:DiskInfo:textarea:1024::
+:SysSGI:radio::off:
+:SysApple:checkbox::off:
+:SysConvex:checkbox::off:
+:SysCray:checkbox::off:
+:SysDEC:checkbox::off:
+:SysEvans:checkbox::off:
+:SysHP:checkbox::off:
+:SysIBM:checkbox::off:
+:SysIntel:checkbox::off:
+:SysLockheed:checkbox::off:
+:SysQuantel:checkbox::off:
+:SysSun:checkbox::off:
+:SysWin95:checkbox::off:
+:SysWinNT:checkbox::off:
+:SysOther:text:::
+:ConnectWWW:select:::
+:ConnectInet:select:::
+
+:# info about your comments
+:ShipArrive:radio::1:
+:ShipComplete:radio::1:
+:ShipHandle:radio::1:
+:Install:radio::1:
+:AfterInstall:radio::1:
+:Integrate:radio::1:
+:PurchaseExp:select::10:
+:OverallExp:select::10:
+:ExtraCmt:text:::
+
+:# end
+

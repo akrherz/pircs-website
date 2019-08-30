@@ -1,0 +1,376 @@
+#Inventor V2.1 ascii
+
+DEF BM_Root Separator {
+  CoBMRenderOptions {
+    aastring	"low"
+  }
+  DEF LightGroup Group {
+    DirectionalLight {
+      on	TRUE
+      intensity	1
+      color	1 1 1
+      direction	-0.1 0 -1
+    }
+    DirectionalLight {
+      on	TRUE
+      intensity	1
+      color	0.530304 0.624309 0.524595
+      direction	-0.180931 -0.934018 -0.308015
+    }
+    DirectionalLight {
+      on	TRUE
+      intensity	1
+      color	0.0783223 0.163388 1
+      direction	-0.367254 0.742526 -0.560155
+    }
+    PointLight {
+      on	TRUE
+      intensity	1
+      color	0.063708 0.0468627 0.138122
+      location	3.16251 -0.945304 3.55569
+    }
+  }
+  OrthographicCamera {
+    position	-9.16227 -6.20034 1
+    aspectRatio	1.70115
+    nearDistance	55.4667
+    farDistance	67.3362
+    height	19.1611
+  }
+  DEF BackgroundColor Info {
+    string	"0.75 0.75 0.75"
+  }
+  Group {
+    Switch {
+      whichChild	-3
+      Scale {
+	scaleFactor	0.207221 0.207221 0.207221
+      }
+      Translation {
+	translation	-44.2391 -25.9854 -263.112
+      }
+    }
+    Switch {
+      whichChild	-3
+      Translation {
+	translation	44.2391 25.9854 263.112
+      }
+      Scale {
+	scaleFactor	4.82576 4.82576 4.82576
+      }
+      Scale {
+	scaleFactor	0.207221 0.207221 0.207221
+      }
+      Translation {
+	translation	-44.2391 -25.9854 -263.112
+      }
+    }
+    Switch {
+      whichChild	-3
+      Translation {
+	translation	57.6228 -16.4019 257.022
+      }
+      Scale {
+	scaleFactor	4.82576 4.82576 4.82576
+      }
+      Scale {
+	scaleFactor	0.207221 0.207221 0.207221
+      }
+      Translation {
+	translation	-57.6228 16.4019 -257.022
+      }
+    }
+    Switch {
+      whichChild	-3
+      Translation {
+      }
+      Scale {
+	scaleFactor	4.82576 4.82576 4.82576
+      }
+      Scale {
+	scaleFactor	0.207221 0.207221 0.207221
+      }
+      Translation {
+      }
+    }
+  }
+  Material {
+    diffuseColor	1 1 1
+  }
+  DEF theObject Separator {
+    Material {
+      ambientColor	0.2 0.2 0.2
+      diffuseColor	0.8 0.8 0.8
+      specularColor	0 0 0
+      emissiveColor	0 0 0
+      shininess	0.2
+      transparency	0
+    }
+    DEF useThis_0 CoTextGraph {
+      textType	1
+      string	[ "Project",
+	        "Personnel" ]
+      fontName	"Palatino-Roman;HonMinchoLtBT--H;HonMinchoLtBT--Hankaku"
+      fontStyle	      FontStyle {
+	size	24
+	justify	"MIDDLE"
+	spacing	1
+      }
+
+      isBeveled	FALSE
+    }
+  }
+  Separator {
+    Material {
+      ambientColor	0.860488 0.860488 0.9
+      diffuseColor	0.412673 0.455048 0.472727
+      specularColor	0.420602 0.431402 0.454545
+      emissiveColor	0 0 0
+      shininess	0.127273
+      transparency	0
+    }
+    Texture2 {
+      filename	"/usr/share/data/textures/reflect/temple.rgb"
+      wrapS	REPEAT
+      wrapT	REPEAT
+      model	MODULATE
+      blendColor	0 0 0
+    }
+    Texture2Transform {
+      translation	0.04 0
+      rotation	0
+      scaleFactor	1.70641 1
+      center	0.46 0.5
+    }
+    TextureCoordinateEnvironment {
+    }
+    DEF Glass CoMultiButton {
+      leftMargin	1
+      rightMargin	1
+      topMargin	0.3
+      bottomMargin	0.3
+      resizePolicy	"constant"
+      width	152.16
+      height	55.488
+      geometry	      Separator {
+	Transform {
+	  translation	-45.6239 -3.936 -28.9435
+	  rotation	0 0 1  0
+	  scaleFactor	30.4319 27.7435 27.7435
+	}
+	Complexity {
+	  value	1
+	}
+	Switch {
+	  whichChild	3
+	  DEF O1 Separator {
+	    Sphere {
+	    }
+	  }
+	  DEF O15 Separator {
+	    Separator {
+	      Transform {
+		translation	1.5 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	0.75 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	1.5
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  DEF O2 Separator {
+	    Separator {
+	      Transform {
+		translation	2 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	1 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  DEF O3 Separator {
+	    Separator {
+	      Transform {
+		translation	3 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	1.5 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	3
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  DEF O4 Separator {
+	    Separator {
+	      Transform {
+		translation	4 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	2 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	4
+	      }
+	    }
+	    Separator {
+	      Transform {
+	      }
+	      Sphere {
+	      }
+	    }
+	  }
+	  Separator {
+	    Separator {
+	      Transform {
+		translation	5 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	2.5 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	5
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  Separator {
+	    Separator {
+	      Transform {
+		translation	8 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	4 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	8
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  Separator {
+	    Separator {
+	      Transform {
+		translation	10 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	5 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	10
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  Separator {
+	    Separator {
+	      Transform {
+		translation	14 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	7 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	14
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	  Separator {
+	    Separator {
+	      Transform {
+		translation	20 0 0
+	      }
+	      Sphere {
+	      }
+	    }
+	    Separator {
+	      Transform {
+		translation	10 0 0
+		rotation	0 0 1  1.5708
+	      }
+	      Cylinder {
+		height	20
+	      }
+	    }
+	    Separator {
+	      Sphere {
+	      }
+	    }
+	  }
+	}
+      }
+
+      attachTo	      USE useThis_0
+
+    }
+  }
+}

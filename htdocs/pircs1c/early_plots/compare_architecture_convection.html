@@ -1,0 +1,77 @@
+<HTML>
+<TITLE>PIRCS-1(c) Comparison of results for simulations using different computer architecture </TITLE>
+<link rel="stylesheet" href="/var/www/htdocs/main.css" type="text/css">
+<BODY BGCOLOR="#ffffff">
+<h1> Sensitivity Study: </h1>
+<h2> Computer Architecture and Convective Parameterization </h2>
+Three 1-month simulations are compared.  The simulations are carried out with MM5 and
+differ in one of three ways: (1) alternative convective parameterization, (2) different
+machine architecture, or (3) both (1) and (2).  The simulations are labeled as follows.
+<ul>
+<li> MMANL1: MM5-3.6.1 using Grell convective parameterization scheme. </li>
+<li> MMANL2: MM5-3.6.1 using Kain-Fritsch convective parameterization scheme. </li>
+<li> MMISU1: MM5-3.6.0 using Grell convective parameterization scheme. </li>
+<li> MMISU2: MM5-3.6.0 using Kain-Fritsch convective parameterization scheme. </li>
+</ul>
+MM5-3.6.1 is run at Argonne National Lab (MMANL1, MMANL2) on their 
+<a href="http://www.lcrc.anl.gov/jazz/index.php" target="_blank"> Jazz teraflop computer, </a>
+which is a 350 node cluster of INTEL processors.  
+MM5-3.6.0 is run at NCAR (MMISU1, MMISU2) on 
+<a href="http://www.scd.ucar.edu/computers/blackforest/" target="_blank"> blackforest, </a>
+a teraflop computer with 293 IBM POWER3 processors.
+<p>
+A list of changes between MM5-3.6.0 and MM5-3.6.1 is found within the NCAR/MMM MM5 support
+<a href="http://www.mmm.ucar.edu/mm5/mm5v3/v3mm5-chg-v3-6.html" target="_blank"> web pages. </a>
+Although MM5-3.6.1 incorporates changes in how Noah LSM processes sea-ice and in components
+of the Reisner moist physics parameterization, none of the changes directly influence
+the results below.
+<p>
+The results are organized into tables such that computer architecture is identical for results
+presented along table rows and convective schemes are identical for results presented in columns.
+
+<br>
+<br>
+<table border=1>
+<tr>
+<th bgcolor=fffcc>
+&nbsp;
+</th>
+<th bgcolor=fffcc>
+Grell Convective Parameterization
+</th>
+<th bgcolor=fffcc>
+Kain-Fritsch Convective Parameterization
+</th>
+</tr>
+<tr>
+<td bgcolor=fffcc>
+<b> Jazz at ANL </b>
+</td>
+<td>
+<a href="mmanl1_jul86_pcp.gif" target="_blank"> 
+  <IMG SRC="mmanl1_jul86_pcp.gif" align="center" width=450 height=375 alt="MMANL1 July 1986 precipitation">
+</a>
+</td>
+<td>
+<a href="mmanl2_jul86_pcp.gif" target="_blank"> 
+  <IMG SRC="mmanl2_jul86_pcp.gif" align="center" width=450 height=375 alt="MMANL2 July 1986 precipitation">
+</td>
+</tr>
+<tr>
+<td bgcolor=fffcc>
+<b> Blackforest at NCAR </b>
+</td>
+<td>
+<a href="mmisu1_jul86_pcp.gif" target="_blank">
+<IMG SRC="mmisu1_jul86_pcp.gif" align="center" width=450 height=375 alt="MMISU1 July 1986 precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu2_jul86_pcp.gif" target="_blank">
+<IMG SRC="mmisu2_jul86_pcp.gif" align="center" width=450 height=375 alt="MMISU2 July 1986 precipitation">
+</a>
+</td>
+</tr>
+
+</BODY>
+</HTML>

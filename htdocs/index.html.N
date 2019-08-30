@@ -1,0 +1,26 @@
+<!-- Home page for machine -->
+<html>
+<head>
+   <title><!--#exec cmd="/usr/bsd/hostname -s"--></title>
+</head>
+<body bgcolor="c1c1c1" text="000000" link="0000ee" vlink="0000ee" 
+alink="ff0000" background="/outbox/images/background.gif">
+<!-- Display machine page toolbar -->
+<!--DO NOT REMOVE--><!--#exec cgi="/cgi-bin/machine-cgi" -->
+<center>
+<p>
+<a href="http://www.sgi.com"><img src=/outbox/images/sgi_banner.gif width=323 height=234 border=0></a>
+<p>
+<i><font size=7>
+<a href="/cgi-bin/MachineInfo"><!--#exec cmd="/usr/bsd/hostname -s"--></a>
+</font></i><p>
+</center>
+<HR WIDTH="100%">
+<p>
+<center>
+<table>
+<!--DO NOT REMOVE--><!--#exec cmd="cat /var/www/htdocs/userList.html"-->
+</table>
+</center>
+</body>
+</html>

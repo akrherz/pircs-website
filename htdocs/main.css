@@ -1,0 +1,24 @@
+font.headline {
+ font-size: 24pt; font-family: Helvetica, Arial, sans-serif; color: 
+#B60B0B;
+}
+font.text {
+ font-size: 12pt; font-family: sans-serif; color: 
+#666666; line-height: 25px;
+}
+font.text2 {
+ font-size: 24pt; font-family: Times, Courier New, serif; 
+font-style: italic; font-color: #000000; line-height: 30px;
+}
+font.subhead {
+ font-size: 16pt; font-family: sans-serif; color: 
+#B60B0B;
+}
+font.text3 {
+ font-size: 12pt; font-family: Times, Courier New, serif; font-color: 
+#000000;
+}
+font.text4 {
+ font-size: 14pt; font-family: sans-serif; color: 
+#666666; line-height: 25px;
+}

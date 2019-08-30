@@ -1,0 +1,325 @@
+<html>
+<head>
+<title>PIRCS Archive Format</title>
+<meta name="Author" content="William J. Gutowski">
+</head>
+<body bgcolor="FFFFFF">
+
+<hr noshade width="85%">
+<center><h2>Format for Transmitting Model Output to PIRCS Archive</h2></center>
+<hr noshade width="85%">
+<p>
+<br>
+Model output should be transmitting to PIRCS in one ASCII file
+containing control information for reading the output followed by a
+set of output files in IEEE754 floating point (32 bit) binary.  The
+binary output requires a field ID number, available in
+<a href="table1.html"> Table 1 </a> for the required output and 
+<a href="table2.html"> Table 2 </a> for the optional output.  A table
+of <a href="./table1_sample.html">representative values</a> (Table
+1) is available for guidance when preparing output for the archive.
+<b>Please adhere carefully to the units assigned each variable in
+these tables! </b>
+<p>
+<p>
+<hr noshade width="75%">
+<center><h3>ASCII FILE</h3></center>
+<hr noshade width="75%">
+<blockquote><p>
+The ASCII file provides general information to identify the model and
+gives control data for reading the output.  It also has some redundancy
+with the binary output to help maintain proper identity of the binary
+files.  
+<p>
+The file should be named IDDDDD.CONTROL, where IDDDDD is the 6-character 
+identifier string in line 1 below.
+<p>
+The file should contain at a minimum 8 lines: 
+<center>
+<table border=2 cellpadding=5>
+<tr>
+	<th> Line </th>
+	<th> Information </th>
+</tr>
+<tr>
+<td>1 </td>
+<td>A model ID (character variable; A6 format).  This ID should be the
+prefix to all files sent to the PIRCS archive (see "File naming
+convention" under BINARY FILES, section 3(a))
+</td>
+</tr>
+<tr>
+<td>2 </td>
+<td>Start day (3 integers in year, month, day order in I5 format; 4-digit year 
+that includes century, i.e. 1988 not 88) 
+</td>
+</tr>
+<tr>
+<td>3 </td>
+<td>End day (3 integers in year, month, day order in I5 format;
+4-digit year)
+</td>
+</tr>
+<tr>
+<td>4 </td>
+<td>Number of "latitudes" (gridpoints in y-direction of model
+output grid; 1 integer in I5 format) 
+</td>
+</tr>
+<tr>
+<td>5 </td>
+<td>Number of "longitudes" (gridpoints in x-direction of model output
+grid; 1 integer in I5 format) 
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Vertical grid identifier (1 integer in I5 format) and type of
+vertical output grid (e.g., sigma, hybrid sigma-pressure, etc.;
+character variable, A24 format) 
+<pre>
+Key for identifier:
+= 0 - standard pressure levels
+= 1 - alternative pressure levels
+= 2 - sigma levels
+= 3 - other
+</pre>
+</td>
+</tr>
+<tr>
+<td>7 </td>
+<td>Number of vertical levels (1 integer in I5 format)
+</td>
+</tr>
+<tr>
+<td>8 </td>
+<td>Byte-order indicator (character variable; A6 format).  Enter "BIG..." or
+"LITTLE" to indicate whether your machine uses "big endian" or
+"little-endian" byte order for floating-point numbers.   Consult your
+system's 'man' pages or other documentation to find which
+ordering it uses. 
+</td>
+</tr>
+<tr>
+<td>9-12</td>
+<td>The file may contain up to 4 additional lines, 80 characters wide, of
+additional comments. 
+</td>
+</tr>
+</table>
+</center>
+</blockquote><p>
+<hr noshade width="65%">
+<center><h3>BINARY FILES</h3></center>
+<hr noshade width="65%">
+<p>
+<h4>1.  General structure</h4>
+<blockquote><p>
+Output should be stratified as follows, with "Output field"
+representing the coarsest division of the output and "Longitude"
+representing the finest. 
+<pre>
+Output field	<- coarsest
+Date/time
+Height
+Latitude
+Longitude	<- finest
+</pre>
+<p>
+The terms "latitude" and "longitude" are used loosely in this document
+to refer to the model's Y and X coordinates, respectively, where Y
+increases approximately from south to north and X increases
+approximately from west to east.  It is not necessarily implied that
+the data should be interpolated to an actual latitude-longitude grid. 
+<p>
+</blockquote>
+<h4>2.  Order</h4>
+<blockquote><p>
+Output and related reference fields are to be reported in the order
+given on the PIRCS web page tables:
+<p>
+<a href="table1.html"> Table 1 </a> for the required output and 
+<br>
+<a href="table2.html"> Table 2 </a> for the optional output.
+<p>
+</blockquote>
+<h4>3. Files</h4>
+<blockquote>
+<p>
+(a) File naming convention:  IDDDDD.FIELD.YYYY.MM.DD
+<br>where
+<ul>
+<li>IDDDDD is the 6 character model ID given in the ASCII file
+<li>FIELD is a 6 character field name given at the PIRCS web site
+<li>YYYY.MM.DD is the year (4 digits), month and day <b>on which the run
+ends</b>
+</ul>
+An example of a properly constructed file name is:
+ NCPRSM.6HGEOP.1988.07.15
+<p>
+(b) Output should be written as one file per output field (estimated
+as 2-15 Mb per 60-days for single-level fields, 120 mb per 60-days for
+three-dimensional fields). 
+<p>
+(c) For min/max temperatures, report the times of minimum and times of
+maximum in separate files from the actual values of minimum or maximum temperatures.
+<p>
+</blockquote>
+<h4>4. Horizontal grid</h4>
+<blockquote><p>
+(a) All requested fields should be reported on the same horizontal
+grid.  For models that stagger variables horizontally, output should
+be interpolated horizontally to a common grid.  When interpolation is
+needed, it is recommended that wind fields be interpolated to the grid
+used for mass and temperature variables. 
+<p>
+(b) When writing two-dimensional (horizontal) fields:
+<ol>
+<li>Start in the southwest corner and proceed "eastward" in model's x direction
+<li>Increment latitude from south to north, always writing from the
+latitude's westernmost point toward the easternmost. 
+</ol>
+<p>
+(c) When writing three-dimensional fields:
+<ol>
+<li>Write output as a sequence of two-dimensional (horizontal) fields. 
+<li>Start with atmospheric layer closest to surface.
+<li>Proceed upward to layer farthest from surface.
+</ol>
+<p>
+</blockquote>
+<h4>5. Vertical grid</h4>
+<blockquote>
+<p>
+(a) All requested three-dimensional fields should be reported at the
+same levels, without vertical staggering.  If the model does stagger
+variables in the vertical, then all fields should be interpolated to a
+common vertical grid. 
+<p>
+(b) Output from models using a sigma coordinate should be reported on
+the sigma grid.  Sigma levels of the output should be listed in the
+vertical-coordinate reference file from the surface upward, with sigma
+values listed as numbers in the range [1,0]. 
+<p>
+(c) Output from other models also should be presented on the model's
+vertical grid if there is a straightforward procedure giving the
+pressure levels corresponding to the model's vertical grid points.
+
+<P>(d) When such a procedure is not available, other models should report
+output interpolated/extrapolated to the following pressure levels.
+<B>This is the least desirable option and should be used only as
+a last resort</b> when it would be effectively impossible to recover
+the pressure on the model grid.  Data are to be interpolated
+to these 23 pressure levels:
+<br>
+<blockquote>
+1025 mb, 1000 mb, ... (every 25 mb) ... , 600 mb, 500 mb, 400 mb, 300
+mb, 200 mb, 100 mb 
+</blockquote>
+If output is reported on this grid, then in the ASCII control file,
+the grid should be described as the "standard pressure grid".
+<p>
+(e) When writing fields, go from the lowest layer of the model atmosphere 
+toward the top of the
+model atmosphere. 
+<p>
+</blockquote>
+<h4>6. Binary standard</h4>
+<p>
+<blockquote>
+<b> Files should be written as unformatted output in IEEE754
+floating point (32 bit) binary.</b>
+<p>
+ The IEEE754 format can typically be specified as a compiler option and may be 
+the default format on some systems.  If byte ordering can be specified
+please use "big endian" byte order.  Consult your system's "man" pages
+or other documentation to find any compiler switches that are
+necessary to specify this format.
+<p>
+For those computing on a 64-bit machine, please note that the IEE754 standard 
+considers 64-bit floating point numbers as double precision.  <b>For
+cross-platform compatibility of the archive, it is imperative that the
+output be written as 32-bit.</b>
+<p>
+</blockquote>
+<h4>7.  Writing to files</h4>
+<blockquote><p>
+(a) General header:<br>
+The first record written in an output file is to contain
+<ol>
+<li>Output field ID <b>number</b> (not the 6-character form of the ID), 
+as given in the tables for the 
+<A HREF="table1.html">required</A> and 
+<A HREF="table2.html">supplementary</A> output (1 floating point number)
+<li>Start day (3 floating point numbers in day, month, year order) 
+<li>End day (3 floating point numbers in day, month, year order)
+<li>Number of latitudes (gridpoints in y-direction of model grid; 1
+floating point number) 
+<li>Number of longitudes (gridpoints in x-direction of model grid; 1
+floating point number) 
+<li>Number of vertical levels (1 floating point number)
+</ol>
+(These are to be written with a single write statement, i.e., the
+information above consists of <b>one record</b>) 
+<p>
+(b) Individual time-step header:<br>
+Before each date/time block of output, write a record containing
+<BR>
+<BLOCKQUOTE> 
+Model date (3 floating point numbers in day, month, year order)<BR>
+Model time (UTC in seconds after 00 UTC; i.e. 1 floating point
+number in the range 0-86400)<BR> 
+</BLOCKQUOTE>
+Note that for cumulative fields, such as precipitation, the model time
+is the <B>ending time</B> of the accumulation period.
+<p>
+(c) For two-dimensional fields, each write record is to contain
+values for all x-direction gridpoints along one "latitude" (y
+gridpoint). 
+<p>
+(d) Three-dimensional fields are to be written as a sequence of
+two-dimensional fields ordered from the atmospheric layer closest to
+the surface to the layer farthest from the surface.  Thus, for one
+atmospheric layer, each write record should contain values for all
+x-direction gridpoints along one "latitude" (y gridpoint), and the
+records should be ordered from southernmost latitude to northernmost.
+<p>
+</blockquote>
+<h4>8.  The  first time to report each field.</h4>
+<blockquote>
+<p>
+(a) For three-hourly mass and temperature fields and all six-hourly
+fields, the first reporting time is the start of the simulation (00
+UTC on starting day). 
+<p>
+(b) For three-hourly cumulative fluxes and precipitation, the first
+reporting time is after the initial 3 hours of simulation (03 UTC on
+starting day). 
+<p>
+(c) For daily values, see <a href="table1.html"> Table 1 </a>.
+<p>
+(d) For supplemental ("B-list") output, follow 8(a) for
+instantaneously sampled fields and 8(b) for cumulative and
+time-average fields. 
+<p>
+</blockquote>
+<br>
+<br>
+<hr>
+Return to <a href="./pircsex1.html#diagn">Experiment 1 Diagnostics</a>
+<p>
+Return to <a href="../workshop2.html">Workshop II Summary</a>
+<p>
+<table>
+<tr><a href="http://www.pircs.iastate.edu" border="0"><img
+src="../homepage2.jpg"
+border="0"></a></tr>
+<tr><a href="http://www.iastate.edu" border="0"><img src="../isu.gif"
+border="0"></a></tr>
+<tr><td><a
+href="http://www.iastate.edu/guide/policies/notice.html">Copyright/Trademark
+Legal Notice</a></td></tr>
+</table>
+ 
+</body>
+</html>

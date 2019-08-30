@@ -1,0 +1,215 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Project to Intercompare Regional Climate Simulations (PIRCS):  </TITLE>
+</HEAD>
+<BODY TEXT="#000000" LINK="#0000ff">
+
+<FONT FACE="Times New Roman"><P>&nbsp;</P>
+<P>&nbsp;</P>
+</FONT><B><FONT FACE="Times New Roman" SIZE=4><P ALIGN="CENTER">Project to Intercompare Regional Climate Simulations (PIRCS): </P>
+<P ALIGN="CENTER"> </P>
+<P ALIGN="CENTER">Description and Initial Results</P>
+</FONT><FONT FACE="Times New Roman"><P>&nbsp;</P></B>
+</B><P>&nbsp;</P>
+<P>&nbsp;</P>
+<P ALIGN="CENTER">Eugene S. Takle<SUP>1,2,3</SUP>, William J. Gutowski, Jr.<SUP>1,2</SUP>, Raymond W. Arritt<SUP>2</SUP>,
+Zaitao Pan<SUP>2</SUP>, C. Anderson<SUP>2</SUP>, 
+R. Silva<SUP>2</SUP>, D. Caya<SUP>9</SUP>, S. Chen<SUP>8</SUP>, 
+J.H. Christensen<SUP>5</SUP>, S.-Y. Hong<SUP>7</SUP>, H.&Ecirc;Juang<SUP>7</SUP>, 
+J.&Ecirc;Katzfey<SUP>4</SUP>, W. Lapenta<SUP>6</SUP>, 
+R. Laprise<SUP>9</SUP>,
+P. Lopez<SUP>5</SUP>, 
+J. McGregor<SUP>4</SUP>, J. Roads<SUP>8</P>
+</SUP><P ALIGN="CENTER">&nbsp;</P>
+<P>&nbsp;</P>
+<SUP><P>1</SUP>Department of Geological and Atmospheric Sciences, Iowa State University, Ames.</P>
+<SUP><P>2</SUP>Department of Agronomy, Iowa State University, Ames.</P>
+<SUP><P>3</SUP>International Institute of Theoretical and Applied Physics, Iowa State University, Ames.</P>
+<SUP><P>4</SUP>Commonwealth Scientific and Industrial Research Organisation, Mordialloc, Australia.</P>
+<SUP><P>5</SUP>Danish Meteorological Institute, Copenhagen, Denmark.</P>
+<SUP><P>6</SUP>Marshall Space Flight Center, Huntsville, Alabama.</P>
+<SUP><P>7</SUP>National Centers for Environmental Prediction, Camp Springs, Maryland.</P>
+<SUP><P>8</SUP>Scripps Institute of Oceanography, La Jolla, California.</P>
+<SUP>9</SUP>Universite du Quebec a Montreal, Montreal, Canada</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P ALIGN="CENTER">August 1998</P>
+<P ALIGN="CENTER">&nbsp;</P>
+<P ALIGN="CENTER">&nbsp;</P>
+<P ALIGN="CENTER">Submitted to</P>
+<I><P ALIGN="CENTER">Journal of Geophysical Research</P>
+</I></FONT><P ALIGN="CENTER">&nbsp;</P>
+<FONT FACE="Times New Roman"><P ALIGN="CENTER">ABSTRACT</P>
+</FONT><P>A description is given for the first simulation experiment and output archives of the Project to Intercompare Regional Climate Simulations (PIRCS).  Initial results from simulations of the summer 1988 drought over the central U.S. indicate that limited-area models forced by large-scale information at the lateral boundaries are able to reproduce bulk temporal and spatial characteristics of meteorological fields.  In particular, the 500 hPa height field&Otilde;s  time average and temporal variability is generally well simulated by all participating models.</P>
+<P>Model simulations of precipitation episodes vary depending on the scale of the relevant dynamical forcing.  Organized synoptic-scale precipitation systems are simulated deterministically in that precipitation occurs at close to the same time and location as observed (though the amounts may vary from the observations).  Episodes of mesoscale and convective precipitation are represented in a more stochastic sense, with less precise agreement in temporal and spatial patterns. </P>
+<FONT FACE="Times New Roman"><P>Simulated surface energy fluxes near the FIFE region show broad similarity with FIFE observations in their temporal evolution and time average diurnal cycle. Inter-model differences in mid-day Bowen ratio tend to be closely associated with precipitation differences.  Differences in daily maximum temperatures are also linked to the Bowen ratio differences, indicating strong local, surface influence on this field.  Although some of the models have bias with respect to the FIFE observations, they all tend to reproduce the synoptic variability of observed daily maximum and minimum temperatures.</P>
+<B><P>&nbsp;</P>
+<P>1.  Introduction</P>
+</B><P>&nbsp;</P>
+<P>&#9;Contemporary global climate models have typical resolutions on the order of 100s of kilometers or larger [Phillips, 1995], in part due to computational constraints.   Although this has been adequate for many purposes, it is not sufficient for resolving landscape regions that are important to human activities such as agricultural zones and watersheds of sub-continental size.  Such resolution is also insufficient for simulating regional circulations that may interact with the landscape and influence local climate.  Because simulating climate variability in sub-continental regions is important for understanding human impacts of potential climate change, much attention has been devoted in recent years to climate simulation using atmospheric mesoscale models [Giorgi and Mearns 1991; McGregor 1996] driven by output from a coarser resolution global model or, for test purposes, an atmospheric analysis.  The limited-area domain of such mesoscale models allows simulations lasting months or even years at resolutions of just a few 10s of kilometers using current computing resources.</P>
+<P>&#9;The importance of regional climate change prompts a need to understand the capabilities and limitations of using atmospheric mesoscale models to simulate climate.  Furthermore, steady improvements in computing power imply that global climate simulation will eventually occur at mesoscale resolution on a regular basis. Analysis and interpretation of climate simulations by limited-area mesoscale models will help pave the way for interpreting the results of global simulations at these resolutions.  Numerous publications have documented capabilities of a variety of these models to simulate climate adequately in several regions [Giorgi and Mearns, 1991; McGregor, 1996].  Despite these successes, the overall strengths and weaknesses of this approach to climate simulation have been difficult to assess because the disparate applications reviewed by Giorgi and Mearns [1991] and McGregor [1996] lack a common framework.</P>
+<P>&#9;The Project to Intercompare Regional Climate Simulations (PIRCS) was developed to provide a common simulation framework for evaluating mesoscale models run in climate mode, both versus each other and, more important, versus observations.  Beyond the general PIRCS goal of evaluating the capabilities of this approach to climate simulation, PIRCS also provides a basis for improving mesoscale climate models, both individually and as a group.  For this reason, PIRCS has developed with strong community involvement, through a series of workshops [Takle, 1995; Gutowski et al., 1998] and additional informal exchanges among participants and advisors [WGNE report, 1996].</P>
+<P>This paper describes the motivation and structure for the first PIRCS simulation experiment, including the output and some of the observational data sets archived for analysis.  We also present some preliminary results from the first experiment that give an initial indication of the collective capabilities of the participating models and of this approach to climate simulation.</P>
+<P>&nbsp;</P>
+<B>
+<P>2. PIRCS Experiment 1</P>
+</B>
+<P>&nbsp;</P>
+<P> &#9;We describe here general features of Experiment 1.  Specific technical details can be found at the PIRCS Web site, http://www.pircs.iastate.edu. </P>
+<P> </P>
+<P>(a) Domain and period</P>
+<P>&#9;The simulation domain for Experiment 1 (Fig. 1) 
+covers the continental United States with a specific focus on the central region.  
+Simulations cover two periods of hydrologic extremes in the central 
+US:  15 May &ETH; 15 July 1988 (drought) and 1 June &ETH; 31 July 1993 (flood).  These periods were chosen to give strong signals of climate variability that a model should be able to capture.  Summer periods were chosen because large-scale circulation is typically weaker in summer, so that local, mesoscale circulation might be expected to play a larger role in regional climate.  This places a greater challenge on the models to generate regional climate internally without strong external control through lateral boundary conditions.  Periods of only two months were initially chosen to balance limitations in computational and personnel resources for a largely volunteer effort against the need for simulations long enough to capture climatic behavior.  Although recent advances in computing hardware have made longer simulations more feasible, there remains substantial benefit from the side-by-side simulations performed for the first experiment.</P>
+<P> &#9;Several factors have guided the choice of a simulation domain.  A fundamental assumption in PIRCS is that there must be important mesoscale features in the targeted domain for climate simulation by a mesoscale model to give added value to the global simulation driving it.  The central United States contains a significant mesoscale circulation, the nocturnal, low-level jet [LLJ; Stensrud, 1996].  The LLJ is a strong flow of air from the Gulf of Mexico  that transports large amounts of water into the central U.S. and thus plays an important role in the region&Otilde;s water and energy cycles [Rasmussen, 1967].  The LLJ typically is confined to a relatively thin layer a few hundred meters above the surface and exhibits a strong diurnal cycle, with maximum flow tending to occur in the middle of the night [Bonner, 1968; Mitchell et al., 1995].  The LLJ plays an important role in the development and sustenance of mesoscale convective precipitation systems, which typically provide about half of the growing-season precipitation over the central U.S. [Fritsch et al., 1986].  One ultimate focus of PIRCS is thus analyzing the ability of models to simulate the LLJ and its coupling to precipitation.</P>
+<P>&#9;The central U.S. was also chosen because it contains a dense climatic observing network whose measurements can be used to assess model performances.  This region has also experienced field campaigns such as the First ISLSCP Field Experiment (FIFE) [Sellers et al., 1992] and new instrument networks such as wind profilers  [Wuertz et al., 1995] that provide additional observations.  Such special data sets may cover only a small part of the simulation domain and only a portion of the simulation periods, but they provide information on surface energy fluxes and LLJ distribution not available from the standard climatic networks.</P>
+<P>&#9;The simulation domain's extent was chosen to minimize as much as possible the presence of mountain ranges near the boundaries.   Rapidly varying topography in mountains can interfere with translating coarse-resolution driving data into mesoscale-resolution boundary conditions. [<B>reference??S-Y Hong?</B>].   One outcome of this consideration is that the simulation domain also covers western U.S. mountain ranges, providing an opportunity to simulate and analyze topographic precipitation that will be resolved only crudely in a global climate model.</P>
+<P>&#9;Finally, partly for the same reasons as given here, the central U.S. is the focus region for the Global Energy and Water Experiment's Continental International Project [GCIP, 1998].  One goal of GCIP is to improve simulation of climatic water and energy cycles.  PIRCS is helping GCIP attain this goal by providing a framework for assessing mesoscale model simulation of these cycles.</P>
+<P>&nbsp;</P>
+<P>(b) Initial and boundary conditions</P>
+<P>&#9;Atmospheric initial and boundary conditions were extracted from the reanalysis produced by the National Centers for Environmental Prediction (NCEP) and the National Center for Atmospheric Research (NCAR) [Kalnay et al., 1996].  We treated the reanalysis as output from a &Ograve;perfect&Oacute; model of the atmosphere for the periods simulated and thus conservatively assumed that differences between model output and observed behavior represent errors in the simulations due to factors such as construction of boundary conditions and internal shortcomings in the models. This assumption is most reasonable for large-scale mass, temperature and momentum fields and less so for humidity [Trenberth and Guillemot, 1995].  </P>
+<P>The initial and boundary conditions used the finest output resolution available, sigma-layer fields on the T62 gaussian grid of the data assimilation cycle&Otilde;s forecast model.   PIRCS scientists at Iowa State extracted initial and boundary conditions for the mesoscale models by interpolating reanalysis output to a 25 hPa vertical grid spanning 25 &ETH; 1050 hPa and three sets of horizontal grids:  0.5¡ latitude-longitude grid, 60 km polar-stereographic projection, and 60 km Lambert conformal projection.  The relatively high lower boundary pressure of the driving conditions data set was chosen to accommodate mesoscale models in regions where their surface topography is lower, and thus at higher pressure, than the reanalysis topography.  The horizontal interpolation was performed to produce driving files matching or nearly matching the standard PIRCS resolution of 60 km.  A small degree of additional interpolation was needed to transfer the initial and boundary conditions files to forms actually ingested by individual models.  However, by performing the initial coarse to fine grid interpolation, PIRCS scientists ensured that all models used nearly uniform interpolation of the reanalysis to mesoscale resolution.       </P>
+<P>The oceanic portions of the simulation domain used sea-surface temperatures (SSTs) derived from the reanalysis SST data set. These were supplemented by direct observations of surface temperature in the Great Lakes and satellite observations of SST in the Gulf of California, where the reanalysis grid gave only crude resolution.  The combined data sets were interpolated to the PIRCS grids using a Cressman scheme with three iterations of decreasing radius of influence.</P>
+<P>The most problematic initial condition was soil moisture.  Over most of the PIRCS domain, this field is not observed regularly, necessitating use of an indirectly estimated soil moisture field.  Furthermore, because the spin-up time for soil moisture simulation is probably several weeks or months, any errors in initial soil moisture will persist throughout the two simulation periods.  For consistency with the atmospheric driving conditions, PIRCS used the soil moisture produced by the surface parameterization of the reanalysis forecast model.  Because participating models use a variety of soil-layer resolutions, PIRCS supplied a vertically uniform available water fraction, ranging from 0 at wilting point to 1 at field capacity.  The reanalysis soil moisture is subject to relaxation toward an estimated annual climatology [Roads et al., 1998] 
+and thus must be viewed with caution as an initial condition.  The hydrologic extremes of 1988 and 1993 reduce the uncertainty of initial soil moisture by providing periods when soil in the central US was very dry or very wet.  However, individual soil moisture parameterizations can react rather differently to soil moisture near wilting point, so sensitivity to this initial condition may still exist in the first experiment.</P>
+<P>&nbsp;</P>
+<P>(c) Output archive</P>
+</FONT><P>Anticipated analyses of model output have guided the development of the structure of the output archive.  A general goal of the archive is to permit analysis of key mesoscale features, such as the low-level jet, and energy and water cycles linked to mesoscale behavior.  Therefore most fields are saved at least four times daily to allow analysis of diurnal variability.  An additional goal has been to have a relatively simple archive to minimize the potential for confusion and mistakes in creating it and to promote archive accessibility.</P>
+<P><A HREF="PAPER1/Table_1n.html">Table 1</A> lists 
+the fields contained in the standard PIRCS archive.  Some 
+of the fields such as precipitation and daily minimum and maximum temperature are included because they are observed at relatively high spatial resolution by climate observing networks.  Others, such as surface fluxes are included even though more sparsely observed because of their key roles in regional energy and water cycles and their usefulness in interpreting how a given model develops its climate.  Archived output will be available to the general community, though interested users are required to maintain contact with PIRCS and participating modelers to ensure clear understanding of what the models can and can not do.</P>
+<P>&nbsp;</P>
+<P>(d) Participating models</P>
+<P>&#9;Participation in PIRCS is currently open to all modeling groups 
+willing to perform the simulations and furnish the output in a standard 
+format.  For this initial report, output is available from seven models 
+<A HREF="http://www.mesoscale.iastate.edu/modeltable.html">(Table 2)</A>.  
+Results presented here are based on output selected from the 
+models' contributions to the PIRCS archive for the 1988 PIRCS simulation.</P>
+<P>&nbsp;</P>
+<B><P>3.  Initial results</P>
+<P>&nbsp;</P>
+</B>
+<P>(a) 500 hPa height field</P>
+<P>We used the NCEP reanalysis as a standard for evaluation of the 
+500 hPa height field.   The density of rawinsonde observations over 
+the U.S. is such that large-scale, upper air fields in the reanalysis 
+are well observed.  Time-average 500 hPa heights from the reanalysis 
+shows that the central U.S. was dominated by a large-scale ridge 
+(Fig. 2).  
+Further discussion of large-scale features of the 1988 drought appears in Atlas et al. [1993] and Trenberth and Guillemot [1996].  </P>
+<P>We compared the 500 hPa height field for each model to that for 
+the reanalysis using two statistics, the bias and the root-mean-square 
+deviation (RMSD).  The bias is simply the arithmetic mean of the 
+difference between the predicted 500 hPa height from the model and 
+the reanalysis. The bias reflects systematic over- or under-predictions 
+while transient positive and negative errors may cancel.  Conversely, while errors of opposite sign will not cancel in the RMSD, information on the sign of the error is lost.  The bias and RMSD were computed at all grid points from output archived every 6 hours.</P>
+<P>The RMSD for several models (HIRHAM, Scripps RSM, NCEP RSM and DARLAM; 
+<A HREF="JGRfig3.html">Fig. 3)</A>.  
+shows a rather similar pattern in which there is a broad RMSD maximum located across the central to southern United States.  Comparison with the bias  indicates that for DARLAM and HIRHAM the region of maximum RMSD generally coincides with a broad maximum of the bias. We see two possible interpretations (which are not mutually exclusive) for such results:  first, the RMSD maxima may be attributable to systematic error in the prediction of the amplitude of the 500 hPa ridge that prevailed over North America during the period; second, the error may be largest in this region because it is relatively far removed from the boundaries, where information from the reanalysis is continually inserted.  The latter seems to be especially the case for MM5, in which the RMSD is small near the lateral boundaries and gradually increases toward the interior of the domain.  RegCM2 shows two spatial maxima of RMSD, one in the lee of the Rocky Mountains and the other across the east-central U.S.  The former corresponds with a positive maximum in the bias (perhaps suggesting a systematic error in the prediction of lee cyclones or other orographic influences on the dynamics), and the latter corresponds with a broad region of negative bias. RAMS differs from the other models, with RMSD around 20 m over most of the U.S. and  little bias.  There is little indication of spatial structure to the RAMS errors except for a small RMSD maximum  off the southwestern coast of the U.S.</P>
+<P>The temporal trend of the spatially-averaged RMSD 
+<A HREF="RMSDtimeseries.gif">(Fig. 4)</a> shows 
+that most models exhibit a base level of RMSD around 10-20 m 
+with occasional episodes of higher values.  There was a period about 
+5 to 10 days after the start of the simulation (Julian days 140-145; May 20-25) when the RMSD was relatively large for most models.  During this time  a strong 500 hPa closed low slowly migrated across the U.S.  MM5 has a second period of increasing RMSD during Julian days 146-157, when a strong cut-off low persisted over the south-central U.S.  Once the cut-off low filled, the RMSD decreased dramatically.  For Julian days 158-186 the RMSD was near minimum for all models.  This was a period characterized by the gradual breakdown, partial redevelopment, and continued breakdown of an intense mid- and upper-tropospheric ridge over the central U.S.  Near the end of the simulation there was an episode when RMSD increased for RegCM2 and DARLAM.  The increased RMSD corresponded with the development and migration of a weak trough across the central U.S.  In a broad sense the models appear to handle development and breakdown of large-scale ridges well and the development of short-wavelength lows somewhat less well; however, there are substantial variations from model to model and from case to case.</P>
+</FONT><P>Comparison of the standard deviation of model 500 hPa heights with the corresponding statistic from the reanalysis (Fig. 5) shows how well model storm tracks match those in the reanalysis.  The reanalysis shows maxima of 500 hPa standard deviation in the northwestern and northeastern U.S., with a minimum in the central U.S. implying that storm tracks are blocked.  All models reflect this general pattern quite closely (not shown), suggesting that in general the reanalysis data applied in the boundary conditions are adequate for the models to represent the development and propagation of synoptic systems.</P>
+<P>&nbsp;</P>
+<FONT FACE="Times New Roman"><P>(b) Precipitation</P>
+<P>&#9;Evaluation of simulated precipitation uses gridded observations of Higgins et al. [1996] for comparison.  These observations are analyzed onto a fairly coarse grid (2¡ latitude x 2.5¡ longitude).  While the mesoscale features of the precipitation distribution are thus averaged out, the analysis provides a basis for assessing broad features of the precipitation distribution.  Note that the Higgins data set uses only precipitation observed over the 48 contiguous states and thus provides no basis for evaluating precipitation over Canada, Mexico or the oceans.</P>
+<P>For the models shown, time average precipitation in 1988 in the central US is generally  closer to 1988 than 1993 observations (not shown), indicating that the models are (approximately) capturing the strong differences in climatic behavior between the drought and flood years.  Some general features of the observed precipitation distribution are reflected in the model output:  wet Pacific Northwest, dry southwestern US, and wet Atlantic/Appalachian region, though the magnitudes vary with respect to the Higgins data set.  However, the models give mixed results for the central U.S.  They have difficulty capturing both the relatively large amount of precipitation in Texas and the region of smallest precipitation in Illinois and Indiana during the 1988 drought.</P>
+<P>&#9;Further analysis of predicted precipitation focuses on a portion of the Upper Mississippi River basin (37 N - 47 N, 89 W - 99 W) that is well resolved by the PIRCS models (about  400 grid points) but poorly resolved by a GCM or the reanalysis.  
+<A HREF="PAPER1/Table_3n.html">Table 3</A> summarizes 
+weather patterns that formed central U.S. climate during May - July 1988.  Two prominent episodes occurred during this period:</P>
+<P>&#9;¥  Julian days 139 - 158, dominated by large-scale, synoptic systems</P>
+<P>¥  Julian days 164 - 178, primarily local variability, especially in precipitation</P>
+<P>During the former episode, external boundary conditions should exert substantial influence through their guidance of large-scale flow.  During the latter episode, external forcing should be weak, with much if not most of the simulated precipitation appearing as quasi-random convection. </P>
+<P>&#9;Although the models differ in precipitation magnitudes, they do
+capture the frequency of synoptically forced precipitation quite well
+<A HREF="PAPER1/Figures/DailyPrec.panels.GIF"> (Fig. 6) </A>, particularly for the four precipitation events during the episode dominated by large-scale, synoptic systems (Julian days 139 - 158).  Equally important for hydrologic considerations, the models also capture dry periods with reasonable fidelity during this episode.  All models thus ingest well influences of large-scale, lateral boundary forcing on precipitation. For Julian days 164 - 178, the observed precipitation is frequent in small amounts, with no clearly definable precipitation events.  The models represent this stochastic behavior well, although again they differ from each other and the observations in precipitation magnitude.</P>
+<P>&#9;A particularly noteworthy event during the simulation period is the isolated event on Julian day 160.  This was a transient event within an overall dry period created by a strong omega block, during which  a well-defined precipitation region (likely a mesoscale convective system) migrated across the evaluation subdomain.  This event is particularly revealing because its limited spatial and temporal existence 15 days from model initialization and far from forcing boundaries offers challenges for models to simulate.  The models capture the existence of this episode quite well, including its temporal isolation within a generally dry period, although as before, some difficulty is noted for individual models in getting the correct precipitation amount.</P>
+</FONT><P>These preliminary results suggest that regional models run in climate mode are capable of transporting remotely introduced water vapor and producing precipitation that, on average, matches observed spatial and temporal patterns reasonably well.  </P>
+<P>&nbsp;</P>
+<FONT FACE="Times New Roman"><P>(c) Surface fluxes</P>
+<P>In addition to external, large-scale forcing, surface-atmosphere interaction also influences climate in interior domains through surface energy and water fluxes.  Such fluxes are not observed on a regular basis over most of the simulation domain.  Here, as an initial exploration of simulated surface fluxes, we use observed data from First ISLSCP Field Experiment (FIFE) [Sellers et al., 1992] that were prepared by Betts and Ball [1998]. In this data set, all available FIFE observations of a field such as surface latent heat flux are averaged together at 30-minute intervals.  The averaging makes no distinction between instruments, nor does it use any differential weighting such as area-weighting. During the PIRCS 1988 period, each interval typically contains reports from several instruments. For each model, we extract output from the gridpoint closest to the FIFE location (39 N, 96.5 W) to compare with FIFE observations.</P>
+<P>Betts and Ball also give the standard deviation of the reported values at each time step. There are a number of reasons for the range of values among the measurements, such as  spatially varying cloud cover [Smith et al., 1992], physical features of the landscape [Nie et al., 1992a], specific vegetation characteristics  [Smith et al., 1992],  instrumentation differences [Nie et al., 1992b], and  measurement error [Kanemasu et al., 1992].  We use the standard deviation among concurrent measurements to give a metric for how accurately surface fluxes have been measured. Thus, our plots of FIFE observations versus time typically show two curves, the instrument average plus/minus the standard deviation.</P>
+<P>Figure 7 ( <A HREF="PAPER1/Figures/Diurncycle-1.panels.GIF"> panel 1 </A> and <A
+HREF="PAPER1/Figures/DiurnCycle-2.panels.GIF"> panel 2</A> ) 
+shows time-average diurnal cycles for three surface fluxes:  incident shortwave radiation, latent heat flux and sensible heat flux.  The incident shortwave radiation provides the primary energy input into the surface, whereas the latent and sensible heat fluxes combined typically represent most of the net energy received by the atmosphere from the surface.  The largest differences among the simulations and with respect to the observations occur in the Bowen ratio:  mid-day latent heat flux is larger, smaller or approximately equal to the sensible heat flux, depending on the model.  FIFE observations give latent heat flux roughly three times larger in magnitude than sensible heat flux, but some caution should be exercised in evaluating FIFE sensible and latent heat fluxes for 1988.  Betts and Ball [1998] note that combined precipitation, evapotranspiration and soil moisture measurements for 1988 do not give balance in the soil moisture budget.  Also, the surface latent heat flux observed for 1988 is as large as observed for 1987, even though the FIFE region experienced strong drought in 1988.  There is far less spread among models for incident solar radiation.  There is a tendency for models that simulate greater central U.S. precipitation to have smaller insolation maxima, presumably because of greater simulated cloud cover.</P>
+<P>Time series of daily surface latent heat flux <A
+HREF="PAPER1/Figures/SfcLHF.panels.GIF"> (Fig. 8) </A> 
+and sensible
+heat flux <A HREF="PAPER1/Figures/SfcSHF.panels.GIF"> (Fig. 9)
+</A> show the same relative behavior among models revealed in the
+average diurnal cycles.  If we accept the FIFE observations as
+reasonable representations of the actual fluxes, despite the cautions
+above, then most models are simulating these two fluxes fairly well,
+remembering that these comparisons are effectively for a single point.
+The models also simulate daily insolation <A
+HREF="PAPER1/Figures/SfcISRad.panels.GIF"> (Fig. 10) </A> 
+moderately well, with several roughly reproducing the synoptic variability of the FIFE observations.</P>
+</FONT><FONT FACE="Times New Roman" SIZE=1><P>&nbsp;</P>
+</FONT><FONT FACE="Times New Roman"><P>(d) Daily minimum and maximum temperature</P>
+<P>&#9;An important outcome of surface-atmosphere interaction and
+synoptic weather fluctuations is the time variation of daily minimum
+and maximum temperature.   For daily maximum temperature
+<A HREF="PAPER1/Figures/MaxTemp.panels.GIF"> (Fig. 11)
+</A>, the models tend to follow the temperature&Otilde;s
+synoptic-scale variability, though with bias.   Most models, for
+example, captured sharp decreases and increases in temperature around
+days 142, 167, and 183.  Model bias in maximum temperature tends to
+vary with the mid-day, time-average Bowen ratios in Fig.7.  The
+coolest maxima occur for MM5-BATS and HIRHAM, which had the smallest
+Bowen ratio, whereas DARLAM has the warmest maxima as well as the
+largest Bowen ratio.  Maximum temperature evolution thus shows
+evidence of external control by the synoptic flow and local control by
+surface energy balances.  </P>
+</FONT><P>Daily minimum temperature
+<A HREF="PAPER1/Figures/MinTemp.panels.GIF"> (Fig. 12) </A>
+also tends to reproduce the synoptic variability of the FIFE observations.  Model-observation differences tend to be smaller in magnitude compared to the daily maximum temperature differences.  In contrast to the temperature maxima, however, model-to-model differences in minimum temperature show less relationship to simulated surface energy balances.  Although DARLAM still has the largest positive bias versus FIFE observations, there is otherwise no consistent relationship between Bowen ratio and minimum temperature.  This of course is not surprising since minimum temperatures tend to occur at night in the models (as they do in the observations; not shown), when the surface fluxes shown are weak.</P>
+<P>&nbsp;</P>
+<B><FONT FACE="Times New Roman"><P>4.  Summary</P>
+</B></FONT><P>&nbsp;</P>
+<P>Limited-area models forced by large-scale information at the lateral boundaries are able to reproduce the bulk temporal and spatial characteristics of meteorological fields.  The mean 500 hPa height field is generally well simulated.  There is some evidence that model skill varies with the synoptic regime in a common way for all the models.  Specifically, situations dominated by a ridge or zonal flow are well simulated by most models as measured by the root-mean-square deviation from the reanalysis, while situations characterized by development and migration of short-wave lows or troughs tend to have larger RMSD. </P>
+<P>Model simulations of precipitation episodes vary depending on the scale of the relevant dynamical forcing.  Organized synoptic-scale precipitation systems are simulated deterministically, in that precipitation occurs at close to the same time and location as observed (though the amounts may vary from the observations).  Episodes of mesoscale and convective precipitation are represented in a more stochastic sense.  General periods of scattered convective precipitation tend to be captured in the models, though with less precise agreement in temporal and spatial patterns than for the synoptically organized events.  </P>
+<P>Simulated surface energy fluxes near the FIFE region show broad similarity with FIFE observations in their temporal evolution and time average diurnal cycle.  The largest differences occur in mid-day Bowen ratio, whose inter-model differences tend to be closely associated with precipitation differences.  Differences in daily maximum temperatures are also linked to the Bowen ratio differences, indicating strong local, surface influence on this field.  Although some of the models have bias with respect to the FIFE observations, they all tend to reproduce the synoptic variability of observed daily maximum and minimum temperatures.</P>
+<P>Several questions remain to be addressed in more detailed analyses of the model results. Evaluation of the ability of the models to predict the Great Plains low-level jet, organized mesoscale convective systems, and the relationship between these two phenomena will help explain how the models link mesoscale dynamics with regional precipitation. Sensitivity studies or ensemble simulations should be performed to evaluate the effect of uncertainties in initial and boundary conditions on the model results.  This question is especially important for soil moisture, which as mentioned previously has a rather tenuous observational basis and yet may have substantial influence on the model predictions.  Details of model implementation such as the optimal placement of the lateral boundaries [e.g., Jones et al., 1995] and improved methods for ingesting large-scale data into limited-area models also deserve attention.  It is our intent that by providing a common framework for addressing these and other issues, PIRCS will help to advance the study of climate and climate change on regional scales.</P>
+<P>&nbsp;</P>
+<B><P>Acknowledgments</P>
+</B><FONT FACE="Times New Roman"><P>The Project to Intercompare Regional Climate Simulations has been supported by funding from the Electric Power Research Institute, the International Institute of Theoretical and Applied Physics, and the Iowa Center for Global and Regional Environmental Research.  In addition, R&Ecirc;Arritt and C. Anderson were supported by NSF grant ATM-9616728.</P>
+</FONT><U><FONT FACE="Times New Roman" COLOR="#0000ff"><P>[[Add in funding agencies for the individual modelers]].</P>
+</U></FONT><FONT FACE="Times New Roman"><P>We gratefully acknowledge Eugenia Kalnay, Filippo Giorgi, Roger Pielke and Andrew Staniforth for advice and support in the design of the project.  Scott Kampa and Doug Fils provided computing assistance.</P>
+<P>&nbsp;</P>
+</FONT><P ALIGN="CENTER">&nbsp;</P>
+<FONT FACE="Times New Roman"><P ALIGN="CENTER">REFERENCES</P>
+<P ALIGN="CENTER">&nbsp;</P>
+</FONT><P>Bonner, W.D., Climatology of the low-level jet, Mon. Wea. Rev., 96, 833-850, 1968.</P>
+<P>Fritsch, J.M., R.J. Kane and C.R. Chelius, The contribution of mesoscale convective weather systems to the warm season precipitation in the central United States.  J. Clim. Apppl. Meteor., 25, 1333-1345, 1986.</P>
+<P>GCIP, GCIP:  Global Energy and Water Cycle Experiment (GEWEX) Continental-Scale International Project.  A Review of Progress and Opportunities, 93 pp., National Academy of Sciences, Washington, D.C., 1998.</P>
+<P>Ghan, S., X. Bian, and L. Corsetti, Simulation of the Great Plains low-level  jet and associated clouds by General Circulation Models, Mon. Wea. Rev., 124, 1388-1408, 1996.</P>
+<P>Giorgi, F., and L. Mearns, Approaches to the simulation of regional climate change:  A review, Rev. Geophys., 29, 191-216, 1991.</P>
+<P>Gutowski, W.J., E.S. Takle, and R.W. Arritt, Project to Intercompare Regional Climate Simulations, Workshop II, 5-6 JUNE 1997, Bull. Am. Meteor. Soc., 79 (4), 657-659, 1998.</P>
+<P>Higgins, R.W., J.E. Janowiak and Y. Yao, A gridded hourly precipitation data base for the United States (1963-1993). NCEP/Climate Prediction Center Atlas No. 1, 47 pp., 1996. [Available from NCEP/Climate Prediction Center, W/NP52, Washington, DC 20233.] </P>
+<P>Jones, R.G., J.M. Murphy and M. Noguer, Simulation of climate change over Europe using a nested regional climate model. Part I. Assessment of control climate, including sensitivity to location of lateral boundaries.  Quart. J. Roy. Met. Soc., 121, 1413-1449, 1995.</P>
+<P>Kalnay, E., M. Kanamitsu, R. Kistler, W. Collins, D. Deaven, L. Gandin, M. Iredell, S. Saha, G. White, J. Woollen, Y. Zhu, M. Chelliah, W. Ebisuzaki, W. Higgins, J. Janowiak, K.C. Mo, C. Ropelewski, J. Wang, A. Leetma, R. Reynolds, R. Jenne, and D. Joseph, The NCEP/NCAR 40-year reanalysis project, Bull. Am. Meteor. Soc., 77 (3 (March)), 437-471, 1996.</P>
+<P>Kanemasu, E.T., S.B. Verma, E.A. Smith, L.J. Fritschen, M. Wesley, R.T. Field, W.P. Kustas, H. Weaver, J.B. Stewart, R. Gurney, G. Panin, and J.B. Moncrieff, Surface flux measurements in FIFE:  An overview, J. Geophys. Res., 97 (D17), 18,547-18,555, 1992.</P>
+<P>Mitchell, M.J., R.W. Arritt, and K. Labas, A climatology of the warm season Great Plains low-level jet using wind profiler observations, Weather and Forecasting, 10 (3), 576-591, 1995.</P>
+<P>Nie, D., T. Demetriades-Shah, and E.T. Kanemasu, Surface energy fluxes on four slope sites during FIFE 1988, J. Geophys. Res, 97 (D17), 18,641-18,649, 1992a.</P>
+<P>Nie, D., E.T. Kanemasu, L.J. Fritschen, H.L. Weaver, E.A. Smith, S.B. Verma, R.T. Field, W.P. Kustas., and J.B. Stewart, An intercomparison of surface energy flux measurement systems used during FIFE 1987, J. Geophys. Res, 97 (D17), 18,715-18,724, 1992b.</P>
+<P>Phillips, T.J., Documentation of the AMIP Models on the World Wide Web, pp. 14, Lawrence Livermore National Laboratory, 1995.</P>
+<P>Rasmussen, E.M., Atmospheric water vapor transport and the water balance of North America, Part I.  Characteristics of the water vapor flux field, Mon. Wea. Rev., 95, 403-426, 1967.</P>
+<P>Sellers, P.J., F.G. Hall, G. Asrar, D.E. Strebel, and R.E. Murphy, An overview of the First International Satellite Land Surface Climatology Project (ISLSCP) Field Experiment (FIFE), J. Geophys. Res, 97 (D17), 18,345-18,371, 1992.</P>
+<P>Smith, E.A., et al., Area-averaged surface fluxes and their time-space variability over the FIFE experimental domain, J. Geophys. Res, 97 (D17), 18,599-18,622, 1992.</P>
+<P>Takle, E.S., Project to Intercompare Regional Climate Simulations (PIRCS), Preliminary Workshop, 17-18 November 1994, Bull. Am. Meteor. Soc., 76 (9), 1625-1626, 1995.</P>
+<P>Trenberth, K.E., and C.J. Guillemot, Evaluation of the global atmospheric moisture budget as seen from analyses, J. Climate, 9, 2239-2254, 1995.</P>
+<P>Trenberth, K.E., and C.J. Guillemot, Physical processes involved in the 1988 drought and 1993 floods in North America, J. Climate, 9 (6), 1288-1298, 1996.</P>
+<P>WGNE, Report of the Eleventh Session of the CAS/JSC Working Group on Numerical Experimentation (Reading, UK, 30 October - 3 November 1995), pp. 43, World Meteorological Organization, 1996.</P>
+<P>Wuertz, D.B., D.E. Wolfe, B.L. Weber and R.B. Chadwick, NOAA&Otilde;s Wind Profiler Demonstration Network: an overview of applications and impact on research.  NOAA Technical Memorandum ERL-ETL-249, Environmental Technology Laboratory, Boulder, Colorado, 1995.</P>
+<a href="PAPER1/Fig_captions.html"> Figure Captions</A><P>
+</B><P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY>
+</HTML>

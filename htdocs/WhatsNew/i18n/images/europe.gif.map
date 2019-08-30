@@ -1,0 +1,79 @@
+###_sgi-version: 1
+###_sgi-format: netsite
+###_sgi-date: (890881253) Wed Mar 25 19:00:53 1998
+###_sgi-document: Int'l Pages Europe
+
+default worldmap.html
+
+#
+rect tr_austria.html 78,149 140,169
+
+#
+rect nl_BE.html 91,185 153,201
+
+#
+rect tr_fr_BE.html 91,203 155,218
+
+#
+rect czech.html 78,223 197,240
+
+#
+rect denmark.html 78,240 154,259
+
+#
+rect finland.html 194,149 261,167
+
+#
+rect tr_france.html 194,168 261,184
+
+#
+rect tr_germany.html 190,186 268,203
+
+#
+rect greece.html 192,224 244,237
+
+#
+rect holland.html 190,203 269,220
+
+#
+rect iceland.html 190,240 260,258
+
+#
+rect italy.html 266,149 323,168
+
+#
+rect norway.html 267,168 326,186
+
+#
+rect poland.html 270,186 325,203
+
+#
+rect portugal.html 269,204 337,222
+
+#
+rect russia.html 269,222 332,239
+
+#
+rect slovakia.html 269,239 333,258
+
+#
+rect spain.html 332,149 382,168
+
+#
+rect sweden.html 333,168 391,185
+
+#
+rect tr_fr_CH.html 353,204 409,222
+
+#
+rect tr_de_CH.html 354,222 413,239
+
+#
+rect it_CH.html 354,239 406,259
+
+#
+rect en_UK.html 407,149 520,167
+
+#
+rect turkey.html 408,170 472,182
+

@@ -1,0 +1,231 @@
+<html>
+<head><title>PIRCS Cluster Page</title>
+<style>
+<!--
+body        {   
+                font-family     : verdana,helvetica,arial;
+                font-size       : 12pt;            }
+td          {
+                font-family     : verdana,helvetica,arial;
+                font-size       : 12pt;            }
+ul
+            {
+                list-style-type : circle;
+            }
+a:hover     {
+                color           : #cdc8b1;
+            }
+-->
+</style>
+
+</head>
+
+<body bgcolor="#E4E4E6" link="#8b8878" vlink="#8b8878" alink="#cdc8b1" >
+<table cellspacing="0" cellpadding="0" border="1" bordercolor="#000000" 
+bgcolor="#ffffff" width="100%">
+
+
+
+<!-- Title bar - START -->
+<tr valign="top">
+<td colspan="2">
+    <table cellspacing="0" cellpadding="4" border="0" width="100%">
+
+    <tr bgcolor="#000000" valign="top">
+    <td align="left">
+        <font color="#ffffff">
+        <a href="http://www.pircs.iastate.edu/"> <font color="#ffffff">PIRCS</font></a>  
+        </font>
+    </td>
+    <td align="right">
+        <a href="http://www.pircs.iastate.edu"> -[P I R C S ]-</a>
+    </td>
+    </tr>
+
+    <tr bgcolor="#8b8878" valign="top">
+    <td colspan="2">
+        <font color="#ffffff">
+        Project to Intercompare Regional Climate Simulations 
+        </font></a>
+        </font>
+    </td>
+    </tr>
+
+    <tr bgcolor="#cdc8b1" valign="top">
+    <td>
+        <font size="4" style="font-size:18pt"><nobr><b
+        >P &nbsp;&nbsp;I &nbsp;&nbsp;R &nbsp;&nbsp;C &nbsp;&nbsp;S</b></nobr></font>
+    </td>
+    <td valign="bottom" align="right">
+   <!--     <span style="font-size:10pt;">today's date....</span> -->
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- if (year < 2000) year = 1900 + year; -->
+<!-- Begin
+Stamp = new Date();
+year = Stamp.getYear();
+document.write('<font face="Arial">'+"  " + (Stamp.getMonth() + 1) +"/"+Stamp.getDate()+ " "+ '</font>');
+var Hours;
+var Mins;
+var Time;
+Hours = Stamp.getHours();
+if (Hours >= 12) {
+Time = " P.M.";
+}
+else {
+Time = " A.M.";
+}
+if (Hours > 12) {
+Hours -= 12;
+}
+if (Hours == 0) {
+Hours = 12;
+}
+Mins = Stamp.getMinutes();
+if (Mins < 10) {
+Mins = "0" + Mins;
+}	
+document.write('<font face="Arial">' + "  " + Hours + ":" + Mins + Time + " " +'</font>');
+// End -->
+</SCRIPT>
+
+
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+<!-- Title bar - END -->
+
+<tr valign="top">
+<!-- Column 1 - START -->
+<td width="100%">
+
+    <table cellspacing="2" cellpadding="2" border="0" width="100%">
+    <!-- CONTENT -->
+    <tr valign="top" bgcolor="#8b8878">
+        <td><b><a href="./index.html"><font color="white">Return to Cluster Usage Page<font></a></b></td>
+    </tr>
+
+    <tr valign="top">
+        <td>
+        <table cellspacing="0" cellpadding="2" border="0" width="95%">
+        <tr>
+        <td>
+	
+<p>
+<img src="images/bla.png" border="0" alt="New Story">
+<span style="font-size:12pt;">
+<b>Queue System Information</b><br>
+</span><span style="font-size:12pt;">
+
+The GNU queue system is best described at the
+<a href="http://bioinfo.mbb.yale.edu/~wkrebs/queue_man/queue.html">
+manual page</a>.  I will not attempt to replicate it here but will
+repeate someof the basic examples here and show some scripts I have
+created using the queue system.
+</p>
+
+<p>Simple command structure and examples<br>
+
+<i>queue -i -w -n -- hostname</i><br>
+Here queue is your queue request and hostname is the program you wish to 
+run.  <b>The queue command and options must be seperated from the command you will
+be running by <i>--</i></b>.  hostname is a standard program on linux/unix, you can substitute anything 
+you wish like date, who, top.  NOTE: to run top you would need to use<br>
+<i> queue -i -w -p -h pircsl2 -- top</i><br>
+Here we have changed the n to a p to provide us a full two way
+terminal since top needs to talk interactively to a tty.  We have also
+used -h to specifiy a host, rather than letting queue select the 
+least used one.
+<br>
+<br>
+We can also have results emailed back to us... try<br>
+<i>queue -i -r -n -- hostname</i><br>
+and then check your email (NOTE: your email account on the machine you issue the 
+queue command from, I have a .forward for my PIRCS email to send it to my main 
+account).
+
+
+</p>
+
+The queue program will autmatically calculate the load on the machines
+and select the best node to run your process on.  You can of course force it
+to run on a particular node as well if you wish.<br>
+<br>
+Run on a node it selects:<br>
+queue -i -w -n -- hostname
+
+
+
+<hr width=50>
+<p>Some simple shell scripts which are in /usr/local/bin on the cluster
+machines<br>
+<b>gqstat</b><br>
+A simple shell script to report the 
+load average of the cluster machines.<br>
+</p>
+
+<p>
+<b>gqprocs</b><br>
+A simple shell script to view all user processes on the queue machines
+<br>
+gqprocs   == shows all non-root processes on the cluster machines<br>
+gqprocs -u == shows all processess of the user who invokes the command
+</p>
+
+<p>
+<b>gqkill</b><br>
+A simple shell script to view your processes on the queue machines
+</p>
+
+<p>
+<b>gqmem</b><br>
+Print out a kinda ugly list of the memory status on each cluster
+</p>
+
+<p>
+We will be working to create a nicer interface to all this data, but
+I felt it important you have access to it now if only in text form.
+</p>
+
+
+</span>
+</p>    
+
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+    <!-- CONTENT -->
+    
+   </table>
+
+</td>
+<!-- Column 1 - END -->
+</tr>
+</table>
+
+
+
+    <p>&nbsp;</p>
+    <div style="font-size:10pt;;font-family:verdana,helvetica,arial;">
+    <center>
+    <nobr>Project to Intercompare Regional Climate Simulations (pircs@iitap.iastate.edu)</nobr><br>
+    <nobr>For problems with this page or suggestions please contact 
+    systems@iitap.iastate.edu.</nobr>
+    </center>
+    </div>
+    <p>&nbsp;</p>
+</body>
+</html>

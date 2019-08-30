@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="ROBOTS" CONTENT="NONE">
+<TITLE>Navigation Window</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- // begin hide script
+
+// Load a new page into the creator's window
+function loadPage(loc) {
+	if (!opener)
+		creator.location = loc;
+	else	opener.location = loc;
+}
+
+// Close the navigation window
+function closeWin() {
+	window.close(self);
+}
+// Create the VRML window
+function createVRMLWin(loc) {
+	vrmlWin = window.open(loc, 'vrml_win',
+'toolbar=no,location=no,directories=no,status=yrd,menubar=no,scrollbars=no,resizable=yes,width=520,height=420');
+	vrmlWin.creator = self;
+}
+
+// end hide script -->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#EFEFEF">
+<CENTER><P ALIGN="CENTER">
+<TABLE WIDTH="100%" BORDER="2" CELLSPACING="1" CELLPADDING="1">
+<TR><TD HEIGHT="4"></TD></TR>
+<TR><TH COLSPAN="2" BGCOLOR="#CCCCCC"><FONT COLOR="#000000" FACE="Helvetica,Swiss,Sans Serif" SIZE="2">Full Statistics for <A HREF="javascript:loadPage('totals0500.html');">May 2000</A></FONT></TH></TR>
+<TR><TD HEIGHT="4"></TD></TR>
+<TR><TD BGCOLOR="#CCCCCC"><FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">Hits:</FONT></TD>
+<TD NOWRAP BGCOLOR="#CCCCCC">
+<FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="javascript:loadPage('days0500.html');">by Day</A> /
+<A HREF="javascript:loadPage('avload0500.html');">by Weekday &amp; Hour</A> /
+<A HREF="javascript:loadPage('country0500.html');">by Country</A> /
+<A TARGET="vrml_win" HREF="3Dstats0500.html" onClick="createVRMLWin('3Dstats0500.html');return false;">3D model</A>
+</FONT></TD></TR>
+<TR><TD BGCOLOR="#CCCCCC"><FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">Items/URLs:</FONT></TD>
+<TD NOWRAP BGCOLOR="#CCCCCC"><FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="javascript:loadPage('topurl0500.html');">Top Ten</A> /
+<A HREF="javascript:loadPage('./files0500.html');">Overview</A> /
+<A HREF="javascript:loadPage('./rfiles0500.html');">Not&nbsp;Found</A> /
+<A TARGET="lists" HREF="./lfiles0500.html">List</A>
+</FONT></TD></TR>
+<TR><TD BGCOLOR="#CCCCCC"><FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif">Client Domain:</FONT></TD>
+<TD NOWRAP BGCOLOR="#CCCCCC"><FONT COLOR="#000000" SIZE="2" FACE="Helvetica,Swiss,Sans Serif"><A HREF="javascript:loadPage('topdom0500.html');">Top Ten</A> /
+<A HREF="javascript:loadPage('./sites0500.html');">Overview</A> /
+<A HREF="javascript:loadPage('./rsites0500.html');">Reverse Domain</A> /
+<A TARGET="lists" HREF="./lsites0500.html">List</A>
+</FONT></TD></TR>
+<TR><TD HEIGHT="4"></TD></TR>
+<TR><TD COLSPAN="2" ALIGN="CENTER" BGCOLOR="#CCCCCC"><FONT COLOR="#000000" FACE="Helvetica,Swiss,Sans Serif" SIZE="2"><A HREF="jsnav.html" onClick="loadPage('index.html');return true;">Summary for 2000</A> / <A HREF="javascript:closeWin();">Close navigation window</A></FONT></TD></TR>
+<TR><TD HEIGHT="4"></TD></TR>
+</TABLE></P>
+</CENTER>
+</BODY>
+</HTML>

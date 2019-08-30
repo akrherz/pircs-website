@@ -1,0 +1,115 @@
+:#
+:# day5pref.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0   - nothing special (default)
+:#	1   - soft mandatory
+:#	2   - hard mandatory
+:#	4   - hinv result if value is empty
+:#	8   - auto populate serial # if value is empty
+:#	16  - auto pop sysid if value is empty
+:#	32  - detect email connection
+:#	64  - auto pop email address
+:#
+:# value -- user input or a predefined value
+
+:Lang:radio::en_US:
+
+:#
+:# GlobalErrorMsg will be used to in a global area (e.g. at the beginning)
+:# of a html page when there is an error occurs. e.g. mandatory fields
+:# are not filled.
+:#
+:GlobalErrorMsg:text::<br><strong><font color="#ff0000">Please provide information
+for marked </font><blink>**</blink> fields <blink>**</blink><font color="#ff0000">
+below. Thank you.</font></strong><br>:
+
+:#
+:# NotFoundMsg will be used when there is no items found in a search, in
+:# day5appsearch page.
+:#
+:NotFoundMsg:text::<strong>No items are found.</strong><p>:
+
+:#
+:# VendorBeginMsg and VendorEndMsg will be inserted before and after
+:# Vendor Name in the day5appsearch page.
+:#
+:VendorBeginMsg:text::Products by\: :
+:VendorEndMsg:text:: ----:
+
+:#
+:# EmailSubject will be used for subject string in the email resent
+:# back to the user.
+:#
+:EmailSubject:text::EndUser Registration:
+
+:#
+:# DataTitle and EnvelopeTitle will only be used in print form 
+:#
+:EnvelopeTitleMsg:text::Please fax or postal mail this form to Silicon Graphics\::
+:DataTitleMsg:text:: ---------- ---------- ---------- ----------:
+
+:#
+:# GoBackButton will be used to toggle on/off the Go Back button based
+:# on whether or not the invoking page was OOBE
+:#
+:GoBackButton:text:0:<input type="submit" name="SubmitToHome" value=" Go Back ">:
+
+:#
+:# CongratDoneButton will be used to toggle on/off the Done button on the
+:# day5congrat.html page based on whether or not the invoking page was OOBE
+:#
+:CongratDoneButton:text::<input type="submit" name="SubmitToHome" value=" Done ">:
+
+:#
+:# CongratDoneText will be used to toggle on/off some text on the
+:# day5congrat.html page based on whether or not the invoking page was OOBE
+:#
+:CongratDoneText:text::
+<table border=0 width=638>
+<tr>
+<td colspan=3>
+<strong>
+<br>
+To remove the Registration icon from your desktop, click once on the icon,
+click the <u>right</u> mouse button, and select <i>"Remove"</i>.
+<p>
+
+To quit Netscape, click the File option of the Netscape menu bar with the
+<u>left</u> mouse button and choose the <i>"Exit"</i> menu item.
+<br>
+</strong>
+</td>
+</tr>
+</table>:
+
+:#
+:# SelectedCountryOption will be optionally inserted as the first <option>
+:# in day5index.html to make the selected country always visible.
+:# The value of Country will be appended after the tag by day5cgi.
+:# 
+:# VisibleCountries specifies countries (in country code) that are already
+:# visible at first time so that SelectedCountryOption will not be inserted,
+:# if the selected country is in the VisibleCountries list.
+:#
+:SelectedCountryOption:text::<option selected>:
+:VisibleCountries:text::AF AA AL DZ AS:
+
+:#
+:# PrintButton specifies the submit button when printer list is not empty
+:# and PrintButtonAlt provides the alternative text when printer list's empty.
+:# 
+:PrintButton:text::<input type="submit" name="SubmitPrint" value=" Print Registration ">:
+:PrintButtonAlt:text::<b>[ Printer Not Available ]</b>:
+
+:#
+:# SysConfigMsg will be used in day5all.html (or preview form page).
+:#
+:SysConfigMsg:text::Collecting configuration information using\: hinv, versions -an, df -l
+:
+
+:# end
+

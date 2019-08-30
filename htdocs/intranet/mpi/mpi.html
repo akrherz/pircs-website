@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>MPI network</TITLE>
+    <META NAME="GENERATOR" CONTENT="Mozilla/3.01SGoldC-SGI (X11; I; IRIX 6.3 IP32) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<CENTER><P ALIGN="CENTER">
+<FONT SIZE="+2">MPI network inforamtiion</FONT></P>
+</CENTER><HR>
+<P>
+I have set up and have been running on the PIRCS computer systems. Here 
+I will document some of my notes for running on the system. There is no 
+information here about writing MPI code only on creating topologies, 
+compiling and submitting code. Later I will add information on task 
+analysis and other components.</P>
+<P>
+<B>Location of the LAM/MPI installation</B><BR>
+First the location of the MPI programs libraries and headers is as 
+follows:</P>
+<P>
+<TT>binaries: /usr/local/lam/bin</TT><BR>
+<TT>libraries: /usr/local/lam/lib</TT><BR>
+<TT>header files: /usr/local/lam/h</TT></P>
+<P>
+<B>User files that need modification/creation</B><BR>
+<B> </B>You will need to modify your .cshrc file with the following 
+entries (the syntax will change for bash or other shells, I can help 
+you if you need these in another shell syntax)</P>
+<P>
+<TT># LAM MPI home directory setting for the parallel computing network</TT><BR>
+<TT> setenv LAMHOME /usr/local/lam</TT></P>
+<P>
+<TT># My PATH line with some extenstion for MPI, PVm and other programs</TT><BR>
+<TT> set path = (. /usr/people/fils/bin /usr/people/fils/bin/mpi 
+/usr/sbin /usr/bsd /sbin /usr/bin /usr/bin/X11 /usr/local/lam/bin 
+/usr/local/lam/lambin /usr/local/pvm3/lib /usr/local/pvm3/bin/SGI5 
+/usr/people/fils/bin/mpi )</TT></P>
+<P>
+In addition to this you will need to create a .rhosts file on the 
+machines you will be running as nodes on your topology. I created a 
+generic .rhosts file and placed it on each of the machines I might use 
+as a node. As I add more I will have to modify the file with these new 
+names. Note that this is a bit of a security (more than a bit) so I am 
+not happy that this is what is needed to run mpi on these systems. My 
+.rhosts file is as follows:<TT>abe.geol.iastate.edu fils</TT></P>
+<P>
+<TT>maggie.geol.iastate.edu fils</TT><BR>
+<TT>jumpgate.iitap.iastate.edu fils</TT><BR>
+<TT>stargate.iitap.iastate.edu fils</TT><BR>
+<TT>marvin.iitap.iastate.edu fils</TT></P>
+<P>
+<B>Compiling the program</B><BR>
+Once you have written or obtained MPI code, compiling it will look 
+something like:</P>
+<P>
+<TT>cc -o pi_mpi pi_mpi.c -I/usr/local/lam/h -L/usr/local/lam/lib -lmpi 
+-ltstdio -lt -ltrillium</TT></P>
+<P>
+Note that the libraries that make up the LAM/MPI package are:<BR>
+ libmpi.a libtstdio.a libargs.a libt.a libtrillium.a</P>
+<P>
+In the above compile line I did not use -largs since it was not 
+required by the code, however, your MPI code may very well require it. 
+Note as in all cases the order of the library arguements is important 
+and I have tried to list them out in proper dependenve order here. </P>
+<P>
+<B>Running a program</B><BR>
+<B> </B>To create a network topology you will need to create a text 
+file with the names of the computers you wish to run on in it. I 
+created a text file topology.txt and in it I placed the names of the 
+computers I will be running on. It looks like this:</P>
+<P>
+<TT>abe.geol.iastate.edu<BR>
+maggie.geol.iastate.edu<BR>
+pircss0.agron.iastate.edu</TT></P>
+<P>
+A first step in creating your topolgy would be to conduct an initial 
+test to make sure the system seems to be configured correctly. This 
+would be especially true if you are adding a new node (computer) to 
+your network of workstations.</P>
+<P>
+recon -v topolgy will run a quick test of the system and should look 
+like the following:</P>
+<PRE>
+abe.geol.iastate.edu&gt; recon -v topology.txt 
+recon: testing n0 (abe.geol.iastate.edu)
+recon: testing n1 (maggie.geol.iastate.edu)
+recon: testing n2 (pircss0.agron.iastate.edu)
+</PRE>
+<P>
+In most of these examples I will use the -v option to provide verbose 
+reporting for better displaying of the actions taking place.</P>
+<P>
+Our next step is to actually boot up our network:</P>
+<PRE>
+abe.geol.iastate.edu&gt; lamboot -v topology.txt 
+
+LAM 6.1 - Ohio Supercomputer Center
+
+hboot n0 (abe.geol.iastate.edu)...
+hboot n1 (maggie.geol.iastate.edu)...
+hboot n2 (pircss0.agron.iastate.edu)...
+topology done      
+</PRE>
+<P>
+We now have our our network topology up and running. We can look at it 
+with the command mpitask, however at present it will most likely be 
+rather boring since we don't have anything running yet.</P>
+<PRE>
+abe.geol.iastate.edu&gt; mpitask 
+TASK (G/L) FUNCTION PEER|ROOT TAG COMM COUNT DATATYPE
+</PRE>
+<P>
+We have our compiled MPI code and we have a booted network, all we 
+really need to do now is submit our program to the topolgy. There are 
+three different ways we might do something like that.</P>
+<P>
+1) mpirun command with all the arguements provided<BR>
+ 2) a schema file passed as a single arguement to mpirun<BR>
+ 3) xmpi a GUI interface to our topology (<A
+ HREF="http://www.osc.edu/Lam/lam/xmpi.html">XMPI home page</A>)</P>
+<P>
+The program I will be using for many of these following examples is the 
+master slave mandelbrot code that comes as an example program in the 
+MPI distribution.</P>
+<P>
+(I will finish this page later.... 8/28/97)</P>
+</BODY>
+</HTML>

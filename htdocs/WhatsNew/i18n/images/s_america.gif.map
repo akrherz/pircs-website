@@ -1,0 +1,10 @@
+#
+# Created by WebMap 1.0.1
+# Wednesday, November 29, 1995 at 5:51 PM
+# Format: NCSA
+#
+
+
+default ../s_america.html
+rect ../argentina.html 270,177 348,196
+rect ../brazil.html 270,196 335,214

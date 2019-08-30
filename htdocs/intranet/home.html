@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>Intrnet home page for PIRCS</TITLE>
+    <META NAME="GENERATOR" CONTENT="Mozilla/3.01SGoldC-SGI (X11; I; IRIX 6.3 IP32) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<MAP NAME="composit.map">
+</MAP>
+<CENTER><P ALIGN="CENTER">
+<A HREF="composit.map"><IMG SRC="./composit.gif" ISMAP
+ USEMAP="#composit.map" WIDTH="480" HEIGHT="360"></A> <BR>
+ <BR>
+ <FONT SIZE="+3">PIRCS Intranet</FONT><BR>
+ <A HREF="./macpc.html">PC and Macs</A> | <A HREF="tape.html">Tape 
+drives</A> | <A HREF="origin.html">Origin</A> | <A HREF="alpha.html">Alpha's</A>
+ | <A HREF="o2.html">O2's</A> | <A HREF="vincent.html">Vincent </A>| <A
+ HREF="printers.html">Printers</A> </P>
+</CENTER><TABLE BORDER="1" WIDTH="100%">
+    <TR>
+        <TD WIDTH="50%" ALIGN="CENTER"><CENTER><P ALIGN="CENTER">
+            News of the moment: (9/16/97)</P>
+            </CENTER><CENTER><P ALIGN="CENTER">
+            After all we went through with the 9 gig drive (it's on its way to be 
+            replaced by the way) we are now having trouble with the 4mm. I will let 
+            people know via email.</P>
+            </CENTER><CENTER><P ALIGN="CENTER">
+            I have also placed an archive of my email (good, bad, typo's and all) 
+            on-line and will link it into this page soon for people to have for 
+            their records. <A HREF="email/default.html">You can take an 
+            early look.</A></P>
+            </CENTER></TD>
+        <TD VALIGN="TOP"><P>
+            Projects: </P>
+            <P>
+            <A HREF="mpi/mpi.html">MPI on the PIRCS equipment. </A></P>
+            <P>
+            <A HREF="hdf.shtml">HDF file interface to WWW.</A> This is 
+            in the early stages now. More, plus some VRML soon.</P>
+            I am working up some <A
+             HREF="http://www.iitap.iastate.edu/test/hint/mpi.html">info 
+            on LAM MPI</A> on networked Linux boxes.</TD>
+    </TR>
+</TABLE>
+<P>
+<B>Current News Items for PIRCS systems (8/25/97):</B></P>
+<P>
+<B><I>MPI networking news:</I></B><BR>
+ I am working up some pages on the MPI network on the PIRCS systems. 
+Including locations of the programs and libraries and header files and 
+some example code from various locations.</P>
+<P>
+<B><I>Vincent NFS:</I></B><BR>
+ Pan and I discovered a problem with the NFS mounting being done by the <A
+ HREF="vincent.html">PIRCS Vincent Alpha's</A>. This did not affect the 
+other UNIX machines. However, it did make the Vincent systems 
+unuasable. This was resolved, finally, with a option to the mount 
+string making it look like:<BR>
+ <B>mount -t nfs -o vers=2 pircss0.agron.iastate.edu:/usr/people/pircs 
+./pircs</B><BR>
+ Note the vers=2 option, which was required. Vincent claims NFS3 
+support, but does not seem to fully have it in fact. The other 
+non-vincent DEC's were fine at version 3. You will need to go root o 
+the system to do this, just type su and when prompted for a passwd, 
+give your normal vincent passwd.</P>
+<P>
+Questions regarding the PIRCS computers can be addressed to:<BR>
+ Douglas FIls<BR>
+ fils@iastate.edu<BR>
+ 4-6196 voice (4-3555 for the main IITAP offive)<BR>
+ 4-9933 FAX</P>
+</BODY>
+</HTML>

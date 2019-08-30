@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>printers</TITLE>
+</HEAD>
+<BODY BGCOLOR="white">
+<CENTER><P ALIGN="CENTER">
+<FONT SIZE="6">PIRCS Printers</FONT></P>
+</CENTER><HR>
+<P>
+There are two printers in the PIRCS lab that are on the network. They 
+are listed below along with the printer commands for the various 
+machines.</P>
+<HR WIDTH="33%" ALIGN="LEFT">
+<P>
+<FONT COLOR="green">LaserJet5M</FONT><BR>
+ <FONT COLOR="green">pircs_lj5</FONT></P>
+<P>
+<FONT COLOR="red">DEC UNIX: lpr -Ppircs_lj5 </FONT></P>
+<P>
+<FONT COLOR="red">SGI's: lp -dpircs_lj5</FONT> </P>
+<P>
+<FONT COLOR="red">Vincent: lpr -Pah3203-lj5</FONT> <BR>
+ NOTE: while this is fine for PS files, if you are sending text, like 
+source code, the vincent system requires that it be converted before 
+being sent to the printer. This is not a factor with the PIRCS machines 
+but there is nothing I can do about it on Vincent. The system that can 
+be used to print on Vincent is enscript found in the locker gnu. A 
+print string might look something like:<BR>
+ <FONT COLOR="red">enscript -Pah3203-lj5 file.txt.</FONT><BR>
+ There are several nice options in enscript, including uping, line 
+numbering and others that may be of interest to you. For example: <BR>
+ <FONT COLOR="red">enscript --columns=2 --line-numbers --landscape 
+-Pah3203-lj5 file.txt</FONT> <BR>
+ Will print the file file.txt in landscape mode, 2 columns per page 
+side by side and put line numbers down. </P>
+<P>
+Mac's: The printers are on the Desktop, or you can use the <I>Chooser</I>
+ under the Apple menu. The printer is in zone Agronomy, as printer 
+pircs_lj5 </P>
+<P>
+Windows: The printer discription has been made, you can select it from 
+the print dialog box. </P>
+<HR WIDTH="33%" ALIGN="LEFT">
+<P>
+<FONT COLOR="green">HP InkJet 1600</FONT><BR>
+ <FONT COLOR="green">pircs_1600</FONT></P>
+<P>
+<FONT COLOR="red">DEC UNIX: lpr -Ppircs_1600 </FONT></P>
+<P>
+<FONT COLOR="red">SGI's: lp -dpircs_l600 </FONT></P>
+<P>
+<FONT COLOR="red">Vincent: lpr -Pah3203-dj</FONT> <BR>
+ NOTE: while this is fine for PS files, if you are sending text, like 
+source code, the vincent system requires that it be converted before 
+being sent to the printer. This is not a factor with the PIRCS machines 
+but there is nothing I can do about it on Vincent. The system that can 
+be used to print on Vincent is enscript found in the locker gnu. A 
+print string might look something like:<BR>
+ <FONT COLOR="red">enscript -Pah3203-dj file.txt</FONT> <BR>
+ There are several nice options in enscript, including uping, line 
+numbering and others that may be of interest to you. For example: <BR>
+ <FONT COLOR="red">enscript --columns=2 --line-numbers --landscape 
+-Pah3203-dj file.txt</FONT> <BR>
+ Will print the file file.txt in landscape mode, 2 columns per page 
+side by side and put line numbers down. </P>
+<P>
+Mac's: The printers are on the Desktop, or you can use the <I>Chooser</I>
+ under the Apple menu. The printer is in zone Agronomy, as printer 
+pircs_1600 </P>
+<P>
+Windows: The printer discription has been made, you can select it from 
+the print dialog box. </P>
+</BODY>
+</HTML>

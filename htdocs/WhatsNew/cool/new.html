@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <TITLE>Key New Features or Changes</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<BLOCKQUOTE>
+<FONT FACE="helvetica">&nbsp;</FONT> </BLOCKQUOTE>
+<H1>
+<A NAME="features"><FONT FACE="helvetica">IRIX 6.5.13 Key New Features</FONT></A></H1>
+<P>
+<FONT FACE="helvetica">The following changes have been incorporated 
+into the core 6.5.13 overlay CDs and the Applications CD.</FONT></P>
+<H3>
+<FONT FACE="Arial,Helvetica">New Software Features - Feature Stream 
+Only:</FONT></H3>
+<H4>
+<FONT FACE="helvetica">Filesystems</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">With 6.5.13, the structure of the CXFS 
+    filesystem configuration has been changed. CXFS filesystems can now be 
+    defined, modified, managed and deleted independently of each other, and 
+    of the cluster definition. (Previously, the CXFS filesystems were 
+    defined as attributes to the cluster definition.) To accommodate 
+    clusters mixing nodes running 6.5.12 and 6.5.13, backwards 
+    compatibility is enforced by default in 6.5.13. For more information, 
+    see the <I>CXFS Software Installation and Administration Guide</I>.</FONT>
+     
+    <LI>
+    <FONT FACE="Arial,Helvetica">The XVM Volume Manager can be used 
+    when layered with the CXFS filesystem. The XVM Volume Manager can also 
+    be used as a standalone volume manager; this requires that you be 
+    running the 6.5.13f release leg of the IRIX operating system. The 
+    6.5.13m leg does not support XVM as a standalone volume manager; this 
+    support will be added in a later release. For information on CXFS 
+    filesystems, see <I>CXFS Software Installation and Administration 
+    Guide</I>.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Added support for the use of mirrors 
+    in XVM logical volumes. The mirroring feature of XVM requires the XFS 
+    Volume Plexing software option. Customers running CXFS and who want to 
+    run mirrors will need to purchase this license. XLV customers with 
+    plexing licenses can upgrade to XVM without having to acquire a new 
+    license.</FONT> 
+</UL>
+<H3>
+<FONT FACE="Arial,Helvetica">New Software Enhancements - Maintenance 
+and Feature Stream: </FONT></H3>
+<H4>
+<FONT FACE="Arial,Helvetica">Filesystems</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">The xfsrestore command returns an 
+    incorrect exit code when it encounters a media error; improving this 
+    process lets a system administrator intelligently react to these 
+    conditions.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Improved exit codes for the xfsrestore 
+    and xfsdump commands. This lets a system administrator correctly 
+    respond to end-of-media or operator interrupt conditions.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Changed the mkfs command to allow you 
+    to specify the size of an XFS allocation group, as an alternative to 
+    specifying the total number of allocation groups. You use the -d 
+    agsize= option for this. For information, see the mkfs_xfs man page and <I>IRIX 
+    Admin: Disks and Filesystems</I>.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Changed the mkfs command to allow you 
+    to specify the size of a stripe unit and the size of a stripe width in 
+    bytes or in filesystem blocks, as an alternative to specifying these 
+    values in 512-byte block units. You use the -d su= and the -d sw= 
+    options for this. For information, see the mkfs_xfs man page and <I>IRIX 
+    Admin: Disks and Filesystems</I>.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Changed the default size of an XFS 
+    allocation group; larger filesystems will result in larger default 
+    allocation group sizes.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">The xfsdump and xfsrestore commands 
+    will provide the VSN of the tape that reached its end-of-volume (or the 
+    VSN of a new tape that needs to be mounted) and pass this VSN to the 
+    media_change_alert_program specified with the -c option. This lets 
+    system administrators send commands to a tape jukebox to mount the next 
+    tape.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Changed the default size of an XFS 
+    log. The default log size grows with the size of the filesystem up to 
+    the maximum log size, 128 megabytes, on a 1 terabyte filesystem. For 
+    information on the default values of XFS allocation groups and XFS log 
+    sizes, see <I>IRIX Admin: Disks and Filesystem</I>s.</FONT> 
+</UL>
+<H4>
+<FONT FACE="Arial,Helvetica">Scalability</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Added cpusetAttachPID() and 
+    cpusetDetachPID() functions to the Cpuset System library. The 
+    cpusetAttachPID() function allows a programmer to attach a currently 
+    running program to an existing cpuset. The cpusetDetachPID() function 
+    allows a programmer to detach a currently running program to an 
+    existing cpuset. Any programmer that uses the cpuset API from Irix 
+    6.5.13, and later, can use these functions. For information, see 
+    chapter 4, &quot;Cpuset System&quot;, in the<I> IRIX Admin: 
+    Resource Administration</I> manual and the cpusetAttachPID(3x)and 
+    cpusetDetachPID(3x) man pages.</FONT> 
+</UL>
+<H4>
+<FONT FACE="Arial,Helvetica">Networking</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">The following features have been moved 
+    from Enhanced DHCP to standard DHCP:</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">Ping check before an address is 
+        leased to insure it is not already in use</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">MAC address filtering; clients 
+        whose MAC address is listed in a file will be unable to obtain a lease 
+        and/or accesses from these clients will be logged.</FONT> 
+    </UL>
+    <P>
+    <FONT FACE="Arial,Helvetica">For more information, see the 
+    dhcp_bootp man page.</FONT></P>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Added implementation of End Sequence 
+    to Scheduled Transfer Protocol. The upper layer protocol or 
+    applications can now terminate a transfer and restart another one 
+    without taking down virtual connection.</FONT> 
+</UL>
+<H4>
+<FONT FACE="Arial,Helvetica">Graphics workstations</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">VPro for Octane/OpenGL performance 
+    improvements have been added as follows:</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">Improved X window performance by 
+        25 percent based on x11perf</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">Iproved performance of OpenGL 
+        glCopypixel() function</FONT> 
+    </UL>
+</UL>
+<H4>
+<FONT FACE="Arial,Helvetica">SGI Origin 3000 servers</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">The following new system controller 
+    features have been implemented for the SGI Origin 3000 server series: </FONT>
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">Enabled router port security, 
+        which prevents unauthorized enabling of additional router ports on 
+        router bricks in the SGI Origin/Onyx 3400 server series </FONT>
+        <LI>
+        <FONT FACE="Arial,Helvetica">Enabled system serial number 
+        security, which prevents unauthorized changes to the system serial 
+        number </FONT>
+        <LI>
+        <FONT FACE="Arial,Helvetica">Completely redesigned the 
+        graphical interface for the front-panel display of the SGI 3400 and 
+        3800 servers </FONT>
+    </UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Added hotplug attach feature that 
+    allows Gigabit Ethernet cards to be installed on a running system. A 
+    system administrator can use the pciconfig command to add cards to an 
+    Origin 3000 system and the ifconfig command to configure the cards for 
+    networking. For more information, see the pciconfig and ifconfig man 
+    pages.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Added Origin 3000 system partitioning 
+    support in the eoe.sw.partition software package. This feature improves 
+    how system partitioning software is installed, enabled, and disabled. 
+    It also eliminates the need to manually edit configuration files.</FONT>
+     
+</UL>
+<H4>
+<FONT FACE="Arial,Helvetica">System performance</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Efficiency improvements have been made 
+    to the BTE driver layer to reduce both latency and contention. This 
+    feature is a performance improvement to the existing functionality that 
+    is used internally by the system.</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">The tools that report CPU utilization 
+    have been modified to correct the sampling of %WIO to omit idle time in 
+    line with industry standards. See the sar(1) man page for details.</FONT>
+     
+</UL>
+<H4>
+<FONT FACE="Arial,Helvetica">Licensing software</FONT></H4>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Updated FLEXlm v7.2f support from 
+    GLOBEtrotter Software, Inc. The license manager daemon and the floating 
+    license server are built in V5 compatibility mode. For backwards 
+    compatibility, the client libraries and header files are still based on 
+    FLEXlm v6.1g. For more information, see the <I>FLEXlm End User 
+    Manual</I> and the associated man pages.</FONT> 
+</UL>
+<H3>
+<FONT FACE="Arial,Helvetica">Applications CD: </FONT></H3>
+<P>
+<FONT FACE="Arial,Helvetica">The following products were updated with 
+bug fixes only:</FONT></P>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">SGI Web Server, based on the Apache 
+    1.3.20</FONT> 
+    <P>
+    <FONT FACE="Arial,Helvetica">For details on how to change your 
+    default web server and configure and administer the SGI Web Server, see <A
+     HREF="../install/precaveats.html">Caveats to Read After You Upgrade</A></FONT>. </P>
+    <LI>
+    <FONT FACE="Arial,Helvetica">IRIX Interactive Desktop System 
+    Administration</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Information Searching Execution 
+    Environment</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">InSight Online Doc Viewer 4.4</FONT> 
+    <LI>
+    <FONT FACE="Arial,Helvetica">Netscape Communicator 4.77 </FONT>
+    <P>
+    <FONT FACE="Arial,Helvetica">By default, version 4.77 will install 
+    the new N32 version of the browser. Any existing third-party plugins 
+    for the browser that are O32 will no longer function. Support for the 
+    Macromedia Flash plugin is also included. For more information, see <A
+     HREF="http://home.netscape.com/communicator/v4.5/tour/index.html">http://home.netscape.com/communicator/v4.5/tour/index.html</A>. </FONT></P>
+</UL>
+<P>
+<FONT FACE="Arial,Helvetica">The following products contain 
+enhancements or new features: </FONT></P>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">WebSetup 3.3 has been updated to 
+    support the SGI web server based on Apache 1.3.20 and an administration 
+    GUI has been added. </FONT>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Impressario 2.9.5 to supports a new 
+    HP6300 Scanner driver and an Epson PPD bug fix.</FONT> 
+</UL>
+<BLOCKQUOTE>
+<FONT FACE="helvetica">&nbsp;</FONT> </BLOCKQUOTE>
+<H2>
+<FONT FACE="Arial,Helvetica">Other IRIX Software Changes</FONT></H2>
+<H3>
+<FONT FACE="Arial,Helvetica">IRIX OS Bundled Software: </FONT></H3>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Removed Out of Box Experience (OOBE) CD </FONT>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Removed Hot Mix CD </FONT>
+</UL>
+<P>
+<FONT FACE="Arial,Helvetica">For more information about the bundled 
+software that is included with this release, see <A
+ HREF="../install/cd.products.html">CD Contents</A> and the Bundled Software and 
+Licenses web page that you can access from the Welcome web page. </FONT></P>
+<H3>
+<FONT FACE="Arial,Helvetica">System Platform Bundles</FONT></H3>
+<P>
+<FONT FACE="Arial,Helvetica">No changes have been made to the demonstration software CDs developed 
+for the specific system platforms.</FONT></P>
+<H3>
+<FONT FACE="Arial,Helvetica">Freeware CDs: </FONT></H3>
+<P>
+<FONT FACE="Arial,Helvetica">The following changes have been incorporated for the IRIX 6.5.13 
+release time frame.</FONT></P>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">New freeware list</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">cyrus-sasl</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">db3</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">junkbuster</FONT> 
+    </UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Updated</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">apache</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">groff</FONT> 
+        <LI>
+       <FONT FACE="Arial,Helvetica">mpg123</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">mutt</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">ntp (formerly called fw_xntp)</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">OpenLDAP</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">procmail</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">proftpd</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">sox</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">texinfo</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">vim</FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">zsh</FONT> 
+    </UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Omitted</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">None</FONT> 
+    </UL>
+</UL>
+<P>
+<FONT FACE="Arial,Helvetica">For more information about the freeware 
+that is included with this release, including a complete list of the 
+freeware packages, see <A HREF="http://freeware.sgi.com"
+ TARGET="_blank">http://freeware.sgi.com/ </A>.</FONT></P>
+<H3>
+<FONT FACE="Arial,Helvetica">Documentation</FONT></H3>
+<P>
+<FONT FACE="Arial,Helvetica">The following manuals have been revised 
+for the significant new features incorporated into this release. See 
+the front of each manual for a description of the new features and 
+major documentation changes covered in these revised manuals.</FONT></P>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">IRIX operating system</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-2825-008, <I>IRIX Admin: Disks 
+        and Filesystems</I> </FONT>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-2859-016, <I>IRIX Admin: 
+        System Configuration and Operation</I></FONT> 
+        <LI>
+        <FONT FACE="Arial,Helvetica">07-3700-008, <I>IRIX Admin: 
+        Resource Administration</I></FONT> 
+    </UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Filesystems and Volume Managers</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-4003-007, <I>XVM Volume 
+        Manager Administrator's Guide</I> </FONT>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-4016-009, <I>CXFS Software 
+        Installation and Administration Guide</I></FONT> 
+    </UL>
+</UL>
+<P>
+<FONT FACE="Arial,Helvetica">The following manuals were revised in 
+conjunction with the IRIX 6.5.13 release. See the front of each manual 
+for a description of the new features and major documentation changes 
+covered in these revised manuals.</FONT></P>
+<UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Trusted IRIX</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-3299-005, <I>Trusted IRIX/CMW 
+        Security Administrator's Guide</I></FONT> 
+    </UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">Origin and Onyx servers</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-3430-003, <I>Origin2000 and 
+        Onyx2 Performance Tuning and Optimization Guide</I></FONT> 
+    </UL>
+    <LI>
+    <FONT FACE="Arial,Helvetica">System Support</FONT> 
+    <UL>
+        <LI>
+        <FONT FACE="Arial,Helvetica">007-4065-006, <I>Embedded Support 
+        Partner User Guide</I></FONT> 
+    </UL>
+</UL>
+<P>
+</body>
+</html>

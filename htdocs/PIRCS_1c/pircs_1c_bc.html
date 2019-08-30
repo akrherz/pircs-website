@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>  PIRCS EXPERIMENT 1 DATASET 
+</title></head>
+<body bgcolor="#FFFFFF">
+<center><FONT COLOR="#ff0000"><h1>PIRCS_1C Forcing Data Description <br>
+</FONT></h1></center>
+
+<a name="intro"><b><h2>1 - Introduction</h2></b></a>
+
+PIRCS experiment 1c consists of 3.5 years of integration, July 1, 1986 through
+December 31, 1989, with the first 6 months as spinup. The domain covers  
+145.0 W - 55.0 W and 5.0 N - 60.0 N, with half degree resolution.
+The first one-month data are stored at PIRCS ftp site. 
+<p>
+
+<hr>
+<a name="data"><b><h2>2 - Data files</h2></b></a>
+
+<br>
+How to get the dataset:</h2></b></a>
+<ol>
+<li>ftp ftp.pircs.iastate.edu (129.186.20.177) <br>
+<li>login: <br>
+<li>passwd: <br>
+<li>cd /pub/PIRCS/pircs1c_bc<br>
+
+</ol>
+
+Please contact PIRCS group for login ID and password for security reasons.
+
+<br>
+
+<h4> 1) One-time variables </h4>
+
+ter_ncep <br>
+soilm_86070100 <br>
+
+<h4> 2) Daily SST </h4>
+
+sst_1986.07-12 <br>
+
+
+<h4> 3) Six-hourly boundary conditions</h4>
+<ul>
+<table>
+<tr><td>PRCF0p5.860701-10.tar</td></tr>  
+<tr><td>PRCF0p5.860711-20.tar</td></tr>  
+<tr><td>PRCF0p5.860721-30.tar</td></tr>  
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr align=center><td>. </td></tr>
+<tr><td>PRCF0p5.891221-30.tar</td></tr>  
+</table>
+
+<p> Each tar file contains about 40 individual
+files of 6-hourly data.
+
+</ul>
+
+
+<a name="datpk"><b><h2>3 - DATA PACKING</h2></b></a>
+
+To minimize storage in ASCII format all data 
+are packed in integer form as follows:
+(1) Scale all data values into integers by multiplying them by 10**N,
+(2) Find maximum value within the 2D (pressure surface) field.
+(3) Subtract the values at each grid from the maximum value.  
+Please see more details in read.f in ftp directory or at
+<a href="./beta_test.html">pircs 1a,1b.</a> 
+
+
+<p> For each 'horizontal' slice the data are ordered as
+follows, as you look at it on the screen
+(Note, this applies for the ordering of the forcing
+data as well.) <p>
+<center>
+<table>
+<tr><td>SW Corner</td><td>(1,1) .......................................... (XMAX,1)</td><td>SE Corner</td></tr>
+<tr><td></td><td>(1,2) .......................................... (XMAX,2)</td><td></td></tr>
+<tr><td></td><td> .........................................................</td><td></td></tr>
+<tr><td></td><td> ............................. (I,J) .....................</td><td></td></tr>
+<tr><td></td><td> .........................................................</td><td></td></tr>
+<tr><td>NW corner</td><td>(1,YMAX) ................................... (XMAX,YMAX)</td><td>NE Corner</td></tr>
+</table>
+</center>
+<p>
+
+<p> <p>
+
+<p>Please direct all questions to 
+<a href="mailto:pircs@iastate.edu">pircs@iastate.edu</a><br>
+<p>
+
+</body>
+</html>
+

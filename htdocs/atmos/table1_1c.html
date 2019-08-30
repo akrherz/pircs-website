@@ -1,0 +1,401 @@
+<html>
+<head>
+<title>Project to Intercompare Regional
+Climate Simulations (PIRCS)</title>
+<meta name="Author" content="Michael R. Taber">
+</head>
+<body bgcolor="FFFFFF">
+
+
+<hr noshade width="85%">
+<center><h2>Data to be collected by PIRCS(1c) archive</h2></center>
+<hr noshade width="85%">
+<p>
+<br>
+<br>
+In the tables below:
+<ul>
+<b>ID  </b> = field identification number.<br>
+<b>Root</b> = field's file name root in PIRCS archive.<br>
+</ul>
+<br>
+Note:  A table of <a href="./table1_sample_1c.html">representative values</a> is
+available for guidance when preparing output for the archive.
+<br>
+<H3>REFERENCE</H3>
+<center>
+<table border=2 cellpadding=5>
+<tr> 
+	<th> ID </th>
+	<th> Root </th>
+	<th> Field </th>
+     	
+</tr>
+<tr>
+	<td>101</td>
+        <td> GRDLAT </td>
+	<td>Latitude of each point on the horizontal grid used to
+		report model output, given in the same order as the
+		three-hourly output.</td> 
+</tr>
+<tr>
+	<td>102</td>
+        <td> GRDLON </td>
+	<td>Longitude of each point on the horizontal grid used to
+		report model output, given in the same order as the
+		three-hourly output.</td> 
+</tr>
+<tr>
+	<td>103</td>
+        <td> TERRHT </td>
+	<td>Two-dimensional field giving the
+        terrain height in meters above mean sea level.
+	</td>
+</tr>
+<tr>
+	<td>104</td>
+        <td> LNDSEA </td>
+	<td>Two-dimensional field giving the land 
+        fraction of each grid cell.  A value of 0 indicates that
+        the grid cell is composed entirely of water (either lake or ocean)
+        and 1 indicates that the
+        grid cell is composed entirely of land.  Intermediate values indicate
+        fractional land coverage.
+	</td>
+</tr>
+</table>
+</center>
+<br>
+<br>
+<br>
+
+
+<h3>THREE-HOURLY</h3>
+Model output reported at 00,03,06 ..., 21 UTC. For fluxes (ID 201-208), the output is a
+three-hour accumulation (e.g. output at 12 UTC is accumulated from 9 UTC- 12
+UTC).   For mass and temperature (ID 210-216), output is the value at the reporting
+time. Values are reported on the horizontal grid of the participating
+model.
+<p> 
+All fluxes are <u>positive downward</u>. 
+<p>
+
+<center>
+<table border=2 cellpadding=5>
+<tr>
+     	<th> ID</th>
+        <th>Root</th>
+	<th>Field</th>
+	<th>Unit </th>
+
+<tr>
+     	<th>---</th>
+        <th>---</th>
+	<th> Surface fluxes</th>
+     	<td align=center> --- </td>
+</tr> 
+<tr>
+   	<td>201</td>
+        <td> SFSWIN </td>
+	<td> incident solar (shortwave) radiation</td>
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>	
+	<td>202</td>
+        <td> SFSWRF </td>
+	<td> reflected solar (shortwave) radiation</td>
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>	
+	<td>203</td>
+        <td> SFLWUP </td>
+	<td> upward terrestrial (longwave) radiation</td>
+	<td> Joules m<sup>-2</sup></td>
+</tr>
+<tr>	
+	<td>204</td>
+        <td> SFLWDN </td>
+	<td> downward terrestrial (longwave) radiation</td>
+	<td>Joules m<sup>-2</sup> </td>
+</tr>
+<tr>	
+	<td>205</td>
+        <td> SFSENF </td>
+	<td> sensible heat flux</td>
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>	
+	<td>206</td>
+        <td> SFLATF </td>
+	<td> latent heat flux (evapotranspiration)</td>
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>	
+	<td>207</td>
+        <td> PRECON </td>
+	<td> convective precipitation </td>
+	<td> mm  </dt>
+</tr>
+<tr>	
+	<td>208</td>
+        <td> PRESTB </td>
+	<td> stable precipitation </td>
+	<td> mm  </dt>
+</tr>
+<tr>
+     	<th>---</th>
+        <th>---</th>
+	<th> Surface fields</th>
+     	<td align=center> --- </td>
+</tr> 
+<tr>	
+	<td>210</td>
+        <td> SFQAIR </td>
+	<td> 2-m specific humidity </td>
+	<td> kg kg<sup>-1</sup>  </dt>
+</tr>
+<tr>	
+	<td>211</td>
+        <td> SFTAIR </td>
+	<td> 2-m temperature </td>
+	<td> K  </dt>
+</tr>
+<tr>	
+	<td>212</td>
+        <td> SKNTMP </td>
+	<td> Surface temperature </td>
+	<td> K  </dt>
+</tr>
+<tr>	
+	<td>213</td>
+        <td> SFPRSS </td>
+	<td> Surface Pressure </td>
+	<td> Pa  </dt>
+</tr>
+<tr>	
+	<td>214</td>
+        <td> SLPRSS </td>
+	<td> Sea Level Pressure </td>
+	<td> Pa  </dt>
+</tr>
+<tr>	
+	<td>215</td>
+        <td> SFZVEL </td>
+	<td> U-component of wind at 10-m</td>
+	<td> m s<sup>-1</sup></dt>
+</tr>
+<tr>	
+	<td>216</td>
+        <td> SFMVEL </td>
+	<td> V-component of wind at 10-m</td>
+	<td> m s<sup>-1</sup></dt>
+</tr>
+<tr>
+     	<th>---</th>
+        <th>---</th>
+     	<th> Top-of-atmosphere fluxes </th>
+	<td align=center> --- </td>
+</tr>
+<tr>
+      	<td>301</td>
+        <td> TASWNT </td>
+	<td> net solar (shortwave) radiation </td>
+	<td> Joules m<sup>-2</sup></td>
+</tr>
+<tr>
+      	<td>302</td>
+        <td> TALWUP </td>
+	<td> upward terrestrial (longwave) radiation
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>
+      	<td>303</td>
+        <td> TASWCL </td>
+	<td> upward solar (shortwave) radiation for clear-sky
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>
+      	<td>303</td>
+        <td> TALWCL </td>
+	<td> upward terrestrial (longwave) radiation for clear-sky
+	<td> Joules m<sup>-2</sup> </td>
+</tr>
+<tr>
+     	<th>---</th>
+        <th>---</th>
+     	<th> Vertically Integrated Quantities</th>
+	<td align=center> --- </td>
+</tr>
+<tr>
+      	<td>401</td>
+        <td> PRCWAT </td>
+	<td> precipitable water (water vapor only)</td> 
+	<td> mm </td>
+</tr> 
+<tr>
+      	<td>402</td>
+        <td> VICH2O </td>
+	<td> vertically integrated condensed water vapor</td> 
+	<td> mm </td>
+</tr> 
+<tr>
+      	<td>403</td>
+        <td> UQZFLX </td>
+	<td> U-component of water vapor flux</td> 
+	<td> kg m<sup>-1</sup> s<sup>-1</sup> </td>
+</tr> 
+<tr>
+      	<td>404</td>
+        <td> VQZFLX </td>
+	<td> V-component of water vapor flux</td> 
+	<td> kg m<sup>-1</sup> s<sup>-1</sup> </td>
+</tr> 
+</table>
+</center>
+<p>
+<br>
+<br>
+<br>
+
+<h3>SIX-HOURLY</H3>
+Atmospheric output sampled at 00, 06, 12, and 18 UTC. Output reported on the
+three-dimensional grid of the participating model and at the following
+pressure levels: 925, 850, 700, 500, and 200 mb.<p>
+<center>
+<table border=2 cellpadding=5>
+<tr>
+	<th>ID</Th>
+        <th>Root</th>
+	<Th>Field</th>
+	<th>Units</th>
+</tr>
+<tr>
+	<td>601</td>
+        <td> 6HTEMP </td>
+	<td>Temperature</td>
+	<td> K</td>
+</tr>
+<tr>
+	<td>602</td>
+        <td> 6HSHUM </td>
+	<td>Specific Humidity</td>
+	<td>kg kg<sup>-1</sup></td>
+</tr>
+<tr>
+	<td>603</td>
+        <td> 6HZVEL </td>
+	<td>Zonal (east-west) wind
+	<br>
+	(Direction is with respect to the earth's lat/long grid.)
+	</td>
+	<td>m s<sup>-1</sup></td>
+</tr>
+<tr>
+	<td>604</td>
+        <td> 6HMVEL </td>
+	<td>Meridonal (north-south) wind 
+	<br>
+	(Direction is with respect to the earth's lat-lon grid.)
+	</td>
+	<td> m s<sup>-1</sup></td>
+</tr>
+<tr>
+	<td>605</td>
+        <td> 6HWVEL </td>
+	<td> Vertical Velocity
+	</td>
+	<td> m s<sup>-1</sup></td>
+</tr>
+<tr>
+	<td>606</td>
+        <td> 6HGEOP </td>
+	<td>Geopotential height</td>
+	<td> m</td>
+</tr>
+</table>
+</center>
+<p>
+<br>
+<br>
+<br>
+
+
+<h3>DAILY</h3>
+Output reported on the horizontal grid of the participating model.<P>
+
+<center>
+<table border=2 cellpadding=5>
+<tr> 
+	<th> ID </th>
+        <th> Root </th>
+	<th> Field </th>
+     	<th> Unit</th>
+</tr>
+<tr> 
+	<th>---</th>
+        <th>---</th>
+	<th> Air temperature at 2 meter elevation </th>
+	<td align=center>--- </td>
+</tr>
+<tr>
+	<td>1101</td>
+        <td> DYTMAX </td>
+	<td> Daily maximum (period: 00 UTC - 00 UTC)</td>
+	<td align=center> K</td>
+</tr>
+<tr>
+	<td>1102</td>
+        <td> DYMXTM </td>
+	<td> Time of daily maximum </td>
+	<td align=center> (See Note) </td>
+</tr>
+<tr>
+	<td>1103</td>
+        <td> DYTMIN </td>
+	<td> Daily minimum (period: 0 UTC - 0 UTC)</td>
+	<td align=center> K </td>
+</tr>
+<tr>
+	<td>1104</td>
+        <td> DYMNTM </td>
+	<td> Time of daily minimum </td>
+	<td align=center> (See Note) </td>
+      	
+</tr>
+
+<tr>
+     	<th>---</th>
+        <th>---</th>
+     	<th>Soil moisture</th>
+     	<td align=center>---</td>
+</tr>
+<tr>
+     	<td align=center>1201</td>
+        <td> DYSOIL </td>
+	<td>Total amount of water in the soil column at 12 UTC </td>
+	<td align=center>mm</td>
+</tr>
+<tr>
+     	<th>---</th>
+        <th>---</th>
+	<th>Runoff </th>
+	<td align=center>---</td>
+</tr>
+<tr>
+	<td align=center>1301</td>
+        <td> DYRUNF </td>
+	<td> Accumulation over prior 24 hours (period: 0 UTC - 0 UTC)</td>
+	<td align=center>mm</td>
+</tr>
+</table>
+<p>
+NOTE: Times of min/max should be reported in seconds after 00 UTC.
+</center>
+<p>
+<br>
+<br>
+
+<hr>
+<A href="../index.html"><img src="../button12.gif">
+</body>
+</html>

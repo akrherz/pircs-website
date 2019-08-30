@@ -1,0 +1,44 @@
+<TITLE>Instructions for Processing Hadley Centre Data</TITLE>
+<BODY BGCOLOR="#ffffff">
+<H1>Instructions for Processing Hadley Centre Data</H1>
+<P>
+<B>Create a working directory:</B>  Create a directory for the
+data processing.  (This could be your home directory if you 
+want.) Under this directory create a parent directory for the
+Hadley Centre model data.  It is recommended that this
+directory be called <B>HadCM</B> because otherwise you would need to
+change references to this directory name in various scripts.
+<P>
+<B>Extract the data:</B> Change to the HadCM directory and
+extract the data from the tapes using the usual 
+Unix "tar" command.  This would be something like
+<PRE>
+tar xvf /dev/tape >& ../tar_list
+</PRE>
+In the example above, the list of contents of the tar volume
+and any other diagnostic output is written to a file
+called "tar.list" which resides in the level above the HadCM
+directory. Notice that we didn't write this to the HadCM
+directory, but instead to the directory one level up. 
+It is best to keep everything except the data out
+of the HadCM directory.
+<P>
+<B>Check the data:</B> Programs and a script have been written
+that perform crude checks for physical realism and completeness
+of the data.  
+<P>
+<B>Explode the archive files into individual times:</B> The source
+code for this is a program called explode.f and a C-shell script
+for exploding multiple files is explode.csh.  The only argument
+to explode.csh is the name of the directory below HadCM
+that contains the 
+files to be exploded:
+<PRE>
+/bin/csh explode.csh aaxnea.pjo1 >& explode.csh.aaxnea.pjo1.out
+</PRE>
+<P>
+
+
+
+
+

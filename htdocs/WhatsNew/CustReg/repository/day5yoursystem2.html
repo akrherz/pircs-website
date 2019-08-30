@@ -1,0 +1,244 @@
+<html>
+<head>
+
+<title>Customer Registration - Information About Your System</title>
+<!-- Changed by: James Chen, 23-Dec-1995 -->
+<script language="JavaScript">
+<!--  Begin to hide script contents from old browsers.
+
+function turnOffSGI(form, checkbox) {
+  if (checkbox.checked == true) {
+    form.SysSGI.checked = false;
+  }
+}
+
+function turnOffNonSGI(form) {
+  if (form.SysSGI.checked == true) {
+    form.SysApple.checked = false;
+    form.SysConvex.checked = false;
+    form.SysCray.checked = false;
+    form.SysDEC.checked = false;
+    form.SysEvans.checked = false;
+    form.SysHP.checked = false;
+    form.SysIBM.checked = false;
+    form.SysIntel.checked = false;
+    form.SysLockheed.checked = false;
+    form.SysQuantel.checked = false;
+    form.SysSun.checked = false;
+    form.SysWinNT.checked = false;
+    form.SysWin95.checked = false;
+    form.SysOther.value = "";
+  }
+}
+// End the hiding here. -->
+</script>
+</head>
+
+<body background="images/bg_sgi_logo.gif">
+
+<font size="+2">
+<img src="images/CorpID.gif" alt="Silicon Graphics, Inc.">
+<strong>Information About Your System</font><font size="+1"> cont'd.</strong>
+</font>
+
+__ErrorGlobal__
+<FORM METHOD="POST" ACTION="day5yoursystem2.cgi">
+
+<table border=0 width=638>
+<tr>
+<th align="left">
+Knowing your system's configuration helps us create products
+that will truly meet your needs. If you would prefer not to have your system's
+configuration captured, click on the `No' box below.
+</th>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td width=80></td>
+<td>
+CPU Data
+</td>
+<td>
+Graphics Data
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+Memory Size
+</td>
+<td>
+Network Data
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+Software Data
+</td>
+<td>
+Storage Peripherals
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td align="center">
+OK to automatically collect configuration information on the above items?
+<INPUT TYPE="radio" NAME="OkHwConfig" VALUE="1" __OkHwConfig_1__> Yes
+<INPUT TYPE="radio" NAME="OkHwConfig" VALUE="0" __OkHwConfig_0__> No
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>What computing platforms are used within your immediate
+work group?
+<br>
+(Check all that apply.)</strong>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<TR>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysSGI" __SysSGI__ onClick="turnOffNonSGI(this.form)"> Silicon Graphics Only
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysApple" __SysApple__ onClick="turnOffSGI(this.form, SysApple)"> Apple
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysConvex" __SysConvex__ onClick="turnOffSGI(this.form,SysConvex)"> Convex
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysCray" __SysCray__ onClick="turnOffSGI(this.form,SysCray)"> Cray
+</TD>
+</TR>
+<TR>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysDEC" __SysDEC__ onClick="turnOffSGI(this.form,SysDEC)"> DEC
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysEvans" __SysEvans__ onClick="turnOffSGI(this.form,SysEvans)"> Evans&amp;Sutherland
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysHP" __SysHP__ onClick="turnOffSGI(this.form,SysHP)"> Hewlett-Packard
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysIBM" __SysIBM__ onClick="turnOffSGI(this.form,SysIBM)"> IBM
+</TD>
+</TR>
+<TR>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysIntel" __SysIntel__ onClick="turnOffSGI(this.form,SysIntel)"> Intel Paragon
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysLockheed" __SysLockheed__ onClick="turnOffSGI(this.form,SysLockheed)"> Lockheed/Martin
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysQuantel" __SysQuantel__ onClick="turnOffSGI(this.form,SysQuantel)"> Quantel
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysSun" __SysSun__ onClick="turnOffSGI(this.form,SysSun)"> Sun
+</TD>
+</TR>
+<TR>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysWinNT" __SysWinNT__ onClick="turnOffSGI(this.form,SysWinNT)"> Windows NT
+</TD>
+<TD ALIGN="LEFT">
+<INPUT TYPE="checkbox" NAME="SysWin95" __SysWin95__ onClick="turnOffSGI(this.form,SysWin95)"> Windows95 or 3.x
+</TD>
+<TD COLSPAN="2" ALIGN="LEFT">
+&nbsp;Specify Other: <INPUT TYPE="text" NAME="SysOther" SIZE=12 VALUE="__SysOther__">
+</TD>
+</TR>
+</TABLE>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>
+Are you able to access Web pages <I>across the Internet</I> using your Netscape
+browser (or any other Web browser)?
+</strong>
+<INPUT TYPE="radio" NAME="ConnectWWW" VALUE="1" __ConnectWWW_1__> Yes 
+<INPUT TYPE="radio" NAME="ConnectWWW" VALUE="2" __ConnectWWW_2__> No 
+<INPUT TYPE="radio" NAME="ConnectWWW" VALUE="3" __ConnectWWW_3__> Do Not Know 
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<hr>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td>
+<strong>
+Which category best describes your connection to the Internet?
+</strong>
+</td>
+</tr>
+</table>
+
+<table border=0 width=638>
+<tr>
+<td width=100></td>
+<td>
+<SELECT NAME="ConnectInet">
+<OPTION __ConnectInet__> 
+<OPTION __ConnectInet_No Connection__> No Connection
+<OPTION __ConnectInet_Modem__> Modem
+<OPTION __ConnectInet_Other Type of Connection__> Other Type of Connection
+<OPTION __ConnectInet_Do Not Know__> Do Not Know
+</SELECT>
+<INPUT TYPE="submit" NAME="SubmitClearConnectInet" VALUE="Clear">
+</td>
+</tr>
+</table>
+
+<br>
+
+<table border=0 width=638>
+<tr>
+<td width=10%>
+</td>
+<td width=80% align="center">
+<input type="submit" name="SubmitToPrev" value=" Previous Page ">
+<input type="submit" name="SubmitToNext" value=" Continue ">
+<td width=10% align="right">
+<input type="submit" name="SubmitToHelp" value=" Help ">
+</td>
+</tr>
+</table>
+
+</form>
+

@@ -1,0 +1,105 @@
+<html>
+<head><title>PIRCS Experiment 2</title></head>
+<body bgcolor="#ffffff" link="blue" vlink="purple">
+
+<center><h1>PIRCS Experiment 2</h1>
+
+<h2>Regional Climate Model Intercomparison for South America</h2>
+</center>
+
+Background Information<p>
+	<ul>
+	Terrain map<br>
+        Climate of South America<br>
+        <a href="/pircs2/links.html">Climate Research in South America</a>
+	</ul><P>
+	
+Domain: most of South America (see maps)<p>
+
+Resolution 50 km<br>
+
+                (some modelers may want to do an inner nest ~ 20km)<p>
+
+Period:  Jan 1998 - December 1999 <br>
+
+                (max of last El Nino to current La Nina)<P>
+
+Initial/Lateral/Surface Boundary Conditions:<br>
+
+                NCEP reanalysis to provide primary boundary conditions
+
+                (Version 2 available?  EC reanalysis better in tropics?)
+
+                Vegetation and topography data sets can be provided
+
+                No additional surface boundary data set appears needed<p>
+
+Output Archive:<br>
+
+                NetCDF format<br>
+
+                (We will provide a translator code, potentially based on one
+	developed by Argonne)<br>
+
+                Meta-database describing more extensive PIRCS-2 holdings at
+	participating institutions<p>
+
+OUTPUT FIELDS:<br>
+Notes: <p>
+
+A. Output fields transmitted to us will be 2-D fields, reducing data
+transmission/storage requirements.<p>
+
+B. Modelers will store more complete model-run history at their own
+institution, with the PIRCS meta-database providing summaries and
+pointers to the output.<p>
+
+1. Direct output (minor post-processing)<br>
+<u>Three hourly cumulative</u><br>
+(a) convective precipitation<br>
+(b) stratiform precipitation<br>
+(c) surface energy fluxes: up/down solar, up/down longwave, sensible,
+latent<br>
+(d) outgoing longwave radiation (top of atmosphere)<p>
+
+<u>Three hourly instantaneous</u><br>
+(a) 2-m air temperature<br>
+(b) sea-level pressure<br>
+(c) surface pressure<br>
+(d) cloud cover<p>
+
+<u>Six Hourly</u><br>
+(a) east-west wind component at 850 hPa<br>
+(b) north-south wind component at 840 hPa<br>
+(c) east-west wind component at 200 hPa<br>
+(d) north-south wind component at 200 hPa<p>
+
+<u>Daily</u><br>
+(a) Min/max temperature<br>
+(b) Soil moisture<br>
+(c) Cumulative runoff<p>
+
+
+2. Derived statistics (we provide code or algorithm)<br>
+<u>Three-hour average</u><br>
+(a) vertically integrated horizontal water transport<br>
+(b) precipitable water<br>
+(c) vertically integrated cloud water<p>
+
+<u>Monthly averages at 850, 700, 500, 300, and 200 hPa</u><br>
+(a) East-west wind speed<br>
+(b) North-south wind speed<br>
+(c) Vertical wind speed<br>
+(d) Temperature<p>
+
+<u>Other</u><br>
+(a) LLJ statistics<br>
+(b) 850 hPa streamfunction - (6 hourly)<br>
+(c) 850 hPa velocity potential - (6 hourly)<br>
+(d) 200 hPa streamfunction - (6 hourly)<br>
+(e) 200 hPa velocity potential - (6 hourly)<br>
+(f) 500 hPa vertical wind - (6 hourly)<p>
+
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<TITLE>Format of Hadley Centre Boundary Data</TITLE>
+<H1>Format of Hadley Centre Boundary Data</H1>
+<PRE>
+Naming format:   EEEEES.pCYYDHM.pp
+-------------
+
+EEEEE : Experiment: aaxne = control, aaxnf = increasing CO2
+S     : Submodel identifier: a = atmosphere, o = ocean
+C     : Data stream
+YY    : Year, from base year 1800 \
+M     : Month			  | Valid at the end of the last field
+D     : Day 			  |   (chronologically) in the file
+H     : Hour (0 = 0Z)		  /
+The 'p' and '.pp' both signify that the file contains pp fields.
+
+Codes for data stream (C)
+-------------------------
+d	File contains one year of 5 day means of:
+	00101  POTENTIAL TEMPERATURE (OCEAN)  DEG.C
+	00146  AICE : ICE CONCENTRATION
+	00147  HICE: MEAN ICE DEPTH OVER GRIDBOX  M
+
+j	File contains 10 days of 6 hourly instantaneous fields of:
+	00001  PSTAR AFTER TIMESTEP
+	00002  U COMPNT OF WIND AFTER TIMESTEP
+	00003  V COMPNT OF WIND AFTER TIMESTEP
+	00004  THETA AFTER TIMESTEP
+	00010  SPECIFIC HUMIDITY AFTER TIMESTEP
+
+Codes for Year (YY), Day (D) and Hour (H)
+-----------------------------------------
+1	1		16	g
+2	2		17	h
+3	3		18	i
+4	4		19	j
+5	5		20	k
+6	6		21	l
+7	7		22	m
+8	8		23	n
+9	9		24	o
+10	a		25	p
+11	b		26	q
+12	c		27	r
+13	d		28	s
+14	e		29	t
+15	f		30	u
+
+Codes for Month (M)
+-------------------
+1	JANUARY		7	JULY
+2	FEBRUARY	8	AUGUST
+3	MARCH		9	SEPTEMBER
+4	APRIL		a	OCTOBER
+5	MAY		b	NOVEMBER
+6	JUNE		c	DECEMBER
+
+
+
+
+
+Example:   aaxnfa.phn9ab0.pp
+-------
+Experiment aaxnf (increasing CO2), atmosphere submodel.
+Final time of data in file:
+   year       2039 = 1800 + 23*10 + 9
+   month      October
+   day        11
+   hour       0Z
+Start time of data in file:
+   The data is on stream j => start time is 10 days earlier at 0Z 01/10/2039 
+
+Directory naming
+----------------
+Each directory name takes the part of the file name common to all files inside
+it. E.g. directory aaxnea.pho7 contains files with names aaxnea.pho7*.pp.
+
+List of data sent
+-----------------
+RCM Atmosphere data for Setember 2039 to 2050 and
+SST and sea ice data for September 2039 to August 2060
+
+Directory	Contents				Number of files	DAT tape
+------------	--------				---------------	--------
+aaxneo.pd/	stream 'd' control 01/09/2039 to 30/08/2060	21	e2
+aaxnea.pjn9/	stream 'j' control 01/09/2039 to 20/12/2039 	11	e1
+aaxnea.pjo0/	stream 'j' control 21/12/2039 to 20/12/2040	36	e1
+aaxnea.pjo1/		:                  :			:	e1
+aaxnea.pjo2/		:                  : 			:	e1
+aaxnea.pjo3/		:                  : 			:	e1
+aaxnea.pjo4/		:                  : 			:	e1
+aaxnea.pjo5/		:                  : 			:	e2
+aaxnea.pjo6/		:                  : 			:	e2
+aaxnea.pjo7/		:                  : 			:	e2
+aaxnea.pjo8/		:                  : 			:	e2
+aaxnea.pjo9/	stream 'j' control 21/12/2048 to 20/12/2049	36	e2
+aaxnea.pjp0/	stream 'j' control 21/12/2049 to 20/12/2050	36	e2
+
+Directory	Contents				Number of files	DAT tape
+------------	--------				---------------	--------
+aaxnfo.pd/	stream 'd' incr. CO2 01/09/2039 to 30/08/2060	21	f2
+aaxnfa.pjn9/	stream 'j' incr. CO2 01/09/2039 to 20/12/2039 	11	f1
+aaxnfa.pjo0/	stream 'j' incr. CO2 21/12/2039 to 20/12/2040	36	f1
+aaxnfa.pjo1/		:                     	:		:	f1
+aaxnfa.pjo2/		:                     	:	 	: 	f1
+aaxnfa.pjo3/		:                   	:	 	:	f1
+aaxnfa.pjo4/		:                  	:	 	:	f1
+aaxnfa.pjo5/		:                    	: 	 	:	f2
+aaxnfa.pjo6/		:                     	:	 	:	f2
+aaxnfa.pjo7/		:                     	:	 	:	f2	
+aaxnfa.pjo8/		:                     	:	 	:	f2
+aaxnfa.pjo9/	stream 'j' incr. CO2 21/12/2048 to 20/12/2049	36	f2
+aaxnfa.pjp0/	stream 'j' incr. CO2 21/12/2049 to 20/12/2050	36	f2
+
+</PRE>

@@ -1,0 +1,341 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="Microsoft Word 97/98">
+<TITLE>Ensemble Seasonal Forecasting for Southern Africa using Advanced Computing</TITLE>
+</HEAD>
+<body bgcolor="FFFFFF">
+<BODY LINK="#0000ff">
+
+<B><FONT FACE="Times" SIZE=4><P ALIGN="CENTER"></P>
+<P ALIGN="CENTER">Ensemble Seasonal Forecasting for Southern Africa</P>
+<P ALIGN="CENTER">Using Advanced Computing</P>
+</FONT><U><FONT FACE="Times">
+</B></U><P>&nbsp;</P>
+<P>&nbsp;</P>
+<CENTER>William J. Gutowski, Jr.<br>
+Department of Geological and Atmospheric Sciences<br>
+Iowa State University<br>
+Ames, Iowa  50011<br>
+ U. S. A.<br>
+<P ALIGN="CENTER">(</FONT><A HREF="mailto:gutowski@iastate.edu"><FONT FACE="Times">gutowski@iastate.edu</FONT></A><FONT FACE="Times">)</P>
+
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<CENTER>A white paper prepared for the
+<br>
+Workshop on the Development of Science and
+Technology in Africa 
+<br>
+Durban, South Africa
+</center><br>
+27 &#151; 31 July 1998
+<P></P>
+<P>&nbsp;</P>
+<P>ABSTRACT</P>
+<P></center></P>
+<P>&#9;Many human activities in Africa could benefit from forecasts of
+temperature and precipitation patterns several months into the
+future. Recent advances in numerical modeling of the
+land-atmosphere-ocean system give ample reason to believe that one
+might produce worthwhile forecasts of changes in seasonal climate.
+The concurrent development of limited-area (mesoscale) models offers
+the potential for downscaling global, seasonal forecasts to regions of
+human activity such as agricultural zones or watersheds.  In addition,
+advances in computing hardware are creating the potential to perform
+ensembles of seasonal forecasts from which one can produce estimates
+of likely ranges in climate variables such as precipitation, thus
+indicating forecast reliability.  Especially attractive for Africa is
+the availability of relatively inexpensive PC processors that can be
+linked to form powerful computers to perform these
+forecasts.</P> 
+<P>&#9;Taking advantage of these advances will require a concerted,
+cooperative effort of research and graduate-level training in the
+areas of climate study, computer science and statistics, which is
+proposed here.  A potential outcome of this effort is that benefits of
+seasonal forecasting will encourage countries across the region to
+develop infrastructure supporting operational seasonal climate
+forecasting.  Such development would advance a closely related goal of
+this effort, to provide African students trained in this program the
+opportunity to exercise their talents on climate problems germane to
+their home regions while residing in their home countries. </P> 
+
+<hr noshade width="85%">
+<P>&nbsp;</P>
+<P><b> 1.  INTRODUCTION</b></P>
+<P>
+<P>&#9;Many human activities could benefit from forecasts of
+temperature and precipitation patterns several months into the future,
+as detailed studies have shown (e.g., Georgakakos et al. 1998).
+Agriculture and water 
+resources management, in particular, could use such information to
+great advantage.  Day-to-day weather forecasts months in advance are
+not possible.  However, there is ample reason to believe that one
+could forecast changes in statistical characteristics of the weather
+such as time-average temperature and precipitation variability, i.e.,
+forecast climate.  For example, many weather characteristics are
+strongly influenced by changes in the earth&#146;s climate system that
+evolve much more slowly than weather events, such as the annual cycle
+of insolation and the variability of ocean temperature.</P> 
+<P>Links between slowly evolving features that govern climate and
+day-to-day weather variability are gradually becoming understood.
+Recent advances in numerical modeling of the land-atmosphere-ocean
+system on a number of fronts indicate that numerical, earth-system
+models are becoming more adept at simulating these links (GCIP 1998).
+Physically based global models have been used for some time to explore
+the potential for season climate prediction (Palmer and Anderson
+1994).  The time is ripe for testing and improving the capability of
+physically based models to forecast changes in seasonal climate
+several months into the future.</P> 
+<P>&#9;Seasonal climate forecasts are most useful if they can resolve
+trends for different domains of human activity, such as agricultural
+zones or watersheds.  One important advance in recent years is the
+development of regional, numerical climate models (Giorgi and Mearns
+1991; McGregor 1997) that use fundamental conservation laws of mass,
+energy and momentum to simulate the evolution of the earth-system.
+These models typically have resolutions of approximately 60 km or 1/2
+degree of latitude, enabling them to resolve at least major climatic
+domains and river basins.  The models provide an important link
+between global- and regional-scale climate processes.  They can
+&quot;downscale&quot; global forecasts of seasonal and interannual
+variability to regional scales.  At the same time, they can integrate
+regional energy and water fluxes into a coupled, physically consistent
+depiction of continental hydroclimate.</P> 
+<P>&#9;Daily weather forecasts have been shown to be more useful if
+end-users have an estimate of forecast reliability (Wilks and Hamill
+1995).  End-users 
+typically must make risk assessments that balance the costs of
+responding or not responding to a forecast, so estimates of forecast
+reliability can help them hedge their response.  Seasonal climate
+forecasts are also more likely to be useful if the end-user has an
+estimate of their reliability.  Advances in computing hardware have
+allowed the introduction of operational, ensemble weather forecasting
+for periods out to 10 days (Toth and Kalnay 1993).  Further advances
+are creating the potential to perform ensembles of seasonal forecasts
+from which one can produce estimates of likely ranges in climate
+variables such as precipitation.  Exploratory studies using global
+models have been promising (Livezey et al.  1996).</P> 
+<P>&#9;Taking advantage of these research advances could greatly help
+the economy of southern Africa.  To do so will require a concerted,
+cooperative effort of research and graduate-level training in the
+areas of climate study, computer science and statistics, which we
+propose here.   A potential outcome of this effort is that benefits of
+seasonal forecasting will encourage countries across the region to
+develop infrastructure supporting operational seasonal climate
+forecasting.  Development of such an infrastructure would advance a
+closely related goal of this effort, to provide African students
+trained in this program the opportunity to exercise their talents on
+climate problems germane to their home regions while residing in their
+home countries.  Furthermore, these students will receive training in
+the fundamental physics and mathematics of seasonal climate
+forecasting, so that although their efforts may be focused on
+forecasting issues for southern Africa, they will have opportunity to
+contribute to fundamental science on the global level.</P> 
+<p>
+<P>&nbsp;</P>
+<B><P>2.  REGIONAL CLIMATE MODELING</P>
+</B>
+<P>&#9;Regional climate modeling based on fundamental conservation
+laws has emerged from the development of so-called atmospheric
+mesoscale models (Anthes 1990), which simulate atmospheric circulation and its
+coupling with the underlying surface with resolutions on the order of
+10&#146;s of km.  Advances in regional climate modeling have led to
+the development of major international programs involving multiple
+versions of these models to advance further the state of the science
+[e.g., GEWEX Continental International Project (GCIP 1998), MERCURE
+(Jones et al. 1998), <a href="http://www.pircs.iastate.edu">Project to
+Intercompare  
+Regional Climate Simulations</a> (Takle 1995; Gutowski et al. 1998), among
+others].  Concurrent with the 
+modeling development has been the assembly of multi-decade, global
+databases that provide initial conditions,boundary conditions, and standards
+for verification of forecasts.  The atmospheric reanalysis projects
+producing these data bases have involved major, international
+forecasting and research centers [U.S. National Centers for
+Environmental Prediction (Kalnay et al. 1996), European Centre for
+Medium Range Weather Forecasts (Gibson et al. 1997), U.S. NASA Goddard
+Space Flight Center (Schubert et al. 1993)].  Additional global
+databases are also being generated that can provide verification data
+at mesoscale (1/2 degree) and higher resolution (e.g., <a
+href="http://edcwww.cr.usgs.gov/landdaac"> USGS 1998</a>).</P>  
+
+<P>(a) <U>Basic Research</P>
+</U><P>&#9;One or more mesoscale models will be tools for understanding and improving ability to simulate interactions between regional (mesoscale) circulation and water and energy cycles that govern regional climate.  Mesoscale models will be used to examine the relative contributions of factors that influence precipitation over southern Africa, such as</P>
+<ul>
+<li> eddy rings in the Agulhas current off the southern tip of Africa
+and other sea-surface temperature variability </li>
+<li> persistent elevated inversions over the continent</li>
+<li> tropical-extratropical interaction</li>
+<li> wind-driven coastal upwelling</li>
+<li> moisture sources and transport</li>
+<li> regional soil moisture anomalies</li>
+<li> orography</li>
+<li> vegetation feedbacks to regional circulation</li>
+<li> land-use change</li>
+</ul>
+
+<P>Related to this work will be research examining relative influences
+on hydroclimate of local factors (e.g. soil moisture) and remote
+factors such as sea-surface temperature anomalies.  The latter will
+enter through their modification of general circulation and, as a
+consequence, lateral boundary conditions for the mesoscale model.  A
+possible initial simulation/analysis project would be simulating the
+January/February 1996 wet period in South Africa, using a domain <a
+href="Figure1.html">(Fig. 1)</a> that covers southern Africa at 60-km
+resolution and driving 
+boundary conditions from the NCEP/NCAR or ECMWF reanalysis.   On a
+modest-level workstation (e.g. Dec Alpha 3000), such a simulation
+requires approximately 4 cpu days per simulated month.  Recent
+experience (Arritt, personal communication) suggest that even faster
+simulation can occur using a fairly common Pentium II (233 MHz)
+processor running UNIX.  Analysis of model output would focus on the ability of the model to capture the extreme event and, assuming favorable comparison, on the model's dynamics that contributed to the event.  Interest would focus in part on determining if there is important mesoscale behavior that coarser-grid global models miss, such as topographically controlled precipitation or details of tropical-extratropical interaction. </P>
+<P>Mesoscale models will be used to explore coupling to further elements of the water cycle beyond soil-vegetation-atmosphere interaction, such as subterranean water flow and surface water flow and impoundment.  In related activity, mesoscale models will be used to explore simulation at finer scale through grid nesting at high (order 1 km) resolution for selected regions where validation data is available.  The nested modeling will thus aim at resolving water basins of modest size.  This activity will provide a basis for linking continental simulation directly to operational water management.  Related research will also explore interactions linking fluctuations in water table, lake/wetlands evaporation and regional precipitation.  This activity will aim toward developing the capability to simulate the water cycle from net atmospheric input to freshwater flow into the ocean, thus advancing understanding of the complete, continental water cycle.</P>
+<P>Supporting research will include evaluation of mesoscale-model simulation in the presence of particularly challenging features of southern African geography such as very strong topographic gradients and sharp climatic boundaries (Hewitson, personal communication).  Supporting research will also provide testbeds for refined parameterization of land-atmosphere coupling and precipitation modeling.  One outcome of research in these areas will be the knowledge base for eventual, effective global model simulation at mesoscale resolution.</P>
+
+<P>(b) <U>Operational forecasting</P>
+</U><P>&#9;One ultimate goal of this effort is operational forecasting
+of seasonal climate several months in advance.  Initially, mesoscale
+models will be used to provide experimental forecasts at 30 km or
+higher resolution, using boundary conditions provided by global,
+coarse-resolution seasonal forecasts produced experimentally at major
+forecasting centers.  These forecasts will include estimates of
+forecast skill by giving, for example, probability distributions of
+forecast fields.  Special emphasis will be given to output products
+that have utility in applied sectors such as water resource management
+and agriculture.  Forecasts with demonstrated economic value may
+provide compelling motivation for a nation (or multi-national
+consortium) to engage in operational seasonal forecasting for southern
+Africa using physically based modeling.  It is anticipated that
+refinement in global seasonal and 
+interannual forecasting as well in mesoscale land-atmosphere modeling
+could allow such forecasting to become routine by the end of the next
+decade.</P> 
+<p>
+<P>&nbsp;</P>
+<B><P>3. COMPUTER SCIENCE</P>
+</B>
+<P>The evolution of a climate forecast can be sensitive to small
+changes in external factors such as specified boundary conditions.
+These conditions are not known perfectly.  Knowing how the error
+statistics of the boundary or other external conditions affect the
+forecast gives an estimate of forecast reliability.  Advances in
+computing hardware are creating the potential to perform ensembles of
+seasonal forecasts where one can use such error statistics to generate
+multiple realizations of boundary conditions to drive an ensemble of
+model forecasts.  Such ensembles can sample potential future states of
+the climate and produce likelihood estimates of possible ranges in
+climate variables such as precipitation.</P> 
+<P>&#9;Some of the advance is due to developments in computer
+hardware.  High performance computing has evolved from expensive
+mainframes (e.g., Cray) to integrated parallel systems (e.g., nCUBE,
+Intel Paragon) to massively parallel computation clusters using
+low-cost commodity processors (e.g., Intel Pentium) and public-domain
+operating systems.  The evolution toward this computing paradigm has
+provided compelling economic arguments to pursue it vigorously (<a
+href="Table1.html">Table 1</a>; Gustafson, personal communication).
+The opportunity exists for countries in southern Africa to develop
+relatively inexpensive clusters that can be built incrementally using
+common, desktop personal computers.</P> 
+<P>&#9;There are of course other costs involved with using commodity
+clusters:  software development can be cumbersome and processor
+coordination for massively parallel computation is complex.  However,
+a substantial body of experience has been developed at Iowa State
+University in the Scalable Computing Laboratory (SCL) headed by John
+Gustafson.  The SCL has provided collaborative assistance to ISU
+groups in a number of disciplines.  The SCL has also assembled a
+<A href="http://www.scl.ameslab.gov/Projects/ClusterCookbook">
+"cookbook"</a> for constructing these systems, and they are 
+considered leaders in this field.  Their expertise could provide the
+means to use parallel computing effectively.  Transferring this
+expertise to Africa would provide a major opportunity to train African
+computer scientists in cutting-edge computing that could be developed
+and applied in their home countries.</P> 
+<P> &#9;Even with the experience of the SCL, adapting a major,
+regional climate simulation code to a massively parallel machine can
+pose a daunting programming job, one that has often required years of
+effort by teams of highly skilled programmers.  In addition, code
+upgrading is discouraged because it could require starting from
+scratch to re-parallelize the code.  Prof. Suresh Kothari at Iowa
+State has developed an important solution to this problem by
+recognizing that an expert system focusing on specific classes of
+computation can simplify the programming demands considerably.
+Kothari&#146;s Parallelization Agent (PA) has yielded in a few weeks
+parallel codes that had required months and years for manual
+parallelization.  Not only does the PA allow rapid parallelization of
+an original code and further modifications, but because it rewrites
+the code, the chance of errors due to typos, misplace lines, etc. is
+minimized.  Coupling of PA and SCL expertise could allow substantial
+computing resource development for climate modeling in southern Africa
+</P> 
+<p>
+<P>&nbsp;</P>
+<B><P>4.  STATISTICS</P>
+</B>
+<P>&#9;Supporting research for the regional climate-forecasting
+program will engage statisticians.  Their expertise will be used to
+explore a variety of approaches for producing probabilistic
+forecasts. Ensemble daily weather forecasting has received substantial
+attention (e.g., Houtekamer 1995; Houtekamer and Derome 1995), but
+statistical expertise is generally needed only 
+for producing ensembles of initial conditions.  Seasonal ensemble
+forecasting needs additional attention to developing ensembles of
+boundary conditions with physically consistent and appropriate
+statistical properties.  Activities of statisticians will include
+various forms of ensemble simulation, such as specification of initial
+and boundary conditions, and approaches combining numerical simulation
+with statistical modeling.  Statistical analysis should also include a
+side-by-side comparison of the ensemble simulations with output from
+purely statistical approaches to producing regional climate from
+coarse-grid global simulation.  Finally, statistical expertise will be
+needed for the very important tasks of model diagnosis and forecast
+evaluation.</P> 
+<p>
+<P>&nbsp;</P>
+<B><P>5.  EDUCATION AND INFRASTRUCTURE</P>
+</B>
+<P>&#9;A climate-forecasting project could provide several opportunities for educating new scientists and giving advanced training to current scientists in southern Africa.  Each of the activities proposed above should entail training of next-generation scientists within Africa. </P>
+<P>&#9;A central facility supporting education and related research could provide a regional focus for computational resources, modeling expertise and technical support.  However, financial considerations probably preclude developing such a facility.  A more appropriate model might be a &quot;virtual&quot; facility wherein a national or multi-national program is spread across a cluster of institutions that maintain strong links for computing, data archiving and educational resources. Such a facility might also provide a means of melding in institutions in adjacent countries through a systematic program of expansion.</P>
+<p>
+<P>&nbsp;</P>
+<B><P>6.  FINAL COMMENTS</P>
+</B>
+<P>&#9;A significant base of activity exists in the Republic of South Africa that could provide a strong foundation for the program proposed here.  The Systems Modelling Group at the Universities of Cape Town and the Witwatersrand, headed by Prof. Bruce Hewitson, links together several faculty using leading models for climate simulation.  The South African Weather Bureau (SAWB) is experienced with operational seasonal forecasting already, using empirically based statistical approaches.  The SAWB also has extensive experience in shorter term forecasting (up to 10 days) with mesoscale models.  Prof. Peter Tyson (Univ. Wits.) is head of the International Geosphere-Biosphere Project (IGBP) START program for Africa.  Prof. Mark Jury (Univ. Zululand) is head of the World Climate Research Programme&#146;s CLIVAR/Africa steering committee.  Strong statistical experience in geophysical issues exists at the University of Witwatersrand; strong experience in seasonal hydrology issues exists at the University of Natal.  This list is undoubtedly incomplete, but gives some indication of the existing foundation in South Africa. </P>
+<P>Additional social aspects influencing the proposed activity must also be noted.  An important activity in South Africa is the effort to increase involvement of black South Africans in research and operations.  Currently, talented students are often lured to well-paying careers in the private sector.  While this economic advancement is hardly a problem in itself, it does pose special challenges to identifying and retaining students qualified to become high-level scientists.  Linked to this issue is the need to develop supporting infrastructure in all the countries of southern Africa.  Such development is critical for the ultimate success of this program.  An infrastructure that allows students trained in this program to work profitably in their home countries will help stem the drain of talented scientists to more developed countries and allow seasonal forecasting for the region to advance.  The economic benefits of seasonal forecasting should be used to encourage countries across the region to develop this infrastructure.</P>
+<p>
+<P>&nbsp;</P>
+<B><P>7.  ACKNOWLEDGMENTS</P>
+</B>
+<P>&#9;This document is the outcome of discussion and email exchanges with several people.  I am particularly indebted to Bruce Hewitson (Univ. Cape Town) and Alec Joubert (Univ. Wits.) for comments on an earlier draft.  I also benefited from exchanges with Mark Jury (Univ. Zululand), Johan Pauw (FRD), Ferdi van der Walt (FRD), Clive Turner (ESKOM), Stephen Lennon (ESKOM), Laban Ogallo (Univ. Nairobi) and, at Iowa State, Gene Takle, Ray Arritt, Suresh Kothari, John Gustafson, and James Vary.   Participation by the author in the Durban workshop was supported in part by Iowa State University through a foreign travel grant, the South African Department of Arts, Culture, Science and Technology, and grants from the U.S. National Science Foundation (ATM-9616811) and Department of Energy (DE-FG02-96ER61473).</P>
+
+<P>&nbsp;</P>
+<P><b>8.  REFERENCES</b></P>
+<P>Anthes, R. A., 1990: Recent applications of the Penn State/NCAR mesoscale model to synoptic, mesoscale and climate studies. <I>Bull. Amer. Meteor. Soc.,</I><B> 71,</B> 1610-1629.</P>
+<P>GCIP, 1998: <I>GCIP: Global Energy and Water Cycle Experiment (GEWEX) Continental-Scale International Project. A Review of Progress and Opportunities.</I> National Academy of Sciences, 93 pp.</P>
+<P>Georgakakos, A. P., H. Yao, M. G. Mullusky and K. P. Georgakakos, 1998: Impacts of climate variability on the operational forecast and management of the upper Des Moines River basin. <I>Wat. Resour. Res.,</I><B> 34,</B> 799-821.</P>
+<P>Gibson, J. K., D. Burridge, P. Kallberg, S. Uppala, A. Nomura, E. Serrano and A. Hernandez, 1997: The ECMWF re-analysis. <I>First International Conference on Reanalyses</I>, Silver Spring, MD, USA, World Climate Research Programme, 8.</P>
+<P>Giorgi, F., and L. Mearns, 1991:  Approaches to the simulation of regional climate change:  A review.  <I>Rev. Geophys.,</I><B> 29,</B> 191-216.</P>
+<P>Gutowski, W. J., E. S. Takle and R. W. Arritt, 1998:  Project to Intercompare Regional Climate Simulations, Workshop II, 5-6 JUNE 1997.  <I>Bull. Amer. Meteor. Soc.,</I><B> 79,</B> 657-659.</P>
+<P>Houtekamer, P. L., 1995:  The construction of optimal perturbation.  <I>Mon. Wea. Rev.,</I><B> 123,</B> 2888-2898.</P>
+<P>Houtekamer, P. L., and J. Derome, 1995:  Methods of ensemble
+prediction.  <I>Mon. Wea. Rev.,</I><B> 123,</B> 2181-2193.</P> 
+<P>Jones, R., and coauthors, 1997:  <i>Modelling European Regional Climate:  Understanding and Reducing Errors, </I>a proposal to the European Commision.</P>
+<P>Kalnay, E., M. Kanamitsu, R. Kistler, W. Collins, D. Deaven, L. Gandin, M. Iredell, S. Saha, G. White, J. Woollen, Y. Zhu, M. Chelliah, W. Ebisuzaki, W. Higgins, J. Janowiak, K. C. Mo, C. Ropelewski, J. Wang, A. Leetma, R. Reynolds, R. Jenne and D. Joseph, 1996:  The NCEP/NCAR 40-year reanalysis project.  <I>Bull. Amer. Meteor. Soc.,</I><B> 77,</B> 437-471.</P>
+<P>Livezey, R. E., M. Masutani and M. Ji, 1996:  SST-forced seasonal simulatio and prediction skill for versions of the NCEP/MRF model.  <I>Bull. Amer. Meteor. Soc.,</I><B> 77,</B> 507-517</P>
+<P>McGregor, J. L., 1997:  Regional climate modelling.
+<I>Meteor. Atmos. Phys.,</I> <b>63,</b> 105-117.</P>
+<P>Palmer, T. N., and D. L. T. Anderson, 1994:  The prospects for seasonal forecasting - A review paper.  <I>Quart. J. Roy. Meteor. Soc.,</I><B> 120,</B> 755-794.</P>
+<P>Schubert, S. D., R. B. Rood and J. Pfaendtner, 1993:  An assimilated dataset for earth science applications.  <I>Bull. Amer. Meteor. Soc.,</I><B> 74,</B> 2331-2342.</P>
+<P>Takle, E. S., 1995: Project to Intercompare Regional Climate Simulations (PIRCS), Preliminary Workshop, 17-18 November 1994. <I>Bull. Amer. Meteor. Soc.,</I><B> 76,</B> 1625-1626.</P>
+<P>Toth, Z., and E. Kalnay, 1993: Ensemble forecasting at NCM: The generation of perturbations. <I>Bull. Amer. Meteor. Soc.,</I><B> 74,</B> 2317-2330.</P>
+<P>USGS, 1998: The Earth Resources Observation Systems (EROS) Data
+Center Distributed Active Archive Center (EDC DAAC). 
+http://edcwww.cr.usgs.gov/landdaac.</P>
+<P>Wilks, D. S., and T. M. Hamill, 1995: Potential economic value of
+ensemble-based surface weather forecasts. <I>Mon. Wea. Rev.,</I><B>
+123,</B> 3565-3575.</P> 
+
+<hr noshade width="85%">
+<P ALIGN="CENTER">(end)</P>
+
+</FONT></BODY>
+</HTML>

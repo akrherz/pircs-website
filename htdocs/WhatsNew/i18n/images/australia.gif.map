@@ -1,0 +1,10 @@
+###_sgi-version: 1
+###_sgi-format: netsite
+###_sgi-date: (890874354) Wed Mar 25 17:05:54 1998
+###_sgi-document: Int'l Pages Australia
+
+default worldmap.html
+
+#
+rect au.html 384,244 481,276
+

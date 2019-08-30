@@ -1,0 +1,411 @@
+<title> Parallel Hydrostatic MM5 </title>
+
+<body bgcolor="#FFF1DF">
+
+<Pre><h1>Parallel Hydrostatic MM5
+for Distributed Memory Computers</h1>  
+<h4> <i>Updated December 27, 1996</i></h4>
+
+<h5>Project for Collaboration between</h5>
+<h4><a href = "http://www.iastate.edu">Iowa State University</a>
+<a href = "http://www.public.iastate.edu/~wxintro/atmos.html">Atmospheric Science</a>/<a href = "http://www.cs.iastate.edu:80">Computer Science</a></h4>
+<h5>and</h5>
+<h4><a href = "http://www.anl.gov/">Argonne National Laboratory</a>
+(Global Change Program)
+<a href = "http://www.mcs.anl.gov/index.html">Mathematical and Computer Science Division</a></h4>
+</Pre>
+
+<h3>Contents</h3>
+<ul><li><a href="#MM5">1 MM5</a>
+<li><a href="#Par">2 Parallel Implementation of MM5</a>
+<li><a href="#Val">3 Validation</a>
+<li><a href="#Per">4 Performance Analysis</a>
+</ul>
+<br>
+
+<hr>
+<a name="MM5"><b>1 MM5 (The Fifth Generation of Mesoscale Model)</b>
+
+<p>The Penn State/NCAR Mesoscale Meteorological Model (MM5) is
+designed for high-resolution simulations or forecasts of mesoscale
+atmospheric circulation with four-dimensional data assimilation
+<a href="#Ref1">[1]</a>.
+This model has been used for real-time forecasting on small scales, process
+studies, sensitivity studies, and climate studies.
+The MM5 includes a finite difference formulation of the time-dependent Navier
+Stokes equations plus physics computations for the simulation of clouds,
+radiation, moist convection, etc. in a cubic three-dimensional region
+representing the atmosphere <a href="#Ref3">[3]</a>.<p>
+
+<p>The MM5 has two versions: <i>hydrostatic</i> and
+<i>non-hydrostatic</i>.  The hydrostatic version solves for the vertical
+velocity using the incompressible continuity equation rather than
+a prognostic equation.  Another approximation used by the hydrostatic version
+is a calculation of pressure directly from the temperature field rather than
+from a Poisson equation.  These two approximations allow the hydrostatic
+version to run faster, but with some sacrifice of the accuracy for
+horizontal grid spacing below 5 <i>km</i>.  For grids with spacing larger
+than 20 <i>km</i> the two versions give almost identical results.
+Another distinct difference between the two versions is that
+the splitting method for the fast waves is explicitly implemented
+in the hydrostatic version.
+Numerical stability of the hydrostatic equations is severely limited
+by the speed of external gravity waves, and the fast moving gravity waves
+are a small fraction of the total energy.  Therefore the hydrostatic version
+requires the split-explicit method.<p>
+
+<br><a name="Par"><b>2 Parallel Implementation of MM5</b>
+
+<br>
+<br><b>2.1 Data Mapping</b>
+
+<p>The parallel MM5 maps the three-dimensional domain onto a
+two-dimensional array of processors so that the computations in a column
+of nodes are assigned to a single processor (See Figure 1).
+This decomposition is known to provide the best efficiency <a href="#Ref5">[5]</a>.<p>
+
+<center>
+<img src="fig1.gif">
+<br>Figure 1: Data mapping of parallel MM5
+</center>
+<br>
+<br>
+
+<br><b>2.2 RSL (Runtime System and Library)</b>
+
+<p>The RSL is a portable library which provides two supporting mechanisms
+for parallelization of finite difference climate models: communication
+interface and index transformation
+<a href="#Ref6">[6</a>,<a href="#Ref7">7]</a>.<p>
+
+<p>The library handles all details of the underlying message passing
+such as buffer allocation, copying, routing, and asynchronous communication.
+The RSL manages routines for decomposition of multiple nested domains and for
+specifying the communication to exchange data both within each domain and
+between domains.<p>
+
+<p>For index transformation, the RSL removes iteration over global
+horizontal indices from the original program and inserts the local horizontal
+indices at runtime.  The MM5 code contains the time loops within
+which all variables are recalculated for each grid point, and the subroutine
+<i>solve1</i> contains both horizontal and vertical indices.
+Figure 2 shows the RSL index transformation that separated the
+vertical loop.  Since the library keeps both of global and local horizontal
+indices, the parallel program does not contain the local index transformation
+from the global index.  Note that there exist vertical loops because we use
+the horizontal two-dimensional data mapping.<p>
+
+<center>
+<img src="fig2.gif">
+<br>Figure 2: RSL index transform
+</center>
+<br>
+<br>
+
+<br><b>2.3 Parallelization steps</b>
+
+<p>
+<li><b>Step 1: Identify communication.</b>
+Perform data dependency analysis of the original code to determine
+the synchronization
+points and communication patterns.
+This data dependency results in inter-processor communication
+between neighboring processors in the mesh configuration since the computations
+at each grid point require data from other grid points that are one or
+two cells away.
+
+<p>
+<li><b>Step 2: Collapse communication synchronization points.</b>
+The MM5 code originally had hundreds of synchronization points requiring
+communication.  However, to achieve efficiency the number of
+synchronization points must be as small as possible.
+In the parallel
+implementation of the main time marching routine (<i>solve1</i>),
+we have minimized the number of synchronization points to 2.
+<br>
+<center>
+<img src="fig4.gif">
+<br>Figure 3: Description of communication points for <i>solve1</i>
+</center>
+<br>
+
+<p>
+<li><b>Step 3: Restructure the original code.</b>
+Since the RSL maintains the horizontal loop indices and inserts
+both global and local horizontal indices at runtime, all loops over the
+horizontal indices are removed from the original code.  However, since the
+RSL calls a routine for each point in the domain,
+the routine requires conditional statements for checking boundary
+grid points.
+
+<p>
+<li><b>Step 4: Build a parallel driver to use RSL.</b>
+The parallel driver defines synchronization points and communication patterns
+and calls the RSL routine to use the restructured parallel code
+obtained in the previous step.
+
+<br>
+<br>
+<center>
+<img src="fig3.gif">
+<br>Figure 4: Schematic representation of parallelization steps
+</center>
+<br>
+<br>
+
+<br>
+<a name="Val"><b>3 Validation</b>
+<br>
+
+<br><b>3.1 Absolute error</b>
+
+<p>Our objective is to create a parallel model that is consistent with the
+sequential model.  The differences between output
+values from the parallel and sequential models are defined as errors.
+The approximate error is the mean of the absolute errors.<p>
+
+<b>3.2 Validation of the parallel hydrostatic MM5</b>
+
+<p>Validation was performed on two different grid sizes,
+32x32x23 and 64x64x23, by comparing
+meteorologically important field data such as east-west wind velocity and
+temperature.  The two different grid sizes on the same domain show how
+different resolution affects on the accuracy.
+The test domain is from the `Great Flood' of 1993 in the US Midwest
+(9 July 1993).  We used 64 processors on the IBM SP1.<p>
+
+<p>Figure 5 shows the approximate errors of the east-west
+wind velocity field (<i>u</i>) and temperature (<i>T</i>), and
+Figure 6 shows the approximately errors of the pressure (<i>ps</i>)
+and mixing ratio for water vapor temperature (<i>qv</i>) field.
+It is observed that the differences
+between the two models are less than measurement uncertainties in establishing
+initial conditions.<p>
+
+<center>
+<img src="fig5.gif">
+<img src="fig6.gif">
+<br>Figure 5: The approximate errors of the east-west wind speed and temperature
+</center>
+<br>
+
+<br>
+<center>
+<img src="fig7.gif">
+<img src="fig8.gif">
+<br>Figure 6: The approximate errors of the pressure and mixing ratio for
+water vapor
+</center>
+<br>
+
+<br>
+<br>
+<a name="Per"><b>4 Performance Analysis</b>
+<br>
+
+<br><b>4.1 Execution time</b>
+<br>
+
+<p>Figures 7 and 8 show execution time
+on a 32x32x23 grid and a 64x64x23 grid,
+respectively, for a 24-hour weather simulation.
+The number of processors was varied between 2x2, 4x4 and 8x8.
+The execution time excludes file I/O and message displaying time.
+We run the sequential model on a single processor of the IBM SP1.<p>
+
+<br>
+<center>
+<img src="fig9.gif">
+<br>Figure 7: Execution time for the 32x32x23 domain
+</center>
+<br>
+
+<br>
+<center>
+<img src="fig10.gif">
+<br>Figure 8: Execution time for the 64x64x23 domain
+</center>
+<br>
+
+<p>Figure 7 shows that
+the parallel model running on 64 processor IBM SP1 reduced the execution time
+from 46 minutes to
+less than 2 minutes for a 24-h simulation with 23,552 grid points
+(32x32x23).
+As shown in Figure 8, for a 24-h simulation with 94,208
+grid points (64x64x23) the parallel
+model running on 64 processor IBM SP1 reduced the execution time from 5 hours
+to just 7 minutes.<p>
+
+<p>The speedups shown in Figure 9 are better for larger
+domains because of smaller communication overhead and better load balance
+among processors.<p>
+
+<center>
+<img src="fig11.gif">
+<br>Figure 8: Speedups on different number of processors
+</center>
+<br>
+
+<br><b>4.2 Communication overhead</b>
+
+<p>The parallel model has inter-processor communication overhead not present
+in the sequential model.  We measure the communication overhead in each
+time step to show the percentage of the communication overhead as a part
+of the execution time.  For measuring communication timings, we consider the
+time-marching routine
+(<i>solve1</i>) since it is the dominant routine for the dynamics and
+physics computations in each time step.  Table 1
+shows the communication overhead for the two different domains.
+The communication overhead is less than 10%.
+The larger size domain (64x64x23) has
+lower communication overhead since the communication amount
+is increased by a factor of 2 over that for the smaller domain
+(32x32x23) while the computation time increased
+by a factor of 4.<p>
+
+<center>
+Table 1: Communication overhead (%)
+<br><img src="tab1.gif">
+</center>
+<br>
+
+<br><b>4.3 Analysis of load balance</b>
+
+<br>
+<li><b>Load balance</b>
+
+<p>Computations in MM5 can be classified either as dynamics or physics.
+The dynamics includes computations for solving the basic Navier Stokes equations
+and equations for
+conservation of mass and conservation of energy.  Subroutines for
+parameterizing convective precipitation, radiation and boundary layer
+processes are considered physics.  While the dynamics computations are
+uniformly distributed across processors at all time steps, the physics
+computations show significant spatial and temporal variations in terms of the
+computational load per grid column depending upon meteorological conditions
+in that column.  We analyze the overall load balance to show the
+utilization of processors.<br>
+
+<i>Load balance</i>=<i>Tmean</i>/<i>Tmax</i><br>
+<i>Tmean</i> : Execution time at a processor averaged over all processors<br>
+<i>Tmax</i> : Maximum execution time at a processor<p>
+
+<p>A load balance of 1.0 means all processors take exactly the same amount
+of time, whereas a number close to zero indicates that many processors are
+idle waiting for the busiest processor to finish.
+Figure 9 compares the load balance of the parallel MM5 using two
+different domain sizes.  The load balance values decline as the number of
+processors increases.<p>
+
+<center>
+<img src="fig12.gif">
+<br>Figure 9: Overall load balance of the parallel MM5 on two difference domains
+</center>
+<br>
+
+<br>
+<li><b>Load distribution map</b>
+
+<p>Load distribution maps of processors can be used to relate load imbalance
+to the physics computations and thereby to the areas meteorological
+conditions being simulated.  Figure 10 compares the maps
+with the rainfall maps obtained from the parallel model.
+We use a 64x64x23 domain on 4x4 processors and 8x8
+processors.  The load balance percentages are averaged over 160 time steps
+(3 simulation h).  Precipitation is one of physics computations causing
+load imbalance, so rainfall regions define processors<p>
+
+<center>
+<b><3-6 hour average></b>
+<br>
+<img src="fig13-1.gif">
+<br>
+<br>
+<img src="fig13-5.gif">
+<4x4 processors>
+<img src="fig13-9.gif">
+<8x8 processors>
+<hr>
+<br>
+<b><9-12 hour average></b>
+<br>
+<img src="fig13-2.gif">
+<br>
+<img src="fig13-6.gif">
+<4x4 processors>
+<img src="fig13-10.gif">
+<8x8 processors>
+<hr>
+<br>
+<b><15-18 hour average></b>
+<br>
+<img src="fig13-3.gif">
+<br>
+<img src="fig13-7.gif">
+<4x4 processors>
+<img src="fig13-11.gif">
+<8x8 processors>
+<hr>
+<br>
+<b><21-24 hour average></b>
+<br>
+<img src="fig13-4.gif">
+<br>
+<img src="fig13-8.gif">
+<4x4 processors>
+<img src="fig13-12.gif">
+<8x8 processors>
+<br>
+<br>Figure 10: Load-distribution maps for the 64x64x23 domain
+</center>
+<br>
+<br>
+
+<hr>
+
+<br>
+<b>Acknowledgments</b>
+<p>NASA funds (project NAG 5-2491) of the HPCC program provide partial
+support for this research.  Proposals were submitted to support this
+and follow on collaborative work on MPMM between Iowa State University,
+Ames Laboratory, and Argonne National Laboratory.<p>
+
+<br>
+<b>References</b>
+<br>
+
+<p><a name="Ref1">[1] R. A. Anthes, E. Y. Hsie and Y. H. Kuo,
+<i>Description of the Penn State/NCAR mesoscale model version 4 (MM4)</i>.
+Tech. Report NCAR/TN-282+STR, National Center for Atmosphere Research,
+Boulder, Colorado, 1987.<p>
+
+<p><a name="Ref2">[2] I. Foster and B. Toonen, <i>Load-Balancing Algorithms
+for Climate Models</I> Proc. 1994 Scalable High-Performance Computing Conf.,
+IEEE, pp. 674-681, 1994.<p>
+
+<p><a name="Ref3">[3] D. O. Grell, J. Dudhia and D. R. Stauffer,
+<i>A description of the Fifth-Generation Penn State/NCAR Mesoscale Model
+(MM5)</i> Tech. Report NCAR/TN-398+STR, National Center for Atmosphere
+Research, Boulder, Colorado, 1994.<p>
+
+<p><a name="Ref4">[4] I. B. M. Corp., <i>IBM AIX parallel environment -
+Parallel programming subroutine reference (2.0)</i> Kingston, New York, 1994.<p>
+
+<p><a name="Ref5">[5] K. Johnson, J. Bauer, G. Riccardi, K. Droegemeier
+and M. Xue, <i>Distributed Processing of a Regional Prediction Model</i>
+Mon. Wea. Rev., 122 (1994), pp. 2558-2572.<p>
+
+<p><a name="Ref6">[6] J. Michalakes, <i>RSL: A parallel runtime system
+library for regular grid finite difference models using multiple nests</i>
+Tech. Report ANL/MCS-TM-197, MCS Division, Argonne National Laboratory,
+Argonne, Illinois, 1994.<p>
+
+<p><a name="Ref7">[7] J. Michalakes, T. Canfielf, R. Nanjundiah and
+S. Hammond, <i>Parallel implementation, validation, and performance of MM5</i>,
+Proc. 6th Workshop on the use of Parallel Processors in Meteorology,
+Reading, U. K., European Center for Medium Range Weather Forecasting, 1994.<p>
+
+<p><a name="Ref8">[8] D. Purnell and M. Revell, <i>Field-Object Design of
+a Numerical Weather Prediction Model for Uni- and Multiprocessors</i>
+AMS, pp. 401-429, 1995.<p>

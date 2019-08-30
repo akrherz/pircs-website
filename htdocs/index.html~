@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta name="keywords" content="regional climate, climate, climate modeling">
+<title>PIRCS - Regional Climate Modeling</title>
+</head>
+
+<body bgcolor="#E4E4E6">
+
+<blockquote>
+    <h1><font color="#FF0000" face="Arial,Helvetica">Project to
+    Intercompare Regional Climate Simulations (PIRCS) </font></h1>
+    <table border="0" cellpadding="16">
+        <tr>
+            <td><img src="smpircslogo.gif" align="left"
+            hspace="0" width="108" height="150" valign="CENTER"> </td>
+            <td><font size="+1"><i>The mission of PIRCS is to provide a common
+            framework for evaluating strengths and weaknesses
+            of regional climate models and their component
+            procedures through systematic, comparative
+            simulations.</i> </font></td>
+        </tr>
+    </table>
+    <p>
+    <br>
+    </p>
+    <table border="0" cellpadding="12" cellspacing="0">
+        <tr>
+            <td align="center" width="34%" bgcolor="#A8A8FF"><font
+            size="4" face="Arial"><b>Background</b></font></td>
+            <td align="center" width="32%" bgcolor="#FFFF50"><font
+            size="4" face="Arial"><b>Experiment 1</b></font></td>
+            <td align="center" width="32%" bgcolor="#80FF80"><font
+            size="4" face="Arial"><b>Meetings</b></font></td>
+        </tr>
+        <tr>
+            <td valign="top"><a href="atmos/panz/overview.html">Overview</a></td>
+            <td valign="top"><a href="atmos/pircsex1.html">Description
+            </a></td>
+            <td valign="top"><a href="early_meetings.html">Meetings before 1999</a></td>
+        </tr>
+        <tr>
+            <td align="top" valign="top"><a href="mission.html">Mission</a></td>
+            <td align="top" valign="top"><a href="proj1aparts.html">
+            Participants in Regional Climate Modeling Experiment 1</a></td>
+            <td><a href="dallas_notes.html">Dallas</a> (12
+            January 1999)</td>
+        </tr>
+        <tr>
+            <td align="top" valign="top"><a href="personnel.html">Participating Institutions</a></td>
+            <td align="top" valign="top"><a
+            href="atmos/boundary.html">Boundary Conditions </a></td>
+            <td valign="top"><a href="PIRCS-IUGG.html">IUGG99</a>
+            (18-30 July 1999, Birmingham, U.K.)</td>
+        </tr>
+        <tr>
+            <td valign="top"><a href="prospect.html">Information
+            for prospective participants</a></td>
+            <td><a
+            href="atmos/plots/plots.html">Observed/Analyzed
+            Fields for Experiment 1</a></td>
+            <td valign="top"><a href="PIRCSnotes.html">PIRCS
+            Modelers Meeting</a> (11 January 2000, Long Beach,
+            CA) </td>
+        </tr>
+        <tr>
+            <td valign="top"><a href="pubs_2.html">Publications</a></td>
+            <td><a
+            href="http://www.pircs.iastate.edu/atmos/dataformat.html">Output
+            format specifications</a></td>
+            <td valign="top"><font color="#ff0000"></font> <a href="http://www.pircs.iastate.edu/CPH/">PIRCS
+            Review and Planning Workshop</a> (22-23 May 2000, Copenhagen,
+            Denmark) </td>
+        </tr>
+        <tr>
+            <td valign="top"><a href="permissions.html">Policy
+            Statement on distribution of model output</a></td>
+            <td><a href="PIRCS_1c/index.html">PIRCS 1(c)</a></td>
+            <td align="top" valign="top"></td>
+        </tr>
+        <tr>
+            <td valign="top"><a href="ack.html">Acknowledgments</a>
+            </td>
+            <td>&nbsp;</td>
+            <td></td>
+        </tr>
+    </table>
+    <p><br clear="left">
+    </p>
+    <hr>
+    <h3 align="center"><font face="Arial">PIRCS and related regional
+climate modeling activities are coordinated by </font></h3>
+    <h3 align="center"><a
+    href="http://www.iitap.iastate.edu/iitap_home.html">International
+    Institute of Theoretical and Applied Physics</a></h3>
+    <h3 align="center"><a
+    href="http://www.iitap.iastate.edu/ees/home.html">Environmental
+    and Earth Science Thrust Area</a></h3>
+    <table border="0">
+        <tr>
+            <td><font face="Arial"><b>Project Leaders:</b></font>
+            </td>
+            <td>William J. Gutowski, Jr., </td>
+            <td>Eugene S. Takle, </td>
+            <td>Raymond W. Arritt </td>
+        </tr>
+    </table>
+</blockquote>
+</body>
+</html>

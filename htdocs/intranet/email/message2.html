@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<fils>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>message 2</TITLE>
+</HEAD>
+<BODY BGCOLOR="white">
+<P>
+(Message filed_mail:745)<BR>
+To: panz <BR>
+cc: cdaniel, rwarritt, dptodey, zekai, jhodson, gutowski, flory <BR>
+Subject: drive failure update <BR>
+Date: Mon, 08 Sep 1997 12:22:53 CDT <BR>
+From: &quot;Douglas R. Fils&quot; </P>
+<P>
+PIRCS, </P>
+<P>
+Things are looking very bad. We may have lost data on /usr/people/pircs 
+which is not backed up. File systems /usr/people/$USERNAME (your home 
+directories) and the ftp and WWW files have been totally recovered 
+either from xfs_rescue or from tape (they were backed up to tape). 
+However, since /usr/people/pircs was so large and people were using the 
+8mm to make tapes to, I did not have a back-up plan for this system. I 
+of course have created one and have the tapes ready for it, but that 
+does not help us in the current situation. I still have two actions to 
+try. </P>
+<P>
+1) move unit 1 of the pircs directory to another lun/slot and try to 
+recover from there </P>
+<P>
+2) try a low level drive access program for set-up and configuration of 
+drives. </P>
+<P>
+Normally this is used only at the factory (so the documentation tells 
+me) so details on it's use are sketchy. I am in touch with SGI asking 
+them for advise on it's use. Currently I am rebuilding another of the 9 
+gig drives into a new unit 1 and will try to add this to the pircs 
+drive set. This will be a last ditch attempt to at least recover 2/3's 
+of the files (unlikely to be that high, but a theoretical possibility). 
+While that drive is being created I am researching the above two 
+options so that I have all the details I need for when I am in front of 
+the computer. It seems one of the 9 gig units had a hardware level 
+failture. This failure affected 2 other drives on the machine, but I 
+seem to have recovered fully those two units. Unfortunately the drive 
+that failed was unit 1 of 3 (the first of the set) and as such contains 
+the file structure information needed to recover the file system. I 
+will keep you up to date on the actions I am taking and the progress, 
+if any. </P>
+<P>
+doug </P>
+</BODY>
+</HTML>

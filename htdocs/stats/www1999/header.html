@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="ROBOTS" CONTENT="NONE">
+<BASE TARGET="header">
+<TITLE>Table of Content</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- // hide script
+var vrmlWin = null;
+var switchImages=0;
+var totalMonth=0;
+var totalGraphics=0;
+var selectedModel=0;
+var active=1;
+var curmon=1;
+
+// Build array of extensions
+function monTab(sdir, sfx, text) {
+	this.sdir = sdir;
+	this.sfx = sfx;
+	this.text = text;
+}
+
+// Create new month description
+// First entry is top summary period
+function createMonTab(sdir, sfx, text) {
+	monTab[totalMonth] = new monTab(sdir, sfx, text);
+	totalMonth++;
+}
+
+// Change graphic appearance as mouse moves over it
+function tocMouseOver(tocNumber, thismon) {
+	if (switchImages && tocNumber != active)
+		document.images[tocNumber-1].src = tocGraphic[tocNumber].on.src;
+	self.status = 'Show '+tocGraphic[tocNumber].text+' for '+monTab[thismon].text;
+}
+
+// Change graphic back to 'off' state when mouse moves past it
+function tocMouseOut(tocNumber) {
+	if (switchImages && tocNumber != active)
+		document.images[tocNumber-1].src = tocGraphic[tocNumber].off.src;
+	self.status = '';		// Clear status line for broken browsers
+}
+
+// Display no report error message
+function noReport(tocNumber, thismon) {
+	alert('No '+tocGraphic[tocNumber].text+' report available for '+monTab[thismon].text);
+}
+
+// Show no report status
+function tocNoReport(thismon) {
+	self.status = 'No report available for '+monTab[thismon].text;
+}
+
+// Build array of graphic objects
+function tocGraphic(name, file, text) {
+	this.name = name;
+	this.file = file;
+	this.text = text;
+	if (switchImages) {
+		this.off = new Image(85,30);
+		this.off.src = name + "_off.gif";
+		this.on = new Image(85,30);
+		this.on.src = name + "_on.gif";
+	}
+}
+
+// Create new array object
+function createTocGraphic(name, file, text) {
+	totalGraphics++;
+	tocGraphic[totalGraphics] = new tocGraphic(name, file, text);
+}
+
+// Create the VRML window
+function createVRMLWin(loc) {
+	vrmlWin = window.open(loc, 'vrml_win',
+'toolbar=no,location=no,directories=no,status=yrd,menubar=no,scrollbars=no,resizable=yes,width=520,height=420');
+	vrmlWin.creator = self;
+}
+
+// Select the VRML model
+function selectModel(button) {
+	// Load either one frame or two frames into the right side
+	if (button.value != "year")
+		selectedModel = 0;
+	else
+		selectedModel = 1;
+	tocClick(active);
+}
+
+// Load the VRML scene
+function loadVRML(checkbox) {
+	// Load either one frame or two frames into the right side
+	// depending on the value of checkbox. It is triggered by the
+	// user clicking the ShowVRML checkbox in the control pane.
+	if (checkbox.checked) {
+		createVRMLWin("about:blank");
+	} else {		// Close the VRML window.
+		vrmlWin.close();
+		vrmlWin = null;
+	}
+	tocClick(active);
+}
+
+// Load given month
+function loadMonth() {
+	curmon = document.ControlForm.period.selectedIndex+1;
+	tocClick(2);
+}
+
+// Change graphic to 'on' state when mouse is clicked
+function tocClick(tocNumber) {
+	var currentURL;
+	var currentModel;
+	if (switchImages && (active > 0) && (active != tocNumber))
+		document.images[active-1].src = tocGraphic[active].off.src;
+
+	if (tocNumber > 0) {
+		if (switchImages)
+			document.images[tocNumber-1].src = tocGraphic[tocNumber].on.src;
+		if (tocNumber > 1) {
+			currentURL = parentURL+monTab[curmon].sdir+tocGraphic[tocNumber].file+monTab[curmon].sfx+'.html';
+			currentModel = parentURL+monTab[curmon].sdir+"3Dstats"+monTab[curmon].sfx+".html";
+		} else {
+			currentURL = baseURL+tocGraphic[tocNumber].file+monTab[0].sfx+'.html';
+			currentModel = parentURL+"3Dlogo.html";
+		}
+		if (document.ControlForm.ShowVRML.checked) {
+			if ((top.window.frames['main_win'].location.href != currentURL))
+				top.window.frames['main_win'].location = currentURL;
+
+			if (vrmlWin == null)	// in case page has been reloaded
+				createVRMLWin('');
+			if (vrmlWin.location.href != currentModel)
+				vrmlWin.location = currentModel;
+		} else
+		if ((top.window.frames['main_win'].location.href != currentURL))
+		    top.window.frames['main_win'].location = currentURL;
+	}
+	active = tocNumber;
+}
+
+// Set home document
+function setHome() {
+	var mn, curPage = top.window.frames['main_win'].location.href;
+
+	// Strip off prefix and suffix from URL
+	curPage = curPage.substring(curPage.lastIndexOf("/")+1,curPage.length);
+	curPage = curPage.substring(0,curPage.lastIndexOf(".html"));
+
+	if (curPage.length > 4) {
+		mn = curPage.substring(curPage.length-4, curPage.length);
+		curPage = curPage.substring(0, curPage.length-4);
+	} else {                // Set default values
+		curPage = tocGraphic[1].file;
+		mn = monTab[0].sfx;
+	}
+
+	// Find out which page is currently loaded
+	var idx = 0;
+	var count = 1;
+	while ((idx < 13) && (monTab[idx].sfx != mn))
+		idx++;
+
+	if (curmon < 13)
+		while ((count <= totalGraphics) && (tocGraphic[count].file != curPage))
+			count++;
+
+	// Adjust menu to current page
+	if (idx < 13 && count <= totalGraphics) {
+		curmon = idx;
+		if (curmon == 0)
+			curmon++;
+		tocClick(count);
+	}
+}
+
+// Determine base URL
+baseURL = location.href.substring(0,location.href.lastIndexOf("/")+1);
+parentURL = baseURL.substring(0,baseURL.lastIndexOf("www1999/"));
+// Check if navigator is Netscape, if so, check whether it is >= 3.0.
+// We multiply the version number by 1000 because NN 2.0x converts
+// numbers like 2.02 to strings like "2.01999999999875".
+if (navigator.appName.substring(0,8) == "Netscape" &&
+    Math.round(parseFloat(navigator.appVersion)*1000) > 3000)
+	switchImages=1;
+
+// Build menu graphic array
+createTocGraphic("../btn/year",  "fstats","summary");
+createTocGraphic("../btn/totals","totals","totals");
+createTocGraphic("../btn/days",  "days",  "hits by day");
+createTocGraphic("../btn/avload","avload","top hour/min/sec of period");
+createTocGraphic("../btn/topurl","topurl","top items/filenames");
+createTocGraphic("../btn/topdom","topdom","top client domains");
+createTocGraphic("../btn/topuag","topuag","top user agents");
+createTocGraphic("../btn/topref","topref","top referrer URLs");
+createTocGraphic("../btn/cntry", "country","hits by country");
+createTocGraphic("../btn/files", "files", "items/filenames");
+createTocGraphic("../btn/rfiles","rfiles","Code 404 (Not Found)");
+createTocGraphic("../btn/sites", "sites", "client domains");
+createTocGraphic("../btn/rsites","rsites","reverse domains");
+createTocGraphic("../btn/agents","agents","user agents");
+createTocGraphic("../btn/refers","refers","referrer URLs");
+
+createMonTab("www1999/", "1999", "the last 12 months");
+createMonTab("www1999/", "1299", "December 1999");
+createMonTab("www1999/", "1199", "November 1999");
+createMonTab("www1999/", "1099", "October 1999");
+createMonTab("www1999/", "0999", "September 1999");
+createMonTab("www1999/", "0899", "August 1999");
+createMonTab("www1999/", "0799", "July 1999");
+createMonTab("www1999/", "0699", "June 1999");
+createMonTab("www1999/", "0599", "May 1999");
+createMonTab("www1999/", "0499", "April 1999");
+createMonTab("www1999/", "0399", "March 1999");
+createMonTab("www1999/", "0299", "February 1999");
+createMonTab("www1999/", "0199", "January 1999");
+
+// -->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#000000" TEXT="#FF6600" LINK="#00FF00"
+ ALINK="#FF0000" VLINK="#FF3300" onLoad="setHome()">
+
+<SPACER TYPE="vertical" SIZE="4">
+<FORM NAME="ControlForm" METHOD="GET">
+<CENTER>
+<P ALIGN="CENTER">
+<A HREF="javascript:top.frames[0].tocClick(1)"
+ onMouseOver="tocMouseOver(1,curmon);return true;" onMouseOut="tocMouseOut(1);">
+<IMG SRC="../btn/year_off.gif" ALT="summary" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<FONT FACE="Helvetica,Swiss,Sans Serif" SIZE="2"><B><SELECT NAME="period" onChange="loadMonth();">
+<OPTION SELECTED>Dec 99
+<OPTION>Nov 99
+<OPTION>Oct 99
+<OPTION>Sep 99
+<OPTION>Aug 99
+<OPTION>Jul 99
+<OPTION>Jun 99
+<OPTION>May 99
+<OPTION>Apr 99
+<OPTION>Mar 99
+<OPTION>Feb 99
+<OPTION>Jan 99
+</SELECT></B></FONT><BR>
+<A HREF="javascript:top.frames[0].tocClick(2)"
+ onMouseOver="tocMouseOver(2,curmon);return true;" onMouseOut="tocMouseOut(2);">
+<IMG SRC="../btn/totals_off.gif" ALT="totals" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(3)"
+ onMouseOver="tocMouseOver(3,curmon);return true;" onMouseOut="tocMouseOut(3);">
+<IMG SRC="../btn/days_off.gif" ALT="days" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(4)"
+ onMouseOver="tocMouseOver(4,curmon);return true;" onMouseOut="tocMouseOut(4);">
+<IMG SRC="../btn/avload_off.gif" ALT="avload" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(5)"
+ onMouseOver="tocMouseOver(5,curmon);return true;" onMouseOut="tocMouseOut(5);">
+<IMG SRC="../btn/topurl_off.gif" ALT="topurl" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(6)"
+ onMouseOver="tocMouseOver(6,curmon);return true;" onMouseOut="tocMouseOut(6);">
+<IMG SRC="../btn/topdom_off.gif" ALT="topdom" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].noReport(7,curmon)"
+ onMouseOver="tocNoReport(curmon);return true;">
+<IMG SRC="../btn/topuag_off.gif" ALT="topuag" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].noReport(8,curmon)"
+ onMouseOver="tocNoReport(curmon);return true;">
+<IMG SRC="../btn/topref_off.gif" ALT="topref" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(9)"
+ onMouseOver="tocMouseOver(9,curmon);return true;" onMouseOut="tocMouseOut(9);">
+<IMG SRC="../btn/cntry_off.gif" ALT="country" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(10)"
+ onMouseOver="tocMouseOver(10,curmon);return true;" onMouseOut="tocMouseOut(10);">
+<IMG SRC="../btn/files_off.gif" ALT="files" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(11)"
+ onMouseOver="tocMouseOver(11,curmon);return true;" onMouseOut="tocMouseOut(11);">
+<IMG SRC="../btn/rfiles_off.gif" ALT="rfiles" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(12)"
+ onMouseOver="tocMouseOver(12,curmon);return true;" onMouseOut="tocMouseOut(12);">
+<IMG SRC="../btn/sites_off.gif" ALT="sites" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].tocClick(13)"
+ onMouseOver="tocMouseOver(13,curmon);return true;" onMouseOut="tocMouseOut(13);">
+<IMG SRC="../btn/rsites_off.gif" ALT="rsites" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].noReport(14,curmon)"
+ onMouseOver="tocNoReport(curmon);return true;">
+<IMG SRC="../btn/agents_off.gif" ALT="agents" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<A HREF="javascript:top.frames[0].noReport(15,curmon)"
+ onMouseOver="tocNoReport(curmon);return true;">
+<IMG SRC="../btn/refers_off.gif" ALT="refers" WIDTH="85" HEIGHT="30" BORDER="0"></A><BR>
+<INPUT TYPE="checkbox" NAME="ShowVRML" onClick="loadVRML(this);"><FONT FACE="Helvetica,Swiss,Sans Serif" SIZE="2"><B>&nbsp;VRML</B></FONT><BR>
+<SPACER TYPE="vertical" SIZE="4">
+<HR SIZE="2">
+<A HREF="../index.html" TARGET="_top"><FONT FACE="Helvetica,Swiss,Sans Serif" SIZE="2"><B>Main&nbsp;Page</B></FONT></A><BR>
+<A HREF="http://www.netstore.de/Supply/http-analyze/docs.html" TARGET="manual"><FONT FACE="Helvetica,Swiss,Sans Serif" SIZE="1">Online&nbsp;Documentation</FONT></A>
+<HR SIZE="2">
+<A HREF="http://www.netstore.de/Supply/http-analyze/" TARGET="_blank"><IMG SRC="../btn/RAG_sb.gif" ALT="" WIDTH="48" HEIGHT="51" BORDER="0"></A><BR>
+<HR SIZE="2">
+<A HREF="http://www.netstore.de/Supply/http-analyze/register.html" TARGET="_blank"><IMG SRC="../btn/netstore_sb.gif" ALT="" WIDTH="79" HEIGHT="30" VSPACE="4" BORDER="0"></A><BR>
+<FONT FACE="Helvetica,Swiss,Sans Serif" SIZE="1">http-analyze&nbsp;2.01pl15<BR>
+Copyright &#169; 2000 by RENT-A-GURU&#174;</FONT></P>
+</CENTER>
+</FORM>
+
+</BODY>
+</HTML>

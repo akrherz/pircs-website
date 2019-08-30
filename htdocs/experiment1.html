@@ -1,0 +1,242 @@
+<html>
+<head><title>PIRCS Experiment 1</title>
+<link rel="stylesheet" href="main.css" type="text/css"></head>
+<body bgcolor="#FFFFFF" link="#666666" vlink="#666666">
+
+<center><img src="experiment13.jpg"></center><p>
+
+<UL><font class="text">
+<LI><A HREF="#motiv">Motivation</A>
+<LI><A HREF="#locat">Location</A>
+<LI><A HREF="#perio">Period</A>
+<LI><A HREF="#simdo">Simulation Domain</A>
+<LI><A HREF="#ilbcs">Atmospheric Initial and Lateral Boundary 
+Conditions</A>
+<LI><A HREF="#sfccd">Surface Conditions</A>
+<LI><A HREF="#cvrad">Convection and Radiation</A>
+<LI><A HREF="#diagn">Diagnostics</A>
+<LI><A HREF="#fnote">Final Notes</A>
+<LI><A HREF="#furth">Further Information</A>
+</UL></font>
+
+<p><hr><p>
+
+<a name="motiv"></a>
+
+<font class="subhead">Motivation</font><p>
+<font class="text">The intent of the first experiment is to provide a 
+first comparison of how well regional models represent aggregate 
+characteristics of weather
+events in a simulation long enough to include many such events, i.e. 
+resolve climate. To this end, the experiment is designed to be relatively 
+simple to perform and diagnose thereby facilitating wide-spread 
+participation and the establishment of a framework for ongoing 
+intercomparison. The experiment will contain the strong climate signals of persistent extreme 
+events, which are expected to simplify the intercomparison by focusing diagnosis 
+on dominant processes during these events.<p>
+
+<P>The initial experiment focuses on a
+primarily agricultural region with significant vulnerability to growing
+season precipitation, a problem common to most developing countries. 
+Accordingly, one emphasis of the intercomparison will be diagnosing the 
+simulation of hydrologic processes. In order to complement related 
+research programs, the initial experiment is also designed to overlap with 
+activities of COMPARE, GEWEX (specifically G-NEG and GCIP) and AMIP.
+</font><p>
+
+<a name="locat"></a>
+<font class="subhead">Location</font><p>
+
+<font class="text">
+The first experiment will focus on the central United States, a region
+of intense cultivation containing a major watershed, the Mississippi River
+basin. It is a region that has experienced episodes of both extreme 
+drought
+and extreme flooding within the past 10 years. This region is also the
+focus of GCIP and planned activities by G-NEG.</font><p>
+
+<a name="perio"></a>
+<font class="subhead">Period</font>
+
+<font class="text">
+<p>The first experiment will contain two periods: the summer of 1988 
+drought (Expt. 1a) and the summer of 1993 flooding (Expt. 1b). Experiment 
+1a emphasizes thermal processes, whereas Experiment 1b emphasizes 
+processes of the water cycle. Initial simulation and diagnosis will focus 
+on the summer of 1988, but the coupled diagnosis of opposite extremes will 
+constitute a more complete analysis of the systematic behavior of participating models. 
+Simulations will be initialized using gridded analyses for 15 May 1988 and 
+1 June 1993 and will last 60 days. The starting dates represent times by 
+which persistent circulation features for each summer had become established.
+</font><p>
+
+<a name="simdo"></a>
+<font class="subhead">Simulation Domain</font><p>
+
+<font class="text">
+The simulation domain will consist of two parts: a forced outer frame
+and a &quot;free&quot; inner domain. Diagnostics will be computed for the
+inner domain. The standard inner domain will be given by a 51 (N-S) x 101
+(E-W) lat-lon grid with 1/2 degree resolution, with the central point 
+located in the middle of the U.S. (lat. grid #26, lon. grid #51) = (37.5 
+N, 100 W) <A HREF="http://www.pircs.iastate.edu/atmos/pircsreg.gif">(Fig. 
+1)</A>.
+
+<P>The PIRCS support staff has designed a nearly equivalent inner domain
+for models using:
+<ul>
+ <li>a polar stereographic projection, with the central point
+        (X grid #28, Y grid #41)=(37.5 N, 100 W)<A 
+HREF="http://www.pircs.iastate.edu/atmos/pircspsg.gif">
+        (Fig.2)</A> and 60 km resolution, or<p>
+ <li>a Lambert conformal projection, which is true at 30 N and 60 N with a
+        central point (X grid #51, Y grid #36)=(37.50 N, 100.00 W) and 52 
+km resolution.
+</ul>
+<font class="text">
+<P>Precise structure of the inner and outer domains may vary between 
+models depending on their numerical procedures. It is expected that 
+participants in the intercomparison will use the lateral boundary 
+conditions given in the outer frame as appropriate for their model and 
+that no model will include explicit external forcing within the domain 
+covered by the standard &quot;free&quot; grid.
+
+<P>In the vertical direction, each model will use its own coordinate, grid
+and resolution: there is no standard vertical grid.</font><p>
+
+<a name="ilbcs"></a>
+
+<font class="subhead">Atmospheric Initial and Lateral Boundary 
+Conditions</font><p>
+
+<font class="text">
+The PIRCS support staff will provide initial conditions for the simulation
+domain described above from re-analysis output produced by the U.S. 
+National Meteorological Center. In order to facilitate the participation 
+of a wide variety of models, and guided by the COMPARE program, PIRCS will 
+distribute data on three grids: a background, global grid at 2 1/2 degree 
+resolution, forcing-frame (outer domain) data at 1/2 degree resolution on 
+the lat-lon grid, and forcing-frame data at 60 km resolution on the polar 
+stereographic grid. Data for lateral boundary conditions will be provided 
+every 6 hours.
+
+<P>The variables provided will be the horizontal wind components (u, v),
+temperature T, specific humidity q, the surface pressure p_sfc of the 
+reanalysis model and the topography used by the re-analysis model. Data 
+will be provided at 25 mb resolution. PIRCS will provide the algorithm for 
+vertical interpolation of surface pressure to the individual model's 
+topographic height.</font><p>
+
+<a name="sfccd"></a>
+<font class="subhead">Surface Conditions</font><p>
+
+<font class="text">
+The PIRCS support staff will provide soil-moisture for initial conditions
+and periodic ocean and lake surface temperatures for lower boundary 
+conditions. For a number of reasons, precise determination of the field of 
+soil moisture on each starting date will be difficult. The soil-moisture 
+conditions that will be distributed are intended to provide a consistent, 
+reasonably accurate initial condition for all models. Therefore, while 
+these values can be converted to units appropriate for each model, they 
+should not be adjusted toward drier or more moist conditions.
+
+<P>For simplicity, each modeling group is encouraged to use their model's
+topography and land characterization procedures already established for
+this region, if they exist. The PIRCS support staff, however, will provide
+a reference topography and land-characterization dataset for participants
+needing this information.</font><p>
+
+<a name="cvrad"></a>
+<font class="subhead">Convection and Radiation</font><p>
+
+<font class="text">
+The choice of cumulus convection and radiation schemes is left to each
+modeling group.</font><p>
+
+<a name="diagn"></a>
+<font class="subhead">Diagnostics</font><p>
+
+<font class="text">
+Modelers submitting output to PIRCS should read and adhere
+carefully to the <A HREF="./dataformat.html">format for transmitting
+model output </A> to the PIRCS archive.
+<P>Primary diagnostics will consist of heat, moisture and energy budgets
+on scales finer than typically resolved by global models. All spatially
+varying output should be reported on the model's grid for the inner 
+domain. The PIRCS archive will collect from each participating group a 
+standard archive <A HREF="./table1.html">(Table 1)</A>. The archive 
+emphasizes mesoscale circulation and diurnal cycles of energy and moisture 
+fluxes at the surface. A supplemental data set (<a href="./table2.html">
+Table 2</a>) is also requested from those with the means to assemble it.
+
+<P>Participants will be strongly encouraged to save at their institutions
+hourly histories of the prognostic variables. PIRCS requests that archives
+contain sufficient history information so that comparisons that are either
+unanticipated by PIRCS or that go beyond the scope of the initial 
+comparison may still be performed. Examples of the latter would include 
+analysis of vertical fluxes of heat and moisture generated by convection 
+and their impact on resolved dynamics and study of the interaction between 
+clouds in the planetary boundary layer (PBL), radiation and other PBL 
+processes.
+
+<P>For Expt. 1a (drought year), diagnostic emphasis for the 
+intercomparison will be on the evolution of the thermal processes across 
+the domain, as characterized by the surface and atmospheric thermal energy 
+budgets. A comparison of hydrologic processes for this case of weak 
+hydrologic cycle will also be performed, but it is expected that this 
+comparison in particular will not be complete until the strong hydrologic 
+cycle of the 1993 flood period is also simulated and diagnosed.</font><p>
+
+<a name="fnote"></a>
+<font class="subhead">Final Notes</font><p>
+
+
+<UL>
+<font class="text">
+<LI>A five-day boundary conditions data set (<a
+href="./beta_test.html">beta test</a>) is available that enables
+interested groups
+to perform a partial PIRCS run and assess whether or not they can commit
+the resources necessary for the project. <BR>
+<BR>
+<LI>We have packaged the full <a href="./full_release.html">60-day
+boundary-conditions</a> data sets.
+The dataset is in GRIB format. <BR>
+<BR>
+
+
+<LI>Formal registration includes providing a description of the 
+participating
+model's components and the grid to be used. The reporting format appears 
+at the
+<a href="ftp://ftp.pircs.iastate.edu">PIRCS ftp site</a> (directory: 
+/pub/PIRCS).
+</UL></font><p>
+
+<a name="furth"></a>
+<font class="subhead">Further Information</font><p>
+
+<font class="text">
+<P>Questions and requests for further information should be sent to<BR>
+gstakle@iastate.edu (Gene Takle)<BR>
+--or-- <BR>
+gutowski@iastate.edu (Bill Gutowski)<BR>
+--or-- <BR>
+rwarritt@iastate.edu (Ray Arritt)<br>
+--or-- <BR>
+panz@eas.slu.edu (Zaitao Pan)<p>
+
+<hr>
+<table>
+<tr><a href="http://www.pircs.iastate.edu" border="0"><img
+src="homepage2.jpg"
+border="0"></a></tr>
+<tr><a href="http://www.iastate.edu" border="0"><img src="isu.gif"
+border="0"></a></tr>
+<tr><td><a
+href="http://www.iastate.edu/guide/policies/notice.html">Copyright/Trademark
+Legal Notice</a></td></tr>
+</table>
+
+</body>
+</html>

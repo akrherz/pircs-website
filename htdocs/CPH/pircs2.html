@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>PIRCS Experiment 2</title>
+<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<blockquote><font class="subhead">Regional Climate Model
+Intercomparison for South America</font><p></center>
+
+<font class="text">The following draft experimental design 
+is <b>not</b> intended as a proposal to
+be defended but
+instead is offered as a guide
+for discussion.  Please email us at 
+<a href="mailto:pircs@iastate.edu">pircs@iastate.edu</a> with
+comments and suggestions.</font> 
+<hr>
+    <p><font class="text"><b>Background Information</b></p>
+       <blockquote> <p><a href="LBA_map_ter1.gif">Terrain map</a> for 
+potential 
+PIRCS domain, at 50 km resolution <br>
+        <a href="LBA_map_city.jpg">Country borders and major cities</a><br>
+        Climate of South America<br>
+        <a href="links.html">Climate Research in South
+        America</a> </blockquote></p>
+    <p><b>Domain:</b> most of South America (see maps)</p>
+    <p><b>Resolution </b>50 km<br>
+    (some modelers may want to do an inner nest ~ 20km)</p>
+    <p><b>Period:</b> Jan 1998 - December 1999 <br>
+    (max of last El Nino to current La Nina)</p>
+    <p><b>Initial/Lateral/Surface Boundary Conditions:</b><br>
+    <blockquote>NCEP reanalysis to provide primary boundary conditions
+    (Version 2 available? ECMWF reanalysis better in tropics?)
+    Vegetation and topography data sets can be provided. No
+    additional surface boundary data set appears needed.</blockquote></p>
+    <p><b>Output Archive:</b><br>
+    <blockquote>NetCDF format<br>
+    (We will provide a translator code, potentially based on one
+    developed by Argonne)<br>
+    Meta-database describing more extensive PIRCS-2 holdings at
+    participating institutions</blockquote></p>
+    <p><b>OUTPUT FIELDS:</b></p>
+    <blockquote><p>Notes:</p>
+        <p>A. Output fields transmitted to us will be 2-D fields,
+        reducing data transmission/storage requirements.</p>
+        <p>B. Modelers will store more complete model-run history
+        at their own institution, with the PIRCS meta-database
+        providing summaries and pointers to the output.</p></blockquote>	
+    <p><b>1. Direct output</b> (minor post-processing)</p>
+    <blockquote><p><u>Three hourly cumulative</u><br>
+    (a) convective precipitation<br>
+    (b) stratiform precipitation<br>
+    (c) surface energy fluxes: up/down solar, up/down longwave,
+    sensible, latent<br>
+    (d) outgoing longwave radiation (top of atmosphere)
+    <ul><li class="text">Is (d) readily available from most 
+models?</li></ul>
+    <br>Other fluxes?</p>
+    <p><u>Three hourly instantaneous</u><br>
+    (a) 2-m air temperature<br>
+    (b) sea-level pressure<br>
+    (c) surface pressure<br>
+    (d) cloud cover</p>
+
+    <p><u>Six Hourly</u><br>
+    (a) east-west wind component at 850 hPa<br>
+    (b) north-south wind component at 850 hPa<br>
+    (c) east-west wind component at 200 hPa<br>
+    (d) north-south wind component at 200 hPa<br>
+    <br>
+    Other levels; e.g., near LLJ?</p>
+
+    <p><u>Daily</u><br>
+    (a) Min/max temperature<br>
+    (b) Soil moisture<br>
+    (c) Cumulative runoff</p></blockquote>
+
+    <p><b>2. Derived statistics:</b> We provide code or
+    algorithm.</b></p>
+    <blockquote><p><u>Three-hour average</u><br>
+    (a) vertically integrated horizontal water transport<br>
+    (b) precipitable water<br>
+    (c) vertically integrated cloud water</p>
+    <p><u>Monthly averages at 850, 700, 500, 300, and 200 hPa</u><br>
+    (a) East-west wind speed<br>
+    (b) North-south wind speed<br>
+    (c) Vertical wind speed<br>
+    (d) Temperature</p>
+    <p><u>Other</u><br>
+    (a) LLJ statistics (daily)<br>
+    (b) 850 hPa streamfunction - (6 hourly)<br>
+    (c) 850 hPa velocity potential - (6 hourly)<br>
+    (d) 200 hPa streamfunction - (6 hourly)<br>
+    (e) 200 hPa velocity potential - (6 hourly)<br>
+    (f) 500 hPa vertical wind - (6 hourly)</p>
+<ul><li class="text">Would geostrophic and ageostrophic winds be 
+preferable
+to velocity potential and streamfunction?</li>
+<li class="text">Other levels, e.g., 925 mb to capture LLJ?</li>
+</ul></blockquote>
+<table>
+<tr><a href="http://www.pircs.iastate.edu" border="0" target="_Top"><img
+src="../homepage2.jpg"
+border="0"></a></tr>
+<tr><a href="http://www.iastate.edu" border="0" target="_Top"><img src="../isu.gif"
+border="0"></a></tr>
+<tr><td><a
+href="http://www.iastate.edu/guide/policies/notice.html" target="_Top">Copyright/Trademark
+Legal Notice</a></td></tr>
+</table></blockquote>
+</body>
+</html>

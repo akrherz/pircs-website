@@ -1,0 +1,37 @@
+:# day5yoursystem.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0 - nothing special (default)
+:#	1 - soft mandatory
+:#	2 - hard mandatory
+:#	4 - hinv result if value is empty
+:#	8 - auto pop system serial # if value is empty
+:#	16 - auto pop sysID
+:#	32 - auto check email connection
+:#	64 - auto pop email address
+:#	128 - app seg conversion
+:#	256 - auto pop country list.
+:#      512 - country name to code conversion
+:#	
+:# value -- user input or a predefined value
+
+:Country:text:512::
+
+:SaSalutation:text:::
+:SaFirstName:text:::
+:SaLastName:text:::
+:SaEmail:text:::
+:SaPhone:text:::
+:AppSeg1:select:130::
+:AppSeg2:select:128::
+:AppSeg3:select:128::
+:AppSegOther:text:::
+:App1:text:::
+:App2:text:::
+:App3:text:::
+
+:# end
+

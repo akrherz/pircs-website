@@ -1,0 +1,27 @@
+:#
+:# day5yourcomments.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0 - nothing special (default)
+:#	1 - soft mandatory
+:#	2 - hard mandatory
+:#	4 - hinv result if value is empty
+:#	8 - auto pop system serial # if value is empty
+:#      16 - auto pop sysID if value is empty
+:#      32 - use value only if email is connectted
+:# value -- user input or a predefined value
+
+:AfterInstall:radio:::
+:ShipArrive:radio:::
+:ShipComplete:radio:::
+:ShipHandle:radio:::
+:Install:radio:::
+:Integrate:radio:::
+:PurchaseExp:select:::
+:OverallExp:select:::
+
+:# end
+

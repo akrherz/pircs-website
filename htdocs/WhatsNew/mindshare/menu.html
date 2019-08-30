@@ -1,0 +1,139 @@
+<html>
+<head><title>Bundled Software & licenses</title></head>
+
+<script language="javascript">
+
+var tabs = new Array();
+
+function selectTab( tabNr ) {
+	
+	// loop through tabs...
+	for ( var i = 1; i < tabs.length; i++ ) {
+
+		var tabID = "tab" + i;
+
+		if ( i == tabNr ) {
+
+			document.images[tabID].src = eval( "tab" + i + "_s.src");     
+			
+			// register active tab - redundant...
+			tabs[0] = i;
+			
+		}	else {
+		
+			document.images[tabID].src = eval( "tab" + i + "_us.src");
+
+		}
+	}
+}
+
+
+function loadTabImages() {
+
+	//braindead code... had a plane to catch ;-)
+
+	tab1_s = new Image();
+	tab1_s.src = "../pics/mindshare/tab_s_overview.gif";
+	
+	tab1_us = new Image();
+	tab1_us.src = "../pics/mindshare/tab_us_overview.gif";
+
+	tab2_s = new Image();
+	tab2_s.src = "../pics/mindshare/tab_s_desktop.gif";
+	
+	tab2_us = new Image();
+	tab2_us.src = "../pics/mindshare/tab_us_desktop.gif";
+
+	tab3_s = new Image();
+	tab3_s.src = "../pics/mindshare/tab_s_web.gif";
+	
+	tab3_us = new Image();
+	tab3_us.src = "../pics/mindshare/tab_us_web.gif";
+
+	tab4_s = new Image();
+	tab4_s.src = "../pics/mindshare/tab_s_third.gif";
+	
+	tab4_us = new Image();
+	tab4_us.src = "../pics/mindshare/tab_us_third.gif";
+
+	tab5_s = new Image();
+	tab5_s.src = "../pics/mindshare/tab_s_other.gif";
+	
+	tab5_us = new Image();
+	tab5_us.src = "../pics/mindshare/tab_us_other.gif";
+}
+
+
+function initTabs( activeTab ) {
+
+	tabs[0] = activeTab;
+		
+	tabs[1] = "overview";
+	tabs[2] = "desktop";
+	tabs[3] = "web";
+	tabs[4] = "third";
+	tabs[5] = "other";
+
+	loadTabImages();
+}
+
+</script>
+
+
+<body background="../pics/menu/bg_blue.gif" marginwidth=0 marginheight=0 leftmargin=0 topmargin=0 onLoad="initTabs('1');">
+
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+
+<!-- this TR contains the LNF header complex. It is currently unlocalised. -->
+
+<tr>
+	<td align=left valign=top><table cellspacing=0 cellpadding=0 border=0>
+		<tr><!-- topbar menu items -->
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=19 height=26></td>
+			<td><a href="../yourSystem.html" target="_top"><img src="../pics/menu/m_welcome.gif" border=0 width=70 height=26></a></td>
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=32 height=26></td>
+			<td><a href="../install/resources.html" target="page" onClick="javascript:selectTab('99');"><img src="../pics/menu/m_resources.gif" border=0 width=85 height=26></a></td>
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=32 height=26></td>
+			<td><a href="../install/cds.html" target="page" onClick="javascript:selectTab('99');"><img src="../pics/menu/m_CDcontents.gif" border=0 width=95 height=26></a></td>
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=32 height=26></td>
+			<td><a href="../install/starthere.ps" target="page" onClick="javascript:selectTab('99');"><img src="../pics/menu/m_print.gif" border=0 width=48 height=26></a></td>
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=32 height=26></td>
+			<td><a href="../install/contents.html" target="page" onClick="javascript:selectTab('99');"><img src="../pics/menu/m_index.gif" border=0 width=50 height=26></a></td>
+		</tr>
+	</table>
+
+	<table cellspacing=0 cellpadding=0 border=0>
+		<tr><!-- spacer -->
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=484 height=36></td>
+		</tr>
+		<tr><!-- page header -->
+			<td><img src="../pics/menu/hdr_bundled.gif" border=0 width=484 height=62></td>
+		</tr>
+		<tr><!-- spacer -->
+			<td><img src="../pics/menu/block_blue.gif" border=0 width=484 height=37></td>
+		</tr>
+	</table>
+
+	<table cellspacing=0 cellpadding=0 border=0>
+		<tr><!-- tab items -->
+			<td><a href="overview.html" target="page" onClick="javascript:selectTab('1');"><img name="tab1"src="../pics/mindshare/tab_s_overview.gif" border=0 width=140 height=34></a></td>
+			<td><a href="desktop.html" target="page" onClick="javascript:selectTab('2');"><img name="tab2" src="../pics/mindshare/tab_us_desktop.gif" border=0 width=140 height=34></a></td>
+			<td><a href="web.html" target="page" onClick="javascript:selectTab('3');"><img name="tab3" src="../pics/mindshare/tab_us_web.gif" border=0 width=140 height=34></a></td>
+			<td><a href="3rdparty.html" target="page" onClick="javascript:selectTab('4');"><img name="tab4" src="../pics/mindshare/tab_us_third.gif" border=0 width=141 height=34></a></td>
+			<td><a href="other.html" target="page" onClick="javascript:selectTab('5');"><img name="tab5" src="../pics/mindshare/tab_us_other.gif" border=0 width=140 height=34></a></td>
+
+			<td><img src="../pics/menu/block_white.gif" border=0 width=14 height=34></td>
+
+		</tr>
+	</table>
+	</td>
+
+	<!-- section silluette and sgi logo pic -->
+	<td align=right valign=top><img src="../pics/menu/logo_install.gif" border=0 width=316 height=195></td>
+
+</tr>
+
+</table>
+
+</body>
+</html>

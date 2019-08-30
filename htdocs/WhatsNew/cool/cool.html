@@ -1,0 +1,792 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <TITLE>Key New Features or Changes</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<TABLE CELLPADDING="10">
+    <TR>
+        <TD><H1>
+            <FONT FACE="helvetica">Key New Features and Changes</FONT></H1>
+            <FONT FACE="helvetica">The goal of the IRIX 6.5 release 
+            family is to provide a high quality and stable operating system for all 
+            SGI systems. This release family supports all SGI hardware platforms 
+            supported by IRIX 6.2, 6.3, and 6.4, except for Crimson. Significant 
+            additional software has been packaged with IRIX 6.5, including some 
+            important system and network management and interoperability tools.</FONT>
+            <P>
+            <FONT FACE="helvetica">This page contains a partial list of 
+            the key new features and changes for <A HREF="#features">IRIX <B>6.5.22</B></A>. 
+            To see the list of key features and changes for the IRIX 6.5 and IRIX 
+            6.5.1 through 6.5.21 releases, see the <A
+             HREF="previous.html">previous IRIX features</A> page.</FONT>
+            <P>
+            <FONT FACE="helvetica">Look for information about the IRIX 
+            6.5 release family on Supportfolio Online&nbsp;(<A
+             HREF="http://support.sgi.com/irix/6.5" TARGET="_blank">http://support.sgi.com/irix/6.5</A>) 
+            and&nbsp;<A HREF="http://www.sgi.com/" TARGET="_blank">http://www.sgi.com</A>.</FONT>
+            <P>
+            <FONT FACE="helvetica">For details on any of these 
+            new features and changes, refer to the <A
+             HREF="../install/resources.html#relnotes">release notes</A>.</FONT> 
+            <P>
+            <B><FONT FACE="helvetica">Note:</FONT></B><FONT
+             FACE="helvetica"> Some features listed here apply only for 
+            certain software bundles or hardware configurations. </FONT>
+
+            <P>
+            <FONT FACE="helvetica">This page also contains a summary of some
+            <A HREF="#upcoming">upcoming changes in future IRIX releases</A>. 
+             </FONT>
+
+<H2>
+<A NAME="features"><FONT FACE="helvetica">IRIX 6.5.22 Key 
+New Features</FONT></A></H2>
+<P>
+<FONT FACE="helvetica">The following changes have been 
+incorporated into the core IRIX 6.5.22 overlay CDs and the Applications CD.</FONT></P>
+
+
+<!--    <H3>
+    <FONT FACE="helvetica">New Hardware Platforms
+    or Features </FONT>
+    </H3>
+      <UL>
+         <LI></LI>
+      </UL> 
+-->
+
+
+    <H3>
+    <FONT FACE="helvetica">New Software Enhancements - 
+    Maintenance and Feature Stream</FONT></H3>
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    Maintenance Stream Support
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Feature support added to maintenance stream
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       For IRIX 6.5.22, support for the following features is
+       now provided in both the feature stream (IRIX 6.5.22f)
+       and the maintenance stream (IRIX 6.5.22m).  In
+       previous releases, these features were supported in
+       the feature stream only:
+       </FONT>
+       <P>
+       <UL>
+          <LI>
+          <FONT FACE="helvetica">
+          The XVM logical volume manager
+          </FONT>
+          <P>
+          <LI>
+          <FONT FACE="helvetica">
+          CXFS
+          </FONT>
+          <P>
+          <LI>
+          <FONT FACE="helvetica">
+          The SJIS feature
+          of IRIX Language Support,
+          supporting Shift JIS,
+          Traditional Chinese BIG5, and Simplified
+          Chinese GBK locales.
+          </FONT>
+       </UL>
+     </UL>
+
+    <H4>
+    <FONT FACE="helvetica">
+    Installation
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Updated Inst program
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       New installation features were used starting with IRIX 6.5.21 that
+       necessitate an updated version of the Inst program.  If you plan to install using
+       the miniroot, then you may do so by the usual method.  However, if you
+       plan to upgrade by 'live' install and are running IRIX 6.5.19 or
+       earlier, you must first install patch 5086.  For further information,
+       see <A HREF="precaveats.html">Caveats to Before
+       You Upgrade</A>. 
+       </FONT>
+     </UL>
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    Filesystems
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Changes to CXFS Packaging in IRIX 6.5.22
+       </B>
+       <br>
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       Starting with IRIX 6.5.22, The IRIX CXFS software is no longer
+       bundled in the IRIX overlay CDs but instead is on a separate
+       CD that is labeled <B>CXFS IRIX Server and Client 3.0 for IRIX 6.5.22</B>.
+       This changes the installation procedure.  For information on
+       CXFS installation, see <I>SGI InfiniteStorage CXFS Administration Guide</I>.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       <B>Note:</B> If you are upgrading from a previous IRIX release and have
+       CXFS installed, you must upgrade both IRIX and CXFS. If you
+       try to upgrade one without the other, conflicts will occur. 
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       CXFS customers should make sure that their CXFS support contract
+       contains the CD media option.  This option is
+       required for future delivery of the latest features, enhancements,
+       and bug fixes, available only on CD.  The CD media option
+       allows you to take advantage of secure and expedited delivery
+       using the online ordering system, through Software Updates
+       on Supportfolio, or through your local support center by telephone.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       For further information on this packaging change and
+       CXFS support, go to the following page on Supportfolio:
+       <A HREF="http://support.sgi.com/search_request/publications/index"
+       TARGET="_blank">http://support.sgi.com/search_request/publications/index</A>.
+       Select the following parameters:
+       </FONT>
+       <UL>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       Publication type: news
+       </FONT>
+       <LI>
+       <FONT FACE="helvetica">
+       Product type or keyword(s): CXFS Separate CD Media
+       </FONT>
+       </UL>
+     </UL>
+
+
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Case-insensitive filename support for XFS filesystems
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       In IRIX 6.5.22, the mkfs command supports a new version=ci
+       suboption for the -n (naming) option.  Specifying this option
+       enables a version 2 filesystem directory with case-insensitive
+       filenames.  Filenames will be stored in directories
+       as they were created, but all file or directory name searches
+       will be case-insensitive.
+       This feature is normally used only when the filesystem will be used by 
+       Windows CXFS clients.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       Note that you will be able to mount filesystems created with
+       this option only when running IRIX releases 6.5.22 and later. 
+       Attempting to mount the filesystem when running an earlier
+       release produces an error message of "Wrong filesystem
+       type: xfs".
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       For information on the mkfs command, see the mkfs_xfs(1M)
+       man page.
+       </FONT>
+     </UL>
+
+
+
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>Trusted IRIX and IRIX extended attribute support added to UDF filesystems
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+        Write-capable UDF filesystem format Universal Disk Format (UDF) is
+        the filesystem used on DVDs.  A read-only
+        implementation of UDF was added to IRIX 6.5.18, and a
+        write-capable version was added for IRIX 6.5.20.
+        Trusted IRIX support and Extended Attribute support (using UDF streams)
+        was added to the UDF filesystem for IRIX 6.5.22.
+       </FONT>
+     </UL>
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    Worldview
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Japanese GUI and Japanese resource files no longer shipped 
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       The graphical user interfaces (GUIs) for CXFS and XVM contained
+       in IRIX 6.5.22 and later no longer support the localized
+       Japanese GUI and the Japanese resource files do not ship with
+       "WorldView Japanese 6.5 For IRIX 6.5.22 and above".  If you
+       are upgrading to CXFS or XVM on a system running IRIX 6.5.22 or
+       later versions and have previously installed the Japanese resource
+       files for these packages, you should remove them. To remove
+       the Japanese resource files, run the following commands as root:
+       </FONT>
+       <P>
+       <TT># versions remove WorldView_japanese.sw.euc_sysadm_cxfs</TT><br>
+       <TT># versions remove WorldView_japanese.sw.sjis_sysadm_cxfs</TT><br>
+       <TT># versions remove WorldView_japanese.sw.euc_sysadm_xvm</TT><br>
+       <TT># versions remove WorldView_japanese.sw.sjis_sysadm_xvm</TT><br>
+       <TT># versions remove WorldView_japanese.sw.euc_sysadm_cluster</TT><br>
+       <TT># versions remove WorldView_japanese.sw.sjis_sysadm_cluster</TT><br>
+       <TT># versions remove WorldView_japanese.sw.euc_sysadm_base</TT><br>
+       <TT># versions remove WorldView_japanese.sw.sjis_sysadm_base</TT><br>
+     </UL>
+
+    <H4>
+    <FONT FACE="helvetica">
+    Checkpoint and Restart
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       New features of REPLACE keyword of the cpr command
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       In IRIX 6.5.22, the operation of the REPLACE action
+       keyword of the cpr command has been enhanced.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       Under certain constraints, REPLACE actions may invoke
+       SUBSTITUTE actions for files that have been modified or deleted,
+       or a MERGE action for all other files.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       If a SUBSTITUTE action is performed, a notice specifying the
+       location of the substituted file is displayed. It is the
+       responsibility of the user to pick up any output file thus
+       substituted. Applications that reopen a substituted file
+       by its original name may not operate as expected.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       Checkpoint/Restart users are encouraged to review the information
+       on this behavior change detailed in the <I>IRIX Checkpoint and
+       Restart Operation Guide</I>.
+       </FONT>
+    </UL>
+
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    Security
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Support for Pluggable Authentication Module (PAM)
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       IRIX 6.5.22 includes support  for
+       Pluggable Authentication Modules (PAM).  PAM
+       provide a general purpose interface for customer-definable
+       authentication. Implementation of PAM is off by default.
+       For information on PAM, see
+       <I>IRIX Admin: Backup, Security, and Accounting</I>.
+       </FONT>
+     </UL>
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    Desktop
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>New musicplayer application
+       </B>
+       <br>
+       </FONT>
+       The IRIX 6.5.22 release includes musicplayer, a 
+        skinnable desktop music player that plays sound
+        files using sgi audio hardware.  The musicplayer
+        application handles multiple files in a single
+        session.  For information, see the musicplayer(1)
+        man page and the online help provided in the
+        Help menu of the application.
+       <FONT FACE="helvetica">
+     </UL>
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    Device Drivers
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>PCI Bus Interrogation
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       In IRIX 6.5.22, a driver can obtain information about
+       the PCI bus in which its device is installed.  (The only information
+       available about PCI buses on the other side of a PCI-to-PCI bridge
+       is whether multi-master capability is supported.)
+       PCI bus information is returned by the pciio_businfo_get() function
+       as a pointer to a bus information structure pciio_businfo_s.
+       </FONT>
+       <FONT FACE="helvetica">
+       For information about interrogating a PCI bus, see the <I>IRIX
+       Device Driver Programmer's Guide</I>.
+       <FONT FACE="helvetica">
+       </FONT>
+     </UL>
+
+
+    <H4>
+    <FONT FACE="helvetica">
+    NFS
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>Improvements to NFS operation
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       The IRIX 6.5.22 release includes the following improvements to NFS
+       </FONT>
+       <UL>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       Changes have been made to the operation of the buffer cache
+       during NFS operation.  These updates keep
+       I/O performance from collapsing under heavy load and improve
+       the efficiency of I/O in general. 
+       </FONT>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       A new mode has been added to IRIX's kernel NFS service where the number
+       of NFS server daemons grows and shrinks in response to NFS load.
+       Previously on IRIX this was a fixed number that the system
+       administrator had to choose, and both the default number and the
+       recommended tuning procedure ensured inadequate NFS performance for
+       many workloads.  IRIX now requires less tuning and will perform better
+       out of the box.
+       </FONT>
+       <P>
+       <FONT FACE="helvetica">
+       For information on this mode, see the section on DYNAMIC NFS DAEMONS in
+       the nfsd(1M) man page.
+       </FONT>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <P>
+       A new -d option has been added to the nfsstat command that will
+       display statistics about individual NFS daemons.  For information
+       on this option, see the nfsstat(1M) man page.
+       </FONT>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+        NFS now provides an optional "async" mode to improve 
+        write performance.  This mode is set with the
+        async option of the exportfs command.
+        By allowing an administrator to switch from synchronous write/commit
+        cycles to performing the same operations asynchronously, NFS writes
+        can finish up-to 10 times faster on the client and server can
+        perform writes in the way which can optimize backend filesystem IO
+        pattern.  This option is recommended only for heavy synchronous
+        write loads.  For further information, see the exportfs(1M) man page.
+       </FONT>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       A an "offline" option to the exportfs command has been
+       added for use with
+       Failsafe operations.  
+       Historically Failsafe relied on brute-force approach to stop
+       NFS-related activity by killing NFS daemons. With the "offline"
+       option a selected subset of filesystem can be moved offline
+       while NFS server can continue to serve requests to other
+       filesystems.  For information on this option, see the exportfs(1M) man
+       page.
+       </FONT>
+       </UL>
+     </UL>
+
+    <H4>
+    <FONT FACE="helvetica">
+    Networking
+    </FONT></H4>
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>
+       Network time protocol (NTP) support
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       Network time protocol (NTP) is a newly supported
+       component as of the IRIX 6.5.22 release. For more
+       information see "Setting up Time Synchronization Service"
+       in <I>IRIX Admin: Networking and Mail</I>.
+       </FONT>
+       <FONT FACE="helvetica">
+       </FONT>
+     </UL>
+
+
+    <UL>
+       <LI>
+       <FONT FACE="helvetica">
+       <B>Bind Version 9.2.2
+       </B>
+       <br>
+       </FONT>
+       <FONT FACE="helvetica">
+       The IRIX 6.5.22 release supports BIND version 9.2.2.
+       BIND version 9 is a major rewrite of nearly all aspects of the
+       underlying
+       BIND architecture. Some of the important
+       features of BIND 9 are as follows:
+       </FONT>
+
+       <P>
+       <UL>
+          <LI>
+          <FONT FACE="helvetica">
+          DNS security enhancements
+          </FONT>
+          <LI>
+          <FONT FACE="helvetica">
+          IP version 6
+          </FONT>
+          <LI>
+          <FONT FACE="helvetica">
+           DNS protocol enhancements
+          </FONT>
+          <LI>
+          <FONT FACE="helvetica">
+          Multiple Views of the DNS namespace
+          </FONT>
+          <LI>
+          <FONT FACE="helvetica">
+          Multiprocessor support
+          </FONT>
+          <LI>
+          <FONT FACE="helvetica">
+           Improved portability architecture
+          </FONT>
+       </UL>
+
+       <P>
+       <FONT FACE="helvetica">
+       For more information on BIND version 9, see
+       <I>IRIX Admin: Networking and Mail</I>.
+       Detailed information
+       is available at:
+        <A HREF="http://www.isc.org/"
+        TARGET="_blank">http://www.isc.org</A>.
+       Follow the link to BIND documentation.
+       </FONT>
+     </UL>
+
+
+
+
+    <H3><FONT FACE="helvetica">SGI Software Product Life 
+    Cycle Management</FONT></H3>
+        <FONT FACE="helvetica">In accordance with the SGI 
+        software product life cycle management strategy announced in December 
+        2002, SGI will announce support mode changes for various software 
+        products on a semi-annual basis. To view customer letters containing 
+        support mode changes announced since December 2002, as well as the 
+        latest IRIX Support Policy documents, visit the IRIX Support Policy Web 
+        page on
+        <A HREF="http://support.sgi.com/"
+        TARGET="_blank">Supportfolio Online</A>.
+        </FONT>
+
+    <H3>
+    <FONT FACE="helvetica">IRIX OS Bundled Software</FONT></H3>
+    <FONT FACE="helvetica">For information about the 
+    bundled software that is included on the Applications
+    CD with this release, see <A
+     HREF="../install/cd.products.html">CD Contents</A> and the 
+    <A HREF="../mindshare/index.html" target="_top"><FONT
+    ACE="helvetica">Bundled software and licenses</FONT></A>
+    web page.
+    </FONT></P>
+    <H3>
+    <FONT FACE="helvetica">System Platform Bundles</FONT></H3>
+    <P>
+    <FONT FACE="helvetica">No changes have been made to 
+    the demonstration software CDs developed for the specific system 
+    platforms.</FONT></P>
+    <H3>
+    <FONT FACE="helvetica">Freeware</FONT></H3>
+    <P>
+    <FONT FACE="helvetica">For information about the 
+    freeware that is supported for this release,
+    see <A HREF="http://freeware.sgi.com" TARGET="_blank">
+    http://freeware.sgi.com/</A>.
+    </FONT>
+
+
+    <H3>
+    <FONT FACE="helvetica">Documentation</FONT></H3>
+
+    <P>
+    <FONT FACE="helvetica">The following manuals have 
+    been revised for the new features incorporated into this 
+    release:</FONT></P>
+
+
+ <UL>
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>IRIX Admin: Backup, Security, and Accounting</I>,
+       007-2862-006, includes information about Pluggable
+       Authentication Modules (PAM).
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>IRIX Admin: Networking and Mail</I>,
+       007-2860-009, includes information about
+       BIND version 9 and network time protocol (NTP).
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>IRIX Admin: Software Installation and Licensing</I>,
+       007-1364-140, includes small technical corrections.
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>IRIX Checkpoint and Restart Operation Guide</I>,
+       007-3236-009, includes updated information about
+       the REPLACE keyword.
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>IRIX Device Driver Programmer's Guide</I>,
+       007-0911-210, includes
+       information about interrogating a PCI bus.
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>Personal System Administration Guide</I>,
+       007-1366-190, includes small technical corrections.
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>SGI InfiniteStorage CXFS Administration Guide</I>,
+       007-4016-018, (formerly titled 
+       <I>CXFS Version 2 Software Installation and Administration
+       Guide</I>) includes new information about the installation process
+       as well as new information about CXFS configuration and
+       operation.
+       </FONT>
+
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>Trusted IRIX/CMW Security Administration Guide</I>,
+       007-3299-009, includes updated information on the xfsdump
+       and xfsrestore utilities.
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>Trusted IRIX/CMW Security Features User's Guide</I>,
+       007-3300-005, includes small technical updates and corrections.
+       </FONT>
+
+       <P>
+       <LI>
+       <FONT FACE="helvetica">
+       <I>XVM Volume Manager Administrator's Guide</I>,
+       007-4003-016, can now be used as an independent reference
+       for the XVM Graphical User Interface.
+       </FONT>
+
+   </UL>
+
+    <H2><FONT FACE="helvetica">Upcoming Changes to Support Mode Status
+    </FONT></H2>
+        <FONT FACE="helvetica">
+        The following workstations, graphics and scalable server
+        systems will transition to retired support mode after
+        the IRIX 6.5.22 release in November 2003:
+        </FONT>
+        <UL>
+        <P>
+        <LI>
+        <FONT FACE="helvetica">
+        Challenge S
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Challenge M
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Challenge DM
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Challenge L
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Challenge XL
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Indigo
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Indigo2
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Indigo2 Extreme
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Indigo2 Impact
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Indy
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Power Challenge
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Power Indigo2
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Power Onyx
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Onyx1
+        </FONT>
+     </UL>
+
+     <P>
+     <FONT FACE="helvetica">
+     For information on support for these systems in IRIX 6.5.22
+     and IRIX 6.5.23, 
+     go to the following page on Supportfolio:
+    <A HREF="http://support.sgi.com/search_request/publications/index"
+     TARGET="_blank">http://support.sgi.com/search_request/publications/index</A>.
+     Select the following parameters:
+        </FONT>
+        <UL>
+        <P>
+        <LI>
+        <FONT FACE="helvetica">
+        Publication type: news
+        </FONT>
+        <LI>
+        <FONT FACE="helvetica">
+        Product type or keyword(s): IRIX 6.5.22 System Platform Retirement 
+        </FONT>
+        </UL>
+
+     <P>
+        <FONT FACE="helvetica">
+        The following product
+        will transition to retired support mode after
+        the IRIX 6.5.22 release in November 2003:
+        </FONT>
+        <UL>
+        <P>
+        <LI>
+        <FONT FACE="helvetica">
+        Distributed Computing Environment (DCE) / Distributed File System (DFS)
+        </FONT>
+
+      </UL>
+
+     <P>
+     <FONT FACE="helvetica">
+     Contact your local sales representative to discuss options
+     for replacement or upgrade products.
+     </FONT>
+
+
+    </TD>
+    </TR>
+    </TABLE>
+</UL>
+</BODY>
+</HTML>

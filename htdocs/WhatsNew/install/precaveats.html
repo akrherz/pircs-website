@@ -1,0 +1,1837 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <META NAME="Generator" CONTENT="Cosmo Create 1.0.3">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <TITLE>Caveats</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<TABLE BORDER="0" CELLPADDING="10">
+    <TR>
+        <TD VALIGN="TOP"><P>
+<H1><FONT SIZE="7" FACE="helvetica">
+Installation Caveats
+</FONT></H1>
+
+            <FONT FACE="helvetica">This page provides information on the
+            following topics:</FONT> </P>
+            <UL>
+                <LI>
+                <A HREF="#pgfId=341889"><FONT FACE="helvetica">Caveats 
+                to Read Before You Upgrade</FONT></A> 
+                <P>
+                <UL>
+                    <LI>
+                    <A HREF="#_cch3_907950965"><FONT FACE="helvetica">All-Platform</FONT></A>
+                     
+                    <LI>
+                    <A HREF="#_cch2_907950970"><FONT FACE="helvetica">Platform-Specific</FONT></A><BR>
+                     <BR>
+                     
+                </UL>
+                <LI>
+                <A HREF="#_cch1_907950976"><FONT FACE="helvetica">Caveats 
+                to Read After You Upgrade</FONT></A> 
+            </UL>
+            <H1>
+            <A NAME="pgfId=341889"><FONT SIZE="7" FACE="helvetica">Caveats 
+            to Read Before You Upgrade</FONT></A></H1>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">These caveats make you aware of 
+            changes or potential problems that could significantly affect your 
+            installation. </FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <B><FONT FACE="helvetica">Different caveats will be 
+            relevant for different types of users; scan the list for information 
+            that is applicable for you. </FONT></B></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">This is not a complete list of all 
+            known bugs, workarounds, or changes, which are documented in the <A
+             HREF="resources.html#relnotes">release notes</A> for each 
+            individual product. In addition to reviewing this list, you may want to 
+            check the &quot;Caveat and Release Note Updates&quot; for the current
+            release at <A
+             HREF="http://support.sgi.com/irix/6.5"
+             TARGET="_blank">Supportfolio Online</A> for 
+            any late-breaking information.</FONT> </BLOCKQUOTE>
+            <H2>
+            <A NAME="_cch3_907950965"><FONT FACE="helvetica">All-Platform 
+            Caveats to Read Before You Upgrade</FONT></A></H2>
+
+            <BLOCKQUOTE>
+            <UL>
+            <P>
+            <LI>
+            <B><FONT FACE="helvetica">
+            Updated version of Inst requires patch 5086
+            </FONT></B> <BR>
+            <FONT FACE="helvetica">
+            New installation features were used starting with IRIX 6.5.21 that
+            necessitate an updated version of the Inst program.  If you plan to install using
+            the miniroot, then you may do so by the usual method.  However, if you
+            plan to upgrade by 'live' install to IRIX 6.5.21 or later, you may have
+            to install a patch.
+             </FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <P>
+            <FONT FACE="helvetica">
+            If you wish to do a live install and are running 6.5.19 or earlier, then
+            you must first install patch 5086.  This patch can be found in the
+            buildtools
+            directory on CD1.  Once the patch is installed, you must
+            exit and restart Inst before beginning your upgrade.  The patch will be
+            removed automatically once the images have been installed.
+             </FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <P>
+            <FONT FACE="helvetica">
+            Failure to use the patch can result in the following errors during
+            installation:
+            </FONT></BLOCKQUOTE>
+
+            <UL>
+            <BLOCKQUOTE>
+            <LI>
+            <FONT FACE="helvetica">
+            WARNING: Invalid filetype "X" ...
+            </FONT>
+            <P>
+            </BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <FONT FACE="helvetica">
+            Warnings about corrupted images during initialization
+            </FONT>
+            <P>
+            </BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <FONT FACE="helvetica">
+            Unexpectedly long lists of 'missing prerequisites' and 'incompatible
+            with' lines in the 'conflicts' list
+            </FONT>
+            <P>
+            </BLOCKQUOTE>
+
+           </UL>
+           </UL>
+           </UL>
+
+            <BLOCKQUOTE>
+            <P>
+            <LI>
+            <A NAME="example"><B><FONT FACE="helvetica">Confirm that 
+            the applications you rely on are supported.</FONT></B></A> <BR>
+             <FONT FACE="helvetica">(This is also<A HREF="before.html">
+             Step 3</A> of the Preparation Checklist.)</FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <B><FONT FACE="helvetica">Note: </FONT></B><FONT
+             FACE="helvetica">An application supported on any release 
+            in the IRIX 6.5 family will run on all subsequent IRIX 6.5 family 
+            releases. Additionally, the application will be compatible with all 
+            prior releases of the IRIX 6.5 family, as long as the application does 
+            not utilize a new feature from a later 6.5.x release.</FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">Here are some examples<I> (not a 
+            complete list) </I>of applications that either need to be 
+            upgraded or are not yet supported:</FONT> </BLOCKQUOTE>
+
+            <UL>
+            <BLOCKQUOTE>
+            <LI>
+            <FONT FACE="helvetica"><B>DFS Domestic</B><BR>
+            DFS Domestic version 
+            1.2.2a (1275426100) is incompatible with IRIX 6.5.17. DFS Domestic 
+            version 1.2.2c is available and is compatible with IRIX 6.5.17. DFS 
+            Domestic users must remove DFS Domestic version 1.2.2a before they 
+            upgrade and install DFS Domestic version 1.2.2c after they upgrade.</FONT>
+            <P>
+            </BLOCKQUOTE>
+              
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">Netscape Communicator or
+            Navigator</FONT></B>
+            <FONT FACE="helvetica"><BR>
+            By default, version 4.79 will install the new N32 version of the 
+            browser. Any existing third-party plugins for the browser that are O32 
+            will no longer function. If you require existing O32 plugins, you can 
+            install an O32 version of the browser from netscape.sw.o32_client and 
+            netscape.o32_plugin.*.
+            An O32 version of the Macromedia Flash4 plugin
+            exists today with an N32/O32 version of the Macromedia Flash5 plugin
+            planned for the near future.
+            Real.com has released an N32 
+            version of their plugin. Check the third-party web sites for updates on 
+            the status of their plugins.</FONT> </BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">REACT/Pro</FONT></B><BR>
+            <FONT FACE="helvetica">REACT/Pro>Version 3.2 is 
+            incompatible with IRIX 6.5.2 or later releases. REACT/Pro users need to 
+            upgrade to version 4.1 to run frame scheduler applications on IRIX 
+            6.5.2 or later.</FONT> </BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">HIPPI</FONT></B><BR>
+            <FONT FACE="helvetica"><U>HIPPI</U><A NAME="hippi"> Version 4.0 
+            or later is needed to run on IRIX 6.5.9 or later.</A>
+            To find out how to upgrade, see <A
+            HREF="http://www.sgi.com/software/hippi/" TARGET="_blank">
+            http://www.sgi.com/software/hippi/</A>.
+            </FONT></BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">iFOR/LS</FONT></B><BR>
+            <FONT FACE="helvetica">Contact the Isogon 
+            Corporation at <A HREF="http://www.isogon.com"
+             TARGET="_blank">http://www.isogon.com</A> for the latest 
+            release of LicensePower/iFOR (formerly known as iFOR/LS) that runs on 
+            IRIX 6.5.</FONT> </BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">Inventor</FONT></B><BR>
+            <FONT FACE="helvetica">Version 
+            2.1.6 or later is needed to run on IRIX 6.5.15</A>. The 
+            Inventor overlay 2.1.6 is available from the /CDROM/dist directory of 
+            IRIX 6.5.15 Overlays CD (3 of 4), February 2001. This overlay requires 
+            that the base Inventor 2.1.4 image be installed already, or with the 
+            overlay during the same install session. The Inventor overlay 2.1.6 can 
+            be installed on IRIX 6.5.5 and later.</FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">If you have Inventor 2.1.5 installed 
+            through some other mechanism, you will get a conflict when you attempt 
+            to install this release. If you get this conflict, you can resolve it 
+            by using the following set of commands. You will need your Inventor 
+            2.1.4 installation CDROM or a network distribution for it as part of 
+            the process. From within your installation session, enter the following 
+            commands:</FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <TT>open &lt;Inventor 2.1.6+ from 
+            /CDROM/dist/inventor_657+&gt;</TT> <BR>
+             <TT>open &lt;Inventor 2.1.4 from the base IRIX 6.5 CD&gt;</TT><BR>
+             <TT>install inventor_eoe</TT><BR>
+             <TT>set neweroverride on</TT><BR>
+             </BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">Ensure that you have not selected 
+            any other downgrades before proceeding or an incorrect installation may 
+            occur. You can check for other downgrades by using the following 
+            command:</FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <TT>list i D</TT><BR>
+             </BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">If any subsystems other than <CODE>inventor_eoe</CODE>
+             are listed, you must deselect them before you continue.</FONT></BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">Intranet Junction</FONT></B><BR>
+            <FONT FACE="helvetica">Version 1.0.2 or later is needed to
+             run on IRIX 6.5.<I>x </I>releases.</FONT>
+            </BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">ClearCase</FONT></B><BR>
+            <FONT FACE="helvetica">See the <A
+            HREF="http://www.rational.com" TARGET="_blank">RATIONAL 
+            Software</A> site for information on purchasing a version 
+            of ClearCase that runs on IRIX 6.5. </FONT></BLOCKQUOTE>
+
+            <BLOCKQUOTE>
+            <LI>
+            <B><FONT FACE="helvetica">Sybase</FONT></B><BR>
+            <FONT FACE="helvetica">Contact <A
+             HREF="http://www.sybase.com/">Sybase, Inc.</A> for 
+            information on purchasing a version of Sybase that runs on
+            IRIX 6.5.</FONT></BLOCKQUOTE>
+            </UL>
+
+
+<!--
+            <H3>
+            <B><FONT FACE="helvetica">New for
+            6.5.22:</FONT></B></H3>
+            <UL>
+
+             </UL>
+-->
+
+            <H3>
+            <B><FONT FACE="helvetica">Cumulative for 6.5 through 
+            6.5.21, and still applicable for 6.5.22:</FONT></B></H3>
+            <UL>
+
+                <LI>
+                <FONT FACE="helvetica"><B>
+                Installing GNU 1.1
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                The GNU 1.0 product is distributed on the base IRIX 6.5 CDs as a
+                courtesy to customers who wish to install these unsupported products.
+                This product is not installed by default; it must be explicitly
+                selected.  The GNU 1.0 packages have become obsolete, and contain
+                several bugs and known security holes.  Version 1.1 of the GNU product
+                is included with IRIX 6.5.19 and later distributions and removes all
+                content from the GNU package, instead installing symbolic links to the
+                corresponding package in the IRIX Freeware distribution.
+                </FONT>
+
+                <P>
+                <FONT FACE="helvetica">
+                If you installed any of the GNU 1.0 subsystems and have not installed
+                their freeware counterparts the Software Manager may report conflicts
+                during installation.  From within your installation session you may
+                enter the following command to preserve the original GNU 1.0
+                distribution:
+                </FONT>
+
+                <P>
+                <TT>keep gnu</TT>
+
+                <P>
+                <FONT FACE="helvetica">
+                SGI recommends
+                that you either download and install the prerequisite freeware
+                packages from http://freeware.sgi.com/ and complete the upgrade or
+                remove the GNU package entirely by entering the following command:
+                </FONT>
+
+                <P>
+                 <TT>remove gnu</TT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica"><B>
+                Kodak CMM Color Management Removed in 6.5.15
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                Kodak CMM Color Management library
+                has been removed from the cms_eoe and cms_dev products
+                with IRIX 6.5.15.  If you are upgrading from IRIX 6.5.14
+                or earlier and depend on color correction for scanning and
+                image rendering then you will want to save a copy of
+                /usr/lib/libcmm.so and /usr/lib32/libcmm.so
+                prior to the upgrade.  After the upgrade you can copy the libraries
+                back to their original locations.
+                </FONT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+                <B>CXFS upgrades: filesystem definitions</B>
+                <P>
+                </FONT>
+                <FONT FACE="helvetica">
+                The structure of the CXFS 
+                filesystem configuration was changed with the release of IRIX 6.5.13f. 
+                Backward compatibility with earlier versions is no longer maintained as 
+                of IRIX 6.5.14f, since all nodes in the cluster must be running the 
+                same or adjacent releases. </FONT><P>
+                <UL>
+                    <LI>
+                    <FONT FACE="helvetica">If you are upgrading from IRIX
+                    6.5.13f to 6.5.14f or later, there is no further impact.
+                     </FONT>
+                    <P>
+                    <LI>
+                    <FONT FACE="helvetica">If you are upgrading from 
+                    6.5.12f or earlier, you 
+                    must perform a one-time manual conversion of your CXFS filesystem 
+                    definitions. </FONT>
+                </UL>
+                <P>
+                <FONT FACE="helvetica">See
+                <I>SGI InfiniteStorage CXFS Administration Guide</I>
+                for more information.
+                </FONT></P>
+                <LI>
+                <FONT FACE="helvetica">
+                <B>CXFS upgrades: cluster nodes</B>
+                <P>
+                For CXFS customers, if you 
+                install IRIX 6.5.14f or later including sysadm_base on a cluster node where the 
+                6.5.13f or earlier version of CXFS is installed,
+                you will need to upgrade to 
+                the 6.5.14f or later version CXFS (sysadm_cxfs) and install 6.5.14f or
+                later sysadm_cluster.</FONT><FONT FACE="helvetica"> </FONT>
+                </FONT>
+
+                <P>
+                <LI>
+                <B><FONT FACE="helvetica">Installation of 
+                ftn_eoe.sw.lib from the MIPSpro 7.3 product downgrade conflict</FONT></B> 
+                <P>
+                <FONT FACE="helvetica">Users who have installed 
+                ftn_eoe.sw.lib from the MIPSpro 7.3 product before installing the IRIX 
+                6.5.x images may see a downgrade conflict with distribution subsystem 
+                ftn_eoe.sw.libeag when they install with the <CODE>install 
+                maint</CODE> command if they also have the original 6.5 
+                Foundation-1 CD open when they do the installation.</FONT>
+                <BR>
+                 <FONT FACE="helvetica">If this downgrade conflict 
+                occurs, you must specify the <CODE>keep 
+                ftn_eoe.sw.libeag</CODE> command. The conflict occurs 
+                because ftn_eoe.sw.libeag was replaced by the 7.3 ftn_eoe.sw.lib, and 
+                the install program logic with <CODE>install maint</CODE>
+                 now automatically selects downgrades.</FONT></P>
+            </UL>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">Customers who have the MIPSpro 7.3 
+            compilers installed or who will install MIPSpro 7.3 on R4000 or R4400 
+            platforms running IRIX 6.5.5 should install the new 7.3.1m runtime 
+            libraries that are available from Supportfolio at
+            <A HREF="http://support.sgi.com/"
+            TARGET="_blank">Supportfolio Online</A>
+            </FONT>
+            </BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">Customers enrolled under a valid 
+            support contract who do not have web access can obtain these libraries 
+            on CD media free of charge upon request from their local support 
+            organization</FONT></BLOCKQUOTE>
+            <UL>
+                <LI>
+                <B><FONT FACE="helvetica">Configuration files</FONT></B>
+                <P>
+                <A NAME="mergeconfig"><FONT FACE="helvetica">If you 
+                have edited configuration files, check for changed versions at end of 
+                installation.</FONT><BR>
+                 </A><FONT FACE="helvetica">Ideally, configuration file 
+                differences should be merged prior to restarting the system <I>at 
+                the end</I> of an installation. Before restarting the 
+                system at the end of your installation, use the Inst command <CODE>admin 
+                config</CODE> <CODE>changed</CODE> to find out which 
+                system configuration files were modified since installation. You can 
+                find out more about this command by entering <CODE>help 
+                config</CODE> at the Inst prompt. To avoid 
+                compatibility problems, merge configuration files if new versions were 
+                created. The &quot;Updating Configuration Files&quot; section of the 
+                versions(1M) man page describes configuration file updating, as does 
+                the online <VAR>IRIX Admin: Software Installation and 
+                Licensing</VAR> guide.</FONT></P>
+                <P>
+                <FONT FACE="helvetica">One example of a file that may 
+                need to be merged is the <CODE>/etc/group</CODE> file. 
+                If you have edited your <CODE>/etc/group</CODE> file, 
+                see the <A HREF="#group">Default group file now 
+                reinstalled</A> caveat under Caveats to Read After 
+                Upgrading</FONT></P>
+                <LI>
+                <B><FONT FACE="helvetica">XVM root filesystem</FONT></B>
+                 
+                <P>
+                <FONT FACE="helvetica">If you are running the 6.5.13f 
+                release leg of the IRIX operating system and are installing or 
+                upgrading to a mirrored XVM root filesystem from under the miniroot, 
+                you will need to detach all mirror legs except for the one on the boot 
+                device before running the install command. Failure to do so could 
+                result in filesystem damage. The detached legs can then be re-attached 
+                once the install is complete and the system is booted</FONT></P>
+                <LI>
+                <B><FONT FACE="helvetica">CXFS and IRIX FailSafe 
+                coexecution configuration </FONT></B>
+                <P>
+                 <FONT FACE="helvetica">As of IRIX 6.5.12f, a cluster 
+                can be configured with a maximum of 48 nodes. All the nodes in the 
+                cluster are CXFS nodes. As many as 8 nodes can also run IRIS FailSafe 
+                (coexecution). </FONT></P>
+
+                 <P>
+                 <FONT FACE="helvetica">CXFS 6.5.12f and later can install and 
+                run CXFS with IRIS FailSafe 2.1 or later, with applicable licensing. 
+                This is known as coexecution. However, CXFS cannot reside on the same 
+                system with earlier versions of IRIS FailSafe. (If you first
+                install an 
+                earlier version of IRIS FailSafe, you must deinstall it before you can 
+                install CXFS, and vice versa).
+                For more information on how to 
+                obtain a license, contact your SGI service provider.</FONT></P>
+
+                 
+                <LI>
+                <B><FONT FACE="helvetica">The Fortran BLAS libraries 
+                packaged under ftn_eoe.sw.libblas (ftn_eoe.sw64.libblas on IRIX64 
+                systems) are marked for default installation </FONT></B><P>
+                 <FONT FACE="helvetica">As a result of this packaging, 
+                you may receive the following conflict during installation if you did 
+                not already install these libraries:</FONT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">O<TT>verlay product 
+                ftn_eoe.sw.libblas (1276765510) cannot be installed because of missing 
+                prerequisites: base product ftn_eoe.sw.libblas (1274567300):</TT></FONT>
+                 
+                <P>
+                <TT><FONT FACE="helvetica">1a. Do not install 
+                ftn_eoe.sw.libblas (1276765510)</FONT></TT></P>
+                <P>
+                <TT><FONT FACE="helvetica">1b. Also install base 
+                product ftn_eoe.sw.libblas (1274567300) from an additional distribution 
+                -- insert another CD or specify another software distribution </FONT></TT><BR>
+                 </P>
+                <P>
+                <FONT FACE="helvetica">You can resolve this conflict by 
+                either not installing libblas or by installing the base product from 
+                the IRIX 6.5 Foundation 1 CD. </FONT>
+                 </P>
+                <LI>
+                <B><FONT FACE="helvetica">System processor 
+                compatibility with XVM </FONT></B><P>
+                 <FONT FACE="helvetica">XVM installed with CXFS is 
+                currently qualified on IP27 systems (Origin 200, Origin 2000, and 
+                Onyx2), IP30 systems (Octane) and the SGI Origin 3000 server series. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Use the XVM give and steal 
+                commands with extreme caution</FONT></B><P>
+                 <FONT FACE="helvetica">XVM runs in either the local 
+                domain or in the cluster domain, and XVM disks are classified according 
+                to whether they are owned by the local domain, an active cluster 
+                domain, or a foreign domain. The XVM give and steal commands let the 
+                administrator change the ownership of a list of XVM disks. Here are 
+                some guidelines to follow when using the give and steal commands: </FONT>
+                <UL>
+                    <P>
+                    <LI>
+                    <FONT FACE="helvetica">If you are changing the 
+                    domain ownership of XVM disks, you should use the give command instead 
+                    of the steal command. The steal command is intended to be used only as 
+                    a last resort when the give command cannot be used.</FONT>
+                    </P>
+                     
+                    <P>
+                    <LI>
+                    <FONT FACE="helvetica">In general, an XVM probe 
+                    command should be run after the give command. If the XVM disk was given 
+                    to a local host, the probe command is run on the new owner host. If the 
+                    XVM disk was given to a new cluster, the probe command is run on any 
+                    host that is a member of that cluster. </FONT>
+                    </P>
+                    <LI>
+                    <FONT FACE="helvetica">The give and steal commands 
+                    should never be used so that a multidisk volume configuration is split 
+                    between domains. The user must ensure that the list of disks that will 
+                    move from one domain to another is complete; that is, all volume 
+                    configurations are fully contained on this set of disks. The XVM show 
+                    command can be used to examine the top-down configuration for all 
+                    volumes in the system, including the full set of disks that contain 
+                    parts of these volumes.</FONT>
+                    </P>
+                </P>
+                     
+                </UL>
+                <LI>
+                <B><FONT FACE="helvetica">The NUMA migration call 
+                migr_range_migrate() was not reporting a migration failure</FONT></B><P>
+                 <FONT FACE="helvetica">The NUMA migration call 
+                migr_range_migrate() was not reporting a migration failure when the 
+                migration target was either a nonexistent node or an uninitialized 
+                policy module of an SGI Origin system. Beginning with the IRIX 6.5.9 
+                release, this error condition is now reported back to the user 
+                application as EINVAL. For more information, see the migration(5) man 
+                page. This caveat will affect the MediaBase application and it will be 
+                fixed in a subsequent release. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">The fibre channel storage 
+                area network (SAN) port names may change</FONT></B><P>
+                 <FONT FACE="helvetica">There has been a change in the 
+                way the final component of a fabric target's path will be generated. 
+                Some paths that include a 16-digit port name in the final component may 
+                have that port name shortened to a single digit port number. If you use 
+                fibre channel switches to form SANs, this change <B>will</B>
+                 affect you. This name change will require you to update the 
+                configuration files that contain the paths to fibre channel fabric 
+                devices, including the following files: </FONT></P>
+                <UL>
+                    <LI>
+                    <CODE><TT><FONT FACE="helvetica">/etc/fstab</FONT></TT></CODE>
+                     
+                    <LI>
+                    <CODE><TT><FONT FACE="helvetica">/etc/failover.conf</FONT></TT></CODE>
+                     
+                </UL>
+                <P>
+                <FONT FACE="helvetica">You are <B>not</B> impacted by 
+                this change if the paths to your SAN targets are similar to the 
+                following:</FONT></P>
+                <P>
+                <TT><FONT FACE="helvetica">/dev/dsk/5006094670006f7d/lun0s7/c4p1</FONT></TT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">You <B>may</B> be impacted by 
+                this change if the paths to your SAN targets are similar to the 
+                following: </FONT></P>
+                <P>
+                <TT><FONT FACE="helvetica">/dev/dsk/5006094670006f7d/lun0s7/c4p5006094670006f7d</FONT></TT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">The path name to the target 
+                might be shortened as follows: </FONT></P>
+                <P>
+                <TT><FONT FACE="helvetica">/dev/dsk/5006094670006f7d/lun0s7/c4p1</FONT></TT><BR>
+                 </P>
+                <LI>
+                <B><FONT FACE="helvetica">Miser unable to schedule jobs 
+                during the transition from Daylight Savings Time to Standard Time</FONT></B><P>
+                 <FONT FACE="helvetica">If the requested time of a 
+                submitted Miser job is such that the job, when scheduled, will be 
+                executed during the transition time period from Daylight Saving Time 
+                back to Standard time, Miser will not schedule the job until after the 
+                transition occurs. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Installing CXFS and XVM 
+                products</FONT></B><P>
+                 <FONT FACE="helvetica">If you install the CXFS and XVM 
+                products, it is highly 
+                recommended that you check the &quot;Caveat and Release Note 
+                Updates&quot; for this release at
+                <A HREF="http://support.sgi.com/iris/6.5"
+                TARGET="_blank">Supportfolio Online</A>
+                for information on the latest CXFS and XVM patches, CXFS
+                and XVM feature 
+                descriptions, and any late-breaking caveats.</FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">The miser_qinfo command only 
+                reports the first 250 scheduled jobs</FONT></B><P>
+                 <FONT FACE="helvetica">This limitation is due to the 
+                Miser buffer limit and will be fixed in a subsequent release. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">The miser_qinfo command 
+                rounds up the amount of reported available system memory</FONT></B><P>
+                 <FONT FACE="helvetica">The amount of reported system 
+                memory available may be inaccurate by 0.5 gigabytes (GB) when Miser is 
+                configured with more than 1 gigabyte (GB) of memory. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Repacking stops scheduled 
+                Miser jobs if daemon is restarted</FONT></B><P>
+                 <FONT FACE="helvetica">If scheduled Miser jobs are in 
+                a Miser queue that has a repack scheduling policy, after Miser has been 
+                stopped and restarted, the repacking stops for the existing jobs. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Submitting a large number of 
+                jobs to a Miser queue </FONT></B><P>
+                 <FONT FACE="helvetica">If you submit a large number of 
+                jobs to a Miser queue, it may result in some of these jobs being hung 
+                and failing to terminate. </FONT></P>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Xservers file changes</FONT></B><P>
+                 <FONT FACE="helvetica">Starting with 6.5, the file <CODE>/var/X11/xdm/Xservers</CODE>
+                 is no longer automatically replaced when 
+                installing new versions of x_eoe.sw.eoe. Instead, the new version is 
+                installed as <CODE>Xservers.N</CODE>. This allows most 
+                users to preserve changes that they have made to their <CODE>Xservers</CODE>
+                 file without having to merge them back in with each new software 
+                upgrade. </FONT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">Also, the Xsgi command line 
+                argument <I>shmnumclients</I> is no longer supported, 
+                and will prevent the X server from coming up if it's specified in the 
+                Xserver file. If you added the shmnumclients flag to 
+                the Xservers file, remove the shmnumclients<I> </I>flag 
+                before upgrading to 6.5 or later.</FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">&quot;Filesystem too large 
+                for device&quot; error message</FONT></B><P>
+                 <FONT FACE="helvetica">If you have repartitioned your 
+                disk drive with <CODE>fx</CODE> but did not create a 
+                filesystem with <CODE>mkfs</CODE>, you may see a 
+                message like this (under certain rare conditions) when booting the 
+                miniroot:</FONT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">&quot;<TT>Mounting file 
+                systems: </TT></FONT><BR>
+                 <TT><FONT FACE="helvetica">mount: /dev/dsk/dks0d1s0 on 
+                /root: Filesystem too large for device. </FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">mount: giving up on: /root </FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">Unable to mount partition: 
+                /dev/dsk/dks0d1s0 on /root. </FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">This is your system disk: 
+                without it we have nothing on which to install software. </FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">Please manually correct 
+                your configuration and try again. </FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">Press Enter to invoke C 
+                Shell csh:&quot; </FONT></TT>
+                <P>
+                <FONT FACE="helvetica">This generally indicates that 
+                you need to run <CODE>/sbin/mkfs</CODE><I> </I>on the 
+                named disk partition. Inside the miniroot, a convenience script (<CODE>mrmkfsrc</CODE>) 
+                is provided to run <CODE>mkfs</CODE>. </FONT></P>
+                <P>
+                <FONT FACE="helvetica">For example, for the above 
+                failure, you could press <CODE>Enter</CODE> and do the 
+                following (only if the disk is free of important data, because this 
+                procedure will remove all the data on the disk):</FONT> </P>
+            </UL>
+            <DD>
+            <B><TT># mkfs /dev/dsk/dks0d1s0 </TT></B><FONT
+             FACE="helvetica"><I>(if this is the system disk)</I></FONT>
+             
+            <DD>
+
+            <DD>
+            <B><TT># exit</TT></B> 
+            <FONT FACE="helvetica"><I>(to exit <CODE>csh</CODE> and have 
+            the miniroot script try to remount root.)</I> </FONT><BR>
+             <BR>
+             
+            <UL>
+                <LI>
+                <B><FONT FACE="helvetica">Upgrade the flash PROM after 
+                installation on diskless systems </FONT></B><FONT
+                 FACE="helvetica">(see under <A HREF="#o2">O2-specific</A>
+                 caveats and <A HREF="#octane">Octane-specific</A>
+                 caveats)</FONT><BR>
+                 <BR>
+                 
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Obsolete software may cause 
+                installation conflicts</FONT></B><P>
+                 <FONT FACE="helvetica">Starting with the 6.5.3 
+                release, the installation process detects some additional software 
+                package versions that are obsolete and incompatible with the 6.5 
+                release family. During installation, you may see conflict messages 
+                caused by such software. When you see these conflict messages, simply 
+                choose to remove the incompatible software or replace it with newer 
+                versions (if available). </FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <A NAME="netscape"><B><FONT FACE="helvetica">MediaMail</FONT></B></A><B><FONT
+                 FACE="helvetica"> now replaced by Netscape mail</FONT></B><P>
+                 <FONT FACE="helvetica">MediaMail is no longer 
+                available from SGI. The Netscape mail program, which is bundled with 
+                Netscape Communicator, is the new default installed e-mail program for 
+                all SGI systems. SGI recommends a transition to Netscape e-mail 
+                (Netscape Messenger) and have included software with Netscape that 
+                enables conversion of MediaMail mail to Netscape e-mail format. </FONT>
+                <P>
+                <FONT FACE="helvetica">When you transition from 
+                MediaMail to Netscape mail: </FONT></P>
+                <UL>
+                    <LI>
+                    <FONT FACE="helvetica">Be sure to check your home 
+                    directory for a <CODE>.forward</CODE><I> </I>file. 
+                    If you have one that contains a line that mentions <CODE>/usr/lib/Zmail/bin/reassembler</CODE>, 
+                    remove or rename the <CODE>.forward</CODE><I> </I>file immediately 
+                    before or after the IRIX installation, in order 
+                    to prevent problems with mail delivery to your account. On multi-user 
+                    systems, each user should check for this file within their own home 
+                    directory. </FONT><BR>
+                     <BR>
+                     
+                    <LI>
+                    <FONT FACE="helvetica">To learn about getting 
+                    started with Netscape Mail, see <A
+                     HREF="file:/var/netscape/communicator/docs/AboutNetscapeMessenger.html"
+                     TARGET="_blank">About Netscape Messenger</A> (you 
+                    can also access this page by choosing Find &gt; WebTools from the 
+                    Toolchest, and double-clicking the <I>AboutNetscapeMessenger</I>
+                     icon). </FONT>
+                </UL>
+                <P>
+                <B><FONT FACE="helvetica">Note</FONT></B><FONT
+                 FACE="helvetica">: If you still require MediaMail, 
+                please contact NetManage, Inc. for product and sales information: <A
+                 HREF="http://www.netmanage.com">http://www.netmanage.com</A>. 
+                (Note that NetManage's Z-Mail for UNIX product is the same as 
+                MediaMail.) Please be aware that MediaMail is no longer officially 
+                supported on IRIX. </FONT>
+                </P>
+                <LI>
+                <B><FONT FACE="helvetica">Appletalk will not work on 
+                diskless systems</FONT></B><FONT FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">Appletalk (Xinet Macintosh 
+                Connectivity) won't work on a diskless system because <CODE>appletalk</CODE>
+                 installs files into <CODE>/usr/adm</CODE>. </FONT><BR>
+                 <FONT FACE="helvetica">&nbsp; </FONT>
+                <LI>
+                <B><FONT FACE="helvetica">XFS filesystem is strongly 
+                recommended</FONT></B><FONT FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">To install this version of IRIX 
+                you should have an XFS filesystem. If you want to move a disk with a 
+                6.5 (or later) filesystem to a pre-6.5 system, use the<TT>
+                 -d unwritten=0</TT> option when you run <CODE>mkfs</CODE>, 
+                or install the current XFS <A
+                 HREF="overview.html#patches">patches</A> on the 
+                pre-6.5 system.</FONT><BR>
+                 <FONT FACE="helvetica">&nbsp; </FONT>
+                <LI>
+                <B><FONT FACE="helvetica">During miniroot installation: 
+                innocuous disk space error message</FONT></B><FONT
+                 FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">You may may ignore the 
+                following message if you see it during a miniroot installation: </FONT>
+                <P>
+                <TT><FONT FACE="helvetica">&quot;/proc/pinfo/: no such 
+                file or directory&quot;</FONT></TT></P>
+                <LI>
+                <B><FONT FACE="helvetica">The ftn_eoe.sw.libblas and 
+                ftn_eoe.sw64.libblas are no longer marked for default installation.</FONT></B><P>
+                 <FONT FACE="helvetica">This caveat applies only to the 
+                IRIX 6.5 through IRIX 6.5.9 releases; it is not applicable to the IRIX 
+                6.5.10 and later releases. If you require these subsystems, you must 
+                specifically select them during installation.</FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">If you are upgrading from a 
+                pre-6.5 release or to a clean disk, you must open the core 6.5 CDs 
+                during the installation. </FONT></B><P>
+                 <FONT FACE="helvetica">The instructions in the 
+                Installation Instructions CD booklet will prompt you to do this at the 
+                right time. </FONT>
+                <P>
+                <FONT FACE="helvetica">&nbsp;</FONT></P>
+            </UL>
+            <H2>
+            <A NAME="_cch2_907950970"><FONT FACE="helvetica">Platform-Specific 
+            Caveats to Read Before You Upgrade</FONT></A></H2>
+            <P>
+            <FONT FACE="helvetica">If you have an <A HREF="#r4000">Indigo 
+            R4000</A>, <A HREF="#indigo2">Indigo2</A>, <A
+             HREF="#octane">Octane</A>, <A HREF="#o2">O2</A>, <A
+             HREF="#o2000">Origin 2000</A>, <A HREF="#o3000">Origin 
+            3000</A>, or <A HREF="#onyx4">Silicon Graphics Onyx4
+            UltimateVision</A>,
+             please check the relevant caveats below before you 
+            begin your installation. </FONT><BR>
+             <FONT FACE="helvetica">&nbsp; </FONT></P>
+
+
+            <TABLE BORDER="0" CELLPADDING="5">
+                <TR>
+                    <TD VALIGN="TOP"><A NAME="r4000"><B><I><FONT
+                         FACE="helvetica">Indigo R4000 and Indigo2 
+                        R4000 Systems</FONT></I></B></A></TD>
+                    <TD VALIGN="TOP"><P>
+                        <UL><LI>
+                        <FONT FACE="helvetica"><B>If the system 
+                        you are upgrading has a separate filesystem for<I>
+                         </I></B><CODE>/</CODE><B> and </B><CODE>/usr</CODE><B>, 
+                        then the </B><CODE>/</CODE> <B>filesystem must 
+                        be at least 25MB in order to do the 
+                        upgrade.</B>
+                        <P> Systems shipped with IRIX 4.0.x were shipped
+                         with separate<I>
+                        </I><CODE>/</CODE> filesystems of 
+                        approximately 16MB, which is too small for
+                        this version of IRIX.&nbsp;
+                        </FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">To check, use the 
+                        command &quot;df -k /&quot;</FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">If the df -k / output 
+                        looks similar to</FONT></P>
+
+                        <TABLE BORDER="0" CELLPADDING="5">
+                            <TR>
+                                <TD><TT><FONT FACE="helvetica">Filesystem</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">Type</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">kbytes</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">use</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">avail</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">%use</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">Mounted 
+                                    on</FONT></TT></TD>
+                            </TR>
+                            <TR>
+                                <TD><TT><FONT FACE="helvetica">/dev/root</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">efs</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">15275</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">9492</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">5783</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">62%</FONT></TT></TD>
+                                <TD><TT><FONT FACE="helvetica">/</FONT></TT></TD>
+                            </TR>
+                        </TABLE>
+                        <P>
+                        <FONT FACE="helvetica">the disk will need to be 
+                        backed up, and repartitioned with the <I>fx</I>
+                         command before IRIX can be installed. </FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">To do this, refer to the 
+                        online book<I> IRIX Admin: Software 
+                        Installation and Licensing,</I> <I>Troubleshooting</I>
+                         section, <I>Using fx to Restore the Swap 
+                        Partition,</I> for how to do this with the <CODE>fx</CODE>
+                         command. However, before you begin this procedure, make sure you back 
+                        up important data! And, instead of the last step, <CODE>label/create/boot</CODE>, 
+                        use the command <CODE>/repartition/root</CODE>, 
+                        then press Enter in answer to the prompt: </FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">&quot;<TT>fx/repartition/rootdrive: 
+                        type of data partition = (xfs)</TT>&quot;</FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">Next, when you see</FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">&quot;<TT>Warning: you 
+                        will need to re-install all software and restore user data from backups 
+                        after changing the partition layout. Changing partitions will cause all 
+                        data on the drive to be lost. Be sure you have the drive backed up if 
+                        it contains any user data. Continue?</TT>&quot;&nbsp;</FONT></P>
+                        <P>
+                        <FONT FACE="helvetica">press Enter.</FONT></P>
+                        <FONT FACE="helvetica">The <I>kbytes</I> number 
+                        should be at least 25600 in order to install IRIX, and it is 
+                        recommended that it be at least 40MB, particularly on systems that 
+                        support running 64 bit address executables (systems where <CODE>uname 
+                        -s</CODE><I> </I>returns IRIX64, on systems 
+                        running IRIX 6.2 and later).&nbsp; </FONT><BR>
+                         <FONT FACE="helvetica">&nbsp;</FONT></UL></TD>
+                </TR>
+
+
+                <TR>
+                    <TD VALIGN="TOP"><P>
+                        <A NAME="indigo2"><B><I><FONT FACE="helvetica">Indigo2 
+                        Systems</FONT></I></B></A></P>
+                        </TD>
+                    <TD><UL><LI><FONT FACE="helvetica"><B>The EISA Token Ring 
+                        driver is not supported.&nbsp;</B> </FONT><BR>
+                         <FONT FACE="helvetica">&nbsp;</FONT></UL></LI></TD>
+                </TR>
+                <TR>
+                    <TD VALIGN="TOP"><A NAME="octane"><B><I><FONT
+                         FACE="helvetica">Octane Systems</FONT></I></B></A></TD>
+                    <TD VALIGN="TOP">
+                            <UL>
+                            <LI>
+                            <B><FONT FACE="helvetica">Upgrade the flash 
+                            PROM after installation on diskless systems</FONT></B><P>
+                            <FONT FACE="helvetica">On diskless 
+                            systems, the installation may fail if the flash PROM is too old. To 
+                            upgrade the flash PROM on an Octane, enter the following lines in a 
+                            shell:</FONT><BR>
+                             <BR>
+                             <B><TT><FONT FACE="helvetica">su</FONT></TT></B><BR>
+                             <B><TT><FONT FACE="helvetica">/usr/sbin/flash 
+                            -P /usr/cpu/firmware </FONT></TT></B><BR>
+                             <BR>
+                             <FONT FACE="helvetica">You can compare the 
+                            before and after results of <CODE>/usr/sbin/flash 
+                            -V</CODE> to confirm the revision change. 
+                            Reboot afterward. &nbsp;</FONT> </UL>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD VALIGN="TOP">
+                        <A NAME="o2"><B><I><FONT FACE="helvetica">O2 
+                        Systems</FONT></I></B></A></TD>
+                    <TD VALIGN="TOP"><UL>
+                            <LI>
+                            <B><FONT FACE="helvetica">Upgrade the flash 
+                            PROM after installation on diskless systems</FONT></B><P>
+                             <FONT FACE="helvetica">On diskless 
+                            systems, the installation may fail if the flash PROM is too old. To 
+                            upgrade it on an O2, enter the following in a shell: </FONT>
+                            <P>
+                            <B><TT><FONT FACE="helvetica">su</FONT></TT></B><BR>
+                             <B><TT><FONT FACE="helvetica">/sbin/flashinst 
+                            -T -y -q /usr/cpu/firmware/ip32prom.image</FONT></TT></B></P>
+                        </UL>
+                        <BLOCKQUOTE>
+                        <FONT FACE="helvetica">You can compare the 
+                        before and after results of <CODE>/sbin/flashinst 
+                        -v</CODE> to confirm the revision change. 
+                        Reboot afterward.</FONT><BR>
+                         </BLOCKQUOTE>
+                        <UL>
+                            <LI>
+                            <B><FONT FACE="helvetica">If you program 
+                            device drivers for the O2 PCI expansion slot</FONT></B><FONT
+                             FACE="helvetica">, you must use the 
+                            routines (pciio_pio_*()) described in Chapter 22 of the <I>6.5 
+                            Device Driver Programmers Guide, </I>under 
+                            the section&quot;PCI Drivers for the IP32 (O2) Platform,&quot; to 
+                            perform PIO (Program IO) accesses. You 
+                            must use the pciio_pio_* routines for all PIO access to the device, 
+                            including the PCI config space. These 
+                            routines were made available in 6.3 via patch 2801 (if your PCI device 
+                            driver is already using these routines then there is nothing more you 
+                            need to do)<TT>.&nbsp;&nbsp; </TT></FONT><BR>
+                             <TT><FONT FACE="helvetica">&nbsp; </FONT></TT>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD VALIGN="TOP"></UL>
+                        <A NAME="o2000"><B><I><FONT FACE="helvetica">Origin 
+                        2000 Systems</FONT></I></B></A></TD>
+                    <TD VALIGN="TOP"><UL>
+                            <LI>
+                            <B><FONT FACE="helvetica">Special upgrade 
+                            instructions for SGI Origin 2000 systems with 65+ processors</FONT></B><P>
+                             <FONT FACE="helvetica">There are special 
+                            upgrade instructions for SGI Origin 2000 systems that have 65 or more 
+                            processors titled <I>Upgrading an IRIX 
+                            Operating System on a /target_roo</I>t. To 
+                            receive a copy of these instructions, please send a request to your 
+                            local Customer Support Center. For more information, see</FONT><BR>
+                             <A
+                             HREF="http://www.sgi.com/support/supportcenters.html"><TT><FONT
+                             FACE="helvetica">http://www.sgi.com/support/supportcenters.html</FONT></TT></A><TT><FONT
+                             FACE="helvetica"> </FONT></TT><P>
+                            <LI>
+                            <B><FONT FACE="helvetica">System now 
+                            reboots on panic without stopping at the PROM menu</FONT></B><P>
+                             <FONT FACE="helvetica">Rebooting on panic 
+                            without stopping at the PROM menu is the new default behavior. You can 
+                            stop the system during reboot by pressing the <CODE>Esc</CODE>
+                             key at the &quot;<CODE>Starting Up The 
+                            System</CODE>&quot; message. </FONT>
+                            <P>
+                            <FONT FACE="helvetica">If the system panics 
+                            during the reboot, the system will go into a panic/reboot loop. If this 
+                            should happen, press the Esc key to break the loop.</FONT></P>
+                            <P>
+                            <FONT FACE="helvetica">If you do not want 
+                            the system to reboot on panic, you can override the default 
+                            reboot_on_panic variable with the PROM variable rebound. To do this, 
+                            enter the following at the PROM prompt, accessed via option 5 at the 
+                            PROM menu:<TT>&nbsp; </TT></FONT></P>
+                            <P>
+                            <B><TT><FONT FACE="helvetica">setenv 
+                            rebound n</FONT></TT></B><P>
+                            <LI>
+                            <B><FONT FACE="helvetica">To get the MMSC 
+                            version number, check the bottom line of the LCS control panel.</FONT></B><P>
+                             <FONT FACE="helvetica">MMSC version 
+                            numbers for this version of IRIX operating system should be 1.2.E (or 
+                            higher). SGI recommends that you upgrade to version 1.2.E if your 
+                            version is lower. </FONT>
+                            <P>
+                            <FONT FACE="helvetica">A second way to get 
+                            the version of all the MMSCs is to connect to the alternate console 
+                            port on one MMSC and enter the following:<TT>&nbsp;
+                             </TT></FONT></P>
+                            <P>
+                            <B><TT><FONT FACE="helvetica">^T track * ver&nbsp;
+                             </FONT></TT></B>
+                             </P>
+                            <LI>
+                            <B><FONT FACE="helvetica">Potential FLEXlm 
+                            licensing problems</FONT></B><P>
+                             <FONT FACE="helvetica">The Flexible 
+                            License Manager (FLEXlm) controls the use of certain software products 
+                            that are asynchronous to the IRIX operating system.&nbsp;
+                             </FONT>
+                            <P>
+                            <FONT FACE="helvetica">A FLEXlm key is 
+                            generated for each asynchronous software product, based on a unique 
+                            system identifier. Because the Origin 2000 system does not have a 
+                            unique system identifier, the FLEXlm host ID (lmhostid) of the first 
+                            system module is used to create a FLEXlm key.&nbsp;
+                             </FONT></P>
+                            <P>
+                            <FONT FACE="helvetica">If an Origin 2000 
+                            system is reconfigured, a different module with a different FLEXlm host 
+                            ID could be located in the first position, causing a previously valid 
+                            FLEXlm key to fail.&nbsp; </FONT></P>
+                            <P>
+                            <FONT FACE="helvetica">If a license key 
+                            problem arises after a system has been reconfigured, a new license must 
+                            be generated. Contact the vendor of the software product in question 
+                            and give them the host ID number (the FLEXlm host ID of the first 
+                            module) of the reconfigured system to generate a new key.<TT>&nbsp;
+                             </TT></FONT></P>
+                            </TD>
+                    </TR>
+
+
+                    <TR>
+                        <TD VALIGN="TOP"><P>
+                            <A NAME="o3000"><B><I><FONT
+                             FACE="helvetica">SGI Origin 3000 server 
+                            series</FONT></I></B></A></TD>
+                    <TD VALIGN="TOP"><UL>
+                            <LI>
+                            <B><FONT FACE="helvetica">Partitioned 
+                            Origin 3000 system change</FONT></B><P>
+                            <FONT FACE="helvetica">If your Origin 3000 
+                            system is currently partitioned, or if you want to enable system 
+                            partitioning, you must now install the eoe.sw.partition software 
+                            package. Editing the /var/sysgen/system/irix.sm file is no longer 
+                            necessary when enabling system partitioning and should not be done.&nbsp;
+                             </FONT><P>
+                             
+                            <LI>
+                            <B><FONT FACE="helvetica">Partitioned 
+                            FLEXlm licensing change</FONT></B><P>
+                             <FONT FACE="helvetica">Starting with the IRIX 
+                            6.5.15 release, each partition of a partitioned Origin 3000 system will have a 
+                            new unique FLEXlm host ID (lmhostid). Any FLEXlm license based on the 
+                            old non-partitioned lmhostid value will no longer work and a new 
+                            license key must be generated. See the following web page for 
+                            additional details, <A
+                             HREF="http://www.sgi.com/support/licensing/partitionlic.html">http://www.sgi.com/support/licensing/partitionlic.html</FONT></A>.
+                            <UL>
+                                <P>
+                                <LI>
+                                <FONT FACE="helvetica">Contact the 
+                                applicable software product vendor and provide the lmhostid number of 
+                                the partition to generate a new license key.</FONT>
+                                </P>
+                                <P>
+                                <LI>
+                                <FONT FACE="helvetica">For nodelock 
+                                licenses, provide the lmhostid for all partitions of the software 
+                                installed and operating.</FONT> 
+                                </P>
+                                <P>
+                                <LI>
+                                <FONT FACE="helvetica">For software 
+                                licensed by SGI, see the following web page for more details, <A
+                                 HREF="http://www.sgi.com/support/licensing/partitionlic.html">http://www.sgi.com/support/licensing/partitionlic.html</A>.</FONT>
+                                </P>
+                                <P>
+                                <LI>
+                                <FONT FACE="helvetica">For email and 
+                                telephone contact information, see the IRIX 6.5.22 Welcome page and 
+                                follow the &quot;Bundled software and licenses&quot; link.</FONT>
+                                 
+                            </TD>
+                        </TR>
+
+                    <TR>
+                        <TD VALIGN="TOP"></UL>
+                        <A NAME="onyx4"><B><I><FONT FACE="helvetica">
+                        Silicon Graphics Onyx4 UltimateVision
+                        </FONT></I></B></A></TD>
+                    <TD VALIGN="TOP">
+
+                    <TD>
+            <FONT FACE="helvetica">
+            If you upgrade to the Silicon Graphics Onyx4 Ultimatevision from
+            an earlier SGI platform,
+            you may encounter the following software differences:
+            </FONT>
+
+
+            <P>
+            <UL>
+            <LI>
+            <FONT FACE="helvetica">
+            Onyx4 will introduce software differences that may require porting
+            existing IRIX software:
+            </FONT>
+		
+            <P>
+	    <UL>
+            <LI>
+            <FONT FACE="helvetica">
+            IrisGL is being retired and will not be available.
+            </FONT>
+            </LI>
+            <LI>
+            <FONT FACE="helvetica">
+            Xfree86 has been selected as the X Windows server for this platform.
+            </FONT>
+            </LI>
+            </UL>
+
+            <P>
+            <LI>
+            <FONT FACE="helvetica">
+            The following X server extensions will not be available on the Onyx4:
+            </FONT>
+            <P>
+            <UL>
+		<LI>
+                <FONT FACE="helvetica">
+                Adobe DPS
+                </FONT>
+                </LI>
+		<LI>
+                <FONT FACE="helvetica">
+                ESA
+                </FONT>
+                </LI>
+		<LI>
+                <FONT FACE="helvetica">
+                Multibuffering
+                </FONT>
+                </LI>
+		<LI>
+                <FONT FACE="helvetica">
+                SGI-Multibuffering
+                </FONT>
+                </LI>
+		<LI>
+                <FONT FACE="helvetica">
+                SGIFullScreenStereo
+                </FONT>
+                </LI>
+             </UL>
+             
+             <P>
+             <LI>
+            <FONT FACE="helvetica">
+             The following executables are unavailable on the Onyx4
+             in IRIX 6.5.22:
+            </FONT>
+                
+              <P>
+                <UL>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/showcase
+                <br>
+		From: showcase (IRIX Showcase 3.4.3a)
+                </FONT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/iconsmith
+                <br>
+                From: desktop_tools (Desktop Tools)
+                </FONT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/cosmocreate
+                <br>
+                From: cosmocreate (CosmoCreate Authoring Environment 1.0.3)
+                </FONT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		shared objects under /usr/lib/ImageVision/
+                <br>
+		From: il_eoe (ImageVision Library Execution Only Environment, 3.2.1)
+                </FONT>
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/imgworks<BR>
+		/usr/sbin/interp
+                <br>
+		From: imgtools (ImageVision Tools, 3.2.2)
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/etc/config/debugxserver<BR>
+		/usr/bin/X11/Xsgi<BR>
+		/usr/bin/X11/Xsgi_d
+                <br>
+		From: x_eoe (X11 Execution Environment, based on X11R6.6)
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/lib/X11/system.backgrounds
+                <br>
+		From: desktop_eoe (IRIX Interactive Desktop)
+                <br>
+		Note: A few desktop background designs do not appear on
+                the Onyx4.<BR>
+		Most desktop backgrounds do appear on the Onyx4.
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/cedit<BR>
+		/usr/sbin/dialwarp<BR>
+		/usr/sbin/loadmap<BR>
+		/usr/sbin/makemap<BR>
+		/usr/sbin/savemap<BR>
+		/usr/sbin/showmap
+                <br>
+		From: eoe.sw.gltools (Graphics Library Tools)
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/cycol<BR>
+		/usr/sbin/palette
+                <br>
+		From: eoe.sw.imagetools (Graphics Library Image Tools)
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/sysmeter
+                <br>
+		From: eoe.sw.perf (Performance Measurement Utilities)
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/confidence
+                <br>
+		From: confidence (Confidence Tests)
+                </FONT>
+			
+			
+                <P>
+                <LI>
+                <FONT FACE="helvetica">
+		/usr/sbin/sitemgr
+                <br>
+		From: sitemgr (Sitemgr)
+                </FONT>
+				
+	</UL>	
+         
+        <P>
+        <LI>
+        <FONT FACE="helvetica">
+        The Onyx4 does not support
+        additional input devices beyond a keyboard and a mouse.
+        </FONT>
+        </P>
+		
+		
+        <P>
+        <LI>
+        <FONT FACE="helvetica">
+        The following features and applications function with the limitations listed:
+        </FONT>
+		
+	<UL>
+            <P>
+            <LI>
+            <FONT FACE="helvetica">
+            SGI Motif: SgColorChooser sliders on the remote display do not
+            work correctly
+            </FONT>
+            </LI>
+            <P>
+            <LI>
+            <FONT FACE="helvetica">
+            Screensaver panel: monitor power save option is unavailable
+            </FONT>
+            </LI>
+            <P>
+            <LI>
+            <FONT FACE="helvetica">
+            SGImeeting: some features (such as application sharing) do not work
+            </FONT>
+            </LI>
+            <P>
+            <LI>
+            <FONT FACE="helvetica">
+            Locale support:
+            ISO8859-15 locales do not work properly (CID-keyed bitmap fonts
+            are not displaying correctly). The backgrounds CPU Eater, SGI
+            Logo and Twilight are not supported on non-English locales.
+            </FONT>
+            </LI>
+            </UL>
+            <P>
+            </FONT>
+		
+            <P>
+            <LI>
+	    <FONT FACE="helvetica">
+            When running the Onyx4 on IRIX 6.5.22, you may
+            see the following message:</FONT>
+            <P>
+            <TT>
+            WARNING: /hw/module/001c01/node/cpubus/0/a: UCE interrupt on PIO access
+            <br>
+            NOTICE: /hw/module/001c01/node/cpubus/0/a: User Data Bus error in IO space at physical
+            address 0xb2003ba  (EPC 0x1006c098)
+            </TT>
+            <P>
+            <FONT FACE="helvetica">
+            This warning may be safely ignored.
+            </FONT>
+		
+           </UL>
+                    </TD>
+                </TR>
+
+
+                    </TABLE>
+                </UL>
+
+            </UL>
+            <H2>
+            <A NAME="_cch1_907950976"><FONT SIZE="7" FACE="helvetica">Caveats 
+            to Read After You Upgrade</FONT></A></H2>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">These caveats make you aware of 
+            changes or potential problems that could significantly affect your 
+            experience after your upgrade. </FONT></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <B><FONT FACE="helvetica">Different caveats will be 
+            relevant for different types of users; scan the list for information 
+            that is applicable for you.</FONT></B></BLOCKQUOTE>
+            <BLOCKQUOTE>
+            <FONT FACE="helvetica">This is not a complete list of all 
+            known bugs, workarounds, or changes, which are documented in the <A
+             HREF="resources.html#relnotes">release notes</A> for each 
+            individual product. In addition to reviewing this list, you may want to 
+            check &quot;Caveat and Release Note Updates&quot; at
+            <A HREF="http://support.sgi.com/irix/6.5"
+            TARGET="_blank">Supportfolio Online</A>
+            for any late-breaking information.</FONT></BLOCKQUOTE>
+
+
+<!--        <H3>
+            <B><FONT FACE="helvetica">New for 6.5.22: </FONT></B></H3>
+            <UL>
+            </UL>     
+-->
+
+            <H3>
+            <B><FONT FACE="helvetica">Cumulative for 6.5 through 
+            6.5.21, and still applicable for 6.5.22:</FONT></B></H3>
+                <UL>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica"><B>
+                Misconfigured CXFS cluster can yield repeated ioconfig and xvm probe commands
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                A misconfigured CXFS cluster can result in clconfd issuing repeated
+                ioconfig and xvm probe commands.
+                This may not be noticeable on multiprocessor
+                machines, but a single processor machine may become unusable. If a CXFS
+                filesystem is configured to be mounted on a CXFS node which does not
+                have a physical connection to the underlying volume, clconfd detects
+                the ability to access the volume and issues an ioconfig command followed by an
+                xvm probe of all the disks in
+                an attempt to rectify the problem. The frequency at which this process
+                occurs is not correctly controlled, which results in high system resource usage.
+                This issue is being
+                tracked by SGI and will be resolved in a future release;
+                support contract customers can contact their local support
+                organization for more information on the status of this issue.
+                <P>
+                CXFS clusters which correctly configured filesystems will not encounter
+                this issue.
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica"><B>
+                Cloning system disks with OpenSSH files
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                If the OpenSSH server software (openssh.sw.server) is
+                installed on a system disk that you are copying for use on
+                another system, you should ensure that the system
+                keys are not duplicated.  The openssh keys should
+                be unique for each system.
+                </FONT>
+
+                <P>
+                <FONT FACE="helvetica">
+                If the following files exist on your system disk, you
+                should remove them from the copy of the disk when you copy
+                the disk to another system:
+                </FONT>
+                
+                <P>
+                <TT>
+                /etc/openssh/ssh_random_seed
+                <br>
+                /etc/openssh/ssh_host_dsa_key
+                <br>
+                /etc/openssh/ssh_host_dsa_key.pub
+                <br>
+                /etc/openssh/ssh_host_key
+                <br>
+                /etc/openssh/ssh_host_key.pub
+                <br>
+                /etc/openssh/ssh_host_rsa_key
+                <br>
+                /etc/openssh/ssh_host_rsa_key.pub
+                <br>
+                /etc/openssh/sshd.pid
+                </TT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica"><B>
+                OpenSSH server and Privilege Separation
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                The OpenSSH server software runs in Privilege Separation mode by 
+                default. To start the sshd daemon, first you will need to create 
+                an unprivileged user and group named sshd or you will need to
+                change the sshd_config file to disable Privilege Separation.
+                </FONT>
+
+                <P>
+                <LI>
+                <FONT FACE="helvetica"><B>
+                DFS warning message
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                On systems that have DFS installed, an ld warning
+                will occur when a new kernel
+                image is configured. This will occur after installation of IRIX 6.5.19 and
+                when kernel components are removed or installed. It may also occur after
+                permanent systune parameter changes have been made. This warning is harmless
+                and may be safely ignored. An example of the warning follows.
+                </FONT>
+
+                <P>
+                <TT>
+                ld: WARNING 15 : Multiply defined:(strrchr) in sgi.a(libc_src.o) and
+                krpch.a(subr_krpc.o) (2nd definition ignored).
+                </TT>
+                <P>
+
+
+                <LI>
+                <FONT FACE="helvetica"><B>
+                Do not Use XVM give and steal commands with XVM snapshot volumes
+                </B></FONT>
+                <P>
+                <FONT FACE="helvetica">
+                Use of the XVM give and steal commands with XVM snapshot volumes
+                can cause loss of data and should not be used.
+                </FONT>
+
+                <P>
+                <LI>
+                <B><FONT FACE="helvetica">
+                Reboot system to ensure correct vswap value for sadc/sar
+                </FONT></B><P>
+                <FONT FACE="helvetica">
+                For IRIX 6.5.17, a fix was implemented to ensure that
+                sadc/sar will give a correct vswap value.  To enable
+                the fix, reboot the system to the new kernel.  If you
+                do not reboot the system, sadc/sar will continue to
+                work, but vswap numbers may be inaccurate. 
+                If the accuracy of the sadc/sar number is important,
+                we recommend that you reboot as soon as possible
+                after upgrading.
+                </FONT>
+
+                <P>
+                <LI>
+                <B><FONT FACE="helvetica">CXFS message</FONT></B><P>
+                <FONT FACE="helvetica">
+                In IRIX 6.5.15f, machines running CXFS may send a number
+                of messages to the console similar to the following
+                message:</FONT>
+                <P>
+                <TT>
+                NOTICE: cms_action_config: cell 0: reset remoteshutdown
+                </TT>
+                <P>
+                <FONT FACE="helvetica">
+                This message is displayed as part of normal operations
+                and should be ignored.
+                </FONT></P> 
+                
+                <LI>
+                <B><FONT FACE="helvetica">Supported usage of group quotas</FONT></B><P>
+                <FONT FACE="helvetica">
+                Group quotas, new for the 6.5.15 release, are supported
+                in the feature stream only.  If you implement group quotas
+                on a disk and, subsequently, mount that disk with the pquota
+                mount option on a machine running the maintenance stream or
+                an earlier release of the feature stream on which group
+                quotas are not supported, the quota
+                accounting could be corrupted.
+                </FONT></P> 
+
+                <LI>
+                <B><FONT FACE="helvetica">SGI Origin 3000 Series of 
+                Servers</FONT></B><P>
+                 <FONT FACE="helvetica">If you are an Origin 3000 
+                customer (IP35 systems), you should install Patch 4332 on an IRIX 
+                6.5.13m system or Patch 4333 on an IRIX 6.5.13f system to avoid an 
+                intermittent reset problem with I/O bricks and the BASEIO PROM 
+                partitioning commands.</FONT></P> 
+                <LI>
+                <B><FONT FACE="helvetica">Netscape FastTrack Personal 
+                Web Server replaced by the SGI Web Server based on Apache </FONT></B><P>
+                <FONT FACE="helvetica">The new default web server on 
+                the IRIX 6.5.12 Applications CD is the SGI web server based on the 
+                Apache web server, version 1.3.17.
+                Functionally, the SGI web server 
+                replaces the Netscape FastTrack web server. If you still have Netscape 
+                FastTrack enabled through the chkconfig command, the new SGI web server 
+                will not start up. To enable the new SGI web server, you must enter the 
+                following commands before you reboot your system:</FONT><BR>
+                 <BR>
+                 <TT># chkconfig nss_fasttrack 
+                off </TT><BR>
+                 <TT># chkconfig sgi_apache on </TT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">If you changed the default 
+                Netscape FastTrack configuration, you must manually move those changes 
+                into the new SGI web server. For more information, see the SGI release 
+                notes about the SGI web server and the Apache web site (<A
+                 HREF="http://httpd.apache.org/docs/" TARGET="_blank">httpd://httpd.apache.org/docs/</A>).</FONT>
+                 
+                <P>
+                <FONT FACE="helvetica">If you use the Web Setup 
+                product, you must turn off the Netscape FastTrack version to run the 
+                SGI version, by entering the following commands before you reboot your 
+                system:</FONT></P>
+                <P>
+                <TT># chkconfig webface off</TT><BR>
+                 <TT># chkconfig webface_apache 
+                on </TT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">The SGI web server includes 
+                software that was developed by the Apache Software Foundation (<A
+                 HREF="http://www.apache.org" TARGET="_blank">http://www.apache.org</A>).</FONT></P>
+                <P>
+                <FONT FACE="helvetica">The Websetup 3.3 release 
+                contains a GUI administrator tool for Apache based on the Apache module 
+                contained in the Webmin 0.85 release. The Webmin framework has been 
+                configured to only run the Apache module and is accessed via Websetup 
+                by clicking on Administration and then Webservers. The Apache 
+                administrator tool can also be accessed directly by accessing the 
+                following URL: <A HREF="http://localhost:8184/">http://localhost:8184/</A></FONT></P>
+                <P>
+                </P>
+                <P>
+                <FONT FACE="helvetica">The only caveat to doing this is 
+                that you must have an administrator account for Websetup created prior 
+                to visiting the Apache administrator tool since it will prompt you for 
+                a username and password.</FONT></P>
+                <P>
+                </P>
+                <P>
+                <FONT FACE="helvetica">For information about the Apache 
+                module for Webmin, click on the following URL:</FONT></P>
+                <P>
+                <A
+                 HREF="http://www.swelltech.com/support/webminguide/server-apache.html"><FONT
+                 FACE="helvetica">http://www.swelltech.com/support/webminguide/server-apache.html</FONT></A></P>
+                <P>
+                </P>
+                <P>
+                <FONT FACE="helvetica">For general information about 
+                Webmin, click on the following URL:</FONT></P>
+                <P>
+                <A HREF="http://www.webmin.com/webmin/"><FONT
+                 FACE="helvetica">http://www.webmin.com/webmin/</FONT></A></P>
+                <P>
+                </P>
+                <P>
+                <FONT FACE="helvetica">For information on how to 
+                configure and administer the Apache web server from the command line, 
+                click on the following URL:</FONT></P>
+                <P>
+                </P>
+                <P>
+                <A HREF="httpd://httpd.apache.org/docs/"><FONT
+                 FACE="helvetica">httpd://httpd.apache.org/docs/</FONT></A></P>
+                <P>
+                </P>
+                <P>
+                <FONT FACE="helvetica">For a list of frequently asked 
+                questions about Apache, click on the following URL:</FONT></P>
+                <P>
+                </P>
+                <P>
+                <A HREF="http://www.apache.org/foundation/FAQ.html"><FONT
+                 FACE="helvetica">http://www.apache.org/foundation/FAQ.html</FONT></A></P>
+                <LI>
+                <B><FONT FACE="helvetica">Downgrading using a live 
+                (non-miniroot) installation </FONT></B><P>
+                 <FONT FACE="helvetica">If you are downgrading
+                 from feature stream 6.5.<I>x</I> to 6.5 using a 
+                live (non-miniroot) installation, <I>inst/swmgr</I>
+                 will prompt you to continue installing from the miniroot. The prompt 
+                is as follows:</FONT><BR>
+                 <BR>
+                 <TT><FONT FACE="helvetica">This software must be 
+                installed from the miniroot. The system is about</FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">to be shut down and 
+                automatically booted to the miniroot where the </FONT></TT><BR>
+                 <TT><FONT FACE="helvetica">installation will continue 
+                automatically. Okay to proceed? </FONT></TT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">It is not necessary to perform 
+                this type of installation from the miniroot. To avoid this prompt, the 
+                user should set the &quot;<CODE>live_install</CODE>&quot; 
+                preference to &quot;<CODE>on</CODE>&quot; before typing 
+                go/pressing start. </FONT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">If you want to downgrade to an 
+                earlier 6.5.<I>x</I> version of the feature stream, use 
+                the following set of commands:</FONT><BR>
+                 <BR>
+                 <TT>set newoverride on</TT><BR>
+                 <TT>k *</TT><BR>
+                 <TT>install standard</TT><BR>
+                 <TT>install downgrades</TT><BR>
+                 <TT>install prereqs</TT><BR>
+                 <TT>keep incompleteoverlays</TT><BR>
+                 <BR>
+                 
+                <LI>
+                <A NAME="group"><B><FONT FACE="helvetica">Default group file
+                now reinstalled</FONT></B></A>
+                <P>
+                 <FONT FACE="helvetica">With release 6.5.3, the default 
+                group file, <CODE>/etc/group</CODE>, is reinstalled. 
+                The original group file is saved as group.O, which appears only if you 
+                have previously edited <CODE>/etc/group</CODE>. This 
+                update is necessary because some optional packages, such as 
+                nss_fasttrack, require the group &quot;<CODE>nobody&quot;</CODE>
+                 to be present during the installation process. </FONT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">After installation, users 
+                who have defined new groups will have to merge the old group file into 
+                the new group file. When merging, please be sure to preserve 
+                the entry for &quot;<CODE>nobody</CODE>.&quot;</FONT><BR>
+                 <BR>
+                 <FONT FACE="helvetica">The Inst command <CODE>admin 
+                config change</CODE> and the post-installation command <I>versions 
+                changed</I> will both report any changed configuration 
+                files, including the <CODE>/etc/group</CODE> file. As 
+                mentioned in the <A HREF="#mergeconfig">Caveats to Read 
+                Before You Upgrade</A>, this should ideally be done 
+                before at the end of the installation process, but before you restart 
+                the system. </FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">New file for setting NIS 
+                server</FONT></B><FONT FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">It is no longer possible to set 
+                the NIS server in the </FONT><CODE>/etc/config/ypbind.options</CODE>
+                 <FONT FACE="helvetica">
+                 file. If your system is configured this way, create the file </FONT>
+                <P>
+                <CODE>/var/yp/binding/&lt;</CODE>
+                <FONT FACE="helvetica">
+                <I>DOMAIN</I></FONT><CODE>&gt;/ypservers</CODE>
+                 </P>
+                <P>
+                <FONT FACE="helvetica">where &lt; <I>DOMAIN&gt;</I> is 
+                the NIS domain name. Type the NIS server on a new line in this file<TT>.</TT></FONT><BR>
+                 </P>
+                <P>
+                <FONT FACE="helvetica">There were several other 
+                NIS-related changes in 6.5
+                that affect customers who upgrade 
+                from a pre-6.5 release of the IRIX operating system. For example, the 
+                IRIX name services have been completely rewritten. Please refer to the 
+                IRIX eoe <A HREF="resources.html#relnotes">release notes</A>
+                 (chapter 3, Changes and Additions) for details.</FONT><BR>
+                 <BR>
+                 </P>
+                <LI>
+                <B><FONT FACE="helvetica">Remote host display now off 
+                by default</FONT></B><FONT FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">In the interest of security, 
+                the ability to display applications that are running on other systems 
+                is now disabled by default. There are a few different ways you can 
+                re-enable the remote host display. For details, see &quot;About the 
+                Remote Display Feature&quot; in Chapter 13 of the online <I>Desktop 
+                User's Guide.</I>&nbsp;</FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Printer may not be recognized 
+                if turned on after system</FONT></B><FONT
+                 FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">Even after a printer is 
+                configured, it may not function if you turn it on after turning on your 
+                system. This is because the printer device is not present in the 
+                hardware graph. To work around this problem, perform the following 
+                commands in a shell: </FONT>
+            </UL>
+            <DD>
+            <TT><FONT FACE="helvetica">%<B> su</B> </FONT></TT>
+            <DD>
+            <TT><FONT FACE="helvetica"># <B>cd /dev</B> </FONT></TT>
+            <DD>
+            <TT><FONT FACE="helvetica"># <B>./MAKEDEV</B> </FONT></TT>
+            <DD>
+            <TT><FONT FACE="helvetica"># <B>ioconfig -f /hw</B> </FONT></TT>
+            <DD>
+            <TT><FONT FACE="helvetica"># <B>exit</B> </FONT></TT>
+            <UL>
+                <LI>
+                <B><FONT FACE="helvetica">Full hostname now used by 
+                default</FONT></B><FONT FACE="helvetica"> </FONT><P>
+                 <FONT FACE="helvetica">For customers installing IRIX 
+                on new systems, or reconfiguring existing systems after IRIX is 
+                installed or upgraded: the graphical system administration tools now 
+                use the fully qualified hostname by default. This affects scripts that 
+                assume that only the partial hostname is used. Scripts may need to be 
+                modified to use hostname -s rather than hostname. If you wish, you can 
+                override this default and use only the partial hostname.<TT>&nbsp;</TT></FONT><BR>
+                 <BR>
+                 
+                <LI>
+                <B><FONT FACE="helvetica">Gang-scheduled graphics 
+                processes can cause graphics to hang </FONT></B><P>
+                 <FONT FACE="helvetica">Graphics programs using the 
+                schedctl(2) system call to choose gang scheduling mode (SGS_GANG) may 
+                cause the graphics to hang. (Gang-scheduled processes that do not use 
+                graphics are not affected by this problem.) </FONT>
+            </UL>
+
+            <H3>
+            <FONT FACE="helvetica">Origin/Onyx System Caveats</FONT></H3>
+            <P>
+            <FONT FACE="helvetica">The following caveat is for
+            all large (64+ processers) Origin/Onyx systems.
+            </P>
+            <UL>
+                <LI>
+                <B><FONT FACE="helvetica">Process Activity Reporter 
+                (par) sometimes hangs </FONT></B><P>
+                 <FONT FACE="helvetica">Par hangs when the 
+                system-monitoring daemon, <CODE>rtmond</CODE><I>,</I>
+                 produces a data stream that overloads the clients. As a result, 
+                clients that feed par, like padc, will discard events. If the <I>process 
+                exited</I> event is discarded by these clients, par 
+                hangs. When this happens, you see messages like the following in <CODE>/var/adm/SYSLOG</CODE>: </FONT>
+                <P>
+                <TT><FONT FACE="helvetica">&quot;rtmond[669]: (CPU 0) 
+                Client &lt;local&gt;:11:64505 events 1718 dropped (2%) 289 writes(0% 
+                push)for 4720560 bytes, 5 push buffers for 80 KB&quot;</FONT></TT></P>
+                <FONT FACE="helvetica">As shown in this example, you 
+                can tell that par has hung because the message tells you that the 
+                dropped count is other than 0. </FONT>
+                </TD>
+        </TR>
+    </TABLE>
+</UL>
+</BODY>
+</HTML>

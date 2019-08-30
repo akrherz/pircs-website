@@ -1,0 +1,9 @@
+#
+# Created by WebMap 1.0.1
+# Wednesday, November 29, 1995 at 5:48 PM
+# Format: NCSA
+#
+
+
+default ../mideast.html
+rect ../tr_arabic.html 313, 135 433,206

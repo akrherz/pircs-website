@@ -1,0 +1,11 @@
+AuthUserFile /var/www/.reviewpasswd
+AuthGroupFile /dev/null
+AuthName PIRCS
+AuthType Basic
+
+<LIMIT GET>
+order deny,allow
+deny from all
+allow from all
+require user review
+</LIMIT>

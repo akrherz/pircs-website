@@ -1,0 +1,21 @@
+:#
+:# day5raffle.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#	0   - nothing special (default)
+:#	1   - soft mandatory
+:#	2   - hard mandatory
+:#	4   - hinv result if value is empty
+:#	8   - auto populate serial # if value is empty
+:#	16  - auto pop sysid if value is empty
+:#	32  - detect email connection
+:#	64  - auto pop email address
+:#
+:# value -- user input or a predefined value
+
+:# hidden input, default to text ui kind.
+
+:# end

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>Tape Units</TITLE>
+</HEAD>
+<BODY BGCOLOR="white">
+<CENTER><P ALIGN="CENTER">
+<FONT SIZE="6">Tape formats supported</FONT></P>
+</CENTER><HR>
+<P>
+<B><FONT SIZE="4">Tape and CD formats:</FONT></B><FONT SIZE="4"><BR>
+</FONT> Directly available at PIRCS are 8mm exabyte and 4mm DDS 2 DAT 
+tapes. Note also that we are able to make CD-ROM's of data. If you are 
+interested in CD-ROM's being made for you please ask.</P>
+<P>
+Also available at IITAP is ability to create older DDS 1 DAT tapes as 
+well as the newer DDS 3 DAT tapes. A need for DDS 3 tapes should be 
+expressed early so that we can make arrangements for this machines use.</P>
+<P>
+<FONT SIZE="4">4mm DAT2 unit on Origin 2000 <I>(I am still working on 
+this section)</I></FONT></P>
+<P>
+<B>Typical commands:</B><BR>
+</P>
+<P>
+</P>
+<P>
+</P>
+<P>
+<FONT SIZE="4">Exabyte Units on DEC Alpha's</FONT></P>
+<P>
+<B>Typical commands:</B><BR>
+ Standard tape command to reading would be:<BR>
+ tar xf /dev/rmt0h</P>
+<P>
+and for writing:<BR>
+ tar cf /dev/rmt0h</P>
+<P>
+<B>Tape to Tape copies:</B><BR>
+ The system is set up for creating tape copies. To copy from one unit 
+to another you would use a command like:<BR>
+ tar xf /dev/rmt0h | tar cf /dev/rmt1h -</P>
+<P>
+Note the - at the end of the command, this is required to inform tar 
+that it will be obtaining data from a UNIX pipe.</P>
+<P>
+<B>Tape unit hardware report:</B><BR>
+ A typical status call to the Exabyte will return:</P>
+<PRE>
+DEVIOGET ELEMENT CONTENTS
+---------------- --------
+category DEV_TAPE
+bus DEV_SCSI
+interface SCSI
+device EXB-8505
+adpt_num 0
+nexus_num 0
+bus_num 0
+ctlr_num 0
+slave_num 1
+dev_name tz
+unit_num 1
+soft_count 0
+hard_count 0
+stat 5
+ DEV_BOM DEV_OFFLINE 
+category_stat 20000
+ DEV_61000_BPI
+
+DEVGETINFO ELEMENT CONTENTS
+------------------ --------
+media_status 0x1
+ BOM 
+unit_status 0x102
+ Offline 2_FM_Close NO_Rewind Buffered 
+record_size 0
+density (current) 61000 BPI
+density (on write) 0 BPI
+Filemark Cnt &lt;Not Valid&gt;
+Record Cnt &lt;Not Valid&gt;
+Class 2 - RDAT
+
+MTIOCGET ELEMENT CONTENTS
+---------------- --------
+mt_type MT_ISSCSI
+mt_dsreg 0
+mt_erreg 0
+mt_resid 0
+</PRE>
+<P>
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,93 @@
+#Inventor V2.1 ascii
+
+DEF BM_Root Separator {
+  CoBMRenderOptions {
+    aastring	"low"
+  }
+  DEF LightGroup Group {
+    DirectionalLight {
+      on	TRUE
+      direction	-0.181228 0.859699 0.477572
+    }
+    DirectionalLight {
+      on	TRUE
+      color	0.267544 1 0.191268
+      direction	0.270062 -0.845551 0.460554
+    }
+  }
+  OrthographicCamera {
+    position	-0.0809937 3.834 51.9722
+    aspectRatio	1.70115
+    nearDistance	51.9202
+    farDistance	103.231
+    focalDistance	53.601
+    height	99.7158
+  }
+  DEF BackgroundColor Info {
+    string	"0.75 0.75 0.75"
+  }
+  Material {
+    diffuseColor	1 1 1
+  }
+  DEF theObject Separator {
+    Material {
+      ambientColor	0.2 0.2 0.2
+      diffuseColor	0 0 0
+      specularColor	0 0 0
+      emissiveColor	1 1 1
+      shininess	0.2
+      transparency	0
+    }
+    DEF _0 CoTextGraph {
+      textType	1
+      string	"PIRCS Homepage"
+      fontName	"Palatino-Roman;HonMinchoLtBT--H;HonMinchoLtBT--Hankaku"
+      fontStyle	      FontStyle {
+	size	18
+	justify	"MIDDLE"
+	spacing	1
+      }
+
+      isBeveled	FALSE
+    }
+  }
+  Separator {
+    Material {
+      diffuseColor	0.1 0.2 0.7
+      specularColor	1 1 1
+      shininess	0.8
+    }
+    DEF Sphere CoMultiButton {
+      leftMargin	0.6
+      rightMargin	0.6
+      topMargin	0.9
+      bottomMargin	0.9
+      resizePolicy	"grow"
+      alignment	"inked_area"
+      width	164.088
+      height	50.256
+      geometry	      Separator {
+	Transform {
+	  translation	-0.0809937 3.834 -26.028
+	  scaleFactor	82.044 25.128 25.128
+	}
+	Switch {
+	  whichChild	0
+	  Separator {
+	    Scale {
+	      scaleFactor	1 1 1
+	    }
+	    Complexity {
+	      value	1
+	    }
+	    Sphere {
+	    }
+	  }
+	}
+      }
+
+      attachTo	      USE _0
+
+    }
+  }
+}

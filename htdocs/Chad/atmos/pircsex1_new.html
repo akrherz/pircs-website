@@ -1,0 +1,187 @@
+<html>
+<head><title> PIRCS Experiment 1 </title></head>
+<body bgcolor="#FFFFFF">
+<pre>
+<h1>PIRCS Experiment 1 </h1>
+
+<h3>Release date:  June 16, 1995</h3>
+<br>
+</pre>
+<ul>
+<li><a href="#motiv">MOTIVATION</a>
+<li><a href="#locat">LOCATION</a>
+<li><a href="#perio">PERIOD</a>
+<li><a href="#simdo">SIMULATION DOMAIN</a>
+<li><a href="#ilbcs">ATMOSPHERIC INITIAL AND LATERAL BOUNDARY CONDITIONS</a>
+<li><a href="#sfccd">SURFACE CONDITIONS</a>
+<li><a href="#cvrad">CONVECTION AND RADIATION</a>
+<li><a href="#diagn">DIAGNOSTICS</a>
+<li><a href="#timet">TIMETABLE</a>
+<li><a href="#fnote">FINAL NOTES</a>
+<li><a href="#furth">FURTHER INFORMATION</a>
+</ul>
+<br>
+<a name="motiv"><b><h2>MOTIVATION</h2></b></a>
+<p>The intent of the first experiment is to provide a first comparison of how well regional models 
+represent aggregate characteristics of weather events in a simulation long enough to include many 
+such events, i.e. resolve climate.  To this end, the experiment is designed to be relatively simple to 
+perform and diagnose thereby facilitating wide-spread participation and the establishment of a 
+framework for ongoing intercomparison.  The experiment will contain the strong climate signals 
+of persistent extreme events, which are expected to simplify the intercomparison by focusing 
+diagnosis on dominant processes during these events.</p>
+<p>
+This intercomparison is being coordinated by the International Institute of Theoretical and 
+Applied Physics (IITAP), which has a goal of promoting the application of forefront scientific 
+tools to practical problems facing scientists in developing countries.  The initial experiment 
+focuses on a primarily agricultural region with significant vulnerability to growing season 
+precipitation, a problem common to most developing countries.  Accordingly, one emphasis of the 
+intercomparison will be diagnosing the simulation of hydrologic processes.  In order to 
+complement related research programs, the initial experiment is also designed to overlap with 
+activities of COMPARE, GEWEX (specifically G-NEG and GCIP) and AMIP.</p>
+<a name="locat"><b><h2>LOCATION</h2></b></a>
+<p>
+The first experiment will focus on the central United States, a region of intense cultivation 
+containing a major watershed, the Mississippi River basin. It is a region that has experienced 
+episodes of both extreme drought and extreme flooding within the past 10 years.  This region is 
+also the focus of GCIP and planned activities by G-NEG.</p>
+<a name="perio"><b><h2>PERIOD</h2></b></a>
+<p>
+The first experiment will contain two periods:  the summer of 1988 drought (Expt. 1a) and the 
+summer of 1993 flooding (Expt. 1b).  Experiment 1a emphasizes thermal processes, whereas 
+Experiment 1b emphasizes processes of the water cycle.  Initial simulation and diagnosis will 
+focus on the summer of 1988, but the coupled diagnosis of opposite extremes will constitute a 
+more complete analysis of the systematic behavior of participating models.  Simulations will be 
+initialized using gridded analyses for 15 May 1988 and 1 June 1993 and will last 60 days.  The 
+starting dates represent times by which persistent  circulation features for each summer had 
+become established.<p>
+<a name="simdo"><b><h2>SIMULATION DOMAIN</h2></b></a>
+<p>The simulation domain will consist of two parts:  a forced outer frame and a "free" inner domain.  
+Diagnostics will be computed for the inner domain.  The standard inner domain will be given by a 
+51 (N-S) x 101 (E-W) lat-lon grid with 1/2 degree resolution, with the central point located in the middle of the U.S. (lat. grid #26, lon. grid #51) =
+(37.5 N, 100 W)
+<a href=pircsreg.gif>(Fig. 1)</a>.</p>
+<p>The PIRCS support staff has designed a nearly equivalent inner domain for models using a 
+polar stereographic projection with the central point (X grid #28, Y grid#41) =
+(37.5 N, 100 W)
+ <a href=pircspsg.gif>(Fig. 2)</a>.</p>
+<p>Models using other projections should use a grid that 
+marginally covers all of the inner domain.  Any projection onto a Cartesian grid should use a 60 
+km horizontal resolution.  The standard outer frame is an additional 10 grid points on each side of 
+the inner domain, for both the lat-lon and polar stereographic grids.  The design of the inner 
+domain attempts to include major, central-U.S. moisture sources in the Pacific and Gulf of 
+Mexico while avoiding an excessive computing burden from too many grid points.  The domain as 
+a whole is also designed to minimize the occurrence of high topography along the boundaries.</p>
+<p>Precise structure of the inner and outer domains may vary between models depending on their 
+numerical procedures.  It is expected that participants in the intercomparison will use the lateral 
+boundary conditions given in the outer frame as appropriate for their model and that no model 
+will include explicit external forcing within the domain covered by the standard "free" grid.</p>
+<p>In the vertical direction, each model will use its own coordinate, grid and resolution:  there is no 
+standard vertical grid.</p>
+<a name="ilbcs"><b><h2>ATMOSPHERIC INITIAL AND LATERAL BOUNDARY CONDITIONS </h2></b></a>
+<p>
+The PIRCS support staff will provide initial conditions for the simulation domain described above 
+from re-analysis output produced by the U.S. National Meteorological Center.  In order to 
+facilitate the participation of a wide variety of models, and guided by the COMPARE program, 
+PIRCS will distribute data on three grids:  a background, global grid at 2 1/2 degree resolution, 
+forcing-frame (outer domain) data at 1/2 degree resolution on the lat-lon grid, and forcing-frame 
+data at 60 km resolution on the polar stereographic grid.  Data for lateral boundary conditions will 
+be provided every 6 hours. </p>
+<p>The variables provided will be the horizontal wind components (u, v), temperature T, specific 
+humidity q, the surface pressure p_sfc of the reanalysis model and the topography used by the re-analysis model.  Data will be provided at 25 mb resolution.  PIRCS will provide the algorithm for 
+vertical interpolation of surface pressure to the individual model's topographic height.</p>
+<a name="sfccd"><b><h2>SURFACE CONDITIONS</h2></b></a>
+<p>
+The PIRCS support staff will provide soil-moisture for initial conditions and periodic ocean and 
+lake surface temperatures for lower boundary conditions.  For a number of reasons, precise 
+determination of the field of soil moisture on each starting date will be difficult.  The soil-moisture 
+conditions that will be distributed are intended to provide a consistent, reasonably accurate initial 
+condition for all models.  Therefore, while these values can be converted to units appropriate for 
+each model, they should not be adjusted toward drier or more moist conditions.
+</p>
+<p>For simplicity, each modeling group is encouraged to use their model's topography and land 
+characterization procedures already established for this region, if they exist.  The PIRCS support 
+staff, however, will provide a reference topography and land-characterization dataset for 
+participants needing this information.</p>
+<a name="cvrad"><b><h2>CONVECTION AND RADIATION</h2></b></a>
+<p>
+The choice of cumulus convection and radiation schemes is left to each modeling group.</p>
+<a name="diagn"><b><h2>DIAGNOSTICS</h2></b></a>
+<p>Primary diagnostics will consist of heat, moisture and energy budgets on scales finer than typically 
+resolved by global models.  All spatially varying output should be reported on the model's grid for 
+the inner domain.  The PIRCS archive will collect from each participating group four sets of data,
+<A HREF="http://www.physics.iastate.edu/atmos/table1.html">(Table 1)</A>.  The hourly data will enable an assessment of time-average energy and water budgets 
+and links between the surface and atmosphere.  The multi-day averages will be used to assess the 
+ability of the models to simulate mean behavior of specific episodes and to monitor model drift.</p>
+<p>Participants will be strongly encouraged to save at their institutions hourly histories of the 
+prognostic variables.  PIRCS requests that archives contain sufficient history
+information so that comparisons that are either unanticipated by PIRCS or 
+that go beyond the scope of the initial comparison may still be performed.
+Examples of the latter would include analysis of vertical fluxes of heat
+and moisture generated by convection and their impact on resolved dynamics and
+study of the interaction between clouds in the planetary boundary layer (PBL),
+radiation and other PBL processes.
+</p>
+
+<p>For Expt. 1a (drought year), diagnostic emphasis for the intercomparison will be on the evolution 
+of the thermal processes across the domain, as characterized by the surface and atmospheric 
+thermal energy budgets.  A comparison of hydrologic processes for this case of weak hydrologic 
+cycle will also be performed, but it is expected that this comparison in particular will not be 
+complete until the strong hydrologic cycle of the 1993 flood period is also simulated and 
+diagnosed.</p>
+<a name="timet"><b><h2>TIMETABLE</h2></b></a>
+<p>
+<pre>
+Present - 15 Nov 95   (Beta-test period):
+                       Produce prototype dataset for first 5-day
+                       subperiod (15 - 19 May 1988).  
+                       Perform tests of simulation and diagnostic archiving. 
+
+15 Nov - 1 Dec         Refine procedures based on feedback from beta-test
+                       participants.
+
+1 Dec 95               15 - 19 May 1988 boundary conditions available through
+                       anonymous ftp.
+                       60-day boundary conditions available upon registering
+                       for PIRCS.
+
+1 Feb 96               Start receiving 60-day simulation results from
+                       participants.
+
+1 May 96               Closing date for receiving archive data that will be 
+                       included in the preliminary analysis for the July 
+                       workshop.
+
+15 Jul 96              Second PIRCS Workshop, with preliminary analysis of
+                       datasets reported to PIRCS/ISU.
+
+</pre>
+<a name="fnote"><b><h2>FINAL NOTES</h2></b></a>
+<ul>
+<LI>The time table is tentative and somewhat dependent on the
+availability of external funding support.
+<br>
+<br>
+<LI>The five-day boundary conditions data set will enable interested
+groups to perform a partial PIRCS run and assess whether or not 
+they can commit the resources necessary for the project.
+<br>
+<br>
+<LI>We will package the full 60-day boundary-conditions data set for
+groups that formally register.  The dataset will be in GRIB format.
+<br>
+<br>
+<LI>Formal registration will include providing a description of the
+ participating model's components and the grid to be used.  PIRCS will
+supply the reporting format.
+</ul> 
+
+<a name="furth"><b><h2>FURTHER INFORMATION</h2></b></a>
+<p>Questions and requests for further information should be sent to<br>
+gstakle@iastate.edu  (Gene Takle)<br>
+--or-- <br>
+gutowski@iastate.edu  (Bill Gutowski)<br>
+--or-- <br>
+rwturner@iastate.edu  (Richard Turner)<br>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+:#
+:# This is a generated file by day5cgi
+:# PLEASE DO NOT EDIT IT BY HAND
+:#
+:# :name:ui:type:value:
+:#
+
+:From:text:0:desktop:
+:Country:select:514::
+:CountryList:text:256::
+:RegisterNow:radio:0:1:
+:CanRegisterNow:radio:2::
+:RemindDay:select:0:5:
+:Email:text:64:sgdecker@pircss3.agron.iastate.edu:
+:RemindMe:checkbox:0:off:
+
+:# end

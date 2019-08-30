@@ -1,0 +1,337 @@
+<HTML>
+<TITLE>PIRCS-1(c) Comparison of results for PIRCS-1(a) </TITLE>
+<link rel="stylesheet" href="/var/www/htdocs/main.css" type="text/css">
+<BODY BGCOLOR="#ffffff">
+<h1> Sensitivity Study: </h1>
+<h2> PIRCS-1(a) Period from Short and Long Simulations </h2>
+
+<!--- Description of data in the plots  ---!>
+<p>
+Results are presented from simulations that overlap the
+<a href="http://www.pircs.iastate.edu/overview.html" target="_blank"> PIRCS-1(a) simulation period, 15 May 1988 through 15 July 1988.</a>
+Results for the 60-day period are extracted from the output of short (60-day) and long (multi-year)
+simulations.
+Initialization for the 60-day simulations is 00Z 15 May 1988 and for multi-year simulations
+is 00Z 1 July 1986. Driving data for these simulations come from the NCEP/DOE AMIP-II
+Reanalysis project.  The simulations are labeld as follows.
+<ul>
+<li> MMANL1: MM5-3.6.1 using Grell convective parameterization scheme; simulation
+     made at Argonne National Laboratory on a cluster of INTEL processors  </li>
+<li> MMISU1: MM5-3.6.0 using Grell convective parameterization scheme; simulation
+     made at NCAR on a cluster of POWER 3 IBM processors </li>
+<li> MMISU2: MM5-3.6.0 using Kain-Fritsch convective parameterization scheme; 
+     simulation made at NCAR on a cluster of POWER 3 IBM processors </li>
+<li> ECPCRS: Scripps RSM </li>
+</ul>
+</p>
+
+<!--- Description of the tables containing the plots ---!>
+<p>
+The results are organized into tables such that results from short simulations
+are presented in table row #1, and those from long simulations are 
+in table row #2.  Column #1 contains results from MMANL1, whereas columns #2 and #3 show results
+from MMISU1 and MMISU2, respectively. Simulations MMANL1 and MMISU1 have identical 
+model components but were the executables were compiled and run
+on different computer architectures.
+<br>
+<br>Some table cells may be empty.  We will add these results
+and others as we receive data.
+</p>
+
+<!--- Table containing data fields ---!>
+<br>
+<br>
+Table 1. Accumulated precipitation (the short simulations were integrated for 60 days; whereas I extracted 61-day periods from the long simulations).
+<ul>
+<li> Although the shading differs slightly over the Midwest in MMANL1 and MMISU1, the values range
+between 300 and 400 mm. </li>
+<li> Differences are larger between simluations using different convective 
+parameterization compared with those executed on different computer architectures.
+</ul>
+
+<table border="1" >
+<th bgcolor=fffcc>
+&nbsp;
+</th>
+<th bgcolor=fffcc>
+MMANL1 Simulations
+</th>
+<th bgcolor=fffcc>
+MMISU1 Simulations
+</th>
+<th bgcolor=fffcc>
+MMISU2 Simulations
+</th>
+<th bgcolor=fffcc>
+ECPCRS Simulations
+</th>
+
+<!--- Data row 1 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Short Simulation </b>
+</td>
+<td>
+<a href="mmanl1_pircs1a_pcp.gif" target="_blank">
+<IMG SRC="mmanl1_pircs1a_pcp.gif" align=center width=450 height=375 alt="MMANL1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu1_pircs1a_pcp.gif" target="_blank">
+<IMG SRC="mmisu1_pircs1a_pcp.gif" align=center width=450 height=375 alt="MMISU1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu2_pircs1a_pcp.gif" target="_blank">
+<IMG SRC="mmisu2_pircs1a_pcp.gif" align=center width=450 height=375 alt="MMISU2 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+
+<!--- Data row 2 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Long Simulation </b>
+</td>
+<td>
+<a href="mmanl1_15may88_15jul88_pcp.gif" target="_blank"> 
+  <IMG SRC="mmanl1_15may88_15jul88_pcp.gif" align="center" width=450 height=375 alt="MMANL1 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<a href="mmisu2_15may88_15jul88_pcp.gif" target="_blank"> 
+  <IMG SRC="mmisu2_15may88_15jul88_pcp.gif" align="center" width=450 height=375 alt="MMISU2 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+</a>
+<a href="rsm_ras.bmp" target="_blank">
+<IMG SRC="rsm_ras.bmp" align="center" width=450 height=375 alt="ECPCRS 15 May - 15 Jul 88 Precipitation">
+</td>
+</tr>
+</table>
+
+<!--- Table containing time series of data ---!>
+<br>
+<br>
+<br>
+Table 2. Time series of daily precipitation averaged over the central United States domain bounded
+by 37-47N and 99-89W.  Julian day 136 is May 15, 1988.  Tick marks have a 2-day interval.  Note
+that I haven't been able to coerce NCL to produce a consistent Y-Axis scale.
+<ul>
+<li>All Grell simulations contain two periods of multiday precipitation: Julian day 148-155 and Julian day 164-178.</li>
+<li>Kain-Fritsch simulations also have multiday precipitation during Julian day 148-155, but
+after this period rainfall is intermittent.</li>
+<li>The Kain-Fritsch long simulation has higher daily rainfall rates than all other simulations during Julian days 148-155.</li>
+</ul>
+
+<table border="1" >
+<th bgcolor=fffcc>
+&nbsp;
+</th>
+<th bgcolor=fffcc>
+MMANL1 Simulations
+</th>
+<th bgcolor=fffcc>
+MMISU1 Simulations
+</th>
+<th bgcolor=fffcc>
+MMISU2 Simulations
+</th>
+<th bgcolor=fffcc>
+ECPCRS Simulations
+</th>
+
+<!--- Data row 1 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Short Simulation </b>
+</td>
+<td>
+<a href="mmanl1_pircs1a_cus_pcp_ts.gif" target="_blank">
+<IMG SRC="mmanl1_pircs1a_cus_pcp_ts.gif" align=center width=450 height=375 alt="MMANL1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu1_pircs1a_cus_pcp_ts.gif" target="_blank">
+<IMG SRC="mmisu1_pircs1a_cus_pcp_ts.gif" align=center width=450 height=375 alt="MMISU1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu2_pircs1a_cus_pcp_ts.gif" target="_blank">
+<IMG SRC="mmisu2_pircs1a_cus_pcp_ts.gif" align=center width=450 height=375 alt="MMISU2 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+
+<!--- Data row 2 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Long Simulation </b>
+</td>
+<td>
+<a href="mmanl1_15may88_15jul88_cus_pcp_ts.gif" target="_blank"> 
+  <IMG SRC="mmanl1_15may88_15jul88_cus_pcp_ts.gif" align="center" width=450 height=375 alt="MMANL1 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+nbsp;
+</td>
+<td>
+<a href="mmisu2_15may88_15jul88_cus_pcp_ts.gif" target="_blank">
+<IMG SRC="mmisu2_15may88_15jul88_cus_pcp_ts.gif" align="center" width=450 height=375 alt="MMISU2 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+nbsp;
+</td>
+</tr>
+</table>
+
+<!--- Table containing field data for related variables ---!>
+<br>
+<br>
+<br>
+Table 3. Soil water volumetric content in upper 1 m of soil column.
+<ul>
+<li> The initial soil water content is ~0.1 m<sup>3</sup> m<sup>-3</sup> larger over the Midwest
+and Ohio Valley in the long compared to short simulations, creating a more intense gradient
+of soil water content across the Plains. </li>
+<li> In the short simulations, the final soil moisture content in the Midwest and Ohio
+Valley is less in the Kain-Fritsch simulation, even though precipitation over this region
+is very similar to the Grell simulation. </li>
+</ul>
+
+<table border="1" >
+<th bgcolor=fffcc>
+&nbsp;
+</th>
+<th bgcolor=fffcc>
+MMANL1 Simulations
+</th>
+<th bgcolor=fffcc>
+MMISU1 Simulations
+</th>
+<th bgcolor=fffcc>
+MMISU2 Simulations
+</th>
+<th bgcolor=fffcc>
+ECPCRS Simulations
+</th>
+
+<!--- Data Row 1 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Short Simulation <br>
+    Initial </b>
+</td>
+<td>
+<a href="mmanl1_pircs1a_15may88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmanl1_pircs1a_15may88_soilw_1m.gif" align=center width=450 height=375 alt="MMANL1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu1_pircs1a_15may88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmisu1_pircs1a_15may88_soilw_1m.gif" align=center width=450 height=375 alt="MMISU1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu2_pircs1a_15may88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmisu2_pircs1a_15may88_soilw_1m.gif" align=center width=450 height=375 alt="MMISU2 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+nbsp;
+</td>
+</tr>
+
+<!--- Data Row 2 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Short Duration <br>
+    Final </b>
+</td>
+<td>
+<a href="mmanl1_pircs1a_15jul88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmanl1_pircs1a_15jul88_soilw_1m.gif" align=center width=450 height=375 alt="MMANL1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu1_pircs1a_15jul88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmisu1_pircs1a_15jul88_soilw_1m.gif" align=center width=450 height=375 alt="MMISU1 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+<a href="mmisu2_pircs1a_15jul88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmisu2_pircs1a_15jul88_soilw_1m.gif" align=center width=450 height=375 alt="MMISU2 PIRCS-1(a) Precipitation">
+</a>
+</td>
+<td>
+nbsp;
+</td>
+</tr>
+
+<!--- Data Row 3 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Long Simulation <br>
+    Initial</b>
+</td>
+<td>
+<a href="mmanl1_15may88_soilw_1m.gif" target="_blank"> 
+  <IMG SRC="mmanl1_15may88_soilw_1m.gif" align="center" width=450 height=375 alt="MMANL1 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<a href="mmisu2_15may88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmisu2_15may88_soilw_1m.gif" align="center" width=450 height=375 alt="MMISU2 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+<a href="soil15may.bmp" target="_blank">
+<IMG SRC="soil15may.bmp" align="center" width=450 height=375 alt="ECPCRS 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+</tr>
+
+<!--- Data Row 4 ---!>
+<tr>
+<td bgcolor=fffcc>
+<b> Long Simulation <br>
+    Final</b>
+</td>
+<td>
+<a href="mmanl1_15jul88_soilw_1m.gif" target="_blank"> 
+  <IMG SRC="mmanl1_15jul88_soilw_1m.gif" align="center" width=450 height=375 alt="MMANL1 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+<a href="mmisu2_15jul88_soilw_1m.gif" target="_blank">
+<IMG SRC="mmisu2_15jul88_soilw_1m.gif" align="center" width=450 height=375 alt="MMISU2 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+<td>
+<a href="soil15jul.bmp" target="_blank">
+<IMG SRC="soil15jul.bmp" align="center" width=450 height=375 alt="ECPCRS 15 May - 15 Jul 88 Precipitation">
+</a>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

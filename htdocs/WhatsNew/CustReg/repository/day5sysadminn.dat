@@ -1,0 +1,45 @@
+:#
+:# day5sysadminn.dat
+:#
+:# name:ui:type:value:
+:# name  -- name of input in the HTML forms
+:# ui    -- kind of ui or tag in HTML forms, e.g. text, radio, checkbox, select
+:# type  -- a bit-wisely ORed flag for different types:
+:#      0   - nothing special (default)
+:#      1   - soft mandatory
+:#      2   - hard mandatory
+:#      4   - hinv result if value is empty
+:#      8   - auto populate serial # if value is empty
+:#      16  - auto pop sysid if value is empty
+:#      32  - detect email connection
+:#      64  - auto pop email address
+:#      128 - app seg conversion
+:#      256 - auto pop country list.
+:#      512 - country name to code conversion
+:#
+:# value -- user input or a predefined value
+
+:Salutation:text:::
+:FirstName:text:2::
+:LastName:text:2::
+:Company:text:2::
+:Gate:text:::
+:Bldg:text:::
+:Floor:text:::
+:Suite:text:::
+:Room:text:::
+:Mstop:text:::
+:Street1:text:2::
+:Street2:text:::
+:City:text:2::
+:State:text:2::
+:Postal:text:2::
+:Phone:text:::
+:Ext:text:::
+:Vmail:text:::
+:Fax:text:::
+:Email:text:2::
+:SerialNumList:textarea:::
+
+:# end
+

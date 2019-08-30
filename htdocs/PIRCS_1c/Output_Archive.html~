@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="Microsoft Word 73.1">
+<TITLE>Project to Intercompare Regional Climate Simulations</TITLE>
+</HEAD>
+<BODY>
+
+<B><FONT FACE="Times" SIZE=5><P ALIGN="CENTER"> Project to Intercompare Regional Climate Simulations</P>
+<P ALIGN="CENTER">Iowa State University</P>
+</B></FONT><FONT FACE="Times"><P>&#9;</P>
+
+</FONT><B><FONT FACE="Times" SIZE=4><P>OUTPUT For Use in PIRCS 1C AND PIRCS 2 Archives</P>
+
+</FONT><FONT FACE="Arial"><P>I. Three-hourly cumulative</P>
+</B></FONT><FONT FACE="Times"><P>1. Convective precip</P>
+<P>2. Stratiform precip </P>
+<P>3. Surface energy fluxes:</P>
+<P>a. Incoming solar</P>
+<P>b. Reflected solar</P>
+<P>c. Upward longwave</P>
+<P>d. Downward longwave&#9;&#9;&#9;</P>
+<P>e. Downward flux into the soil &#9;&#9;</P>
+<P>f. Sensible heat&#9;&#9;&#9;</P>
+<P>g. Latent heat&#9;&#9;&#9;&#9;&#9;</P>
+<P>h. Runoff&#9;&#9;</P>
+<P>4. Top of atmosphere fluxes:</P>
+<P>a. OLR, have modelers specify the bands of longwave they assume.</P>
+<P>b. Reflected (outgoing) shortwave at top of atmosphere (cut this out unless compelling&#9;&#9;&#9;reason to keep)</P>
+
+</FONT><B><FONT FACE="Arial"><P>II. Three-hour average</P>
+</B></FONT><FONT FACE="Times"><P>1. Cloud cover in ISCCP cloud layers</P>
+<P>2. CAPE, computed from algorithm supplied by PIRCS </P>
+<P>3. Vertically integrated horizontal water transport</P>
+
+</FONT><B><FONT FACE="Arial"><P>III. Three-hourly instantaneous</P>
+</B></FONT><FONT FACE="Times"><P>1. 2-m air temp</P>
+<P>2. Precipitable water&#9;&#9;</P>
+<P>3. Surface pressure (from which PIRCS will calculate sea-level pressure)</P>
+<P>4. Omega (vertical motion in pressure coordinates) at 500 hPa</P>
+<P>5. Low-Level Jet statistics (PIRCS will provide algorithm)</P>
+
+</FONT><B><FONT FACE="Arial"><P>IV. Daily</P>
+</B></FONT><FONT FACE="Times"><P>1.  Minimum temperature</P>
+<P>2. Maximun temperature</P>
+<P>3. Soil moisture</P>
+
+</FONT><B><FONT FACE="Arial"><P>V. Monthly averages at 850, 700, 500, 300, and 200 hPa (of 3-hourly samples)</P>
+</B></FONT><FONT FACE="Times"><P>1. East-west wind speed</P>
+<P>2. North-south wind speed</P>
+<P>3. Vertical wind speed (omega)</P>
+<P>4. Temperature</P>
+<P>5. Diabatic heating</P>
+<P>6. Specific humidity</P>
+<P>7. Relative humidity</P>
+<B>
+<P>Notes:</P>
+</B><P>(1) Be sure that the vertical interpolation is done before the monthly averaging is done.</P>
+<P>(2) Include all mandatory levels.</P>
+</FONT></BODY>
+</HTML>
